@@ -1,5 +1,7 @@
 export interface Project {
   slug: string;
+  refId: string;
+  year: string;
   title: string;
   label: 'CLIENT WORK' | 'INTERNAL BUILD' | 'PROTOTYPE' | 'EXPERIMENT' | 'TRAINING';
   tag: string;
@@ -27,6 +29,8 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     slug: 'million-row-pipeline',
+    refId: 'REF. DS-001',
+    year: '2026',
     title: '1,000,000+ Rows Processed in Under 10 Minutes',
     label: 'INTERNAL BUILD',
     tag: 'DATA / PYTHON / AUTOMATION',
@@ -80,6 +84,8 @@ def process_chunk_stream(file_path: str, chunk_size: int = 50_000):
   },
   {
     slug: 'video-processing-pipeline',
+    refId: 'REF. DS-002',
+    year: '2026',
     title: 'Long-Form Video Turned Into a Processing Pipeline',
     label: 'INTERNAL BUILD',
     tag: 'AI / PYTHON / MEDIA AUTOMATION',
@@ -127,6 +133,8 @@ def extract_indexed_clips(video_path: str, segments: list[dict]):
   },
   {
     slug: 'industrial-rfq-intake',
+    refId: 'REF. DS-003',
+    year: '2026',
     title: 'Industrial RFQ Intake & Specification Preparation Engine',
     label: 'PROTOTYPE',
     tag: 'INDUSTRY / RFQ / EXTRACTION',
@@ -160,6 +168,8 @@ def extract_indexed_clips(video_path: str, segments: list[dict]):
   },
   {
     slug: 'tender-monitoring-engine',
+    refId: 'REF. DS-004',
+    year: '2025',
     title: 'Multi-Portal Tender Discovery & Filter Queue',
     label: 'PROTOTYPE',
     tag: 'INDUSTRY / PROCUREMENT / MONITORING',
@@ -193,6 +203,8 @@ def extract_indexed_clips(video_path: str, segments: list[dict]):
   },
   {
     slug: 'commercial-quotation-tracker',
+    refId: 'REF. DS-005',
+    year: '2025',
     title: 'Commercial Quotation Coordination & Follow-Up Pipeline',
     label: 'INTERNAL BUILD',
     tag: 'AUTOMATION / PIPELINE / REPORTING',
@@ -226,6 +238,8 @@ def extract_indexed_clips(video_path: str, segments: list[dict]):
   },
   {
     slug: 'appclick-training-curriculum',
+    refId: 'REF. DS-006',
+    year: '2026',
     title: 'Practical AI, Automation & API Workshop Curriculum',
     label: 'TRAINING',
     tag: 'TEACHING / WORKSHOP / APIS',

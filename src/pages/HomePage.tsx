@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
-import { ArrowRight, ArrowUpRight, CheckCircle2, Terminal } from 'lucide-react';
+import { ProcessDiagram } from '../components/ProcessDiagram';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { PROJECTS } from '../data/projectsData';
 
 export const HomePage: React.FC = () => {
@@ -33,75 +34,90 @@ export const HomePage: React.FC = () => {
         jsonLd={jsonLd}
       />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-24 sm:space-y-32">
+      <main className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-20 space-y-24 sm:space-y-32">
         
-        {/* ─── SECTION 1: HERO ─────────────────────────────────── */}
-        <section className="space-y-8 max-w-4xl">
-          <div className="font-mono-tech text-xs tracking-widest uppercase text-[#96742c] flex items-center gap-2">
-            <span className="w-2 h-2 bg-[#96742c]" />
-            <span>DAFEDESCRIBE / ODAFE AMALEGA</span>
+        {/* ─── SECTION 1: HERO (7 / 5 CATALOGUE SPREAD) ────────── */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start pt-2 sm:pt-6">
+          
+          {/* Left: 7 Columns Headline & Copy */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="font-mono-tech text-xs tracking-[0.12em] uppercase text-[#B58A2A] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-[#B58A2A]" />
+              <span>DAFEDESCRIBE / ODAFE AMALEGA</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-bold tracking-tight text-[#181816] font-display leading-[1.08]">
+              I build systems for work that has outgrown manual handling.
+            </h1>
+
+            <div className="space-y-3 text-base sm:text-lg text-[#33312C] font-body leading-relaxed max-w-2xl">
+              <p>
+                I design automation, data and AI workflows around business processes that still depend too heavily on people copying, checking, searching, following up and rebuilding information.
+              </p>
+              <p className="text-[#77736A]">
+                My deepest current focus is the commercial side of industrial and operational businesses. I also teach teams how these systems actually work.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <Link
+                to="/contact"
+                className="btn-primary px-6 py-3.5"
+              >
+                <span>Show Me the Workflow</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+
+              <Link
+                to="/work"
+                className="btn-secondary px-6 py-3.5"
+              >
+                <span>See What I've Built</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            <div className="pt-4 border-t border-[#D9D4C8] font-mono-tech text-xs text-[#77736A] tracking-[0.06em]">
+              AI Workflow Engineer · Systems Builder · Educator
+            </div>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#141416] leading-[1.15]">
-            I build systems for work that has outgrown manual handling.
-          </h1>
-
-          <p className="text-lg sm:text-xl text-[#4a4946] leading-relaxed max-w-3xl">
-            I design automation, data and AI workflows around business processes that still depend too heavily on people copying, checking, searching, following up and rebuilding information.
-          </p>
-
-          <p className="text-base sm:text-lg text-[#575653] leading-relaxed max-w-3xl">
-            My deepest current focus is the commercial side of industrial and operational businesses. I also teach teams how these systems actually work.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-4 pt-2">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-mono-tech uppercase tracking-wider bg-[#141416] text-[#faf8f5] border border-[#141416] hover:bg-[#2b2b30] transition-colors"
-            >
-              <span>Show Me the Workflow</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-
-            <Link
-              to="/work"
-              className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-mono-tech uppercase tracking-wider bg-[#faf8f5] text-[#141416] border border-[#ded9cf] hover:border-[#141416] transition-colors"
-            >
-              <span>See What I've Built</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="pt-4 border-t border-[#ded9cf] font-mono-tech text-xs sm:text-sm text-[#7a7770]">
-            AI Workflow Engineer · Systems Builder · Educator
+          {/* Right: 5 Columns Schematic Companion */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
+            <ProcessDiagram type="hero-schematic" />
           </div>
         </section>
 
         {/* ─── SECTION 2: THREE COMMERCIAL ENTRY POINTS ────────── */}
         <section className="space-y-6">
-          <div className="font-mono-tech text-xs tracking-wider uppercase text-[#7a7770]">
-            [COMMERCIAL ENTRY POINTS]
+          <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
+            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#77736A]">
+              [COMMERCIAL ENTRY POINTS]
+            </div>
+            <div className="font-mono-tech text-xs text-[#B58A2A]">
+              CATALOGUE SECTION 01–03
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Entry 1: Industry */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 flex flex-col justify-between hover:border-[#141416] transition-colors group">
+            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between group hover:border-[#181816] transition-colors">
               <div className="space-y-4">
-                <div className="font-mono-tech text-xs text-[#96742c] uppercase tracking-wider">
-                  [01] INDUSTRY
+                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
+                  01 / INDUSTRY
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#141416]">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display leading-tight">
                   Commercial systems for businesses that make, supply and install things.
                 </h2>
-                <p className="text-sm text-[#575653] leading-relaxed">
+                <p className="text-sm text-[#77736A] leading-relaxed font-body">
                   RFQs, tenders, quotations, opportunity monitoring, follow-up and commercial reporting.
                 </p>
               </div>
               <div className="pt-8">
                 <Link
                   to="/industry"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold group-hover:text-[#96742c] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold group-hover:text-[#B58A2A] transition-colors"
                 >
                   <span>Explore Industry Systems</span>
                   <span>→</span>
@@ -110,22 +126,22 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Entry 2: Automation */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 flex flex-col justify-between hover:border-[#141416] transition-colors group">
+            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between group hover:border-[#181816] transition-colors">
               <div className="space-y-4">
-                <div className="font-mono-tech text-xs text-[#96742c] uppercase tracking-wider">
-                  [02] AUTOMATION
+                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
+                  02 / AUTOMATION
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#141416]">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display leading-tight">
                   Repetitive process? Strange workflow? Systems that refuse to talk?
                 </h2>
-                <p className="text-sm text-[#575653] leading-relaxed">
+                <p className="text-sm text-[#77736A] leading-relaxed font-body">
                   I build targeted workflows using automation, APIs, code, data and AI where useful.
                 </p>
               </div>
               <div className="pt-8">
                 <Link
                   to="/automation"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold group-hover:text-[#96742c] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold group-hover:text-[#B58A2A] transition-colors"
                 >
                   <span>Explore Automation</span>
                   <span>→</span>
@@ -134,22 +150,22 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Entry 3: Teaching */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 flex flex-col justify-between hover:border-[#141416] transition-colors group">
+            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between group hover:border-[#181816] transition-colors">
               <div className="space-y-4">
-                <div className="font-mono-tech text-xs text-[#96742c] uppercase tracking-wider">
-                  [03] TEACHING
+                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
+                  03 / TEACHING
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#141416]">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display leading-tight">
                   Learn what is actually happening underneath the AI button.
                 </h2>
-                <p className="text-sm text-[#575653] leading-relaxed">
+                <p className="text-sm text-[#77736A] leading-relaxed font-body">
                   Practical training in AI, automation, APIs, digital productivity and AI-assisted building.
                 </p>
               </div>
               <div className="pt-8">
                 <Link
                   to="/teaching"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold group-hover:text-[#96742c] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold group-hover:text-[#B58A2A] transition-colors"
                 >
                   <span>Explore Teaching</span>
                   <span>→</span>
@@ -161,103 +177,112 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* ─── SECTION 3: CREDIBILITY BAND ─────────────────────── */}
-        <section className="border border-[#ded9cf] bg-[#f3efe6] p-6 sm:p-8 space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#ded9cf] pb-4">
-            <h2 className="font-mono-tech text-xs uppercase tracking-wider text-[#141416] font-semibold">
+        <section className="catalogue-inset p-6 sm:p-8 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3">
+            <h2 className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#181816] font-semibold">
               WORK & EXPERIENCE
             </h2>
-            <span className="font-mono-tech text-xs text-[#7a7770]">
+            <span className="font-mono-tech text-xs text-[#77736A]">
               Work, employment and project experience includes
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
             {/* AppClick */}
-            <div className="p-4 bg-[#ffffff] border border-[#ded9cf]">
+            <div className="p-4 bg-[#FFFFFF] border border-[#D9D4C8]">
               <div className="flex items-center justify-between mb-2">
-                <span className="font-mono-tech text-xs text-[#96742c] font-semibold">
-                  [EMPLOYMENT]
+                <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold">
+                  [ACTIVE ROLE]
                 </span>
-                <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#141416] text-[#faf8f5]">
-                  Active Role
+                <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#181816] text-[#FCFBF7]">
+                  EMPLOYMENT
                 </span>
               </div>
-              <div className="text-base font-bold text-[#141416]">
+              <div className="text-base font-bold text-[#181816] font-body">
                 AppClick
               </div>
-              <div className="text-xs text-[#575653] mt-1 font-mono-tech">
+              <div className="text-xs text-[#77736A] mt-1 font-mono-tech">
                 Currently at AppClick
               </div>
-              <p className="text-xs text-[#7a7770] mt-2">
-                Technical instruction, curriculum execution, automation systems, and systems literacy.
+              <p className="text-xs text-[#77736A] mt-2 font-body">
+                Technical instruction, practical workflow curriculum, and systems literacy.
               </p>
             </div>
 
             {/* University */}
-            <div className="p-4 bg-[#ffffff] border border-[#ded9cf]">
-              <div className="font-mono-tech text-xs text-[#7a7770] font-semibold mb-2">
+            <div className="p-4 bg-[#FFFFFF] border border-[#D9D4C8]">
+              <div className="font-mono-tech text-xs text-[#77736A] font-semibold mb-2">
                 [EDUCATION]
               </div>
-              <div className="text-base font-bold text-[#141416]">
+              <div className="text-base font-bold text-[#181816] font-body">
                 Federal University Oye-Ekiti
               </div>
-              <div className="text-xs text-[#575653] mt-1 font-mono-tech">
+              <div className="text-xs text-[#77736A] mt-1 font-mono-tech">
                 Bachelor of Engineering (B.Eng)
               </div>
-              <p className="text-xs text-[#7a7770] mt-2">
-                Rigorous engineering foundations, physical systems principles, and analytical problem-solving.
+              <p className="text-xs text-[#77736A] mt-2 font-body">
+                Engineering foundations, analytical modelling, and physical systems analysis.
               </p>
             </div>
 
-            {/* ALX / Professional */}
-            <div className="p-4 bg-[#ffffff] border border-[#ded9cf]">
-              <div className="font-mono-tech text-xs text-[#7a7770] font-semibold mb-2">
-                [PROFESSIONAL TRAINING]
+            {/* ALX */}
+            <div className="p-4 bg-[#FFFFFF] border border-[#D9D4C8]">
+              <div className="font-mono-tech text-xs text-[#77736A] font-semibold mb-2">
+                [PROFESSIONAL]
               </div>
-              <div className="text-base font-bold text-[#141416]">
+              <div className="text-base font-bold text-[#181816] font-body">
                 ALX Training
               </div>
-              <div className="text-xs text-[#575653] mt-1 font-mono-tech">
-                Virtual Assistance & Technical Operations
+              <div className="text-xs text-[#77736A] mt-1 font-mono-tech">
+                Virtual Assistance & Operations
               </div>
-              <p className="text-xs text-[#7a7770] mt-2">
-                Digital workspace coordination, asynchronous operations, and remote systems workflows.
+              <p className="text-xs text-[#77736A] mt-2 font-body">
+                Distributed workflows, asynchronous digital coordination, and systems execution.
               </p>
             </div>
           </div>
         </section>
 
-        {/* ─── SECTION 4: HOMEPAGE PROOF ───────────────────────── */}
-        <section className="space-y-8">
-          <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-wider uppercase text-[#96742c]">
-              [VERIFIABLE EVIDENCE]
+        {/* ─── SECTION 4: HOMEPAGE PROOF (CATALOGUE PLATES) ────── */}
+        <section className="space-y-6">
+          <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
+            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
+              04 / VERIFIED EVIDENCE
             </div>
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#141416]">
-              Work I can show you.
-            </h2>
+            <div className="font-mono-tech text-xs text-[#77736A]">
+              SPECIFICATION PLATES
+            </div>
           </div>
+
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#181816] font-display">
+            Work I can show you.
+          </h2>
 
           <div className="space-y-6">
             {/* Proof item 1: 1M rows */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 hover:border-[#141416] transition-colors">
+            <div className="catalogue-sheet p-6 sm:p-8 hover:border-[#181816] transition-colors">
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <span className="font-mono-tech text-xs text-[#96742c] font-semibold">
-                  DATA / PYTHON / AUTOMATION
-                </span>
-                <span className="font-mono-tech text-xs px-2 py-0.5 bg-[#f3efe6] text-[#141416] border border-[#ded9cf]">
+                <div className="flex items-center gap-2 font-mono-tech text-xs">
+                  <span className="text-[#B58A2A] font-semibold">REF. DS-001</span>
+                  <span className="text-[#D9D4C8]">|</span>
+                  <span className="text-[#77736A]">DATA / PYTHON / AUTOMATION</span>
+                </div>
+                <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
                   INTERNAL BUILD
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#141416] mb-3">
+
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display mb-3">
                 1,000,000+ rows processed in under 10 minutes.
               </h3>
-              <p className="text-sm sm:text-base text-[#575653] leading-relaxed max-w-3xl mb-6">
+
+              <p className="text-sm sm:text-base text-[#77736A] leading-relaxed max-w-3xl mb-6 font-body">
                 A Python workflow replaced a data-processing job that would otherwise have represented a substantial amount of manual work.
               </p>
+
               <Link
                 to="/work/million-row-pipeline"
-                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold hover:text-[#96742c] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
               >
                 <span>See the project</span>
                 <span>→</span>
@@ -265,49 +290,59 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Proof item 2: Video pipeline */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 hover:border-[#141416] transition-colors">
+            <div className="catalogue-sheet p-6 sm:p-8 hover:border-[#181816] transition-colors">
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <span className="font-mono-tech text-xs text-[#96742c] font-semibold">
-                  AI / PYTHON / MEDIA AUTOMATION
-                </span>
-                <span className="font-mono-tech text-xs px-2 py-0.5 bg-[#f3efe6] text-[#141416] border border-[#ded9cf]">
+                <div className="flex items-center gap-2 font-mono-tech text-xs">
+                  <span className="text-[#B58A2A] font-semibold">REF. DS-002</span>
+                  <span className="text-[#D9D4C8]">|</span>
+                  <span className="text-[#77736A]">AI / PYTHON / MEDIA AUTOMATION</span>
+                </div>
+                <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
                   INTERNAL BUILD
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#141416] mb-3">
+
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display mb-3">
                 Long-form video turned into a processing pipeline.
               </h3>
-              <p className="text-sm sm:text-base text-[#575653] leading-relaxed max-w-3xl mb-6">
+
+              <p className="text-sm sm:text-base text-[#77736A] leading-relaxed max-w-3xl mb-6 font-body">
                 An end-to-end system covering transcription, timestamps, content selection and video processing using Python, transcription models and FFmpeg.
               </p>
+
               <Link
                 to="/work/video-processing-pipeline"
-                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold hover:text-[#96742c] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
               >
                 <span>See the build</span>
                 <span>→</span>
               </Link>
             </div>
 
-            {/* Proof item 3: Industrial RFQ Prototype */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 hover:border-[#141416] transition-colors">
+            {/* Proof item 3: RFQ Intake Prototype */}
+            <div className="catalogue-sheet p-6 sm:p-8 hover:border-[#181816] transition-colors">
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <span className="font-mono-tech text-xs text-[#96742c] font-semibold">
-                  INDUSTRY / RFQ / EXTRACTION
-                </span>
-                <span className="font-mono-tech text-xs px-2 py-0.5 bg-[#f3efe6] text-[#141416] border border-[#ded9cf]">
+                <div className="flex items-center gap-2 font-mono-tech text-xs">
+                  <span className="text-[#B58A2A] font-semibold">REF. DS-003</span>
+                  <span className="text-[#D9D4C8]">|</span>
+                  <span className="text-[#77736A]">INDUSTRY / RFQ / EXTRACTION</span>
+                </div>
+                <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
                   PROTOTYPE
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#141416] mb-3">
+
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display mb-3">
                 Industrial RFQ Intake & Specification Preparation Engine
               </h3>
-              <p className="text-sm sm:text-base text-[#575653] leading-relaxed max-w-3xl mb-6">
+
+              <p className="text-sm sm:text-base text-[#77736A] leading-relaxed max-w-3xl mb-6 font-body">
                 Automated extraction of customer line items, part specifications, and delivery terms from messy email bodies and PDF attachments into an organised review queue.
               </p>
+
               <Link
                 to="/work/industrial-rfq-intake"
-                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold hover:text-[#96742c] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
               >
                 <span>See the build</span>
                 <span>→</span>
@@ -317,16 +352,16 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* ─── SECTION 5: HOMEPAGE ABOUT ───────────────────────── */}
-        <section className="border-t border-[#ded9cf] pt-12 space-y-6 max-w-3xl">
-          <div className="font-mono-tech text-xs tracking-wider uppercase text-[#7a7770]">
-            [SYSTEMS BUILDER]
+        <section className="border-t border-[#D9D4C8] pt-12 space-y-6 max-w-3xl">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
+            05 / SYSTEMS BUILDER
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#141416]">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#181816] font-display">
             Odafe Amalega
           </h2>
 
-          <div className="space-y-4 text-base text-[#4a4946] leading-relaxed">
+          <div className="space-y-4 text-base text-[#33312C] font-body leading-relaxed">
             <p>
               I work across automation, APIs, Python, AI, data and lightweight software.
             </p>
@@ -344,7 +379,7 @@ export const HomePage: React.FC = () => {
           <div className="pt-2">
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold hover:text-[#96742c] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
             >
               <span>View my profile & digital CV</span>
               <span>→</span>
@@ -353,16 +388,16 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* ─── SECTION 6: HOMEPAGE FINAL CTA ───────────────────── */}
-        <section className="border border-[#141416] bg-[#ffffff] p-8 sm:p-12 space-y-6">
-          <div className="font-mono-tech text-xs tracking-wider uppercase text-[#96742c]">
-            [NEXT STEP]
+        <section className="catalogue-sheet p-8 sm:p-14 space-y-6 border-l-4 border-l-[#B58A2A]">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
+            06 / NEXT STEP
           </div>
 
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#141416]">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#181816] font-display">
             What does your team keep doing the same way?
           </h2>
 
-          <div className="space-y-4 text-base sm:text-lg text-[#575653] max-w-2xl leading-relaxed">
+          <div className="space-y-3 text-base sm:text-lg text-[#77736A] font-body max-w-2xl leading-relaxed">
             <p>
               Send me one repeated process.
             </p>
@@ -377,7 +412,7 @@ export const HomePage: React.FC = () => {
           <div className="pt-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-mono-tech uppercase tracking-wider bg-[#141416] text-[#faf8f5] border border-[#141416] hover:bg-[#2b2b30] transition-colors"
+              className="btn-primary px-7 py-4"
             >
               <span>Show Me the Workflow</span>
               <ArrowRight className="w-4 h-4" />

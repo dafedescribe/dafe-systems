@@ -39,22 +39,21 @@ export const IndustryPage: React.FC = () => {
         jsonLd={jsonLd}
       />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-16 sm:space-y-24">
+      <main className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-20 space-y-16 sm:space-y-24">
         
-        {/* Breadcrumb Navigation */}
         <Breadcrumbs items={[{ label: 'INDUSTRY', path: '/industry' }]} />
 
         {/* ─── HERO ────────────────────────────────────────────── */}
         <section className="space-y-6 max-w-4xl">
-          <div className="font-mono-tech text-xs tracking-widest uppercase text-[#96742c]">
-            [INDUSTRY COMMERCIAL SYSTEMS]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
+            01 / INDUSTRY COMMERCIAL SYSTEMS
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#141416] leading-[1.15]">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#181816] font-display leading-[1.12]">
             Less administration between the opportunity and the order.
           </h1>
 
-          <div className="space-y-3 text-base sm:text-lg text-[#4a4946] leading-relaxed max-w-3xl">
+          <div className="space-y-3 text-base sm:text-lg text-[#33312C] font-body leading-relaxed max-w-3xl">
             <p>Industrial sales rarely happens inside one clean system.</p>
             <p>An opportunity appears somewhere.</p>
             <p>An enquiry arrives somewhere else.</p>
@@ -63,7 +62,7 @@ export const IndustryPage: React.FC = () => {
             <p>A quotation has to be prepared.</p>
             <p>Someone follows up.</p>
             <p>Someone else eventually builds the report.</p>
-            <p className="font-medium text-[#141416] pt-2">
+            <p className="font-semibold text-[#181816] pt-2">
               I build targeted systems around the repetitive work in that chain.
             </p>
           </div>
@@ -71,7 +70,7 @@ export const IndustryPage: React.FC = () => {
           <div className="pt-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-mono-tech uppercase tracking-wider bg-[#141416] text-[#faf8f5] border border-[#141416] hover:bg-[#2b2b30] transition-colors"
+              className="btn-primary px-6 py-3.5"
             >
               <span>Show Me Your Commercial Workflow</span>
               <ArrowRight className="w-4 h-4" />
@@ -86,34 +85,34 @@ export const IndustryPage: React.FC = () => {
 
         {/* ─── FOUR CORE AREAS ─────────────────────────────────── */}
         <section className="space-y-8">
-          <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-wider uppercase text-[#96742c]">
-              [SPECIALISED SYSTEMS]
+          <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
+            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
+              [SPECIALISED COMMERCIAL WORKFLOWS]
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#141416]">
-              Four areas where commercial friction accumulates.
-            </h2>
+            <div className="font-mono-tech text-xs text-[#77736A]">
+              AREAS 01–04
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* 1. RFQ Intake */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 flex flex-col justify-between hover:border-[#141416] transition-colors">
+            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between hover:border-[#181816] transition-colors">
               <div className="space-y-3">
-                <div className="font-mono-tech text-xs text-[#96742c] uppercase tracking-wider">
-                  [AREA 01]
+                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
+                  AREA 01 / SPECIFICATION
                 </div>
-                <h3 className="text-xl font-bold text-[#141416]">
+                <h2 className="text-2xl font-bold text-[#181816] font-display">
                   RFQ Intake
-                </h3>
-                <p className="text-sm text-[#575653] leading-relaxed">
+                </h2>
+                <p className="text-sm text-[#77736A] leading-relaxed font-body">
                   Turn incoming emails, PDFs and spreadsheets into an organised request before your technical or commercial team begins its real work.
                 </p>
               </div>
               <div className="pt-6">
                 <Link
                   to="/industry/rfq-automation"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold hover:text-[#96742c] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
                 >
                   <span>RFQ automation</span>
                   <span>→</span>
@@ -122,22 +121,22 @@ export const IndustryPage: React.FC = () => {
             </div>
 
             {/* 2. Tender Monitoring */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 flex flex-col justify-between hover:border-[#141416] transition-colors">
+            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between hover:border-[#181816] transition-colors">
               <div className="space-y-3">
-                <div className="font-mono-tech text-xs text-[#96742c] uppercase tracking-wider">
-                  [AREA 02]
+                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
+                  AREA 02 / OPPORTUNITY
                 </div>
-                <h3 className="text-xl font-bold text-[#141416]">
+                <h2 className="text-2xl font-bold text-[#181816] font-display">
                   Tender Monitoring
-                </h3>
-                <p className="text-sm text-[#575653] leading-relaxed">
+                </h2>
+                <p className="text-sm text-[#77736A] leading-relaxed font-body">
                   Monitor defined opportunity sources and bring new notices into one review process instead of repeatedly checking portals manually.
                 </p>
               </div>
               <div className="pt-6">
                 <Link
                   to="/industry/tender-monitoring"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold hover:text-[#96742c] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
                 >
                   <span>Tender monitoring</span>
                   <span>→</span>
@@ -146,22 +145,22 @@ export const IndustryPage: React.FC = () => {
             </div>
 
             {/* 3. Quotation Workflow */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 flex flex-col justify-between hover:border-[#141416] transition-colors">
+            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between hover:border-[#181816] transition-colors">
               <div className="space-y-3">
-                <div className="font-mono-tech text-xs text-[#96742c] uppercase tracking-wider">
-                  [AREA 03]
+                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
+                  AREA 03 / COORDINATION
                 </div>
-                <h3 className="text-xl font-bold text-[#141416]">
+                <h2 className="text-2xl font-bold text-[#181816] font-display">
                   Quotation Workflow
-                </h3>
-                <p className="text-sm text-[#575653] leading-relaxed">
+                </h2>
+                <p className="text-sm text-[#77736A] leading-relaxed font-body">
                   Reduce repeated searching, copying, document preparation, status updating and follow-up around quotations.
                 </p>
               </div>
               <div className="pt-6">
                 <Link
                   to="/industry/quotation-workflows"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold hover:text-[#96742c] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
                 >
                   <span>Quotation workflows</span>
                   <span>→</span>
@@ -170,22 +169,22 @@ export const IndustryPage: React.FC = () => {
             </div>
 
             {/* 4. Commercial Reporting */}
-            <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 flex flex-col justify-between hover:border-[#141416] transition-colors">
+            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between hover:border-[#181816] transition-colors">
               <div className="space-y-3">
-                <div className="font-mono-tech text-xs text-[#96742c] uppercase tracking-wider">
-                  [AREA 04]
+                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
+                  AREA 04 / DATA & REPORTING
                 </div>
-                <h3 className="text-xl font-bold text-[#141416]">
+                <h2 className="text-2xl font-bold text-[#181816] font-display">
                   Commercial Reporting
-                </h3>
-                <p className="text-sm text-[#575653] leading-relaxed">
+                </h2>
+                <p className="text-sm text-[#77736A] leading-relaxed font-body">
                   Automate recurring data preparation, spreadsheet processing and reports assembled from the same sources repeatedly.
                 </p>
               </div>
               <div className="pt-6">
                 <Link
                   to="/industry/commercial-reporting"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold hover:text-[#96742c] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
                 >
                   <span>Commercial reporting</span>
                   <span>→</span>
@@ -197,29 +196,29 @@ export const IndustryPage: React.FC = () => {
         </section>
 
         {/* ─── INDUSTRY FIT SECTION ────────────────────────────── */}
-        <section className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-10 space-y-8">
+        <section className="catalogue-sheet p-6 sm:p-10 space-y-8">
           <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-wider uppercase text-[#7a7770]">
-              [SECTOR FIT]
+            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
+              [SECTOR FIT REGISTER]
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#141416]">
+            <h2 className="text-3xl font-bold tracking-tight text-[#181816] font-display">
               Where this tends to fit.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm font-medium text-[#141416]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 text-sm font-medium text-[#181816]">
             {sectors.map((sector) => (
               <div
                 key={sector}
-                className="p-3.5 border border-[#ded9cf] bg-[#faf8f5] flex items-center gap-2.5"
+                className="p-3.5 border border-[#D9D4C8] bg-[#FCFBF7] flex items-center gap-2.5 font-body"
               >
-                <span className="w-1.5 h-1.5 bg-[#96742c]" />
+                <span className="w-1.5 h-1.5 bg-[#B58A2A] flex-shrink-0" />
                 <span>{sector}</span>
               </div>
             ))}
           </div>
 
-          <div className="border-t border-[#ded9cf] pt-6 space-y-3 text-sm sm:text-base text-[#575653] max-w-3xl leading-relaxed">
+          <div className="border-t border-[#D9D4C8] pt-6 space-y-3 text-sm sm:text-base text-[#77736A] font-body max-w-3xl leading-relaxed">
             <p>
               The exact sector matters less than the commercial process.
             </p>
@@ -230,23 +229,23 @@ export const IndustryPage: React.FC = () => {
         </section>
 
         {/* ─── INDUSTRY CTA ────────────────────────────────────── */}
-        <section className="border border-[#141416] bg-[#f3efe6] p-8 sm:p-12 space-y-6">
-          <div className="font-mono-tech text-xs tracking-wider uppercase text-[#96742c]">
-            [COMMERCIAL ENGAGEMENT]
+        <section className="catalogue-sheet p-8 sm:p-12 space-y-6 border-l-4 border-l-[#B58A2A]">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
+            COMMERCIAL EVALUATION
           </div>
 
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#141416]">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#181816] font-display">
             Start with one workflow.
           </h2>
 
-          <p className="text-base sm:text-lg text-[#575653] max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-[#77736A] font-body max-w-2xl leading-relaxed">
             Send me one repeated process from your commercial operations. We will map what comes in, where it bottlenecks, and how to structure it reliably.
           </p>
 
           <div className="pt-2">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-mono-tech uppercase tracking-wider bg-[#141416] text-[#faf8f5] border border-[#141416] hover:bg-[#2b2b30] transition-colors"
+              className="btn-primary px-6 py-3.5"
             >
               <span>Show Me the Process</span>
               <ArrowRight className="w-4 h-4" />

@@ -1,150 +1,236 @@
 import React from 'react';
 
 interface ProcessDiagramProps {
-  type?: 'commercial' | 'rfq' | 'tender' | 'quotation';
+  type?: 'commercial' | 'rfq' | 'tender' | 'quotation' | 'hero-schematic';
 }
 
 export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commercial' }) => {
-  if (type === 'rfq') {
+  // Hero Schematic: 7/5 layout companion diagram
+  if (type === 'hero-schematic') {
     return (
-      <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 my-8">
-        <div className="font-mono-tech text-xs uppercase tracking-wider text-[#96742c] mb-6">
-          [PROCESS ARCHITECTURE: RFQ INTAKE & PREPARATION]
+      <div className="catalogue-sheet p-6 sm:p-7 space-y-5">
+        <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
+          <span className="font-mono-tech text-[10px] tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
+            SCHEMATIC / SCH-001
+          </span>
+          <span className="font-mono-tech text-[10px] text-[#77736A] uppercase">
+            OPERATIONAL PIPELINE
+          </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
-          {/* Phase 1: Incoming */}
-          <div className="border border-[#ded9cf] bg-[#faf8f5] p-5">
-            <div className="font-mono-tech text-xs text-[#7a7770] uppercase mb-2">
-              Phase 01 · Incoming Sources
+        <div className="space-y-2.5 font-mono-tech text-xs">
+          {/* Step 1: Input */}
+          <div className="p-3 border border-[#D9D4C8] bg-[#FCFBF7] flex items-start justify-between gap-3">
+            <div>
+              <span className="text-[10px] text-[#B58A2A] font-semibold block">01 / INPUT</span>
+              <span className="text-[#181816] font-medium font-body text-sm">Unstructured Influx</span>
+              <span className="text-[11px] text-[#77736A] block mt-0.5">Emails, multi-page PDFs, messy spreadsheets</span>
             </div>
-            <div className="text-base font-semibold text-[#141416] mb-3">
-              Unstructured Inputs
+            <span className="text-[10px] px-1.5 py-0.5 bg-[#EBE5D8] text-[#33312C]">RAW</span>
+          </div>
+
+          <div className="text-center text-[#B58A2A] text-xs font-semibold py-0.5">↓</div>
+
+          {/* Step 2: Process (Automated) */}
+          <div className="p-3 border border-[#B58A2A] bg-[#F6F0DC] flex items-start justify-between gap-3">
+            <div>
+              <span className="text-[10px] text-[#795B18] font-semibold block">02 / PROCESS [AUTOMATED]</span>
+              <span className="text-[#181816] font-medium font-body text-sm">Extraction & Normalization</span>
+              <span className="text-[11px] text-[#77736A] block mt-0.5">Data parsing, schema matching, catalog lookup</span>
             </div>
-            <ul className="space-y-1.5 text-xs text-[#575653] font-mono-tech">
+            <span className="text-[10px] px-1.5 py-0.5 bg-[#B58A2A] text-[#FFFFFF] font-semibold">SYSTEM</span>
+          </div>
+
+          <div className="text-center text-[#B58A2A] text-xs font-semibold py-0.5">↓</div>
+
+          {/* Step 3: Decision (Human) */}
+          <div className="p-3 border border-[#181816] bg-[#FFFFFF] flex items-start justify-between gap-3">
+            <div>
+              <span className="text-[10px] text-[#33312C] font-semibold block">03 / DECISION [HUMAN]</span>
+              <span className="text-[#181816] font-medium font-body text-sm">Commercial Judgement</span>
+              <span className="text-[11px] text-[#77736A] block mt-0.5">Pricing, margin sizing, engineering feasibility</span>
+            </div>
+            <span className="text-[10px] px-1.5 py-0.5 bg-[#181816] text-[#FCFBF7] font-semibold">HUMAN</span>
+          </div>
+
+          <div className="text-center text-[#B58A2A] text-xs font-semibold py-0.5">↓</div>
+
+          {/* Step 4: Output */}
+          <div className="p-3 border border-[#D9D4C8] bg-[#F5F1E7] flex items-start justify-between gap-3">
+            <div>
+              <span className="text-[10px] text-[#77736A] font-semibold block">04 / OUTPUT</span>
+              <span className="text-[#181816] font-medium font-body text-sm">Dispatched Result</span>
+              <span className="text-[11px] text-[#77736A] block mt-0.5">Approved quote, CRM update, rolling report</span>
+            </div>
+            <span className="text-[10px] px-1.5 py-0.5 bg-[#EBE5D8] text-[#33312C]">VERIFIED</span>
+          </div>
+        </div>
+
+        <div className="pt-2 border-t border-[#D9D4C8] flex items-center justify-between text-[10px] font-mono-tech text-[#77736A]">
+          <span>RULE: AUTOMATE PREPARATION</span>
+          <span className="text-[#B58A2A]">KEEP JUDGEMENT HUMAN</span>
+        </div>
+      </div>
+    );
+  }
+
+  // RFQ Architecture Diagram
+  if (type === 'rfq') {
+    return (
+      <div className="catalogue-sheet p-6 sm:p-8 my-8">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 mb-6">
+          <span className="font-mono-tech text-xs tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
+            [SCHEMATIC / RFQ-001]
+          </span>
+          <span className="font-mono-tech text-xs text-[#77736A] uppercase">
+            INTAKE & PREPARATION ENGINE
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Phase 1 */}
+          <div className="p-5 border border-[#D9D4C8] bg-[#FCFBF7]">
+            <div className="font-mono-tech text-xs text-[#77736A] uppercase mb-2">
+              Phase 01 · Inflow
+            </div>
+            <div className="text-base font-bold text-[#181816] mb-3 font-body">
+              Incoming Sources
+            </div>
+            <ul className="space-y-1.5 text-xs text-[#77736A] font-mono-tech">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#96742c]" /> Customer Email Bodies
+                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Inbound Customer Emails
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#96742c]" /> Multi-page PDF Drawings & Specs
+                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Multi-page PDF Drawings & Specs
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#96742c]" /> Custom Format Spreadsheets
+                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Excel Spreadsheets (Custom Columns)
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#96742c]" /> Scanned Paper Purchase Enquiries
+                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Scanned Paper RFQs
               </li>
             </ul>
           </div>
 
-          {/* Phase 2: System Prepares */}
-          <div className="border border-[#141416] bg-[#f4f1eb] p-5 relative">
-            <div className="absolute -top-2.5 right-4 bg-[#141416] text-[#faf8f5] px-2 py-0.5 font-mono-tech text-[10px] uppercase tracking-wider">
-              Automated Preparation
+          {/* Phase 2: Gold mark automated */}
+          <div className="p-5 border border-[#B58A2A] bg-[#F6F0DC] relative">
+            <div className="absolute -top-2.5 right-4 bg-[#B58A2A] text-[#FFFFFF] px-2 py-0.5 font-mono-tech text-[10px] uppercase tracking-wider font-semibold">
+              AUTOMATED PREPARATION
             </div>
-            <div className="font-mono-tech text-xs text-[#96742c] uppercase mb-2">
+            <div className="font-mono-tech text-xs text-[#795B18] uppercase mb-2 font-semibold">
               Phase 02 · System Prepares
             </div>
-            <div className="text-base font-semibold text-[#141416] mb-3">
+            <div className="text-base font-bold text-[#181816] mb-3 font-body">
               Normalized RFQ Dossier
             </div>
-            <ul className="space-y-1.5 text-xs text-[#4a4946] font-mono-tech">
+            <ul className="space-y-1.5 text-xs text-[#33312C] font-mono-tech">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#141416]" /> Verified Customer Identity & CRM Match
+                <span className="w-1.5 h-1.5 bg-[#181816]" /> Verified Customer Identity & CRM Match
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#141416]" /> Exact Part Numbers & SKUs
+                <span className="w-1.5 h-1.5 bg-[#181816]" /> Exact Part Numbers & ERP SKUs
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#141416]" /> Line-item Quantities & Units
+                <span className="w-1.5 h-1.5 bg-[#181816]" /> Line-item Quantities & Units
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#141416]" /> Extracted Tolerances & Material Specs
+                <span className="w-1.5 h-1.5 bg-[#181816]" /> Extracted Tolerances & Material Grades
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#141416]" /> Delivery Deadlines & Terms
+                <span className="w-1.5 h-1.5 bg-[#181816]" /> Delivery Deadlines & Lead Times
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#96742c]" /> Highlighted Missing Information
+                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Flagged Missing Information
               </li>
             </ul>
           </div>
 
           {/* Phase 3: Human Decides */}
-          <div className="border border-[#ded9cf] bg-[#faf8f5] p-5">
-            <div className="font-mono-tech text-xs text-[#7a7770] uppercase mb-2">
-              Phase 03 · Commercial Engineer
+          <div className="p-5 border border-[#181816] bg-[#FFFFFF]">
+            <div className="font-mono-tech text-xs text-[#33312C] uppercase mb-2 font-semibold">
+              Phase 03 · Commercial Desk
             </div>
-            <div className="text-base font-semibold text-[#141416] mb-3">
+            <div className="text-base font-bold text-[#181816] mb-3 font-body">
               Human Judgement
             </div>
-            <ul className="space-y-1.5 text-xs text-[#575653] font-mono-tech">
+            <ul className="space-y-1.5 text-xs text-[#77736A] font-mono-tech">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#575653]" /> Technical Feasibility Review
+                <span className="w-1.5 h-1.5 bg-[#77736A]" /> Technical Feasibility Sign-off
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#575653]" /> Live Material Cost & Margin Sizing
+                <span className="w-1.5 h-1.5 bg-[#77736A]" /> Current Material Pricing & Margin
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#575653]" /> Shop Capacity & Availability
+                <span className="w-1.5 h-1.5 bg-[#77736A]" /> Shop Floor Availability
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#575653]" /> Commercial Terms & Exceptions
+                <span className="w-1.5 h-1.5 bg-[#77736A]" /> Terms, Exceptions & Payment
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#141416]" /> Final Approved Binding Quotation
+                <span className="w-1.5 h-1.5 bg-[#181816]" /> Final Binding Quotation
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-6 pt-4 border-t border-[#ded9cf] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-[#575653]">
-          <span className="font-mono-tech text-[#141416]">
-            PRINCIPLE: Automate preparation, never unmonitored commercial commitment.
+        <div className="mt-6 pt-4 border-t border-[#D9D4C8] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono-tech text-[#77736A]">
+          <span className="text-[#181816] font-semibold">
+            PRINCIPLE: Automate preparation, never unmonitored commitment.
           </span>
-          <span className="font-mono-tech text-[#7a7770]">
-            Latency: &lt; 3 minutes per document batch
+          <span className="text-[#B58A2A]">
+            Processing latency: &lt; 3 mins per batch
           </span>
         </div>
       </div>
     );
   }
 
+  // Tender Pipeline Diagram
   if (type === 'tender') {
     const steps = [
-      { num: '01', name: 'Monitor', desc: 'Continuous polling of target portals, trade gazettes & buyer sites.' },
-      { num: '02', name: 'Detect', desc: 'Identify net-new notices against historical hash database.' },
-      { num: '03', name: 'Extract', desc: 'Isolate scope summary, submission deadlines & mandatory bonds.' },
-      { num: '04', name: 'Filter', desc: 'Score against company capabilities, geography & negative keywords.' },
-      { num: '05', name: 'Alert', desc: 'Unified morning digest and push notification to commercial desk.' },
-      { num: '06', name: 'Human Review', desc: 'Experienced estimators review qualified documents and decide.' },
+      { num: '01', name: 'Monitor', role: 'System', desc: 'Polling target portals & public trade boards.' },
+      { num: '02', name: 'Detect', role: 'System', desc: 'Identify net-new notices against hash database.' },
+      { num: '03', name: 'Extract', role: 'System', desc: 'Scope summary, submission dates & bond values.' },
+      { num: '04', name: 'Filter', role: 'System', desc: 'Capability score, regional filter & exclusions.' },
+      { num: '05', name: 'Alert', role: 'System', desc: 'Consolidated morning digest to commercial desk.' },
+      { num: '06', name: 'Review', role: 'Human', desc: 'Estimators evaluate qualified opportunities.' },
     ];
 
     return (
-      <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 my-8">
-        <div className="font-mono-tech text-xs uppercase tracking-wider text-[#96742c] mb-6">
-          [PROCESS ARCHITECTURE: TENDER DISCOVERY & QUALIFICATION PIPELINE]
+      <div className="catalogue-sheet p-6 sm:p-8 my-8">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 mb-6">
+          <span className="font-mono-tech text-xs tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
+            [SCHEMATIC / TND-001]
+          </span>
+          <span className="font-mono-tech text-xs text-[#77736A] uppercase">
+            TENDER DISCOVERY & QUALIFICATION
+          </span>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
           {steps.map((step) => {
-            const isLast = step.num === '06';
+            const isHuman = step.role === 'Human';
             return (
               <div
                 key={step.num}
                 className={`p-4 border ${
-                  isLast
-                    ? 'border-[#141416] bg-[#f4f1eb]'
-                    : 'border-[#ded9cf] bg-[#faf8f5]'
+                  isHuman
+                    ? 'border-[#181816] bg-[#FFFFFF]'
+                    : 'border-[#D9D4C8] bg-[#FCFBF7]'
                 }`}
               >
-                <div className="font-mono-tech text-xs text-[#96742c] font-semibold mb-1">
-                  [{step.num}]
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold">
+                    [{step.num}]
+                  </span>
+                  <span className="font-mono-tech text-[9px] px-1 py-0.2 bg-[#EBE5D8] text-[#33312C]">
+                    {step.role.toUpperCase()}
+                  </span>
                 </div>
-                <div className="font-semibold text-sm text-[#141416] mb-1">
+                <div className="font-bold text-sm text-[#181816] mb-1 font-body">
                   {step.name}
                 </div>
-                <div className="text-[11px] text-[#575653] leading-relaxed">
+                <div className="text-[11px] text-[#77736A] leading-relaxed">
                   {step.desc}
                 </div>
               </div>
@@ -152,15 +238,15 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
           })}
         </div>
 
-        <div className="mt-6 pt-4 border-t border-[#ded9cf] text-xs font-mono-tech text-[#141416]">
+        <div className="mt-6 pt-4 border-t border-[#D9D4C8] font-mono-tech text-xs text-[#181816] font-semibold">
           The system finds. Your team decides.
         </div>
       </div>
     );
   }
 
-  // Default: Commercial industrial workflow horizontal progression
-  const commercialStages = [
+  // Commercial Industrial Lifecycle Diagram
+  const stages = [
     { code: '01', title: 'Opportunity', role: 'External' },
     { code: '02', title: 'Enquiry / RFQ', role: 'Intake' },
     { code: '03', title: 'Review', role: 'Preparation' },
@@ -171,43 +257,42 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
   ];
 
   return (
-    <div className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 my-8">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
-        <div className="font-mono-tech text-xs uppercase tracking-wider text-[#96742c]">
+    <div className="catalogue-sheet p-6 sm:p-8 my-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 mb-6">
+        <div className="font-mono-tech text-xs tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
           [FLOW-IND-01: THE COMMERCIAL ORDER LIFECYCLE]
         </div>
-        <div className="font-mono-tech text-xs text-[#7a7770]">
+        <div className="font-mono-tech text-xs text-[#77736A]">
           End-to-End Operational Surface
         </div>
       </div>
 
-      {/* Horizontal Flow */}
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
-        {commercialStages.map((stage, idx) => {
-          const isCoreDecision = stage.code === '04';
+        {stages.map((stage, idx) => {
+          const isQuote = stage.code === '04';
           return (
             <div
               key={stage.code}
-              className={`p-3.5 border relative ${
-                isCoreDecision
-                  ? 'border-[#141416] bg-[#f4f1eb]'
-                  : 'border-[#ded9cf] bg-[#faf8f5]'
+              className={`p-3.5 border ${
+                isQuote
+                  ? 'border-[#181816] bg-[#F5F1E7]'
+                  : 'border-[#D9D4C8] bg-[#FCFBF7]'
               }`}
             >
               <div className="flex items-center justify-between mb-1.5">
-                <span className="font-mono-tech text-[11px] text-[#96742c] font-medium">
+                <span className="font-mono-tech text-[11px] text-[#B58A2A] font-semibold">
                   {stage.code}
                 </span>
-                {idx < commercialStages.length - 1 && (
-                  <span className="text-[#b8b3a7] font-mono-tech text-[10px]">
+                {idx < stages.length - 1 && (
+                  <span className="text-[#AAA397] font-mono-tech text-[10px]">
                     →
                   </span>
                 )}
               </div>
-              <div className="font-semibold text-xs sm:text-sm text-[#141416] leading-tight mb-1">
+              <div className="font-bold text-xs sm:text-sm text-[#181816] leading-tight mb-1 font-body">
                 {stage.title}
               </div>
-              <div className="font-mono-tech text-[10px] text-[#7a7770] uppercase">
+              <div className="font-mono-tech text-[10px] text-[#77736A] uppercase">
                 {stage.role}
               </div>
             </div>
@@ -215,12 +300,11 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
         })}
       </div>
 
-      {/* Key Principle Banner */}
-      <div className="mt-6 pt-5 border-t border-[#ded9cf] space-y-1">
-        <div className="text-sm sm:text-base font-medium text-[#141416]">
+      <div className="mt-6 pt-5 border-t border-[#D9D4C8] space-y-1">
+        <div className="text-sm sm:text-base font-semibold text-[#181816] font-display">
           The valuable judgement stays with your people.
         </div>
-        <div className="text-sm sm:text-base text-[#575653]">
+        <div className="text-sm sm:text-base text-[#77736A] font-body">
           The repeated information work does not necessarily have to.
         </div>
       </div>

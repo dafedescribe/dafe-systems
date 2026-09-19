@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { ArrowRight, Download, Printer, CheckCircle2, FileText } from 'lucide-react';
+import { ArrowRight, Printer, CheckCircle2 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   const jsonLd = {
@@ -57,60 +57,62 @@ export const AboutPage: React.FC = () => {
         jsonLd={jsonLd}
       />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-12">
+      <main className="max-w-4xl mx-auto px-6 sm:px-12 py-12 sm:py-20 space-y-12">
         <Breadcrumbs items={[{ label: 'ABOUT', path: '/about' }]} />
 
         {/* ─── ACTION BAR FOR DOSSIER ──────────────────────────── */}
-        <div className="flex items-center justify-between border-b border-[#ded9cf] pb-4 font-mono-tech text-xs text-[#7a7770]">
-          <div>
-            DOCUMENT: OA-DOSSIER-2026
+        <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-4 font-mono-tech text-xs text-[#77736A]">
+          <div className="flex items-center gap-2">
+            <span className="text-[#B58A2A] font-semibold">PERSONNEL FILE / ODAFE AMALEGA</span>
+            <span className="text-[#D9D4C8]">|</span>
+            <span>REF. DA-2026</span>
           </div>
           <div className="flex items-center gap-4">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 text-[#141416] hover:text-[#96742c] transition-colors"
+              className="inline-flex items-center gap-1.5 text-[#181816] hover:text-[#B58A2A] transition-colors"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print Dossier</span>
             </button>
             <Link
               to="/contact"
-              className="text-[#141416] font-medium hover:text-[#96742c] transition-colors"
+              className="text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
             >
               Direct Enquiry →
             </Link>
           </div>
         </div>
 
-        {/* ─── PHYSICAL PAPER / DOSSIER CONTAINER ──────────────── */}
-        <article className="dossier-paper p-8 sm:p-14 space-y-12 bg-[#fdfbf7] border border-[#dcd5c7]">
+        {/* ─── PHYSICAL PAPER DOSSIER SHEET ────────────────────── */}
+        <article className="catalogue-sheet p-8 sm:p-14 space-y-12 bg-[#FFFFFF]">
           
-          {/* Dossier Header Stamp */}
-          <div className="border-b border-[#ded9cf] pb-8 space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 font-mono-tech text-xs">
-              <span className="text-[#96742c] font-semibold tracking-wider">
-                [PERSONNEL DOSSIER / TECHNICAL RECORD]
+          {/* Header Block */}
+          <div className="border-b border-[#D9D4C8] pb-8 space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-2 font-mono-tech text-xs">
+              <span className="text-[#B58A2A] font-semibold tracking-wider">
+                TECHNICAL DOSSIER · RECORD OF COMPETENCE
               </span>
-              <span className="px-2 py-0.5 bg-[#141416] text-[#faf8f5] font-semibold">
+              <span className="px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
                 ACTIVE STATUS
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#141416]">
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#181816] font-display">
               Odafe Amalega
             </h1>
 
-            <div className="text-base sm:text-lg font-mono-tech text-[#141416]">
+            <div className="text-base sm:text-lg font-mono-tech text-[#181816]">
               AI Workflow Engineer · Systems Builder · Educator
             </div>
 
-            <div className="text-sm font-mono-tech text-[#575653]">
-              Currently at <strong className="text-[#141416] font-semibold">AppClick</strong>
+            <div className="text-sm font-mono-tech text-[#77736A]">
+              Currently at <strong className="text-[#181816] font-semibold">AppClick</strong>
             </div>
           </div>
 
-          {/* Dossier Bio */}
-          <section className="space-y-4 text-base sm:text-lg text-[#3a3936] leading-relaxed">
+          {/* Dossier Body Copy */}
+          <section className="space-y-4 text-base sm:text-lg text-[#33312C] font-body leading-relaxed">
             <p>
               I work across workflow automation, APIs, Python, AI, data and lightweight software.
             </p>
@@ -126,18 +128,18 @@ export const AboutPage: React.FC = () => {
           </section>
 
           {/* Capabilities Grid */}
-          <section className="border-t border-[#ded9cf] pt-8 space-y-4">
-            <div className="font-mono-tech text-xs uppercase tracking-wider text-[#7a7770]">
-              [VERIFIED CAPABILITIES]
+          <section className="border-t border-[#D9D4C8] pt-8 space-y-4">
+            <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#B58A2A] font-semibold">
+              [CAPABILITIES]
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {capabilities.map((cap) => (
                 <div
                   key={cap}
-                  className="p-2.5 border border-[#dcd5c7] bg-[#f8f5ee] font-mono-tech text-xs text-[#141416] flex items-center gap-2"
+                  className="p-3 border border-[#D9D4C8] bg-[#FCFBF7] font-mono-tech text-xs text-[#181816] flex items-center gap-2"
                 >
-                  <span className="w-1.5 h-1.5 bg-[#96742c] flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 bg-[#B58A2A] flex-shrink-0" />
                   <span>{cap}</span>
                 </div>
               ))}
@@ -145,44 +147,44 @@ export const AboutPage: React.FC = () => {
           </section>
 
           {/* Selected Proof Matrix */}
-          <section className="border-t border-[#ded9cf] pt-8 space-y-4">
-            <div className="font-mono-tech text-xs uppercase tracking-wider text-[#7a7770]">
+          <section className="border-t border-[#D9D4C8] pt-8 space-y-4">
+            <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#B58A2A] font-semibold">
               [SELECTED PROOF]
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 border border-[#dcd5c7] bg-[#ffffff] space-y-1">
-                <div className="font-bold text-base text-[#141416]">
+              <div className="p-4 border border-[#D9D4C8] bg-[#FCFBF7] space-y-1">
+                <div className="font-bold text-base text-[#181816] font-body">
                   1M+ rows
                 </div>
-                <p className="text-xs sm:text-sm text-[#575653]">
+                <p className="text-xs sm:text-sm text-[#77736A] font-body">
                   Processed programmatically in under ten minutes without spreadsheet failures.
                 </p>
               </div>
 
-              <div className="p-4 border border-[#dcd5c7] bg-[#ffffff] space-y-1">
-                <div className="font-bold text-base text-[#141416]">
+              <div className="p-4 border border-[#D9D4C8] bg-[#FCFBF7] space-y-1">
+                <div className="font-bold text-base text-[#181816] font-body">
                   End-to-end media pipeline
                 </div>
-                <p className="text-xs sm:text-sm text-[#575653]">
+                <p className="text-xs sm:text-sm text-[#77736A] font-body">
                   Transcription through processed video output orchestrated via Python and FFmpeg.
                 </p>
               </div>
 
-              <div className="p-4 border border-[#dcd5c7] bg-[#ffffff] space-y-1">
-                <div className="font-bold text-base text-[#141416]">
+              <div className="p-4 border border-[#D9D4C8] bg-[#FCFBF7] space-y-1">
+                <div className="font-bold text-base text-[#181816] font-body">
                   Business systems
                 </div>
-                <p className="text-xs sm:text-sm text-[#575653]">
+                <p className="text-xs sm:text-sm text-[#77736A] font-body">
                   Automation, websites, integrations and data workflows for operational teams.
                 </p>
               </div>
 
-              <div className="p-4 border border-[#dcd5c7] bg-[#ffffff] space-y-1">
-                <div className="font-bold text-base text-[#141416]">
+              <div className="p-4 border border-[#D9D4C8] bg-[#FCFBF7] space-y-1">
+                <div className="font-bold text-base text-[#181816] font-body">
                   Teaching
                 </div>
-                <p className="text-xs sm:text-sm text-[#575653]">
+                <p className="text-xs sm:text-sm text-[#77736A] font-body">
                   AI, automation, APIs and digital-product topics de-jargonized for nontechnical learners.
                 </p>
               </div>
@@ -190,39 +192,39 @@ export const AboutPage: React.FC = () => {
           </section>
 
           {/* Education & Credentials */}
-          <section className="border-t border-[#ded9cf] pt-8 space-y-4">
-            <div className="font-mono-tech text-xs uppercase tracking-wider text-[#7a7770]">
-              [EDUCATION & CREDENTIALS]
+          <section className="border-t border-[#D9D4C8] pt-8 space-y-4">
+            <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#B58A2A] font-semibold">
+              [EDUCATION & FORMAL TRAINING]
             </div>
 
-            <div className="space-y-4 text-sm text-[#141416]">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-[#eae5da] pb-3">
+            <div className="space-y-4 text-sm text-[#181816]">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-[#D9D4C8] pb-3">
                 <div>
-                  <div className="font-bold text-base">Bachelor of Engineering (B.Eng)</div>
-                  <div className="text-xs text-[#575653]">Federal University Oye-Ekiti</div>
+                  <div className="font-bold text-base font-body">Bachelor of Engineering (B.Eng)</div>
+                  <div className="text-xs text-[#77736A] font-mono-tech">Federal University Oye-Ekiti</div>
                 </div>
-                <div className="font-mono-tech text-xs text-[#7a7770] mt-1 sm:mt-0">
+                <div className="font-mono-tech text-xs text-[#77736A] mt-1 sm:mt-0">
                   Engineering Foundations
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-[#eae5da] pb-3">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-[#D9D4C8] pb-3">
                 <div>
-                  <div className="font-bold text-base">ALX Training</div>
-                  <div className="text-xs text-[#575653]">Virtual Assistance & Digital Workspace Operations</div>
+                  <div className="font-bold text-base font-body">ALX Training</div>
+                  <div className="text-xs text-[#77736A] font-mono-tech">Virtual Assistance & Operations</div>
                 </div>
-                <div className="font-mono-tech text-xs text-[#7a7770] mt-1 sm:mt-0">
+                <div className="font-mono-tech text-xs text-[#77736A] mt-1 sm:mt-0">
                   Professional Programme
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Dossier Footer Call to Action */}
-          <div className="border-t border-[#ded9cf] pt-8 flex flex-wrap items-center justify-between gap-4">
+          {/* Dossier Footer Actions */}
+          <div className="border-t border-[#D9D4C8] pt-8 flex flex-wrap items-center justify-between gap-4">
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 px-6 py-3 text-xs font-mono-tech uppercase tracking-wider bg-[#141416] text-[#faf8f5] hover:bg-[#2b2b30] transition-colors"
+              className="btn-primary px-6 py-3.5"
             >
               <span>View Work</span>
               <ArrowRight className="w-4 h-4" />
@@ -230,7 +232,7 @@ export const AboutPage: React.FC = () => {
 
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 text-xs font-mono-tech uppercase tracking-wider bg-[#faf8f5] text-[#141416] border border-[#dcd5c7] hover:border-[#141416] transition-colors"
+              className="btn-secondary px-6 py-3.5"
             >
               <span>Send Workflow</span>
             </Link>

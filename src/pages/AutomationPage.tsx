@@ -57,6 +57,15 @@ export const AutomationPage: React.FC = () => {
     'Browser-based repetitive tasks'
   ];
 
+  const automationDiagramSteps = [
+    { label: 'CUSTOMER', type: 'human', desc: 'Inbound enquiry via WhatsApp or web' },
+    { label: 'WHATSAPP', type: 'system', desc: 'Incoming webhook & session trigger' },
+    { label: 'INTAKE', type: 'system', desc: 'Automated qualification & question sequence' },
+    { label: 'DATA / DOCUMENTS', type: 'system', desc: 'File parsing & attachment validation' },
+    { label: 'RULES + AUTOMATION', type: 'system', desc: 'Routing logic, schema check & dispatch' },
+    { label: 'TEAM', type: 'human', desc: 'Operations engineer takes pre-prepared job' },
+  ];
+
   return (
     <div className="min-h-screen">
       <SeoHead
@@ -66,28 +75,28 @@ export const AutomationPage: React.FC = () => {
         jsonLd={jsonLd}
       />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-16 sm:space-y-24">
+      <main className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-20 space-y-16 sm:space-y-24">
         
         <Breadcrumbs items={[{ label: 'AUTOMATION', path: '/automation' }]} />
 
         {/* ─── HERO ────────────────────────────────────────────── */}
         <section className="space-y-6 max-w-4xl">
-          <div className="font-mono-tech text-xs tracking-widest uppercase text-[#96742c]">
-            [OPERATIONAL AUTOMATION]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
+            02 / OPERATIONAL AUTOMATION
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#141416] leading-[1.15]">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#181816] font-display leading-[1.12]">
             When every new enquiry starts another mini administrative project.
           </h1>
 
-          <div className="space-y-3 text-base sm:text-lg text-[#4a4946] leading-relaxed max-w-3xl">
+          <div className="space-y-3 text-base sm:text-lg text-[#33312C] font-body leading-relaxed max-w-3xl">
             <p>
               Some businesses do not sell standard products with a Buy Now button.
             </p>
             <p>
               Every job needs questions answered, information collected, a scope prepared, a quotation sent and somebody to follow up.
             </p>
-            <p className="font-medium text-[#141416] pt-1">
+            <p className="font-semibold text-[#181816] pt-1">
               I build workflows around that kind of work.
             </p>
           </div>
@@ -95,7 +104,7 @@ export const AutomationPage: React.FC = () => {
           <div className="pt-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-mono-tech uppercase tracking-wider bg-[#141416] text-[#faf8f5] border border-[#141416] hover:bg-[#2b2b30] transition-colors"
+              className="btn-primary px-6 py-3.5"
             >
               <span>Show Me the Process</span>
               <ArrowRight className="w-4 h-4" />
@@ -103,13 +112,73 @@ export const AutomationPage: React.FC = () => {
           </div>
         </section>
 
-        {/* ─── PROBLEMS SECTION: 7 STATEMENTS ──────────────────── */}
-        <section className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-10 space-y-8">
-          <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-wider uppercase text-[#7a7770]">
-              [DIAGNOSTIC SIGNS]
+        {/* ─── ENGINEERING MANUAL SCHEMATIC DIAGRAM ────────────── */}
+        <section className="catalogue-sheet p-6 sm:p-8 space-y-6">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3">
+            <span className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
+              [SCHEMATIC / AUTO-FLOW-01: COMPONENT TRACE]
+            </span>
+            <div className="flex items-center gap-4 font-mono-tech text-[11px]">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 bg-[#B58A2A]" />
+                <span className="text-[#33312C]">Gold: Automated Step</span>
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 bg-[#181816]" />
+                <span className="text-[#33312C]">Graphite: Human Step</span>
+              </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#141416]">
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 font-mono-tech">
+            {automationDiagramSteps.map((step, idx) => {
+              const isAuto = step.type === 'system';
+              return (
+                <div
+                  key={idx}
+                  className={`p-4 border ${
+                    isAuto
+                      ? 'border-[#B58A2A] bg-[#F6F0DC]'
+                      : 'border-[#181816] bg-[#FFFFFF]'
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] text-[#77736A]">
+                      0{idx + 1}.
+                    </span>
+                    <span
+                      className={`text-[9px] px-1 py-0.2 font-semibold uppercase ${
+                        isAuto
+                          ? 'bg-[#B58A2A] text-[#FFFFFF]'
+                          : 'bg-[#181816] text-[#FCFBF7]'
+                      }`}
+                    >
+                      {isAuto ? 'AUTO' : 'HUMAN'}
+                    </span>
+                  </div>
+                  <div className="font-bold text-xs sm:text-sm text-[#181816] mb-1">
+                    {step.label}
+                  </div>
+                  <div className="text-[11px] text-[#77736A] font-body leading-tight">
+                    {step.desc}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="pt-3 border-t border-[#D9D4C8] text-xs font-mono-tech text-[#77736A]">
+            Labelled component trace from engineering workflow manual.
+          </div>
+        </section>
+
+        {/* ─── PROBLEMS SECTION: 7 STATEMENTS ──────────────────── */}
+        <section className="catalogue-sheet p-6 sm:p-10 space-y-8">
+          <div className="space-y-2">
+            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
+              [DIAGNOSTIC CRITERIA]
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight text-[#181816] font-display">
               Good automation often starts with a sentence like this.
             </h2>
           </div>
@@ -118,7 +187,7 @@ export const AutomationPage: React.FC = () => {
             {problemStatements.map((stmt, idx) => (
               <div
                 key={idx}
-                className="p-4 border-l-2 border-[#96742c] bg-[#faf8f5] text-base sm:text-lg font-medium text-[#141416]"
+                className="p-4 border-l-3 border-[#B58A2A] bg-[#FCFBF7] text-base sm:text-lg font-medium text-[#181816] font-body"
               >
                 {stmt}
               </div>
@@ -128,15 +197,15 @@ export const AutomationPage: React.FC = () => {
 
         {/* ─── WHAT SITS UNDERNEATH ────────────────────────────── */}
         <section className="space-y-6">
-          <div className="font-mono-tech text-xs tracking-wider uppercase text-[#96742c]">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
             [IMPLEMENTATION PRAGMATISM]
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#141416]">
+          <h2 className="text-3xl font-bold text-[#181816] font-display">
             The implementation depends on the process.
           </h2>
 
-          <div className="space-y-4 text-base text-[#575653] leading-relaxed max-w-3xl">
+          <div className="space-y-3 text-base text-[#77736A] font-body leading-relaxed max-w-3xl">
             <p>
               I do not sell a predetermined stack.
             </p>
@@ -150,7 +219,7 @@ export const AutomationPage: React.FC = () => {
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1.5 border border-[#ded9cf] bg-[#ffffff] font-mono-tech text-xs text-[#141416]"
+                className="px-3 py-1.5 border border-[#D9D4C8] bg-[#FFFFFF] font-mono-tech text-xs text-[#181816]"
               >
                 {tech}
               </span>
@@ -159,23 +228,23 @@ export const AutomationPage: React.FC = () => {
         </section>
 
         {/* ─── COMMON WORKFLOWS ────────────────────────────────── */}
-        <section className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-10 space-y-8">
+        <section className="catalogue-sheet p-6 sm:p-10 space-y-8">
           <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-wider uppercase text-[#7a7770]">
-              [OPPORTUNITY CATALOGUE]
+            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
+              [PROCESS CATALOGUE]
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#141416]">
+            <h2 className="text-3xl font-bold text-[#181816] font-display">
               Examples of work worth examining
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-[#141416]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-[#181816] font-body">
             {candidateWorkflows.map((item, idx) => (
               <div
                 key={idx}
-                className="p-3.5 border border-[#ded9cf] bg-[#faf8f5] flex items-center gap-2.5"
+                className="p-3.5 border border-[#D9D4C8] bg-[#FCFBF7] flex items-center gap-2.5"
               >
-                <span className="font-mono-tech text-xs text-[#96742c] font-semibold">
+                <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold">
                   {idx < 9 ? `0${idx + 1}` : idx + 1}.
                 </span>
                 <span>{item}</span>
@@ -185,30 +254,29 @@ export const AutomationPage: React.FC = () => {
         </section>
 
         {/* ─── FINAL CTA ───────────────────────────────────────── */}
-        <section className="border border-[#141416] bg-[#f3efe6] p-8 sm:p-12 space-y-6">
-          <div className="font-mono-tech text-xs tracking-wider uppercase text-[#96742c]">
-            [EDGE CASES & IRREGULAR FLOWS]
+        <section className="catalogue-sheet p-8 sm:p-12 space-y-6 border-l-4 border-l-[#B58A2A]">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
+            IRREGULAR WORKFLOWS
           </div>
 
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#141416]">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#181816] font-display">
             Have something stranger?
           </h2>
 
-          <p className="text-xl text-[#141416] font-medium">
+          <p className="text-xl text-[#181816] font-semibold font-body">
             Good.
           </p>
 
-          <p className="text-sm sm:text-base text-[#575653] max-w-2xl leading-relaxed">
+          <p className="text-sm sm:text-base text-[#77736A] font-body max-w-2xl leading-relaxed">
             The most valuable automations are often processes that standard software vendors dismiss as too bespoke or messy.
           </p>
 
           <div className="pt-2">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-mono-tech uppercase tracking-wider bg-[#141416] text-[#faf8f5] border border-[#141416] hover:bg-[#2b2b30] transition-colors"
+              className="btn-primary px-6 py-3.5"
             >
-              <span>Describe the workflow</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Describe the workflow →</span>
             </Link>
           </div>
         </section>

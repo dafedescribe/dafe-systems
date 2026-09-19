@@ -10,11 +10,11 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
 
   if (!article) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-20 text-center space-y-4">
-        <h1 className="text-3xl font-bold text-[#141416]">Note Not Found</h1>
-        <p className="text-[#575653]">The requested note does not exist.</p>
-        <Link to="/notes" className="inline-block px-4 py-2 bg-[#141416] text-[#faf8f5] text-xs font-mono-tech uppercase">
-          Back to Notes
+      <div className="max-w-4xl mx-auto px-6 py-20 text-center space-y-4">
+        <h1 className="text-3xl font-bold text-[#181816] font-display">Technical Note Not Found</h1>
+        <p className="text-[#77736A] font-body">The requested technical bulletin does not exist in the catalogue.</p>
+        <Link to="/notes" className="btn-secondary px-4 py-2">
+          Back to Notes Directory
         </Link>
       </div>
     );
@@ -60,7 +60,7 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
         jsonLd={jsonLd}
       />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-12">
+      <main className="max-w-3xl mx-auto px-6 sm:px-10 py-12 sm:py-20 space-y-12">
         <Breadcrumbs
           items={[
             { label: 'NOTES', path: '/notes' },
@@ -68,38 +68,38 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
           ]}
         />
 
-        {/* ─── ARTICLE HEADER ──────────────────────────────────── */}
-        <header className="space-y-4 border-b border-[#ded9cf] pb-8">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <span className="font-mono-tech text-xs text-[#96742c] font-semibold uppercase">
-              {article.cluster}
+        {/* ─── BULLETIN HEADER ─────────────────────────────────── */}
+        <header className="catalogue-sheet p-6 sm:p-8 space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 font-mono-tech text-xs">
+            <span className="text-[#B58A2A] font-semibold uppercase">
+              TECHNICAL NOTE / {article.cluster.toUpperCase()}
             </span>
-            <span className="font-mono-tech text-xs text-[#7a7770]">
-              {article.date} · {article.readTime}
+            <span className="text-[#77736A]">
+              {article.readTime.toUpperCase()} · {article.date}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#141416] leading-[1.15]">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#181816] font-display leading-[1.15]">
             {article.title}
           </h1>
 
-          <p className="text-lg text-[#575653] leading-relaxed font-medium">
+          <p className="text-base sm:text-lg text-[#33312C] font-body leading-relaxed">
             {article.summary}
           </p>
 
-          <div className="pt-2">
+          <div className="pt-3 border-t border-[#D9D4C8]">
             <Link
               to={article.targetServiceUrl}
-              className="inline-flex items-center gap-1.5 font-mono-tech text-xs text-[#141416] font-medium hover:text-[#96742c] transition-colors"
+              className="inline-flex items-center gap-1.5 font-mono-tech text-xs text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
             >
-              <span>Operational Context: {article.targetServiceLabel}</span>
+              <span>OPERATIONAL CONTEXT: {article.targetServiceLabel.toUpperCase()}</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </header>
 
-        {/* ─── ARTICLE BODY ────────────────────────────────────── */}
-        <div className="space-y-6 text-base sm:text-lg text-[#3a3936] leading-relaxed">
+        {/* ─── BULLETIN BODY ───────────────────────────────────── */}
+        <div className="catalogue-sheet p-6 sm:p-10 space-y-6 text-base sm:text-lg text-[#33312C] font-body leading-[1.75]">
           {article.content.map((paragraph, idx) => (
             <p key={idx}>
               {paragraph}
@@ -107,39 +107,39 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
           ))}
         </div>
 
-        {/* ─── AUTHOR STAMP ────────────────────────────────────── */}
-        <section className="border border-[#ded9cf] bg-[#faf8f5] p-6 space-y-2">
-          <div className="font-mono-tech text-xs text-[#7a7770] uppercase">
-            WRITTEN BY
+        {/* ─── AUTHOR SPECIFICATION ────────────────────────────── */}
+        <section className="catalogue-inset p-6 space-y-2 font-mono-tech text-xs">
+          <div className="text-[#77736A] uppercase">
+            WRITTEN & TESTED BY
           </div>
-          <div className="font-bold text-base text-[#141416]">
+          <div className="font-bold text-base text-[#181816] font-body">
             Odafe Amalega
           </div>
-          <p className="text-xs sm:text-sm text-[#575653] leading-relaxed">
+          <p className="text-[#77736A] font-body leading-relaxed">
             AI Workflow Engineer and Educator currently at AppClick. Builds systems around high-value commercial processes and repetitive operational bottlenecks.
           </p>
           <div className="pt-2">
-            <Link to="/about" className="font-mono-tech text-xs text-[#141416] hover:text-[#96742c] transition-colors">
-              View full profile & digital CV →
+            <Link to="/about" className="text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors">
+              View personnel file & digital CV →
             </Link>
           </div>
         </section>
 
         {/* ─── NEXT STEP CTA ───────────────────────────────────── */}
-        <section className="border border-[#141416] bg-[#f3efe6] p-8 space-y-4">
-          <div className="font-mono-tech text-xs tracking-wider uppercase text-[#96742c]">
-            [NEXT STEP]
+        <section className="catalogue-sheet p-8 space-y-4 border-l-4 border-l-[#B58A2A]">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
+            ACTIONABLE NEXT STEP
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#141416]">
-            Have a process like this in your business?
+          <h2 className="text-2xl font-bold text-[#181816] font-display">
+            Have a similar workflow in your business?
           </h2>
-          <p className="text-sm text-[#575653] leading-relaxed">
+          <p className="text-sm text-[#77736A] font-body leading-relaxed">
             Send me the workflow. We will identify which steps can be handled deterministically.
           </p>
           <div className="pt-2">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 text-xs font-mono-tech uppercase tracking-wider bg-[#141416] text-[#faf8f5] border border-[#141416] hover:bg-[#2b2b30] transition-colors"
+              className="btn-primary px-6 py-3.5"
             >
               <span>Show Me the Workflow</span>
               <ArrowRight className="w-4 h-4" />

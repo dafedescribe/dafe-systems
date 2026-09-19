@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from '../router/Router';
+import { Link, useRouter } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { PROJECTS, Project } from '../data/projectsData';
@@ -7,6 +7,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export const WorkPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
+  const { navigate } = useRouter();
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -39,39 +40,42 @@ export const WorkPage: React.FC = () => {
         jsonLd={jsonLd}
       />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-12">
+      <main className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-20 space-y-16">
         <Breadcrumbs items={[{ label: 'WORK', path: '/work' }]} />
 
-        {/* ─── HEADER ──────────────────────────────────────────── */}
-        <section className="space-y-6 max-w-4xl">
-          <div className="font-mono-tech text-xs tracking-widest uppercase text-[#96742c]">
-            [ENGINEERED SYSTEMS INDEX]
+        {/* ─── HEADER / MASTER CATALOGUE ───────────────────────── */}
+        <section className="space-y-4 max-w-4xl">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
+            03 / MASTER SYSTEMS CATALOGUE
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#141416] leading-[1.15]">
-            Things I have actually built.
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#181816] font-display">
+            Selected Work
           </h1>
 
-          <div className="space-y-2 text-base sm:text-lg text-[#575653] leading-relaxed">
+          <div className="space-y-2 text-base sm:text-lg text-[#77736A] font-body leading-relaxed max-w-3xl">
             <p>
               Client work, internal systems, experiments and teaching projects.
             </p>
-            <p className="font-medium text-[#141416]">
-              Every item is labelled so you know what kind of work you are looking at.
+            <p className="font-medium text-[#181816]">
+              Every item is documented with verifiable constraints, architecture, and verified outcomes.
             </p>
           </div>
         </section>
 
         {/* ─── CATEGORY FILTERS ────────────────────────────────── */}
-        <section className="border-y border-[#ded9cf] py-4 flex flex-wrap gap-2">
+        <section className="border-y border-[#D9D4C8] py-3.5 flex flex-wrap items-center gap-2">
+          <span className="font-mono-tech text-xs text-[#77736A] uppercase mr-2">
+            FILTER:
+          </span>
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
-              className={`px-3 py-1.5 text-xs font-mono-tech uppercase tracking-wider transition-colors border ${
+              className={`px-3 py-1 text-xs font-mono-tech uppercase tracking-[0.08em] transition-colors border ${
                 activeFilter === cat
-                  ? 'bg-[#141416] text-[#faf8f5] border-[#141416]'
-                  : 'bg-[#faf8f5] text-[#575653] border-[#ded9cf] hover:border-[#141416] hover:text-[#141416]'
+                  ? 'bg-[#181816] text-[#FCFBF7] border-[#181816]'
+                  : 'bg-[#FCFBF7] text-[#77736A] border-[#D9D4C8] hover:border-[#181816] hover:text-[#181816]'
               }`}
             >
               {cat}
@@ -79,55 +83,122 @@ export const WorkPage: React.FC = () => {
           ))}
         </section>
 
-        {/* ─── PROJECT GRID ────────────────────────────────────── */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredProjects.map((proj) => (
-            <div
-              key={proj.slug}
-              className="border border-[#ded9cf] bg-[#ffffff] p-6 sm:p-8 flex flex-col justify-between hover:border-[#141416] transition-colors"
-            >
-              <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="font-mono-tech text-xs text-[#96742c] font-semibold">
-                    {proj.tag}
-                  </span>
-                  <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#f3efe6] text-[#141416] border border-[#ded9cf] font-semibold">
-                    {proj.label}
-                  </span>
-                </div>
+        {/* ─── 1. TECHNICAL CATALOGUE INDEX TABLE ──────────────── */}
+        <section className="catalogue-sheet overflow-hidden">
+          <div className="p-4 sm:p-5 border-b border-[#D9D4C8] bg-[#F5F1E7] flex items-center justify-between">
+            <span className="font-mono-tech text-xs text-[#181816] font-semibold uppercase tracking-[0.08em]">
+              TECHNICAL REGISTER / {filteredProjects.length} ENTRIES
+            </span>
+            <span className="font-mono-tech text-[11px] text-[#77736A]">
+              CLICK ANY ROW TO OPEN PROJECT DOSSIER
+            </span>
+          </div>
 
-                <h2 className="text-xl sm:text-2xl font-bold text-[#141416]">
-                  {proj.title}
-                </h2>
+          <div className="overflow-x-auto">
+            <table className="catalogue-table">
+              <thead>
+                <tr>
+                  <th style={{ width: '130px' }}>REF</th>
+                  <th>PROJECT TITLE</th>
+                  <th style={{ width: '180px' }}>FIELD</th>
+                  <th style={{ width: '160px' }}>STATUS / TYPE</th>
+                  <th style={{ width: '90px' }}>YEAR</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredProjects.map((p) => (
+                  <tr
+                    key={p.slug}
+                    onClick={() => navigate(`/work/${p.slug}`)}
+                    className="cursor-pointer transition-colors"
+                  >
+                    <td className="font-mono-tech text-xs text-[#B58A2A] font-semibold whitespace-nowrap">
+                      {p.refId}
+                    </td>
+                    <td className="font-medium text-[#181816] font-body">
+                      <div className="flex items-center justify-between gap-2">
+                        <span>{p.title}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 text-[#AAA397] opacity-0 group-hover:opacity-100" />
+                      </div>
+                    </td>
+                    <td className="text-xs text-[#77736A] font-mono-tech">
+                      {p.category.toUpperCase()}
+                    </td>
+                    <td>
+                      <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold whitespace-nowrap">
+                        {p.label}
+                      </span>
+                    </td>
+                    <td className="font-mono-tech text-xs text-[#77736A]">
+                      {p.year}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-                <p className="text-sm text-[#575653] leading-relaxed">
-                  {proj.oneLiner}
-                </p>
-
-                <div className="pt-2">
-                  <div className="font-mono-tech text-xs text-[#7a7770]">
-                    Verified result:
-                  </div>
-                  <div className="text-xs sm:text-sm text-[#141416] font-medium mt-0.5">
-                    {proj.result}
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-[#ded9cf] mt-6 flex items-center justify-between">
-                <span className="font-mono-tech text-xs text-[#7a7770]">
-                  {proj.category}
-                </span>
-                <Link
-                  to={`/work/${proj.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-mono-tech uppercase tracking-wider text-[#141416] font-semibold hover:text-[#96742c] transition-colors"
-                >
-                  <span>Read case study</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
+        {/* ─── 2. VISUAL PROJECT PLATES & SPREADS ───────────────── */}
+        <section className="space-y-6 pt-6">
+          <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
+            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#77736A]">
+              [CATALOGUE PLATES & SPECIFICATION SPREADS]
             </div>
-          ))}
+            <div className="font-mono-tech text-xs text-[#B58A2A]">
+              PLATES 01–0{filteredProjects.length}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {filteredProjects.map((proj) => (
+              <article
+                key={proj.slug}
+                className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between hover:border-[#181816] transition-colors"
+              >
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3">
+                    <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold">
+                      {proj.refId} · {proj.tag}
+                    </span>
+                    <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
+                      {proj.label}
+                    </span>
+                  </div>
+
+                  <h2 className="text-2xl font-bold text-[#181816] font-display">
+                    {proj.title}
+                  </h2>
+
+                  <p className="text-sm text-[#77736A] leading-relaxed font-body">
+                    {proj.oneLiner}
+                  </p>
+
+                  <div className="p-3.5 bg-[#FCFBF7] border border-[#D9D4C8] space-y-1">
+                    <span className="font-mono-tech text-[10px] text-[#B58A2A] uppercase tracking-wider block">
+                      VERIFIED RESULT
+                    </span>
+                    <p className="text-xs sm:text-sm font-medium text-[#181816]">
+                      {proj.result}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-[#D9D4C8] mt-6 flex items-center justify-between font-mono-tech text-xs">
+                  <span className="text-[#77736A]">
+                    {proj.category} · {proj.year}
+                  </span>
+                  <Link
+                    to={`/work/${proj.slug}`}
+                    className="inline-flex items-center gap-1.5 uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
+                  >
+                    <span>OPEN PROJECT</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
       </main>

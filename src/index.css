@@ -2,23 +2,32 @@
 
 @layer base {
   :root {
-    --bg-canvas: #faf8f5;
-    --bg-card: #ffffff;
-    --bg-subtle: #f3efe6;
-    --bg-muted: #e9e4d7;
-    --ink-primary: #141416;
-    --ink-secondary: #4a4946;
-    --ink-faint: #7a7770;
-    --rule-fine: #ded9cf;
-    --rule-dark: #222226;
-    --accent-gold: #96742c;
-    --accent-gold-soft: #f6efe0;
+    /* Main Paper Stock */
+    --paper: #FCFBF7;
+    --paper-bright: #FFFFFF;
+    --paper-warm: #F5F1E7;
+    --paper-deep: #EBE5D8;
+
+    /* Ink Colors */
+    --ink: #181816;
+    --ink-secondary: #33312C;
+    --ink-muted: #77736A;
+
+    /* Rules & Divisions */
+    --rule: #D9D4C8;
+    --rule-strong: #AAA397;
+
+    /* Gold System (Technical Marking Ink) */
+    --gold: #B58A2A;
+    --gold-dark: #795B18;
+    --gold-light: #E6D8AF;
+    --gold-wash: #F6F0DC;
   }
 
   html {
-    background-color: var(--bg-canvas);
-    color: var(--ink-primary);
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -28,40 +37,158 @@
   body {
     margin: 0;
     padding: 0;
-    background-color: var(--bg-canvas);
-    color: var(--ink-primary);
+    background-color: var(--paper);
+    color: var(--ink);
     min-height: 100vh;
+    background-image: radial-gradient(rgba(24, 24, 22, 0.04) 1px, transparent 0);
+    background-size: 24px 24px;
   }
 
   ::selection {
-    background: #141416;
-    color: #faf8f5;
+    background: var(--gold-light);
+    color: var(--ink);
   }
 }
 
+/* Typography Classes */
+.font-display {
+  font-family: 'Source Serif 4', Georgia, Cambria, serif;
+}
+
+.font-body {
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .font-mono-tech {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Technical Catalogue Paper Plates & Sheets */
+.catalogue-sheet {
+  background-color: var(--paper-bright);
+  border: 1px solid var(--rule);
+  box-shadow: 4px 4px 0 rgba(24, 24, 22, 0.08);
+  border-radius: 0;
+}
+
+.catalogue-plate {
+  background-color: var(--paper-bright);
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.catalogue-plate:hover {
+  border-color: var(--ink);
+  box-shadow: 2px 2px 0 rgba(24, 24, 22, 0.08);
+}
+
+.catalogue-inset {
+  background-color: var(--paper-warm);
+  border: 1px solid var(--rule);
+  border-radius: 0;
+}
+
+.catalogue-archive {
+  background-color: var(--paper-deep);
+  border: 1px solid var(--rule);
+  border-radius: 0;
+}
+
+/* Double Technical Rule (3px + 1px) */
+.rule-double {
+  border-top: 3px solid var(--ink);
+  padding-top: 2px;
+  border-bottom: 1px solid var(--ink);
+}
+
+/* Button System */
+.btn-primary {
+  background-color: var(--gold);
+  color: #FFFFFF;
+  border: 1px solid var(--gold-dark);
+  border-radius: 0;
   font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.font-editorial {
-  font-family: 'Newsreader', Georgia, serif;
+.btn-primary:hover {
+  background-color: var(--gold-dark);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
-/* Dossier paper effect for About / Digital CV */
-.dossier-paper {
-  background-color: #fdfbf7;
-  border: 1px solid #dcd5c7;
-  box-shadow: 0 1px 3px rgba(20, 20, 22, 0.05), 0 12px 36px -8px rgba(20, 20, 22, 0.08);
+.btn-secondary {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-/* Fine technical grid guide background (subtle, non-distracting) */
-.tech-grid {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(222, 217, 207, 0.4) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(222, 217, 207, 0.4) 1px, transparent 1px);
+.btn-secondary:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+  box-shadow: 2px 2px 0 rgba(24, 24, 22, 0.15);
 }
 
+/* Form Inputs */
+.catalogue-input {
+  border: 1px solid var(--rule);
+  background-color: var(--paper);
+  color: var(--ink);
+  border-radius: 0;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.catalogue-input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+/* Tables */
+.catalogue-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.catalogue-table th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.catalogue-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.catalogue-table tr:hover td {
+  background-color: var(--gold-wash);
+}
+
+/* Respect for reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

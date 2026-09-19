@@ -63,7 +63,7 @@ const AppRoutes: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#faf8f5] text-[#141416] antialiased selection:bg-[#141416] selection:text-[#faf8f5]">
+    <div className="flex flex-col min-h-screen bg-[#FCFBF7] text-[#181816] font-body antialiased selection:bg-[#E6D8AF] selection:text-[#181816]">
       <Navbar />
       <div className="flex-1">
         {ContentComponent}
