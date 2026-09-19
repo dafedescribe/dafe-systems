@@ -1,5 +1,5 @@
 /**
- * DAFE.SYSTEMS — High-Conversion Systems & Web Design
+ * DafeDeScribe — High-Conversion Systems & Web Design
  * Main application component
  */
 
@@ -51,8 +51,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center gap-3">
-            <img src="/logo-128.jpeg" alt="DAFE.SYSTEMS" className="w-9 h-9 rounded-full object-cover border border-gray-200 shadow-sm" width={36} height={36} />
-            <span className="text-xl font-bold tracking-tighter text-black" style={{ fontFamily: 'Inter, sans-serif' }}>DAFE.SYSTEMS</span>
+            <img src="/logo-128.jpeg" alt="DafeDeScribe" className="w-9 h-9 rounded-full object-cover border border-gray-200 shadow-sm" width={36} height={36} />
+            <span className="text-xl font-bold tracking-tighter text-black" style={{ fontFamily: 'Inter, sans-serif' }}>DafeDeScribe</span>
           </div>
 
           {/* Desktop nav */}
@@ -370,7 +370,7 @@ const AboutSection = () => {
             </div>
             <div className="flex justify-center">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border border-gray-100 shadow-sm bg-black">
-                <img src="/logo-256.jpeg" alt="Dafe - DAFE.SYSTEMS" className="w-full h-full object-cover" width={320} height={320} />
+                <img src="/logo-256.jpeg" alt="DafeDeScribe" className="w-full h-full object-cover" width={320} height={320} />
               </div>
             </div>
           </div>
@@ -690,7 +690,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="pt-8 border-t border-gray-50 text-gray-400 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} DAFE.SYSTEMS. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} DafeDeScribe. All rights reserved.</p>
           <p>Built for speed and conversion.</p>
         </div>
       </div>
