@@ -13,7 +13,7 @@ export const CommercialReportingPage: React.FC = () => {
       provider: {
         '@type': 'Organization',
         name: 'DafeDeScribe',
-        url: 'https://dafe.name.ng/'
+        url: 'https://www.dafe.name.ng/'
       },
       description: 'Automated data preparation, multi-sheet consolidation, and programmatic reporting replacing repetitive manual spreadsheet wrangling.'
     },
@@ -21,9 +21,9 @@ export const CommercialReportingPage: React.FC = () => {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dafe.name.ng/' },
-        { '@type': 'ListItem', position: 2, name: 'Industry', item: 'https://dafe.name.ng/industry' },
-        { '@type': 'ListItem', position: 3, name: 'Commercial Reporting', item: 'https://dafe.name.ng/industry/commercial-reporting' }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.dafe.name.ng/' },
+        { '@type': 'ListItem', position: 2, name: 'Industry', item: 'https://www.dafe.name.ng/industry' },
+        { '@type': 'ListItem', position: 3, name: 'Commercial Reporting', item: 'https://www.dafe.name.ng/industry/commercial-reporting' }
       ]
     }
   ];
@@ -100,7 +100,7 @@ export const CommercialReportingPage: React.FC = () => {
         </section>
 
         {/* ─── PROOF BLOCK ─────────────────────────────────────── */}
-        <section className="catalogue-sheet p-6 sm:p-8 space-y-4 border-l-4 border-l-[#B58A2A]">
+        <section className="catalogue-sheet p-6 sm:p-8 space-y-4 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold uppercase">
               REF. DS-001 · VERIFIED PROOF
@@ -130,7 +130,7 @@ export const CommercialReportingPage: React.FC = () => {
         </section>
 
         {/* ─── CTA ─────────────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-5 border-l-4 border-l-[#B58A2A]">
+        <section className="catalogue-sheet p-8 space-y-5 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
             [DATA AUDIT]
           </div>

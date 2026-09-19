@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 text-[#181816] border border-[#D9D4C8] hover:bg-[#F5F1E7]"
+              className="md:hidden min-h-[44px] min-w-[44px] p-2 flex items-center justify-center text-[#181816] border border-[#D9D4C8] hover:bg-[#F5F1E7]"
               aria-label={mobileOpen ? 'Close Navigation' : 'Open Navigation'}
               aria-expanded={mobileOpen}
             >
@@ -94,13 +94,13 @@ export const Navbar: React.FC = () => {
           <div className="font-mono-tech text-[10px] text-[#77736A] tracking-[0.1em] uppercase">
             CATALOGUE DIRECTORY
           </div>
-          <nav className="grid grid-cols-1 gap-1 text-xs font-mono-tech">
+          <nav className="grid grid-cols-1 gap-1.5 text-xs font-mono-tech">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
-                className={`py-2.5 px-3 border flex items-center justify-between ${
+                className={`min-h-[44px] py-3 px-3.5 border flex items-center justify-between ${
                   isActive(link.to)
                     ? 'border-[#B58A2A] bg-[#F6F0DC] text-[#181816] font-semibold'
                     : 'border-[#D9D4C8] bg-[#FFFFFF] text-[#77736A] hover:text-[#181816]'

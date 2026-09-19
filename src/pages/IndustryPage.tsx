@@ -13,7 +13,7 @@ export const IndustryPage: React.FC = () => {
     provider: {
       '@type': 'Organization',
       name: 'DafeDeScribe',
-      url: 'https://dafe.name.ng/'
+      url: 'https://www.dafe.name.ng/'
     },
     serviceType: 'Commercial Workflow Systems',
     description: 'Workflow systems for manufacturers, industrial suppliers and contractors covering RFQs, tenders, quotations, opportunity monitoring, follow-up and commercial reporting.'
@@ -229,7 +229,7 @@ export const IndustryPage: React.FC = () => {
         </section>
 
         {/* ─── INDUSTRY CTA ────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 sm:p-12 space-y-6 border-l-4 border-l-[#B58A2A]">
+        <section className="catalogue-sheet p-8 sm:p-12 space-y-6 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
             COMMERCIAL EVALUATION
           </div>

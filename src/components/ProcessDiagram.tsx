@@ -8,7 +8,7 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
   // Hero Schematic: 7/5 layout companion diagram
   if (type === 'hero-schematic') {
     return (
-      <div className="catalogue-sheet p-6 sm:p-7 space-y-5">
+      <div className="catalogue-sheet p-6 sm:p-7 space-y-5" role="region" aria-label="Operational Pipeline Schematic">
         <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
           <span className="font-mono-tech text-[10px] tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
             SCHEMATIC / SCH-001
@@ -77,7 +77,7 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
   // RFQ Architecture Diagram
   if (type === 'rfq') {
     return (
-      <div className="catalogue-sheet p-6 sm:p-8 my-8">
+      <div className="catalogue-sheet p-6 sm:p-8 my-8" role="region" aria-label="RFQ Intake and Preparation Engine Schematic">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 mb-6">
           <span className="font-mono-tech text-xs tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
             [SCHEMATIC / RFQ-001]
@@ -197,7 +197,7 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
     ];
 
     return (
-      <div className="catalogue-sheet p-6 sm:p-8 my-8">
+      <div className="catalogue-sheet p-6 sm:p-8 my-8" role="region" aria-label="Tender Discovery and Qualification Pipeline Schematic">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 mb-6">
           <span className="font-mono-tech text-xs tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
             [SCHEMATIC / TND-001]
@@ -257,7 +257,7 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
   ];
 
   return (
-    <div className="catalogue-sheet p-6 sm:p-8 my-8">
+    <div className="catalogue-sheet p-6 sm:p-8 my-8" role="region" aria-label="Commercial Order Lifecycle Flow Schematic">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 mb-6">
         <div className="font-mono-tech text-xs tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
           [FLOW-IND-01: THE COMMERCIAL ORDER LIFECYCLE]

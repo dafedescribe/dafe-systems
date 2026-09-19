@@ -12,7 +12,7 @@ export const TeachingPage: React.FC = () => {
     provider: {
       '@type': 'Person',
       name: 'Odafe Amalega',
-      url: 'https://dafe.name.ng/about'
+      url: 'https://www.dafe.name.ng/about'
     },
     description: 'Practical training in AI, automation, APIs, digital productivity and vibe coding for teams, educators, young learners, and nontechnical professionals.'
   };
@@ -302,7 +302,7 @@ export const TeachingPage: React.FC = () => {
         </section>
 
         {/* ─── FINAL CTA ───────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 sm:p-12 space-y-6 border-l-4 border-l-[#B58A2A]">
+        <section className="catalogue-sheet p-8 sm:p-12 space-y-6 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
             TRAINING INTAKE
           </div>

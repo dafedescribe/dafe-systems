@@ -24,7 +24,7 @@ export const AboutPage: React.FC = () => {
         name: 'ALX'
       }
     ],
-    url: 'https://dafe.name.ng/about',
+    url: 'https://www.dafe.name.ng/about',
     description: 'AI Workflow Engineer, Systems Builder, and Educator currently at AppClick, specializing in industrial sales workflows and operational automation.'
   };
 

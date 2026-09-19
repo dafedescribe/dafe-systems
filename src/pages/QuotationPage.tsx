@@ -13,7 +13,7 @@ export const QuotationPage: React.FC = () => {
       provider: {
         '@type': 'Organization',
         name: 'DafeDeScribe',
-        url: 'https://dafe.name.ng/'
+        url: 'https://www.dafe.name.ng/'
       },
       description: 'Quotation coordination and preparation workflows reducing administrative overhead before and after quote issuance.'
     },
@@ -21,9 +21,9 @@ export const QuotationPage: React.FC = () => {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dafe.name.ng/' },
-        { '@type': 'ListItem', position: 2, name: 'Industry', item: 'https://dafe.name.ng/industry' },
-        { '@type': 'ListItem', position: 3, name: 'Quotation Workflows', item: 'https://dafe.name.ng/industry/quotation-workflows' }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.dafe.name.ng/' },
+        { '@type': 'ListItem', position: 2, name: 'Industry', item: 'https://www.dafe.name.ng/industry' },
+        { '@type': 'ListItem', position: 3, name: 'Quotation Workflows', item: 'https://www.dafe.name.ng/industry/quotation-workflows' }
       ]
     }
   ];
@@ -147,7 +147,7 @@ export const QuotationPage: React.FC = () => {
         </section>
 
         {/* ─── CTA ─────────────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-5 border-l-4 border-l-[#B58A2A]">
+        <section className="catalogue-sheet p-8 space-y-5 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
             [PROCESS REVIEW]
           </div>

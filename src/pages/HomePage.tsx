@@ -15,7 +15,7 @@ export const HomePage: React.FC = () => {
       '@type': 'Organization',
       name: 'AppClick'
     },
-    url: 'https://dafe.name.ng/',
+    url: 'https://www.dafe.name.ng/',
     description: 'Odafe Amalega builds workflow automation, data and AI systems for industrial and operational businesses, and delivers practical AI and automation training.',
     brand: {
       '@type': 'Brand',
@@ -388,7 +388,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* ─── SECTION 6: HOMEPAGE FINAL CTA ───────────────────── */}
-        <section className="catalogue-sheet p-8 sm:p-14 space-y-6 border-l-4 border-l-[#B58A2A]">
+        <section className="catalogue-sheet p-8 sm:p-14 space-y-6 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
             06 / NEXT STEP
           </div>

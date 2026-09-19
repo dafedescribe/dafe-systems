@@ -84,7 +84,7 @@ export const LabPage: React.FC = () => {
         </section>
 
         {/* ─── FOOTER CTA ──────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-4 border-l-4 border-l-[#B58A2A]">
+        <section className="catalogue-sheet p-8 space-y-4 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
             PRODUCTION SYSTEMS
           </div>

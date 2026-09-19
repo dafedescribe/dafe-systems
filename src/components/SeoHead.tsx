@@ -15,7 +15,7 @@ export const SeoHead: React.FC<SeoProps> = ({
   description,
   canonicalPath = '',
   ogType = 'website',
-  ogImage = 'https://dafe.name.ng/og-image.png',
+  ogImage = 'https://www.dafe.name.ng/og-image.png',
   noIndex = false,
   jsonLd,
 }) => {
@@ -39,7 +39,7 @@ export const SeoHead: React.FC<SeoProps> = ({
     setMeta('name', 'robots', noIndex ? 'noindex, follow' : 'index, follow');
 
     // 3. Open Graph
-    const domain = 'https://dafe.name.ng';
+    const domain = 'https://www.dafe.name.ng';
     const cleanPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
     const fullUrl = `${domain}${cleanPath === '/' ? '' : cleanPath}`;
 

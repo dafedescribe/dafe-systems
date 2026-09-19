@@ -13,7 +13,7 @@ export const WorkPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Automation, Data, AI & Web Projects | Odafe Amalega',
-    url: 'https://dafe.name.ng/work',
+    url: 'https://www.dafe.name.ng/work',
     description: 'Client work, internal systems, prototypes and teaching projects by Odafe Amalega.'
   };
 
@@ -110,15 +110,30 @@ export const WorkPage: React.FC = () => {
                   <tr
                     key={p.slug}
                     onClick={() => navigate(`/work/${p.slug}`)}
-                    className="cursor-pointer transition-colors"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        navigate(`/work/${p.slug}`);
+                      }
+                    }}
+                    tabIndex={0}
+                    role="link"
+                    aria-label={`View case study: ${p.title}`}
+                    className="cursor-pointer transition-colors focus:bg-[#F6F0DC] focus:outline-none"
                   >
                     <td className="font-mono-tech text-xs text-[#B58A2A] font-semibold whitespace-nowrap">
                       {p.refId}
                     </td>
                     <td className="font-medium text-[#181816] font-body">
                       <div className="flex items-center justify-between gap-2">
-                        <span>{p.title}</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-[#AAA397] opacity-0 group-hover:opacity-100" />
+                        <Link
+                          to={`/work/${p.slug}`}
+                          className="hover:text-[#B58A2A] transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {p.title}
+                        </Link>
+                        <ArrowUpRight className="w-3.5 h-3.5 text-[#B58A2A] opacity-0 group-hover:opacity-100" />
                       </div>
                     </td>
                     <td className="text-xs text-[#77736A] font-mono-tech">

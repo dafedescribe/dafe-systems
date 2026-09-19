@@ -12,7 +12,7 @@ export const NotesPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: 'Notes on Automation, AI & Industrial Workflows | DafeDeScribe',
-    url: 'https://dafe.name.ng/notes',
+    url: 'https://www.dafe.name.ng/notes',
     description: 'First-hand technical notes from building, teaching, and researching automation, industrial workflows, APIs, and data systems.'
   };
 

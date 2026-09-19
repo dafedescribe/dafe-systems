@@ -14,7 +14,7 @@ export const TenderPage: React.FC = () => {
       provider: {
         '@type': 'Organization',
         name: 'DafeDeScribe',
-        url: 'https://dafe.name.ng/'
+        url: 'https://www.dafe.name.ng/'
       },
       description: 'Scheduled multi-source tender detection and filtering pipelines delivering qualified opportunity briefs.'
     },
@@ -22,9 +22,9 @@ export const TenderPage: React.FC = () => {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dafe.name.ng/' },
-        { '@type': 'ListItem', position: 2, name: 'Industry', item: 'https://dafe.name.ng/industry' },
-        { '@type': 'ListItem', position: 3, name: 'Tender Monitoring', item: 'https://dafe.name.ng/industry/tender-monitoring' }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.dafe.name.ng/' },
+        { '@type': 'ListItem', position: 2, name: 'Industry', item: 'https://www.dafe.name.ng/industry' },
+        { '@type': 'ListItem', position: 3, name: 'Tender Monitoring', item: 'https://www.dafe.name.ng/industry/tender-monitoring' }
       ]
     }
   ];
@@ -135,7 +135,7 @@ export const TenderPage: React.FC = () => {
         </section>
 
         {/* ─── CTA ─────────────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-5 border-l-4 border-l-[#B58A2A]">
+        <section className="catalogue-sheet p-8 space-y-5 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
             [TENDER INTAKE AUDIT]
           </div>

@@ -18,7 +18,7 @@ export const ContactPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Show Me the Workflow | DafeDeScribe',
-    url: 'https://dafe.name.ng/contact',
+    url: 'https://www.dafe.name.ng/contact',
     description: 'Submit an operational process or commercial workflow for evaluation by Odafe Amalega.'
   };
 
@@ -78,7 +78,7 @@ export const ContactPage: React.FC = () => {
               setInquiryType('workflow');
               setSubmitted(false);
             }}
-            className={`flex-1 py-2.5 px-4 transition-colors ${
+            className={`flex-1 min-h-[44px] py-3 px-4 flex items-center justify-center transition-colors ${
               inquiryType === 'workflow'
                 ? 'bg-[#181816] text-[#FCFBF7] font-semibold'
                 : 'text-[#77736A] hover:text-[#181816]'
@@ -92,7 +92,7 @@ export const ContactPage: React.FC = () => {
               setInquiryType('teaching');
               setSubmitted(false);
             }}
-            className={`flex-1 py-2.5 px-4 transition-colors ${
+            className={`flex-1 min-h-[44px] py-3 px-4 flex items-center justify-center transition-colors ${
               inquiryType === 'teaching'
                 ? 'bg-[#181816] text-[#FCFBF7] font-semibold'
                 : 'text-[#77736A] hover:text-[#181816]'
@@ -104,7 +104,7 @@ export const ContactPage: React.FC = () => {
 
         {/* ─── SUBMISSION STATE ────────────────────────────────── */}
         {submitted ? (
-          <div className="catalogue-sheet p-8 sm:p-10 space-y-6 border-l-4 border-l-[#B58A2A]">
+          <div className="catalogue-sheet p-8 sm:p-10 space-y-6 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
             <div className="flex items-center gap-3">
               <CheckCircle2 className="w-6 h-6 text-[#B58A2A]" />
               <h2 className="text-2xl font-bold text-[#181816] font-display">

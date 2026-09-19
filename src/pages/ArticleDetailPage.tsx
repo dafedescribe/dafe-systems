@@ -29,23 +29,23 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
       author: {
         '@type': 'Person',
         name: 'Odafe Amalega',
-        url: 'https://dafe.name.ng/about'
+        url: 'https://www.dafe.name.ng/about'
       },
       publisher: {
         '@type': 'Organization',
         name: 'DafeDeScribe',
-        url: 'https://dafe.name.ng/'
+        url: 'https://www.dafe.name.ng/'
       },
       datePublished: article.date,
-      mainEntityOfPage: `https://dafe.name.ng/notes/${article.slug}`
+      mainEntityOfPage: `https://www.dafe.name.ng/notes/${article.slug}`
     },
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dafe.name.ng/' },
-        { '@type': 'ListItem', position: 2, name: 'Notes', item: 'https://dafe.name.ng/notes' },
-        { '@type': 'ListItem', position: 3, name: article.title, item: `https://dafe.name.ng/notes/${article.slug}` }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.dafe.name.ng/' },
+        { '@type': 'ListItem', position: 2, name: 'Notes', item: 'https://www.dafe.name.ng/notes' },
+        { '@type': 'ListItem', position: 3, name: article.title, item: `https://www.dafe.name.ng/notes/${article.slug}` }
       ]
     }
   ];
@@ -126,7 +126,7 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
         </section>
 
         {/* ─── NEXT STEP CTA ───────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-4 border-l-4 border-l-[#B58A2A]">
+        <section className="catalogue-sheet p-8 space-y-4 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
             ACTIONABLE NEXT STEP
           </div>

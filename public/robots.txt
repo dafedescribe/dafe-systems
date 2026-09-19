@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /lab
 
-Sitemap: https://dafe.name.ng/sitemap.xml
+Sitemap: https://www.dafe.name.ng/sitemap.xml

@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core Routes -->
   <url>
-    <loc>https://dafe.name.ng/</loc>
+    <loc>https://www.dafe.name.ng/</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/industry</loc>
+    <loc>https://www.dafe.name.ng/industry</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/industry/rfq-automation</loc>
+    <loc>https://www.dafe.name.ng/industry/rfq-automation</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/industry/tender-monitoring</loc>
+    <loc>https://www.dafe.name.ng/industry/tender-monitoring</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/industry/quotation-workflows</loc>
+    <loc>https://www.dafe.name.ng/industry/quotation-workflows</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/industry/commercial-reporting</loc>
+    <loc>https://www.dafe.name.ng/industry/commercial-reporting</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/automation</loc>
+    <loc>https://www.dafe.name.ng/automation</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/teaching</loc>
+    <loc>https://www.dafe.name.ng/teaching</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/work</loc>
+    <loc>https://www.dafe.name.ng/work</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/about</loc>
+    <loc>https://www.dafe.name.ng/about</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/contact</loc>
+    <loc>https://www.dafe.name.ng/contact</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -70,37 +70,37 @@
 
   <!-- Work Case Studies -->
   <url>
-    <loc>https://dafe.name.ng/work/million-row-pipeline</loc>
+    <loc>https://www.dafe.name.ng/work/million-row-pipeline</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/work/video-processing-pipeline</loc>
+    <loc>https://www.dafe.name.ng/work/video-processing-pipeline</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/work/industrial-rfq-intake</loc>
+    <loc>https://www.dafe.name.ng/work/industrial-rfq-intake</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/work/tender-monitoring-engine</loc>
+    <loc>https://www.dafe.name.ng/work/tender-monitoring-engine</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/work/commercial-quotation-tracker</loc>
+    <loc>https://www.dafe.name.ng/work/commercial-quotation-tracker</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/work/appclick-training-curriculum</loc>
+    <loc>https://www.dafe.name.ng/work/appclick-training-curriculum</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -108,49 +108,49 @@
 
   <!-- Notes Articles -->
   <url>
-    <loc>https://dafe.name.ng/notes</loc>
+    <loc>https://www.dafe.name.ng/notes</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/notes/rfq-automation-for-manufacturers</loc>
+    <loc>https://www.dafe.name.ng/notes/rfq-automation-for-manufacturers</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/notes/how-to-process-rfqs-email-pdf-excel</loc>
+    <loc>https://www.dafe.name.ng/notes/how-to-process-rfqs-email-pdf-excel</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/notes/automate-tender-monitoring</loc>
+    <loc>https://www.dafe.name.ng/notes/automate-tender-monitoring</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/notes/n8n-vs-python</loc>
+    <loc>https://www.dafe.name.ng/notes/n8n-vs-python</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/notes/api-vs-browser-automation</loc>
+    <loc>https://www.dafe.name.ng/notes/api-vs-browser-automation</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/notes/million-rows-python</loc>
+    <loc>https://www.dafe.name.ng/notes/million-rows-python</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dafe.name.ng/notes/explaining-apis-to-nontechnical-learners</loc>
+    <loc>https://www.dafe.name.ng/notes/explaining-apis-to-nontechnical-learners</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

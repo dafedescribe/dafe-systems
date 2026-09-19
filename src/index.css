@@ -188,12 +188,49 @@
   background-color: var(--gold-wash);
 }
 
-/* Respect for reduced-motion */
+/* Browser Surfaces (Craft Floor) */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+input, textarea {
+  caret-color: var(--gold);
+}
+
+.font-mono-tech, .catalogue-table {
+  font-variant-numeric: tabular-nums;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+/* Custom Catalogue Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper-warm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rule-strong);
+  border: 2px solid var(--paper-warm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-muted);
+}
+
+/* Accessible Reduced-Motion (Preserves State Hierarchy) */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *, ::before, ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
+
