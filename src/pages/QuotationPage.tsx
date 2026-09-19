@@ -63,23 +63,23 @@ export const QuotationPage: React.FC = () => {
 
         {/* ─── HERO ────────────────────────────────────────────── */}
         <section className="space-y-6">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [COMMERCIAL COORDINATION / QUOTATION PIPELINE]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Commercial Proposal Workflow & Pipeline
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#181816] font-display leading-[1.12]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 font-display leading-[1.12]">
             The quotation is one document. The work around it is usually bigger.
           </h1>
 
-          <div className="space-y-4 text-base sm:text-lg text-[#33312C] font-body leading-relaxed">
+          <div className="space-y-4 text-base sm:text-lg text-slate-700 font-body leading-relaxed">
             <p>
-              Preparing a quote may require customer information, product specifications, pricing, previous records, supplier information and inputs from several people.
+              Issuing a qualified proposal requires synthesizing historical customer records, technical tolerances, supplier pricing sheets, and multi-stakeholder sign-offs.
             </p>
             <p>
-              Then the quote has to be tracked.
+              Once delivered, staff must record statuses, coordinate follow-ups at disciplined intervals, and keep executive revenue forecasts up to date.
             </p>
-            <p className="font-semibold text-[#181816]">
-              The useful automation opportunity is often the preparation and coordination surrounding that decision.
+            <p className="font-semibold text-slate-900">
+              The highest return on automation isn't attempting to price complex jobs automatically—it is systematically accelerating the administrative coordination before and after proposal delivery.
             </p>
           </div>
         </section>
@@ -88,16 +88,16 @@ export const QuotationPage: React.FC = () => {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Before */}
           <div className="catalogue-sheet p-6 sm:p-8 space-y-4">
-            <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
-              [STAGE 01 · PREPARATION]
+            <div className="font-mono-tech text-xs text-amber-700 uppercase font-semibold">
+              STAGE 01 · PREPARATION
             </div>
-            <h2 className="text-2xl font-bold text-[#181816] font-display">
+            <h2 className="text-2xl font-bold text-slate-900 font-display">
               Before quotation
             </h2>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-[#77736A] font-body">
+            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600 font-body">
               {beforeTasks.map((task, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <span className="font-mono-tech text-[#B58A2A] text-xs font-semibold">
+                  <span className="font-mono-tech text-amber-700 text-xs font-semibold">
                     0{i + 1}.
                   </span>
                   <span>{task}</span>
@@ -108,16 +108,16 @@ export const QuotationPage: React.FC = () => {
 
           {/* After */}
           <div className="catalogue-sheet p-6 sm:p-8 space-y-4">
-            <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
-              [STAGE 02 · COORDINATION]
+            <div className="font-mono-tech text-xs text-amber-700 uppercase font-semibold">
+              STAGE 02 · COORDINATION
             </div>
-            <h2 className="text-2xl font-bold text-[#181816] font-display">
+            <h2 className="text-2xl font-bold text-slate-900 font-display">
               After quotation
             </h2>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-[#77736A] font-body">
+            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600 font-body">
               {afterTasks.map((task, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <span className="font-mono-tech text-[#B58A2A] text-xs font-semibold">
+                  <span className="font-mono-tech text-amber-700 text-xs font-semibold">
                     0{i + 1}.
                   </span>
                   <span>{task}</span>
@@ -129,33 +129,33 @@ export const QuotationPage: React.FC = () => {
 
         {/* ─── CORE PRINCIPLE ──────────────────────────────────── */}
         <section className="catalogue-sheet p-6 sm:p-8 space-y-4">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [COMMERCIAL INTEGRITY]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Operational Control
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
             Keep the decisions human.
           </h2>
 
-          <p className="text-base text-[#33312C] font-body leading-relaxed">
-            Pricing, negotiation, exceptions and customer commitments stay with your team.
+          <p className="text-base text-slate-800 font-body leading-relaxed">
+            Pricing, negotiation, engineering tolerances, and client agreements remain squarely with your team.
           </p>
 
-          <p className="text-sm text-[#77736A] font-body leading-relaxed">
-            Automation exists to ensure your sales engineers never spend an hour assembling boilerplates or lose a high-margin order because follow-up was forgotten in a busy week.
+          <p className="text-sm text-slate-600 font-body leading-relaxed">
+            Automation ensures sales engineers never spend an hour assembling standard boilerplates or lose high-margin commercial opportunities because follow-up was overlooked during a busy production week.
           </p>
         </section>
 
         {/* ─── CTA ─────────────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-5 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            [PROCESS REVIEW]
+        <section className="catalogue-sheet p-8 space-y-5 border-t-2 border-t-amber-600">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Workflow Audit
           </div>
-          <h2 className="text-2xl font-bold text-[#181816] font-display">
+          <h2 className="text-2xl font-bold text-slate-900 font-display">
             Show Me Your Quote Process
           </h2>
-          <p className="text-sm sm:text-base text-[#77736A] font-body leading-relaxed">
-            Tell me what happens between a customer asking for pricing and the final quotation leaving your office.
+          <p className="text-sm sm:text-base text-slate-600 font-body leading-relaxed">
+            Walk through what happens between a customer requesting pricing and the final formal quotation leaving your office.
           </p>
           <div className="pt-2">
             <Link

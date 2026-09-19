@@ -2,26 +2,26 @@
 
 @layer base {
   :root {
-    /* Main Paper Stock */
-    --paper: #FCFBF7;
+    /* Modern Architectural Palette */
+    --paper: #FAFAF9;
     --paper-bright: #FFFFFF;
-    --paper-warm: #F5F1E7;
-    --paper-deep: #EBE5D8;
+    --paper-warm: #F8FAFC;
+    --paper-deep: #F1F5F9;
 
-    /* Ink Colors */
-    --ink: #181816;
-    --ink-secondary: #33312C;
-    --ink-muted: #77736A;
+    /* Ink / Slate Colors */
+    --ink: #0F172A;
+    --ink-secondary: #334155;
+    --ink-muted: #64748B;
 
-    /* Rules & Divisions */
-    --rule: #D9D4C8;
-    --rule-strong: #AAA397;
+    /* Subtle Hairline Rules */
+    --rule: #E2E8F0;
+    --rule-strong: #CBD5E1;
 
-    /* Gold System (Technical Marking Ink) */
-    --gold: #B58A2A;
-    --gold-dark: #795B18;
-    --gold-light: #E6D8AF;
-    --gold-wash: #F6F0DC;
+    /* Precision Warm Amber Accent */
+    --gold: #B45309;
+    --gold-dark: #92400E;
+    --gold-light: #FEF3C7;
+    --gold-wash: #FFFBEB;
   }
 
   html {
@@ -40,8 +40,6 @@
     background-color: var(--paper);
     color: var(--ink);
     min-height: 100vh;
-    background-image: radial-gradient(rgba(24, 24, 22, 0.04) 1px, transparent 0);
-    background-size: 24px 24px;
   }
 
   ::selection {
@@ -63,43 +61,36 @@
   font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
-/* Technical Catalogue Paper Plates & Sheets */
+/* Modern Technical Cards & Panels */
 .catalogue-sheet {
   background-color: var(--paper-bright);
   border: 1px solid var(--rule);
-  box-shadow: 4px 4px 0 rgba(24, 24, 22, 0.08);
-  border-radius: 0;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  border-radius: 8px;
 }
 
 .catalogue-plate {
   background-color: var(--paper-bright);
   border: 1px solid var(--rule);
-  border-radius: 0;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .catalogue-plate:hover {
-  border-color: var(--ink);
-  box-shadow: 2px 2px 0 rgba(24, 24, 22, 0.08);
+  border-color: var(--rule-strong);
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06);
 }
 
 .catalogue-inset {
   background-color: var(--paper-warm);
   border: 1px solid var(--rule);
-  border-radius: 0;
+  border-radius: 8px;
 }
 
 .catalogue-archive {
   background-color: var(--paper-deep);
   border: 1px solid var(--rule);
-  border-radius: 0;
-}
-
-/* Double Technical Rule (3px + 1px) */
-.rule-double {
-  border-top: 3px solid var(--ink);
-  padding-top: 2px;
-  border-bottom: 1px solid var(--ink);
+  border-radius: 8px;
 }
 
 /* Button System */
@@ -107,58 +98,60 @@
   background-color: var(--gold);
   color: #FFFFFF;
   border: 1px solid var(--gold-dark);
-  border-radius: 0;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 6px;
+  font-family: 'Hanken Grotesk', -apple-system, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(180, 83, 9, 0.15);
 }
 
 .btn-primary:hover {
   background-color: var(--gold-dark);
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 0 2px 4px 0 rgba(180, 83, 9, 0.25);
 }
 
 .btn-secondary {
-  background-color: transparent;
+  background-color: var(--paper-bright);
   color: var(--ink);
-  border: 1px solid var(--ink);
-  border-radius: 0;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid var(--rule-strong);
+  border-radius: 6px;
+  font-family: 'Hanken Grotesk', -apple-system, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
 }
 
 .btn-secondary:hover {
-  background-color: var(--ink);
-  color: var(--paper);
-  box-shadow: 2px 2px 0 rgba(24, 24, 22, 0.15);
+  background-color: var(--paper-warm);
+  border-color: var(--ink-secondary);
+  box-shadow: 0 2px 4px 0 rgba(15, 23, 42, 0.08);
 }
 
 /* Form Inputs */
 .catalogue-input {
   border: 1px solid var(--rule);
-  background-color: var(--paper);
+  background-color: var(--paper-bright);
   color: var(--ink);
-  border-radius: 0;
+  border-radius: 6px;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .catalogue-input:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 1px var(--gold);
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.15);
 }
 
 /* Tables */

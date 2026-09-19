@@ -70,36 +70,36 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
 
         {/* ─── BULLETIN HEADER ─────────────────────────────────── */}
         <header className="catalogue-sheet p-6 sm:p-8 space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 font-mono-tech text-xs">
-            <span className="text-[#B58A2A] font-semibold uppercase">
-              TECHNICAL NOTE / {article.cluster.toUpperCase()}
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3 font-mono-tech text-xs">
+            <span className="text-amber-700 font-semibold uppercase">
+              Technical Note · {article.cluster}
             </span>
-            <span className="text-[#77736A]">
+            <span className="text-slate-500">
               {article.readTime.toUpperCase()} · {article.date}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#181816] font-display leading-[1.15]">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 font-display leading-[1.15]">
             {article.title}
           </h1>
 
-          <p className="text-base sm:text-lg text-[#33312C] font-body leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 font-body leading-relaxed">
             {article.summary}
           </p>
 
-          <div className="pt-3 border-t border-[#D9D4C8]">
+          <div className="pt-3 border-t border-slate-200">
             <Link
               to={article.targetServiceUrl}
-              className="inline-flex items-center gap-1.5 font-mono-tech text-xs text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
+              className="inline-flex items-center gap-1.5 font-mono-tech text-xs text-slate-900 font-semibold hover:text-amber-700 transition-colors"
             >
-              <span>OPERATIONAL CONTEXT: {article.targetServiceLabel.toUpperCase()}</span>
+              <span>Operational Context: {article.targetServiceLabel.toUpperCase()}</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </header>
 
         {/* ─── BULLETIN BODY ───────────────────────────────────── */}
-        <div className="catalogue-sheet p-6 sm:p-10 space-y-6 text-base sm:text-lg text-[#33312C] font-body leading-[1.75]">
+        <div className="catalogue-sheet p-6 sm:p-10 space-y-6 text-base sm:text-lg text-slate-700 font-body leading-[1.8]">
           {article.content.map((paragraph, idx) => (
             <p key={idx}>
               {paragraph}
@@ -108,32 +108,32 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
         </div>
 
         {/* ─── AUTHOR SPECIFICATION ────────────────────────────── */}
-        <section className="catalogue-inset p-6 space-y-2 font-mono-tech text-xs">
-          <div className="text-[#77736A] uppercase">
+        <section className="catalogue-sheet p-6 sm:p-8 space-y-2 font-mono-tech text-xs">
+          <div className="text-slate-500 uppercase">
             WRITTEN & TESTED BY
           </div>
-          <div className="font-bold text-base text-[#181816] font-body">
+          <div className="font-bold text-lg text-slate-900 font-body">
             Odafe Amalega
           </div>
-          <p className="text-[#77736A] font-body leading-relaxed">
-            AI Workflow Engineer and Educator currently at AppClick. Builds systems around high-value commercial processes and repetitive operational bottlenecks.
+          <p className="text-slate-600 font-body text-sm leading-relaxed">
+            AI Workflow Engineer and Educator currently instructing at AppClick. Builds systems around high-value commercial processes and repetitive operational bottlenecks.
           </p>
           <div className="pt-2">
-            <Link to="/about" className="text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors">
-              View personnel file & digital CV →
+            <Link to="/about" className="text-slate-900 font-semibold hover:text-amber-700 transition-colors">
+              View engineering background & credentials →
             </Link>
           </div>
         </section>
 
         {/* ─── NEXT STEP CTA ───────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-4 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            ACTIONABLE NEXT STEP
+        <section className="catalogue-sheet p-8 space-y-4 border-t-2 border-t-amber-600">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Actionable Next Step
           </div>
-          <h2 className="text-2xl font-bold text-[#181816] font-display">
+          <h2 className="text-2xl font-bold text-slate-900 font-display">
             Have a similar workflow in your business?
           </h2>
-          <p className="text-sm text-[#77736A] font-body leading-relaxed">
+          <p className="text-sm text-slate-600 font-body leading-relaxed">
             Send me the workflow. We will identify which steps can be handled deterministically.
           </p>
           <div className="pt-2">

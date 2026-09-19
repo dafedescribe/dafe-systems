@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { ProcessDiagram } from '../components/ProcessDiagram';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
 import { PROJECTS } from '../data/projectsData';
 
 export const HomePage: React.FC = () => {
@@ -34,55 +34,55 @@ export const HomePage: React.FC = () => {
         jsonLd={jsonLd}
       />
 
-      <main className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-20 space-y-24 sm:space-y-32">
+      <main className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-20 space-y-20 sm:space-y-28">
         
-        {/* ─── SECTION 1: HERO (7 / 5 CATALOGUE SPREAD) ────────── */}
+        {/* ─── SECTION 1: HERO (7 / 5 SPREAD) ──────────────────── */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start pt-2 sm:pt-6">
           
           {/* Left: 7 Columns Headline & Copy */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="font-mono-tech text-xs tracking-[0.12em] uppercase text-[#B58A2A] flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-[#B58A2A]" />
-              <span>DAFEDESCRIBE / ODAFE AMALEGA</span>
+            <div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-amber-600" />
+              <span>Odafe Amalega · DafeDeScribe</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-bold tracking-tight text-[#181816] font-display leading-[1.08]">
+            <h1 className="text-4xl sm:text-6xl lg:text-[64px] font-bold tracking-tight text-slate-900 font-display leading-[1.08]">
               I build systems for work that has outgrown manual handling.
             </h1>
 
-            <div className="space-y-3 text-base sm:text-lg text-[#33312C] font-body leading-relaxed max-w-2xl">
+            <div className="space-y-4 text-base sm:text-lg text-slate-700 font-body leading-relaxed max-w-2xl">
               <p>
-                I design automation, data and AI workflows around business processes that still depend too heavily on people copying, checking, searching, following up and rebuilding information.
+                I design workflow automation, data pipelines, and AI systems around operational processes that still depend heavily on staff copying, checking, searching, and re-entering data across spreadsheets and documents.
               </p>
-              <p className="text-[#77736A]">
-                My deepest current focus is the commercial side of industrial and operational businesses. I also teach teams how these systems actually work.
+              <p className="text-slate-500">
+                My primary focus is the commercial side of industrial, engineering, and supply businesses. Alongside client builds, I instruct teams at AppClick Technology on how these systems operate in practice.
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 to="/contact"
-                className="btn-primary px-6 py-3.5"
+                className="btn-primary px-6 py-3.5 text-sm"
               >
-                <span>Show Me the Workflow</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span>Discuss a Workflow</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
 
               <Link
                 to="/work"
-                className="btn-secondary px-6 py-3.5"
+                className="btn-secondary px-6 py-3.5 text-sm"
               >
-                <span>See What I've Built</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <span>Explore Verified Work</span>
+                <ArrowUpRight className="w-4 h-4 text-slate-500" />
               </Link>
             </div>
 
-            <div className="pt-4 border-t border-[#D9D4C8] font-mono-tech text-xs text-[#77736A] tracking-[0.06em]">
-              AI Workflow Engineer · Systems Builder · Educator
+            <div className="pt-4 border-t border-slate-200 text-xs text-slate-500 font-body">
+              Specialized in Industrial Commercial Operations, Data Pipelines & Technical Education
             </div>
           </div>
 
-          {/* Right: 5 Columns Schematic Companion */}
+          {/* Right: 5 Columns Architecture Companion */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <ProcessDiagram type="hero-schematic" />
           </div>
@@ -90,34 +90,34 @@ export const HomePage: React.FC = () => {
 
         {/* ─── SECTION 2: THREE COMMERCIAL ENTRY POINTS ────────── */}
         <section className="space-y-6">
-          <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
-            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#77736A]">
-              [COMMERCIAL ENTRY POINTS]
+          <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+            <div className="text-xs font-mono-tech tracking-wider uppercase text-slate-500 font-semibold">
+              Commercial Focus Areas
             </div>
-            <div className="font-mono-tech text-xs text-[#B58A2A]">
-              CATALOGUE SECTION 01–03
+            <div className="text-xs text-amber-700 font-medium font-mono-tech">
+              Core Capabilities
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Entry 1: Industry */}
-            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between group hover:border-[#181816] transition-colors">
-              <div className="space-y-4">
-                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
-                  01 / INDUSTRY
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display leading-tight">
-                  Commercial systems for businesses that make, supply and install things.
+            <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all">
+              <div className="space-y-3">
+                <span className="text-xs font-mono-tech text-amber-700 uppercase font-semibold">
+                  Industrial Systems
+                </span>
+                <h2 className="text-2xl font-bold text-slate-900 font-display leading-tight">
+                  Commercial workflows for businesses that make, supply, and install equipment.
                 </h2>
-                <p className="text-sm text-[#77736A] leading-relaxed font-body">
-                  RFQs, tenders, quotations, opportunity monitoring, follow-up and commercial reporting.
+                <p className="text-sm text-slate-600 leading-relaxed font-body">
+                  Automating RFQ extraction, tender monitoring, structured quotation generation, and follow-up tracking.
                 </p>
               </div>
-              <div className="pt-8">
+              <div className="pt-6">
                 <Link
                   to="/industry"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold group-hover:text-[#B58A2A] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
                 >
                   <span>Explore Industry Systems</span>
                   <span>→</span>
@@ -126,22 +126,22 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Entry 2: Automation */}
-            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between group hover:border-[#181816] transition-colors">
-              <div className="space-y-4">
-                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
-                  02 / AUTOMATION
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display leading-tight">
-                  Repetitive process? Strange workflow? Systems that refuse to talk?
+            <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all">
+              <div className="space-y-3">
+                <span className="text-xs font-mono-tech text-amber-700 uppercase font-semibold">
+                  Operational Automation
+                </span>
+                <h2 className="text-2xl font-bold text-slate-900 font-display leading-tight">
+                  Repetitive processes, fragmented data, and systems that refuse to talk.
                 </h2>
-                <p className="text-sm text-[#77736A] leading-relaxed font-body">
-                  I build targeted workflows using automation, APIs, code, data and AI where useful.
+                <p className="text-sm text-slate-600 leading-relaxed font-body">
+                  Targeted workflows built with Python, APIs, n8n, webhooks, and deterministic AI parsing for operational operations.
                 </p>
               </div>
-              <div className="pt-8">
+              <div className="pt-6">
                 <Link
                   to="/automation"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold group-hover:text-[#B58A2A] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
                 >
                   <span>Explore Automation</span>
                   <span>→</span>
@@ -150,24 +150,24 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Entry 3: Teaching */}
-            <div className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between group hover:border-[#181816] transition-colors">
-              <div className="space-y-4">
-                <div className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
-                  03 / TEACHING
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display leading-tight">
-                  Learn what is actually happening underneath the AI button.
+            <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all">
+              <div className="space-y-3">
+                <span className="text-xs font-mono-tech text-amber-700 uppercase font-semibold">
+                  Applied Training
+                </span>
+                <h2 className="text-2xl font-bold text-slate-900 font-display leading-tight">
+                  Understanding what actually happens underneath the AI button.
                 </h2>
-                <p className="text-sm text-[#77736A] leading-relaxed font-body">
-                  Practical training in AI, automation, APIs, digital productivity and AI-assisted building.
+                <p className="text-sm text-slate-600 leading-relaxed font-body">
+                  Practical corporate training covering APIs, automation logic, data handling, and AI-assisted engineering for teams.
                 </p>
               </div>
-              <div className="pt-8">
+              <div className="pt-6">
                 <Link
                   to="/teaching"
-                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold group-hover:text-[#B58A2A] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
                 >
-                  <span>Explore Teaching</span>
+                  <span>Explore Training</span>
                   <span>→</span>
                 </Link>
               </div>
@@ -177,244 +177,229 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* ─── SECTION 3: CREDIBILITY BAND ─────────────────────── */}
-        <section className="catalogue-inset p-6 sm:p-8 space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3">
-            <h2 className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#181816] font-semibold">
-              WORK & EXPERIENCE
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
+            <h2 className="text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
+              Background & Credentials
             </h2>
-            <span className="font-mono-tech text-xs text-[#77736A]">
-              Work, employment and project experience includes
+            <span className="text-xs text-slate-500 font-body">
+              Verified professional roles, engineering degree & accredited programmes
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
             {/* AppClick */}
-            <div className="p-4 bg-[#FFFFFF] border border-[#D9D4C8]">
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold">
-                  [ACTIVE ROLE]
+            <div className="p-5 bg-white border border-slate-200 rounded-lg shadow-2xs space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono-tech text-amber-700 font-semibold">
+                  Current Role
                 </span>
-                <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#181816] text-[#FCFBF7]">
-                  EMPLOYMENT
+                <span className="text-[10px] px-2 py-0.5 bg-slate-900 text-white rounded font-medium">
+                  Instruction
                 </span>
               </div>
-              <div className="text-base font-bold text-[#181816] font-body">
-                AppClick
+              <div className="text-base font-bold text-slate-900 font-body">
+                AppClick Technology
               </div>
-              <div className="text-xs text-[#77736A] mt-1 font-mono-tech">
-                Currently at AppClick
+              <div className="text-xs text-slate-500 font-body">
+                Technical instruction, practical workflow curriculum, and applied AI literacy for professionals.
               </div>
-              <p className="text-xs text-[#77736A] mt-2 font-body">
-                Technical instruction, practical workflow curriculum, and systems literacy.
-              </p>
             </div>
 
             {/* University */}
-            <div className="p-4 bg-[#FFFFFF] border border-[#D9D4C8]">
-              <div className="font-mono-tech text-xs text-[#77736A] font-semibold mb-2">
-                [EDUCATION]
+            <div className="p-5 bg-white border border-slate-200 rounded-lg shadow-2xs space-y-2">
+              <div className="text-xs font-mono-tech text-slate-500 font-semibold">
+                Academic Degree
               </div>
-              <div className="text-base font-bold text-[#181816] font-body">
+              <div className="text-base font-bold text-slate-900 font-body">
                 Federal University Oye-Ekiti
               </div>
-              <div className="text-xs text-[#77736A] mt-1 font-mono-tech">
-                Bachelor of Engineering (B.Eng)
+              <div className="text-xs text-slate-500 font-body">
+                Bachelor of Engineering (B.Eng). Analytical systems modelling and mechanical engineering foundations.
               </div>
-              <p className="text-xs text-[#77736A] mt-2 font-body">
-                Engineering foundations, analytical modelling, and physical systems analysis.
-              </p>
             </div>
 
             {/* ALX */}
-            <div className="p-4 bg-[#FFFFFF] border border-[#D9D4C8]">
-              <div className="font-mono-tech text-xs text-[#77736A] font-semibold mb-2">
-                [PROFESSIONAL]
+            <div className="p-5 bg-white border border-slate-200 rounded-lg shadow-2xs space-y-2">
+              <div className="text-xs font-mono-tech text-slate-500 font-semibold">
+                Professional Certification
               </div>
-              <div className="text-base font-bold text-[#181816] font-body">
-                ALX Training
+              <div className="text-base font-bold text-slate-900 font-body">
+                ALX Programmes
               </div>
-              <div className="text-xs text-[#77736A] mt-1 font-mono-tech">
-                Virtual Assistance & Operations
+              <div className="text-xs text-slate-500 font-body">
+                Accredited tracks in AI Career Essentials, Data Analytics, and distributed digital workflow execution.
               </div>
-              <p className="text-xs text-[#77736A] mt-2 font-body">
-                Distributed workflows, asynchronous digital coordination, and systems execution.
-              </p>
             </div>
           </div>
         </section>
 
-        {/* ─── SECTION 4: HOMEPAGE PROOF (CATALOGUE PLATES) ────── */}
+        {/* ─── SECTION 4: FEATURED CASE STUDIES ────────────────── */}
         <section className="space-y-6">
-          <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
-            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-              04 / VERIFIED EVIDENCE
+          <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+            <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
+              Verified Production Projects
             </div>
-            <div className="font-mono-tech text-xs text-[#77736A]">
-              SPECIFICATION PLATES
+            <div className="text-xs text-slate-500 font-mono-tech">
+              Case Studies & Systems
             </div>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#181816] font-display">
-            Work I can show you.
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 font-display">
+            Selected Work & Architecture
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-5">
             {/* Proof item 1: 1M rows */}
-            <div className="catalogue-sheet p-6 sm:p-8 hover:border-[#181816] transition-colors">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 hover:border-slate-400 hover:shadow-md transition-all">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                 <div className="flex items-center gap-2 font-mono-tech text-xs">
-                  <span className="text-[#B58A2A] font-semibold">REF. DS-001</span>
-                  <span className="text-[#D9D4C8]">|</span>
-                  <span className="text-[#77736A]">DATA / PYTHON / AUTOMATION</span>
+                  <span className="text-amber-700 font-semibold">Case Study DS-001</span>
+                  <span className="text-slate-300">|</span>
+                  <span className="text-slate-500">Data Engineering · Python · Parquet</span>
                 </div>
-                <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
-                  INTERNAL BUILD
+                <span className="text-xs px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full font-medium">
+                  Internal Production Build
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display mb-3">
-                1,000,000+ rows processed in under 10 minutes.
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mb-2">
+                1,000,000+ Rows Processed in Under 10 Minutes
               </h3>
 
-              <p className="text-sm sm:text-base text-[#77736A] leading-relaxed max-w-3xl mb-6 font-body">
-                A Python workflow replaced a data-processing job that would otherwise have represented a substantial amount of manual work.
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl mb-5 font-body">
+                A chunked Python pipeline replaced a recurring multi-source reconciliation process that consistently crashed standard spreadsheet software, producing clean partitioned Parquet outputs in 8.7 minutes.
               </p>
 
               <Link
                 to="/work/million-row-pipeline"
-                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
               >
-                <span>See the project</span>
+                <span>Read the technical breakdown</span>
                 <span>→</span>
               </Link>
             </div>
 
             {/* Proof item 2: Video pipeline */}
-            <div className="catalogue-sheet p-6 sm:p-8 hover:border-[#181816] transition-colors">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 hover:border-slate-400 hover:shadow-md transition-all">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                 <div className="flex items-center gap-2 font-mono-tech text-xs">
-                  <span className="text-[#B58A2A] font-semibold">REF. DS-002</span>
-                  <span className="text-[#D9D4C8]">|</span>
-                  <span className="text-[#77736A]">AI / PYTHON / MEDIA AUTOMATION</span>
+                  <span className="text-amber-700 font-semibold">Case Study DS-002</span>
+                  <span className="text-slate-300">|</span>
+                  <span className="text-slate-500">Python · FFmpeg · Media Automation</span>
                 </div>
-                <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
-                  INTERNAL BUILD
+                <span className="text-xs px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full font-medium">
+                  Internal Production Build
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display mb-3">
-                Long-form video turned into a processing pipeline.
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mb-2">
+                Automated Long-Form Video Assembly Pipeline
               </h3>
 
-              <p className="text-sm sm:text-base text-[#77736A] leading-relaxed max-w-3xl mb-6 font-body">
-                An end-to-end system covering transcription, timestamps, content selection and video processing using Python, transcription models and FFmpeg.
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl mb-5 font-body">
+                An end-to-end media automation system handling audio extraction, semantic transcription, highlight scoring, and programmatic compilation using Python and FFmpeg.
               </p>
 
               <Link
                 to="/work/video-processing-pipeline"
-                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
               >
-                <span>See the build</span>
+                <span>Read the technical breakdown</span>
                 <span>→</span>
               </Link>
             </div>
 
             {/* Proof item 3: RFQ Intake Prototype */}
-            <div className="catalogue-sheet p-6 sm:p-8 hover:border-[#181816] transition-colors">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 hover:border-slate-400 hover:shadow-md transition-all">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                 <div className="flex items-center gap-2 font-mono-tech text-xs">
-                  <span className="text-[#B58A2A] font-semibold">REF. DS-003</span>
-                  <span className="text-[#D9D4C8]">|</span>
-                  <span className="text-[#77736A]">INDUSTRY / RFQ / EXTRACTION</span>
+                  <span className="text-amber-700 font-semibold">Case Study DS-003</span>
+                  <span className="text-slate-300">|</span>
+                  <span className="text-slate-500">RFQ Intake · Multi-Format Parsing · Extraction</span>
                 </div>
-                <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
-                  PROTOTYPE
+                <span className="text-xs px-2.5 py-0.5 bg-amber-50 text-amber-800 rounded-full font-medium">
+                  Operational Prototype
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display mb-3">
-                Industrial RFQ Intake & Specification Preparation Engine
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mb-2">
+                Industrial RFQ Intake & Specification Extraction Engine
               </h3>
 
-              <p className="text-sm sm:text-base text-[#77736A] leading-relaxed max-w-3xl mb-6 font-body">
-                Automated extraction of customer line items, part specifications, and delivery terms from messy email bodies and PDF attachments into an organised review queue.
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl mb-5 font-body">
+                Automated parsing of customer line items, part numbers, material grades, and delivery terms from inbound email attachments and PDFs into a standardized review workbench.
               </p>
 
               <Link
                 to="/work/industrial-rfq-intake"
-                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
               >
-                <span>See the build</span>
+                <span>Read the technical breakdown</span>
                 <span>→</span>
               </Link>
             </div>
           </div>
         </section>
 
-        {/* ─── SECTION 5: HOMEPAGE ABOUT ───────────────────────── */}
-        <section className="border-t border-[#D9D4C8] pt-12 space-y-6 max-w-3xl">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            05 / SYSTEMS BUILDER
+        {/* ─── SECTION 5: BUILDER PROFILE SUMMARY ──────────────── */}
+        <section className="border-t border-slate-200 pt-12 space-y-6 max-w-3xl">
+          <div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">
+            About the Builder
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#181816] font-display">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 font-display">
             Odafe Amalega
           </h2>
 
-          <div className="space-y-4 text-base text-[#33312C] font-body leading-relaxed">
+          <div className="space-y-4 text-base text-slate-700 font-body leading-relaxed">
             <p>
-              I work across automation, APIs, Python, AI, data and lightweight software.
+              I work across workflow automation, APIs, Python, data pipelines, and AI systems for operational businesses.
             </p>
             <p>
-              What interests me most is the point where a useful process has become too repetitive, fragmented or large to keep handling manually.
+              My focus is the intersection where a high-value commercial process has become too repetitive or fragmented to keep handling by hand, but where automated tools must operate reliably without risking commercial errors.
             </p>
             <p>
-              My current commercial focus is bringing that thinking into industrial and operational businesses.
-            </p>
-            <p>
-              I teach as well, which has made explaining technical systems clearly an important part of how I work.
+              Alongside engineering systems, I teach applied automation at AppClick Technology, grounding non-technical professionals and operational managers in practical systems literacy.
             </p>
           </div>
 
           <div className="pt-2">
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
             >
-              <span>View my profile & digital CV</span>
+              <span>View full profile & credentials</span>
               <span>→</span>
             </Link>
           </div>
         </section>
 
-        {/* ─── SECTION 6: HOMEPAGE FINAL CTA ───────────────────── */}
-        <section className="catalogue-sheet p-8 sm:p-14 space-y-6 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            06 / NEXT STEP
+        {/* ─── SECTION 6: FINAL CTA ────────────────────────────── */}
+        <section className="bg-white border border-slate-200 rounded-xl p-8 sm:p-14 space-y-6 shadow-sm">
+          <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
+            Start a Conversation
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#181816] font-display">
-            What does your team keep doing the same way?
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 font-display">
+            Have a workflow ready to automate?
           </h2>
 
-          <div className="space-y-3 text-base sm:text-lg text-[#77736A] font-body max-w-2xl leading-relaxed">
+          <div className="space-y-3 text-base sm:text-lg text-slate-600 font-body max-w-2xl leading-relaxed">
             <p>
-              Send me one repeated process.
+              Describe a manual process currently slowing down your operations. Share what information comes in, where it bottlenecks, and what final output your team needs.
             </p>
-            <p>
-              Tell me what comes in, what somebody does with it and what needs to happen next.
-            </p>
-            <p>
-              You do not need to know whether the solution is AI, automation, code or something else.
+            <p className="text-sm text-slate-500">
+              You do not need to know whether the right answer is Python, an API integration, an n8n pipeline, or an AI model — we will evaluate the technical feasibility and suggest the most maintainable path.
             </p>
           </div>
 
-          <div className="pt-4">
+          <div className="pt-2">
             <Link
               to="/contact"
-              className="btn-primary px-7 py-4"
+              className="btn-primary px-7 py-4 text-sm"
             >
-              <span>Show Me the Workflow</span>
+              <span>Discuss Your Workflow</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

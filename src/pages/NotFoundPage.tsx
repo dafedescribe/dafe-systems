@@ -11,34 +11,34 @@ export const NotFoundPage: React.FC = () => {
         noIndex={true}
       />
 
-      <div className="font-mono-tech text-xs text-[#96742c] uppercase tracking-wider">
-        [HTTP ERROR 404: ROUTE NOT LOCATED]
+      <div className="font-mono-tech text-xs text-amber-700 uppercase tracking-wider font-semibold">
+        404 · Page Not Found
       </div>
 
-      <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#141416]">
-        System Route Not Found
+      <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 font-display">
+        Page Not Found
       </h1>
 
-      <p className="text-base text-[#575653] leading-relaxed max-w-lg">
-        The path you requested does not correspond to an active operational workflow, note, or case study in this system.
+      <p className="text-base text-slate-600 leading-relaxed max-w-lg">
+        The path you requested does not correspond to an active workflow solution, technical note, or case study.
       </p>
 
       <div className="pt-4 flex flex-wrap gap-3">
         <Link
           to="/"
-          className="px-5 py-2.5 bg-[#141416] text-[#faf8f5] font-mono-tech text-xs uppercase"
+          className="btn-primary px-5 py-2.5"
         >
-          Return to Index
+          Return Home
         </Link>
         <Link
           to="/industry"
-          className="px-5 py-2.5 border border-[#ded9cf] bg-[#ffffff] text-[#141416] font-mono-tech text-xs uppercase"
+          className="btn-secondary px-5 py-2.5"
         >
-          Industry Systems
+          Industry Solutions
         </Link>
         <Link
           to="/work"
-          className="px-5 py-2.5 border border-[#ded9cf] bg-[#ffffff] text-[#141416] font-mono-tech text-xs uppercase"
+          className="btn-secondary px-5 py-2.5"
         >
           Verified Work
         </Link>

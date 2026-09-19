@@ -21,7 +21,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#FCFBF7]/95 backdrop-blur-sm border-b border-[#D9D4C8]">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16">
         <div className="flex items-center justify-between h-18 sm:h-20">
           
@@ -31,15 +31,15 @@ export const Navbar: React.FC = () => {
             className="flex flex-col group py-1"
             aria-label="DafeDeScribe Index"
           >
-            <span className="font-bold tracking-tight text-lg sm:text-xl text-[#181816] font-body">
+            <span className="font-bold tracking-tight text-lg sm:text-xl text-slate-900 font-body">
               DafeDeScribe
             </span>
-            <span className="font-mono-tech text-[10px] tracking-[0.12em] uppercase text-[#77736A]">
+            <span className="font-mono-tech text-[10px] tracking-[0.12em] uppercase text-slate-500">
               SYSTEMS · AUTOMATION · EDUCATION
             </span>
           </Link>
 
-          {/* Desktop Navigation Links — Catalogue Index Style */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-7 lg:gap-9 text-xs font-mono-tech tracking-[0.08em]">
             {navLinks.map((link) => {
               const active = isActive(link.to);
@@ -49,16 +49,16 @@ export const Navbar: React.FC = () => {
                   to={link.to}
                   className={`relative py-2 flex items-center gap-1.5 transition-colors ${
                     active
-                      ? 'text-[#181816] font-semibold'
-                      : 'text-[#77736A] hover:text-[#181816]'
+                      ? 'text-slate-900 font-semibold'
+                      : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
-                  <span className={`text-[10px] ${active ? 'text-[#B58A2A]' : 'text-[#AAA397]'}`}>
+                  <span className={`text-[10px] ${active ? 'text-amber-700' : 'text-slate-400'}`}>
                     {link.num}
                   </span>
                   <span>{link.label}</span>
                   {active && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#B58A2A]" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber-600" />
                   )}
                 </Link>
               );
@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden min-h-[44px] min-w-[44px] p-2 flex items-center justify-center text-[#181816] border border-[#D9D4C8] hover:bg-[#F5F1E7]"
+              className="md:hidden min-h-[44px] min-w-[44px] p-2 flex items-center justify-center text-slate-900 border border-slate-200 rounded-lg hover:bg-slate-100"
               aria-label={mobileOpen ? 'Close Navigation' : 'Open Navigation'}
               aria-expanded={mobileOpen}
             >
@@ -90,9 +90,9 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-[#D9D4C8] bg-[#FCFBF7] px-6 py-5 space-y-4">
-          <div className="font-mono-tech text-[10px] text-[#77736A] tracking-[0.1em] uppercase">
-            CATALOGUE DIRECTORY
+        <div className="md:hidden border-t border-slate-200 bg-white px-6 py-5 space-y-4">
+          <div className="font-mono-tech text-[10px] text-slate-500 tracking-[0.1em] uppercase">
+            Navigation Menu
           </div>
           <nav className="grid grid-cols-1 gap-1.5 text-xs font-mono-tech">
             {navLinks.map((link) => (
@@ -100,19 +100,19 @@ export const Navbar: React.FC = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
-                className={`min-h-[44px] py-3 px-3.5 border flex items-center justify-between ${
+                className={`min-h-[44px] py-3 px-3.5 border rounded-lg flex items-center justify-between transition-colors ${
                   isActive(link.to)
-                    ? 'border-[#B58A2A] bg-[#F6F0DC] text-[#181816] font-semibold'
-                    : 'border-[#D9D4C8] bg-[#FFFFFF] text-[#77736A] hover:text-[#181816]'
+                    ? 'border-amber-600 bg-amber-50/50 text-slate-900 font-semibold'
+                    : 'border-slate-200 bg-white text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <span>{link.label}</span>
-                <span className="text-[10px] text-[#B58A2A]">{link.num}</span>
+                <span className="text-[10px] text-amber-700">{link.num}</span>
               </Link>
             ))}
           </nav>
 
-          <div className="pt-2 border-t border-[#D9D4C8]">
+          <div className="pt-2 border-t border-slate-200">
             <Link
               to="/contact"
               onClick={() => setMobileOpen(false)}

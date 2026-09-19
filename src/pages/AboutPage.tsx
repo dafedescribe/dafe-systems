@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { ArrowRight, Printer, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, GraduationCap, Briefcase, Code2, Wrench } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   const jsonLd = {
@@ -25,33 +25,26 @@ export const AboutPage: React.FC = () => {
       }
     ],
     url: 'https://www.dafe.name.ng/about',
-    description: 'AI Workflow Engineer, Systems Builder, and Educator currently at AppClick, specializing in industrial sales workflows and operational automation.'
+    description: 'Odafe Amalega: Systems Builder, AI Workflow Engineer, and Technical Educator at AppClick, specializing in industrial sales workflows and operational automation.'
   };
 
   const capabilities = [
-    'Workflow architecture',
-    'Python scripting',
-    'API integration',
-    'n8n',
-    'browser automation',
-    'data processing',
-    'Google integrations',
-    'AI workflows',
-    'web applications',
-    'AI-assisted media systems',
-    'technical education'
+    'Workflow Architecture',
+    'Python Development',
+    'REST & Webhook APIs',
+    'n8n Workflow Automation',
+    'Browser & Web Automation',
+    'Data Cleaning & Parquet Pipelines',
+    'Google Workspace & Cloud Sync',
+    'Deterministic AI Orchestration',
+    'Lightweight Web Applications',
+    'Corporate Technical Instruction'
   ];
-
-  const handlePrint = () => {
-    if (typeof window !== 'undefined') {
-      window.print();
-    }
-  };
 
   return (
     <div className="min-h-screen">
       <SeoHead
-        title="Odafe Amalega | AI Workflow Engineer & Educator"
+        title="About Odafe Amalega | AI Workflow Engineer & Educator"
         description="Odafe Amalega: AI Workflow Engineer, Systems Builder, and Educator currently at AppClick. Industrial commercial workflows, data processing, and practical technical instruction."
         canonicalPath="/about"
         jsonLd={jsonLd}
@@ -60,181 +53,161 @@ export const AboutPage: React.FC = () => {
       <main className="max-w-4xl mx-auto px-6 sm:px-12 py-12 sm:py-20 space-y-12">
         <Breadcrumbs items={[{ label: 'ABOUT', path: '/about' }]} />
 
-        {/* ─── ACTION BAR FOR DOSSIER ──────────────────────────── */}
-        <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-4 font-mono-tech text-xs text-[#77736A]">
-          <div className="flex items-center gap-2">
-            <span className="text-[#B58A2A] font-semibold">PERSONNEL FILE / ODAFE AMALEGA</span>
-            <span className="text-[#D9D4C8]">|</span>
-            <span>REF. DA-2026</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 text-[#181816] hover:text-[#B58A2A] transition-colors"
-            >
-              <Printer className="w-3.5 h-3.5" />
-              <span>Print Dossier</span>
-            </button>
-            <Link
-              to="/contact"
-              className="text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
-            >
-              Direct Enquiry →
-            </Link>
-          </div>
-        </div>
-
-        {/* ─── PHYSICAL PAPER DOSSIER SHEET ────────────────────── */}
-        <article className="catalogue-sheet p-8 sm:p-14 space-y-12 bg-[#FFFFFF]">
+        {/* ─── MAIN PROFILE CARD ─────────────────────────────────── */}
+        <article className="bg-white border border-slate-200 rounded-xl p-8 sm:p-14 shadow-sm space-y-12">
           
           {/* Header Block */}
-          <div className="border-b border-[#D9D4C8] pb-8 space-y-3">
-            <div className="flex flex-wrap items-center justify-between gap-2 font-mono-tech text-xs">
-              <span className="text-[#B58A2A] font-semibold tracking-wider">
-                TECHNICAL DOSSIER · RECORD OF COMPETENCE
+          <div className="border-b border-slate-100 pb-8 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">
+                Founder & Systems Builder
               </span>
-              <span className="px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
-                ACTIVE STATUS
+              <span className="text-xs font-mono-tech px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full font-medium">
+                Active Inquiries Open
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#181816] font-display">
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 font-display">
               Odafe Amalega
             </h1>
 
-            <div className="text-base sm:text-lg font-mono-tech text-[#181816]">
-              AI Workflow Engineer · Systems Builder · Educator
+            <div className="text-base sm:text-lg text-slate-700 font-body">
+              AI Workflow Engineer · Systems Builder · Technical Educator
             </div>
 
-            <div className="text-sm font-mono-tech text-[#77736A]">
-              Currently at <strong className="text-[#181816] font-semibold">AppClick</strong>
+            <div className="text-sm text-slate-500 font-body flex items-center gap-2">
+              <Briefcase className="w-4 h-4 text-slate-400" />
+              <span>Technical Instructor at <strong className="text-slate-900 font-semibold">AppClick Technology</strong></span>
             </div>
           </div>
 
-          {/* Dossier Body Copy */}
-          <section className="space-y-4 text-base sm:text-lg text-[#33312C] font-body leading-relaxed">
+          {/* Narrative Overview */}
+          <section className="space-y-5 text-base sm:text-lg text-slate-700 font-body leading-relaxed">
             <p>
-              I work across workflow automation, APIs, Python, AI, data and lightweight software.
+              I design and build workflow automation, custom data pipelines, and practical AI systems for businesses whose operations have outgrown manual handling.
             </p>
             <p>
-              My work usually begins with understanding how information moves through a process and identifying the steps a computer can handle reliably.
+              My work focuses on the commercial workflows of industrial and operational businesses: managing inbound RFQs, tracking tenders across public and private procurement boards, assembling complex quotations, and generating recurring operational reports.
             </p>
             <p>
-              My current commercial focus is industrial and operational businesses, particularly the work surrounding enquiries, RFQs, tenders, quotations, documents and reporting.
+              My background is in engineering (B.Eng from Federal University Oye-Ekiti). That engineering training fundamentally shapes how I approach software: I look at how information physically moves through a business, isolate the specific bottlenecks causing delay or error, and build reliable, deterministic systems that keep experienced people in control of key decisions.
             </p>
             <p>
-              I also teach AI and automation, which has made explaining complex systems in plain language a central part of how I work.
+              Alongside engineering systems, I teach applied AI, APIs, and automation at AppClick Technology. Teaching forces clarity — if you cannot explain how a workflow functions in plain terms without relying on buzzwords, you probably should not be building it for production.
             </p>
           </section>
 
-          {/* Capabilities Grid */}
-          <section className="border-t border-[#D9D4C8] pt-8 space-y-4">
-            <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#B58A2A] font-semibold">
-              [CAPABILITIES]
+          {/* Core Competencies */}
+          <section className="border-t border-slate-100 pt-8 space-y-4">
+            <div className="flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
+              <Code2 className="w-4 h-4 text-amber-600" />
+              <span>Core Technical Capabilities</span>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {capabilities.map((cap) => (
                 <div
                   key={cap}
-                  className="p-3 border border-[#D9D4C8] bg-[#FCFBF7] font-mono-tech text-xs text-[#181816] flex items-center gap-2"
+                  className="p-3 rounded-lg border border-slate-200 bg-slate-50/60 text-xs font-medium text-slate-800 flex items-center gap-2 font-body"
                 >
-                  <span className="w-1.5 h-1.5 bg-[#B58A2A] flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600 flex-shrink-0" />
                   <span>{cap}</span>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Selected Proof Matrix */}
-          <section className="border-t border-[#D9D4C8] pt-8 space-y-4">
-            <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#B58A2A] font-semibold">
-              [SELECTED PROOF]
+          {/* Selected Work Highlights */}
+          <section className="border-t border-slate-100 pt-8 space-y-4">
+            <div className="flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
+              <Wrench className="w-4 h-4 text-amber-600" />
+              <span>Representative Work & Proof</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 border border-[#D9D4C8] bg-[#FCFBF7] space-y-1">
-                <div className="font-bold text-base text-[#181816] font-body">
-                  1M+ rows
+              <div className="p-4 rounded-lg border border-slate-200 bg-slate-50/50 space-y-1.5">
+                <div className="font-bold text-base text-slate-900 font-body">
+                  1,000,000+ Rows Pipeline
                 </div>
-                <p className="text-xs sm:text-sm text-[#77736A] font-body">
-                  Processed programmatically in under ten minutes without spreadsheet failures.
+                <p className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
+                  Chunked Python pipeline processing reconciliation datasets in under 10 minutes without spreadsheet crashes.
                 </p>
               </div>
 
-              <div className="p-4 border border-[#D9D4C8] bg-[#FCFBF7] space-y-1">
-                <div className="font-bold text-base text-[#181816] font-body">
-                  End-to-end media pipeline
+              <div className="p-4 rounded-lg border border-slate-200 bg-slate-50/50 space-y-1.5">
+                <div className="font-bold text-base text-slate-900 font-body">
+                  End-to-End Media Assembly
                 </div>
-                <p className="text-xs sm:text-sm text-[#77736A] font-body">
-                  Transcription through processed video output orchestrated via Python and FFmpeg.
+                <p className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
+                  Automated audio transcription, semantic chunking, and programmatic video compilation orchestrated via Python and FFmpeg.
                 </p>
               </div>
 
-              <div className="p-4 border border-[#D9D4C8] bg-[#FCFBF7] space-y-1">
-                <div className="font-bold text-base text-[#181816] font-body">
-                  Business systems
+              <div className="p-4 rounded-lg border border-slate-200 bg-slate-50/50 space-y-1.5">
+                <div className="font-bold text-base text-slate-900 font-body">
+                  Industrial Commercial Systems
                 </div>
-                <p className="text-xs sm:text-sm text-[#77736A] font-body">
-                  Automation, websites, integrations and data workflows for operational teams.
+                <p className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
+                  Quotation management, RFQ extraction, and tender discovery pipelines built for engineering and supply businesses.
                 </p>
               </div>
 
-              <div className="p-4 border border-[#D9D4C8] bg-[#FCFBF7] space-y-1">
-                <div className="font-bold text-base text-[#181816] font-body">
-                  Teaching
+              <div className="p-4 rounded-lg border border-slate-200 bg-slate-50/50 space-y-1.5">
+                <div className="font-bold text-base text-slate-900 font-body">
+                  Practical Technical Training
                 </div>
-                <p className="text-xs sm:text-sm text-[#77736A] font-body">
-                  AI, automation, APIs and digital-product topics de-jargonized for nontechnical learners.
+                <p className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
+                  Hands-on curriculum on APIs, automation logic, and applied AI tools designed specifically for non-technical teams.
                 </p>
               </div>
             </div>
           </section>
 
           {/* Education & Credentials */}
-          <section className="border-t border-[#D9D4C8] pt-8 space-y-4">
-            <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#B58A2A] font-semibold">
-              [EDUCATION & FORMAL TRAINING]
+          <section className="border-t border-slate-100 pt-8 space-y-4">
+            <div className="flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
+              <GraduationCap className="w-4 h-4 text-amber-600" />
+              <span>Education & Credentials</span>
             </div>
 
-            <div className="space-y-4 text-sm text-[#181816]">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-[#D9D4C8] pb-3">
+            <div className="space-y-4 text-sm text-slate-800 font-body">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-100 pb-3">
                 <div>
-                  <div className="font-bold text-base font-body">Bachelor of Engineering (B.Eng)</div>
-                  <div className="text-xs text-[#77736A] font-mono-tech">Federal University Oye-Ekiti</div>
+                  <div className="font-bold text-base text-slate-900">Bachelor of Engineering (B.Eng)</div>
+                  <div className="text-xs text-slate-500 font-mono-tech">Federal University Oye-Ekiti</div>
                 </div>
-                <div className="font-mono-tech text-xs text-[#77736A] mt-1 sm:mt-0">
-                  Engineering Foundations
+                <div className="text-xs text-slate-500 mt-1 sm:mt-0">
+                  Engineering Foundations & Analytical Modelling
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-[#D9D4C8] pb-3">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-100 pb-3">
                 <div>
-                  <div className="font-bold text-base font-body">ALX Training</div>
-                  <div className="text-xs text-[#77736A] font-mono-tech">Virtual Assistance & Operations</div>
+                  <div className="font-bold text-base text-slate-900">ALX Professional Programmes</div>
+                  <div className="text-xs text-slate-500 font-mono-tech">AI Career Essentials & Data Analytics</div>
                 </div>
-                <div className="font-mono-tech text-xs text-[#77736A] mt-1 sm:mt-0">
-                  Professional Programme
+                <div className="text-xs text-slate-500 mt-1 sm:mt-0">
+                  Certified Professional Track
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Dossier Footer Actions */}
-          <div className="border-t border-[#D9D4C8] pt-8 flex flex-wrap items-center justify-between gap-4">
+          {/* Footer Actions */}
+          <div className="border-t border-slate-100 pt-8 flex flex-wrap items-center justify-between gap-4">
             <Link
               to="/work"
-              className="btn-primary px-6 py-3.5"
+              className="btn-primary px-6 py-3"
             >
-              <span>View Work</span>
+              <span>Explore Verified Work</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
             <Link
               to="/contact"
-              className="btn-secondary px-6 py-3.5"
+              className="btn-secondary px-6 py-3"
             >
-              <span>Send Workflow</span>
+              <span>Discuss a Workflow</span>
             </Link>
           </div>
 

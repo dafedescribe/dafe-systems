@@ -48,20 +48,20 @@ export const TenderPage: React.FC = () => {
 
         {/* ─── HERO ────────────────────────────────────────────── */}
         <section className="space-y-6">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [PROCUREMENT SURVEILLANCE / ARCHITECTURE]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Procurement Monitoring & Opportunity Triage
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#181816] font-display leading-[1.12]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 font-display leading-[1.12]">
             Stop checking the same tender sources every morning.
           </h1>
 
-          <div className="space-y-4 text-base sm:text-lg text-[#33312C] font-body leading-relaxed">
+          <div className="space-y-4 text-base sm:text-lg text-slate-700 font-body leading-relaxed">
             <p>
-              When a team already knows which procurement portals, websites and buyer sources matter, repeatedly checking them is an information-handling problem.
+              When a commercial team already knows which portals, utility websites, and institutional boards matter, repeatedly checking them every morning is an information extraction problem.
             </p>
             <p>
-              A monitoring workflow can collect newly published opportunities, structure useful details and present a smaller review queue.
+              Automated monitoring pipelines harvest newly published notices, parse attached bid criteria, and surface a prioritized triage queue before your working day begins.
             </p>
           </div>
         </section>
@@ -73,77 +73,74 @@ export const TenderPage: React.FC = () => {
 
         {/* ─── CORE PRINCIPLE ──────────────────────────────────── */}
         <section className="catalogue-sheet p-6 sm:p-8 space-y-4">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [OPERATIONAL MANDATE]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Operational Governance
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display">
-            The system finds. Your team decides.
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
+            Automate discovery and summarization. Keep bidding decisions human.
           </h2>
 
-          <div className="space-y-3 text-sm sm:text-base text-[#77736A] font-body leading-relaxed">
+          <div className="space-y-3 text-sm sm:text-base text-slate-600 font-body leading-relaxed">
             <p>
-              It should not pretend to know whether your company can fulfil a complex tender.
+              Software should never attempt to evaluate complex technical specifications or commit bonding capacity unsupervised. Estimating margin, assessing manufacturing capability, and weighing operational risk require seasoned human judgment.
             </p>
             <p>
-              Commercial and technical judgement remains with your team.
-            </p>
-            <p>
-              The goal is to reduce the work required to discover and organise opportunities worth evaluating.
+              Our monitoring systems focus exclusively on eliminating the manual research layer—scanning fragmented procurement portals, extracting mandatory qualification terms, filtering out noise, and delivering a clean triage digest directly to your bidding team.
             </p>
           </div>
 
-          <div className="pt-4 border-t border-[#D9D4C8] grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono-tech text-[#181816]">
+          <div className="pt-4 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono-tech text-slate-800">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#B58A2A]" />
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
               <span>Multi-portal headless crawlers</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#B58A2A]" />
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
               <span>Scope & mandatory bond extraction</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#B58A2A]" />
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
               <span>Negative keyword exclusion</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#B58A2A]" />
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
               <span>Unified commercial review digest</span>
             </div>
           </div>
         </section>
 
         {/* ─── RELEVANT NOTES ──────────────────────────────────── */}
-        <section className="border-t border-[#D9D4C8] pt-8 space-y-4">
-          <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#77736A]">
-            [RELATED TECHNICAL BULLETIN]
+        <section className="border-t border-slate-200 pt-8 space-y-4">
+          <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-slate-500">
+            Related Technical Articles
           </div>
           <Link
             to="/notes/automate-tender-monitoring"
             className="catalogue-plate p-5 block group"
           >
-            <div className="font-mono-tech text-[10px] text-[#B58A2A] uppercase mb-1 font-semibold">
-              TECHNICAL NOTE / 003
+            <div className="font-mono-tech text-[10px] text-amber-700 uppercase mb-1 font-semibold">
+              Technical Note 03
             </div>
-            <div className="text-xl font-bold text-[#181816] font-display group-hover:text-[#B58A2A] transition-colors mb-2">
+            <div className="text-xl font-bold text-slate-900 font-display group-hover:text-amber-700 transition-colors mb-2">
               How to Automate Tender Monitoring Across Multiple Procurement Portals
             </div>
-            <div className="text-xs text-[#77736A] font-body">
+            <div className="text-xs text-slate-600 font-body">
               Why keyword-based alerts create noise and how multi-stage filtering provides actionable opportunity queues.
             </div>
           </Link>
         </section>
 
         {/* ─── CTA ─────────────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-5 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            [TENDER INTAKE AUDIT]
+        <section className="catalogue-sheet p-8 space-y-5 border-t-2 border-t-amber-600">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Opportunity Pipeline Audit
           </div>
-          <h2 className="text-2xl font-bold text-[#181816] font-display">
+          <h2 className="text-2xl font-bold text-slate-900 font-display">
             Show Me Your Tender Sources
           </h2>
-          <p className="text-sm sm:text-base text-[#77736A] font-body leading-relaxed">
-            List the procurement boards, utility sites, or buyer portals your commercial team monitors. We will assess the extraction architecture.
+          <p className="text-sm sm:text-base text-slate-600 font-body leading-relaxed">
+            List the procurement boards, utility sites, or buyer portals your commercial team monitors. We will assess the extraction architecture and draft a unified triage queue.
           </p>
           <div className="pt-2">
             <Link

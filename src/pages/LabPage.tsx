@@ -20,21 +20,21 @@ export const LabPage: React.FC = () => {
 
         {/* ─── HEADER ──────────────────────────────────────────── */}
         <section className="space-y-4 max-w-4xl">
-          <div className="flex items-center gap-2 font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            <FlaskConical className="w-4 h-4 text-[#B58A2A]" />
-            <span>[EXPERIMENTAL SANDBOX / PROTOTYPES]</span>
+          <div className="flex items-center gap-2 font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            <FlaskConical className="w-4 h-4 text-amber-700" />
+            <span>Experimental Sandbox & Prototypes</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#181816] font-display">
-            Experiments, prototypes and things I wanted to test.
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 font-display">
+            Experiments, prototypes and exploratory builds.
           </h1>
 
-          <p className="text-base sm:text-lg text-[#77736A] font-body leading-relaxed max-w-2xl">
-            This section demonstrates range. It is where I test technical concepts, build quick prototypes, and explore media automation before turning them into client solutions.
+          <p className="text-base sm:text-lg text-slate-600 font-body leading-relaxed max-w-2xl">
+            Where I test emerging technical patterns, prototype data parsers, and explore media automation workflows before deploying them into production environments.
           </p>
           
-          <div className="font-mono-tech text-xs text-[#77736A]">
-            INDEX STATUS: noindex, follow (Sandbox artifacts)
+          <div className="font-mono-tech text-xs text-slate-400">
+            SANDBOX BUILDS · NON-INDEXED EXPLORATIONS
           </div>
         </section>
 
@@ -46,34 +46,34 @@ export const LabPage: React.FC = () => {
               className="catalogue-sheet p-6 sm:p-8 space-y-4 flex flex-col justify-between"
             >
               <div className="space-y-3">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-2 font-mono-tech text-xs">
-                  <span className="text-[#B58A2A] font-semibold">
-                    [{item.id.toUpperCase()}] · {item.type}
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2 font-mono-tech text-xs">
+                  <span className="text-amber-700 font-semibold uppercase">
+                    {item.id.toUpperCase()} · {item.type}
                   </span>
-                  <span className="text-[#77736A]">
+                  <span className="text-slate-500">
                     {item.date}
                   </span>
                 </div>
 
-                <h2 className="text-xl font-bold text-[#181816] font-display">
+                <h2 className="text-xl font-bold text-slate-900 font-display">
                   {item.title}
                 </h2>
 
-                <p className="text-sm text-[#33312C] font-body leading-relaxed">
+                <p className="text-sm text-slate-600 font-body leading-relaxed">
                   {item.summary}
                 </p>
 
-                <div className="p-3 bg-[#FCFBF7] border border-[#D9D4C8] text-xs text-[#77736A] font-body">
-                  <strong className="font-mono-tech text-[#181816]">Technical Note: </strong>
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded text-xs text-slate-600 font-body">
+                  <strong className="font-mono-tech text-slate-900">Technical Note: </strong>
                   {item.notes}
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-2 pt-3 border-t border-[#D9D4C8]">
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-slate-200">
                 {item.tech.map((t) => (
                   <span
                     key={t}
-                    className="px-2 py-0.5 border border-[#D9D4C8] bg-[#FFFFFF] font-mono-tech text-[11px] text-[#77736A]"
+                    className="px-2 py-0.5 border border-slate-200 bg-white rounded font-mono-tech text-[11px] text-slate-600"
                   >
                     {t}
                   </span>
@@ -84,14 +84,14 @@ export const LabPage: React.FC = () => {
         </section>
 
         {/* ─── FOOTER CTA ──────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-4 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            PRODUCTION SYSTEMS
+        <section className="catalogue-sheet p-8 space-y-4 border-t-2 border-t-amber-600">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Production Systems
           </div>
-          <h2 className="text-2xl font-bold text-[#181816] font-display">
+          <h2 className="text-2xl font-bold text-slate-900 font-display">
             Looking for tested, production-grade systems?
           </h2>
-          <p className="text-sm text-[#77736A] font-body">
+          <p className="text-sm text-slate-600 font-body">
             Explore our verified case studies or submit a commercial workflow for review.
           </p>
           <div className="pt-2 flex flex-wrap gap-4">

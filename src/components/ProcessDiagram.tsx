@@ -1,74 +1,117 @@
 import React from 'react';
+import { 
+  FileText, 
+  Cpu, 
+  UserCheck, 
+  CheckCircle2, 
+  ArrowRight, 
+  Search, 
+  Filter, 
+  Bell, 
+  Database,
+  Layers,
+  Sparkles
+} from 'lucide-react';
 
 interface ProcessDiagramProps {
   type?: 'commercial' | 'rfq' | 'tender' | 'quotation' | 'hero-schematic';
 }
 
 export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commercial' }) => {
-  // Hero Schematic: 7/5 layout companion diagram
+  // Hero Workflow Architecture Diagram
   if (type === 'hero-schematic') {
+    const steps = [
+      {
+        num: '01',
+        title: 'Unstructured Influx',
+        desc: 'Incoming customer emails, engineering PDFs, and custom Excel sheets arrive through commercial channels.',
+        badge: 'Inflow',
+        badgeColor: 'bg-slate-100 text-slate-700',
+        icon: FileText
+      },
+      {
+        num: '02',
+        title: 'Automated Extraction',
+        desc: 'Deterministic parsers and AI models extract line items, match SKUs, normalize quantities, and flag missing specifications.',
+        badge: 'Automated',
+        badgeColor: 'bg-amber-100 text-amber-800 font-semibold',
+        icon: Cpu
+      },
+      {
+        num: '03',
+        title: 'Engineering Review',
+        desc: 'Sales engineers evaluate margin thresholds, inventory availability, and technical constraints.',
+        badge: 'Human Checkpoint',
+        badgeColor: 'bg-slate-900 text-white font-medium',
+        icon: UserCheck
+      },
+      {
+        num: '04',
+        title: 'System Dispatch',
+        desc: 'Binding quotation is assembled, dispatched to the customer, and synchronized back into ERP and CRM databases.',
+        badge: 'Verified',
+        badgeColor: 'bg-emerald-50 text-emerald-800 font-medium',
+        icon: CheckCircle2
+      }
+    ];
+
     return (
-      <div className="catalogue-sheet p-6 sm:p-7 space-y-5" role="region" aria-label="Operational Pipeline Schematic">
-        <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
-          <span className="font-mono-tech text-[10px] tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
-            SCHEMATIC / SCH-001
-          </span>
-          <span className="font-mono-tech text-[10px] text-[#77736A] uppercase">
-            OPERATIONAL PIPELINE
+      <div 
+        className="bg-white border border-slate-200 rounded-xl p-6 sm:p-7 shadow-sm space-y-6" 
+        role="region" 
+        aria-label="Operational Workflow Architecture"
+      >
+        <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse" />
+            <span className="font-mono-tech text-xs tracking-wider text-slate-900 uppercase font-semibold">
+              Operational Pipeline Architecture
+            </span>
+          </div>
+          <span className="text-xs text-slate-500 font-medium">
+            Automated Intake · Human Sign-off
           </span>
         </div>
 
-        <div className="space-y-2.5 font-mono-tech text-xs">
-          {/* Step 1: Input */}
-          <div className="p-3 border border-[#D9D4C8] bg-[#FCFBF7] flex items-start justify-between gap-3">
-            <div>
-              <span className="text-[10px] text-[#B58A2A] font-semibold block">01 / INPUT</span>
-              <span className="text-[#181816] font-medium font-body text-sm">Unstructured Influx</span>
-              <span className="text-[11px] text-[#77736A] block mt-0.5">Emails, multi-page PDFs, messy spreadsheets</span>
-            </div>
-            <span className="text-[10px] px-1.5 py-0.5 bg-[#EBE5D8] text-[#33312C]">RAW</span>
-          </div>
+        <div className="space-y-3">
+          {steps.map((step, idx) => {
+            const Icon = step.icon;
+            return (
+              <div key={step.num} className="relative">
+                <div className="p-4 rounded-lg border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-colors flex items-start gap-4">
+                  <div className="w-9 h-9 rounded-md bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 text-slate-700 shadow-2xs">
+                    <Icon className="w-4 h-4 text-slate-700" />
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-2 mb-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono-tech text-slate-400 font-medium">{step.num}</span>
+                        <h4 className="text-sm font-bold text-slate-900 font-body">{step.title}</h4>
+                      </div>
+                      <span className={`text-[11px] px-2 py-0.5 rounded-full ${step.badgeColor}`}>
+                        {step.badge}
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed font-body">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
 
-          <div className="text-center text-[#B58A2A] text-xs font-semibold py-0.5">↓</div>
-
-          {/* Step 2: Process (Automated) */}
-          <div className="p-3 border border-[#B58A2A] bg-[#F6F0DC] flex items-start justify-between gap-3">
-            <div>
-              <span className="text-[10px] text-[#795B18] font-semibold block">02 / PROCESS [AUTOMATED]</span>
-              <span className="text-[#181816] font-medium font-body text-sm">Extraction & Normalization</span>
-              <span className="text-[11px] text-[#77736A] block mt-0.5">Data parsing, schema matching, catalog lookup</span>
-            </div>
-            <span className="text-[10px] px-1.5 py-0.5 bg-[#B58A2A] text-[#FFFFFF] font-semibold">SYSTEM</span>
-          </div>
-
-          <div className="text-center text-[#B58A2A] text-xs font-semibold py-0.5">↓</div>
-
-          {/* Step 3: Decision (Human) */}
-          <div className="p-3 border border-[#181816] bg-[#FFFFFF] flex items-start justify-between gap-3">
-            <div>
-              <span className="text-[10px] text-[#33312C] font-semibold block">03 / DECISION [HUMAN]</span>
-              <span className="text-[#181816] font-medium font-body text-sm">Commercial Judgement</span>
-              <span className="text-[11px] text-[#77736A] block mt-0.5">Pricing, margin sizing, engineering feasibility</span>
-            </div>
-            <span className="text-[10px] px-1.5 py-0.5 bg-[#181816] text-[#FCFBF7] font-semibold">HUMAN</span>
-          </div>
-
-          <div className="text-center text-[#B58A2A] text-xs font-semibold py-0.5">↓</div>
-
-          {/* Step 4: Output */}
-          <div className="p-3 border border-[#D9D4C8] bg-[#F5F1E7] flex items-start justify-between gap-3">
-            <div>
-              <span className="text-[10px] text-[#77736A] font-semibold block">04 / OUTPUT</span>
-              <span className="text-[#181816] font-medium font-body text-sm">Dispatched Result</span>
-              <span className="text-[11px] text-[#77736A] block mt-0.5">Approved quote, CRM update, rolling report</span>
-            </div>
-            <span className="text-[10px] px-1.5 py-0.5 bg-[#EBE5D8] text-[#33312C]">VERIFIED</span>
-          </div>
+                {idx < steps.length - 1 && (
+                  <div className="flex justify-center py-1">
+                    <div className="w-0.5 h-3 bg-slate-200" />
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
-        <div className="pt-2 border-t border-[#D9D4C8] flex items-center justify-between text-[10px] font-mono-tech text-[#77736A]">
-          <span>RULE: AUTOMATE PREPARATION</span>
-          <span className="text-[#B58A2A]">KEEP JUDGEMENT HUMAN</span>
+        <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span className="font-medium text-slate-700">Deterministic preparation</span>
+          <span className="text-amber-700 font-semibold">Human commercial control</span>
         </div>
       </div>
     );
@@ -77,108 +120,109 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
   // RFQ Architecture Diagram
   if (type === 'rfq') {
     return (
-      <div className="catalogue-sheet p-6 sm:p-8 my-8" role="region" aria-label="RFQ Intake and Preparation Engine Schematic">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 mb-6">
-          <span className="font-mono-tech text-xs tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
-            [SCHEMATIC / RFQ-001]
-          </span>
-          <span className="font-mono-tech text-xs text-[#77736A] uppercase">
-            INTAKE & PREPARATION ENGINE
+      <div 
+        className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 my-8 shadow-sm" 
+        role="region" 
+        aria-label="RFQ Intake and Preparation Engine Architecture"
+      >
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-4 mb-6">
+          <div className="flex items-center gap-2">
+            <Layers className="w-4 h-4 text-amber-600" />
+            <span className="text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
+              RFQ Intake & Extraction Architecture
+            </span>
+          </div>
+          <span className="text-xs text-slate-500">
+            End-to-End Preparation Engine
           </span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Phase 1 */}
-          <div className="p-5 border border-[#D9D4C8] bg-[#FCFBF7]">
-            <div className="font-mono-tech text-xs text-[#77736A] uppercase mb-2">
-              Phase 01 · Inflow
+          <div className="p-5 rounded-lg border border-slate-200 bg-slate-50/50">
+            <div className="text-xs font-mono-tech text-slate-500 uppercase tracking-wider mb-2">
+              Phase 01 · Inbound Sources
             </div>
-            <div className="text-base font-bold text-[#181816] mb-3 font-body">
-              Incoming Sources
+            <div className="text-base font-bold text-slate-900 mb-3 font-body">
+              Multi-Format Intake
             </div>
-            <ul className="space-y-1.5 text-xs text-[#77736A] font-mono-tech">
+            <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Inbound Customer Emails
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-600" /> Inbound Customer Emails
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Multi-page PDF Drawings & Specs
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-600" /> Multi-page PDF Drawings & Specifications
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Excel Spreadsheets (Custom Columns)
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-600" /> Non-standard Vendor Excel Sheets
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Scanned Paper RFQs
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-600" /> Scanned Quotation Requests
               </li>
             </ul>
           </div>
 
-          {/* Phase 2: Gold mark automated */}
-          <div className="p-5 border border-[#B58A2A] bg-[#F6F0DC] relative">
-            <div className="absolute -top-2.5 right-4 bg-[#B58A2A] text-[#FFFFFF] px-2 py-0.5 font-mono-tech text-[10px] uppercase tracking-wider font-semibold">
-              AUTOMATED PREPARATION
+          {/* Phase 2: Automated Preparation */}
+          <div className="p-5 rounded-lg border border-amber-300 bg-amber-50/40 relative">
+            <div className="inline-block bg-amber-700 text-white text-[10px] px-2 py-0.5 rounded font-semibold uppercase tracking-wider mb-2">
+              Automated Parsing Pipeline
             </div>
-            <div className="font-mono-tech text-xs text-[#795B18] uppercase mb-2 font-semibold">
-              Phase 02 · System Prepares
-            </div>
-            <div className="text-base font-bold text-[#181816] mb-3 font-body">
+            <div className="text-base font-bold text-slate-900 mb-3 font-body">
               Normalized RFQ Dossier
             </div>
-            <ul className="space-y-1.5 text-xs text-[#33312C] font-mono-tech">
+            <ul className="space-y-2 text-xs text-slate-700">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#181816]" /> Verified Customer Identity & CRM Match
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Verified Customer Identity & CRM Match
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#181816]" /> Exact Part Numbers & ERP SKUs
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Exact Part Numbers & ERP SKU Resolution
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#181816]" /> Line-item Quantities & Units
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Line-Item Quantities & Unit Normalization
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#181816]" /> Extracted Tolerances & Material Grades
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Extracted Tolerances & Material Grades
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#181816]" /> Delivery Deadlines & Lead Times
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#B58A2A]" /> Flagged Missing Information
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" /> Required Delivery Dates & Lead Times
               </li>
             </ul>
           </div>
 
-          {/* Phase 3: Human Decides */}
-          <div className="p-5 border border-[#181816] bg-[#FFFFFF]">
-            <div className="font-mono-tech text-xs text-[#33312C] uppercase mb-2 font-semibold">
+          {/* Phase 3: Commercial Desk */}
+          <div className="p-5 rounded-lg border border-slate-200 bg-white shadow-2xs">
+            <div className="text-xs font-mono-tech text-slate-500 uppercase tracking-wider mb-2">
               Phase 03 · Commercial Desk
             </div>
-            <div className="text-base font-bold text-[#181816] mb-3 font-body">
-              Human Judgement
+            <div className="text-base font-bold text-slate-900 mb-3 font-body">
+              Sales Engineering Sign-off
             </div>
-            <ul className="space-y-1.5 text-xs text-[#77736A] font-mono-tech">
+            <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#77736A]" /> Technical Feasibility Sign-off
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-700" /> Engineering Feasibility Approval
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#77736A]" /> Current Material Pricing & Margin
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-700" /> Live Margin & Pricing Evaluation
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#77736A]" /> Shop Floor Availability
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-700" /> Shop Floor Production Availability
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#77736A]" /> Terms, Exceptions & Payment
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-700" /> Terms & Payment Exceptions
               </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#181816]" /> Final Binding Quotation
+              <li className="flex items-center gap-2 font-medium text-slate-900">
+                <CheckCircle2 className="w-3.5 h-3.5 text-slate-900 flex-shrink-0" /> Final Dispatched Quotation
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-6 pt-4 border-t border-[#D9D4C8] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono-tech text-[#77736A]">
-          <span className="text-[#181816] font-semibold">
-            PRINCIPLE: Automate preparation, never unmonitored commitment.
+        <div className="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-600">
+          <span className="font-semibold text-slate-900">
+            Automating repetitive extraction while keeping commercial decisions with your engineers.
           </span>
-          <span className="text-[#B58A2A]">
-            Processing latency: &lt; 3 mins per batch
+          <span className="text-amber-700 font-mono-tech font-medium">
+            Processing speed: &lt; 3 mins per batch
           </span>
         </div>
       </div>
@@ -188,49 +232,55 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
   // Tender Pipeline Diagram
   if (type === 'tender') {
     const steps = [
-      { num: '01', name: 'Monitor', role: 'System', desc: 'Polling target portals & public trade boards.' },
-      { num: '02', name: 'Detect', role: 'System', desc: 'Identify net-new notices against hash database.' },
-      { num: '03', name: 'Extract', role: 'System', desc: 'Scope summary, submission dates & bond values.' },
-      { num: '04', name: 'Filter', role: 'System', desc: 'Capability score, regional filter & exclusions.' },
-      { num: '05', name: 'Alert', role: 'System', desc: 'Consolidated morning digest to commercial desk.' },
-      { num: '06', name: 'Review', role: 'Human', desc: 'Estimators evaluate qualified opportunities.' },
+      { num: '01', name: 'Monitor', desc: 'Continuous polling of procurement portals and trade boards.', icon: Search },
+      { num: '02', name: 'Deduplicate', desc: 'Identify new notices against existing hash database.', icon: Database },
+      { num: '03', name: 'Extract', desc: 'Parse scope summary, submission deadlines, and bond requirements.', icon: FileText },
+      { num: '04', name: 'Filter', desc: 'Score capability match against regional criteria and exclusions.', icon: Filter },
+      { num: '05', name: 'Notify', desc: 'Generate consolidated morning briefing for commercial leads.', icon: Bell },
+      { num: '06', name: 'Review', desc: 'Estimators evaluate qualified, high-margin opportunities.', icon: UserCheck }
     ];
 
     return (
-      <div className="catalogue-sheet p-6 sm:p-8 my-8" role="region" aria-label="Tender Discovery and Qualification Pipeline Schematic">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 mb-6">
-          <span className="font-mono-tech text-xs tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
-            [SCHEMATIC / TND-001]
-          </span>
-          <span className="font-mono-tech text-xs text-[#77736A] uppercase">
-            TENDER DISCOVERY & QUALIFICATION
+      <div 
+        className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 my-8 shadow-sm" 
+        role="region" 
+        aria-label="Tender Discovery and Qualification Pipeline Architecture"
+      >
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-4 mb-6">
+          <div className="flex items-center gap-2">
+            <Search className="w-4 h-4 text-amber-600" />
+            <span className="text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
+              Tender Discovery & Qualification Pipeline
+            </span>
+          </div>
+          <span className="text-xs text-slate-500 font-medium">
+            Continuous Discovery Architecture
           </span>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
           {steps.map((step) => {
-            const isHuman = step.role === 'Human';
+            const Icon = step.icon;
+            const isHuman = step.name === 'Review';
             return (
               <div
                 key={step.num}
-                className={`p-4 border ${
+                className={`p-4 rounded-lg border ${
                   isHuman
-                    ? 'border-[#181816] bg-[#FFFFFF]'
-                    : 'border-[#D9D4C8] bg-[#FCFBF7]'
+                    ? 'border-slate-900 bg-slate-900 text-white'
+                    : 'border-slate-200 bg-slate-50/60 text-slate-900'
                 }`}
               >
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold">
-                    [{step.num}]
+                <div className="flex items-center justify-between mb-2">
+                  <span className={`font-mono-tech text-xs font-semibold ${isHuman ? 'text-amber-400' : 'text-amber-700'}`}>
+                    {step.num}
                   </span>
-                  <span className="font-mono-tech text-[9px] px-1 py-0.2 bg-[#EBE5D8] text-[#33312C]">
-                    {step.role.toUpperCase()}
-                  </span>
+                  <Icon className={`w-3.5 h-3.5 ${isHuman ? 'text-slate-300' : 'text-slate-500'}`} />
                 </div>
-                <div className="font-bold text-sm text-[#181816] mb-1 font-body">
+                <div className="font-bold text-sm mb-1 font-body">
                   {step.name}
                 </div>
-                <div className="text-[11px] text-[#77736A] leading-relaxed">
+                <div className={`text-xs leading-relaxed ${isHuman ? 'text-slate-300' : 'text-slate-600'}`}>
                   {step.desc}
                 </div>
               </div>
@@ -238,8 +288,9 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
           })}
         </div>
 
-        <div className="mt-6 pt-4 border-t border-[#D9D4C8] font-mono-tech text-xs text-[#181816] font-semibold">
-          The system finds. Your team decides.
+        <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-600 flex items-center justify-between">
+          <span>Automated monitoring surfaces qualified opportunities without manual daily portal checking.</span>
+          <span className="font-semibold text-slate-900">Commercial estimation stays human.</span>
         </div>
       </div>
     );
@@ -247,66 +298,73 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
 
   // Commercial Industrial Lifecycle Diagram
   const stages = [
-    { code: '01', title: 'Opportunity', role: 'External' },
-    { code: '02', title: 'Enquiry / RFQ', role: 'Intake' },
-    { code: '03', title: 'Review', role: 'Preparation' },
-    { code: '04', title: 'Quote', role: 'Judgement' },
-    { code: '05', title: 'Follow-up', role: 'Tracking' },
-    { code: '06', title: 'Order', role: 'Commercial' },
-    { code: '07', title: 'Reporting', role: 'Intelligence' },
+    { code: '01', title: 'Opportunity Discovery', subtitle: 'Portal & inbound tracking' },
+    { code: '02', title: 'Enquiry / RFQ', subtitle: 'Document extraction' },
+    { code: '03', title: 'Specification Review', subtitle: 'SKU & requirement mapping' },
+    { code: '04', title: 'Quotation Preparation', subtitle: 'Pricing & margin sign-off' },
+    { code: '05', title: 'Follow-Up Tracking', subtitle: 'Structured cadence' },
+    { code: '06', title: 'Order Execution', subtitle: 'ERP & shop handoff' },
+    { code: '07', title: 'Performance Reporting', subtitle: 'Weekly operational metrics' },
   ];
 
   return (
-    <div className="catalogue-sheet p-6 sm:p-8 my-8" role="region" aria-label="Commercial Order Lifecycle Flow Schematic">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3 mb-6">
-        <div className="font-mono-tech text-xs tracking-[0.1em] text-[#B58A2A] uppercase font-semibold">
-          [FLOW-IND-01: THE COMMERCIAL ORDER LIFECYCLE]
+    <div 
+      className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 my-8 shadow-sm" 
+      role="region" 
+      aria-label="Commercial Order Lifecycle Flow Schematic"
+    >
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4 mb-6">
+        <div className="flex items-center gap-2">
+          <Database className="w-4 h-4 text-amber-600" />
+          <span className="text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
+            The Commercial Order Lifecycle
+          </span>
         </div>
-        <div className="font-mono-tech text-xs text-[#77736A]">
+        <span className="text-xs text-slate-500">
           End-to-End Operational Surface
-        </div>
+        </span>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5">
         {stages.map((stage, idx) => {
-          const isQuote = stage.code === '04';
+          const isHighlight = stage.code === '04';
           return (
             <div
               key={stage.code}
-              className={`p-3.5 border ${
-                isQuote
-                  ? 'border-[#181816] bg-[#F5F1E7]'
-                  : 'border-[#D9D4C8] bg-[#FCFBF7]'
+              className={`p-3.5 rounded-lg border ${
+                isHighlight
+                  ? 'border-amber-400 bg-amber-50/50 shadow-2xs'
+                  : 'border-slate-200 bg-slate-50/50'
               }`}
             >
               <div className="flex items-center justify-between mb-1.5">
-                <span className="font-mono-tech text-[11px] text-[#B58A2A] font-semibold">
+                <span className="font-mono-tech text-[11px] text-amber-700 font-semibold">
                   {stage.code}
                 </span>
                 {idx < stages.length - 1 && (
-                  <span className="text-[#AAA397] font-mono-tech text-[10px]">
+                  <span className="text-slate-300 font-mono-tech text-[10px]">
                     →
                   </span>
                 )}
               </div>
-              <div className="font-bold text-xs sm:text-sm text-[#181816] leading-tight mb-1 font-body">
+              <div className="font-bold text-xs sm:text-sm text-slate-900 leading-tight mb-1 font-body">
                 {stage.title}
               </div>
-              <div className="font-mono-tech text-[10px] text-[#77736A] uppercase">
-                {stage.role}
+              <div className="text-[11px] text-slate-500">
+                {stage.subtitle}
               </div>
             </div>
           );
         })}
       </div>
 
-      <div className="mt-6 pt-5 border-t border-[#D9D4C8] space-y-1">
-        <div className="text-sm sm:text-base font-semibold text-[#181816] font-display">
-          The valuable judgement stays with your people.
-        </div>
-        <div className="text-sm sm:text-base text-[#77736A] font-body">
-          The repeated information work does not necessarily have to.
-        </div>
+      <div className="mt-6 pt-5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm text-slate-600">
+        <span className="font-medium text-slate-900">
+          Experienced sales engineers retain control over commitments and margins.
+        </span>
+        <span className="text-amber-700 font-medium">
+          Routine manual transcription is handled systematically.
+        </span>
       </div>
     </div>
   );

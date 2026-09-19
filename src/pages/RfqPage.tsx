@@ -48,26 +48,23 @@ export const RfqPage: React.FC = () => {
 
         {/* ─── HERO ────────────────────────────────────────────── */}
         <section className="space-y-6">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [SPECIFICATION INTAKE / RFQ ARCHITECTURE]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Specification Intake & RFQ Architecture
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#181816] font-display leading-[1.12]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 font-display leading-[1.12]">
             Organise the RFQ before your team starts quoting.
           </h1>
 
-          <div className="space-y-4 text-base sm:text-lg text-[#33312C] font-body leading-relaxed">
+          <div className="space-y-4 text-base sm:text-lg text-slate-700 font-body leading-relaxed">
             <p>
-              Industrial RFQs rarely arrive as clean structured data.
+              Industrial RFQs rarely arrive in clean, standardized formats. They land across customer email threads as dense multi-page PDFs, technical drawings, and ad-hoc spreadsheets with ambiguous customer part numbers.
             </p>
             <p>
-              They arrive as email text, PDFs, spreadsheets, drawings and attachments.
+              Before an estimator or sales engineer can evaluate margins and calculate bids, staff spend hours manually re-typing specifications, validating line items, and cross-referencing internal ERP catalogs.
             </p>
-            <p>
-              Before a salesperson or engineer can make a useful decision, somebody often has to organise that information first.
-            </p>
-            <p className="font-semibold text-[#181816]">
-              That administrative layer is where automation can help.
+            <p className="font-semibold text-slate-900">
+              Deterministic automation handles this entire extraction layer—parsing raw attachments and delivering structured quotation drafts directly into your existing workflow.
             </p>
           </div>
         </section>
@@ -79,60 +76,60 @@ export const RfqPage: React.FC = () => {
 
         {/* ─── CORE VALUE PRINCIPLE ────────────────────────────── */}
         <section className="catalogue-sheet p-6 sm:p-8 space-y-4">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [CORE PRINCIPLE]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Operational Principle
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
             Automate preparation, not judgement.
           </h2>
 
-          <div className="space-y-3 text-sm sm:text-base text-[#77736A] font-body leading-relaxed">
+          <div className="space-y-3 text-sm sm:text-base text-slate-600 font-body leading-relaxed">
             <p>
-              The objective is not to let software make commercial or engineering commitments unsupervised.
+              The objective is not to let an algorithm commit your business to pricing or delivery timelines without oversight.
             </p>
             <p>
-              It is to stop skilled people spending unnecessary time finding files, copying line items, re-entering customer information and rebuilding the same RFQ structure.
+              The goal is to stop skilled engineers and estimators from burning hours copying line items, cross-referencing customer codes, and re-entering customer details into quotation software.
             </p>
           </div>
 
-          <div className="pt-4 border-t border-[#D9D4C8] grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono-tech text-[#181816]">
+          <div className="pt-4 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono-tech text-slate-800">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#B58A2A]" />
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
               <span>Multi-page table extraction from PDFs</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#B58A2A]" />
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
               <span>Customer part numbers mapped to ERP SKUs</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#B58A2A]" />
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
               <span>Incomplete specs flagged before engineering review</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#B58A2A]" />
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
               <span>Zero unattended price commitments</span>
             </div>
           </div>
         </section>
 
         {/* ─── RELEVANT TECHNICAL NOTES ────────────────────────── */}
-        <section className="border-t border-[#D9D4C8] pt-8 space-y-4">
-          <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-[#77736A]">
-            [RELATED TECHNICAL BULLETINS]
+        <section className="border-t border-slate-200 pt-8 space-y-4">
+          <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-slate-500">
+            Related Technical Articles
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Link
               to="/notes/rfq-automation-for-manufacturers"
               className="catalogue-plate p-5 group"
             >
-              <div className="font-mono-tech text-[10px] text-[#B58A2A] uppercase mb-1 font-semibold">
-                TECHNICAL NOTE / 001
+              <div className="font-mono-tech text-[10px] text-amber-700 uppercase mb-1 font-semibold">
+                Technical Note 01
               </div>
-              <div className="text-base font-bold text-[#181816] font-display group-hover:text-[#B58A2A] transition-colors mb-2">
+              <div className="text-base font-bold text-slate-900 font-display group-hover:text-amber-700 transition-colors mb-2">
                 RFQ Automation for Manufacturers: What Should Actually Be Automated?
               </div>
-              <div className="text-xs text-[#77736A] font-body">
+              <div className="text-xs text-slate-600 font-body">
                 Why unsupervised pricing engines fail in real industrial sales.
               </div>
             </Link>
@@ -141,13 +138,13 @@ export const RfqPage: React.FC = () => {
               to="/notes/how-to-process-rfqs-email-pdf-excel"
               className="catalogue-plate p-5 group"
             >
-              <div className="font-mono-tech text-[10px] text-[#B58A2A] uppercase mb-1 font-semibold">
-                TECHNICAL NOTE / 002
+              <div className="font-mono-tech text-[10px] text-amber-700 uppercase mb-1 font-semibold">
+                Technical Note 02
               </div>
-              <div className="text-base font-bold text-[#181816] font-display group-hover:text-[#B58A2A] transition-colors mb-2">
+              <div className="text-base font-bold text-slate-900 font-display group-hover:text-amber-700 transition-colors mb-2">
                 How to Process RFQs From Email, PDF and Excel
               </div>
-              <div className="text-xs text-[#77736A] font-body">
+              <div className="text-xs text-slate-600 font-body">
                 Pipeline architecture for parsing non-standard attachments.
               </div>
             </Link>
@@ -155,15 +152,15 @@ export const RfqPage: React.FC = () => {
         </section>
 
         {/* ─── CTA ─────────────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-5 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            [PROCESS CONSULTATION]
+        <section className="catalogue-sheet p-8 space-y-5 border-t-2 border-t-amber-600">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Workflow Consultation
           </div>
-          <h2 className="text-2xl font-bold text-[#181816] font-display">
+          <h2 className="text-2xl font-bold text-slate-900 font-display">
             Discuss Your RFQ Process
           </h2>
-          <p className="text-sm sm:text-base text-[#77736A] font-body leading-relaxed">
-            Send an example of a typical incoming RFQ and how your team currently prepares the quotation. We will map the extraction bottlenecks.
+          <p className="text-sm sm:text-base text-slate-600 font-body leading-relaxed">
+            Send an example of a typical incoming RFQ and how your team currently prepares the quotation. We will map where data is lost and outline extraction automation.
           </p>
           <div className="pt-2">
             <Link

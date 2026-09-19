@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MessageSquare, FileText, Database, ArrowDown, Workflow } from 'lucide-react';
 
 export const AutomationPage: React.FC = () => {
   const jsonLd = {
@@ -19,51 +19,49 @@ export const AutomationPage: React.FC = () => {
   };
 
   const problemStatements = [
-    '“We ask every customer the same five questions.”',
-    '“Someone has to copy this into Excel.”',
-    '“We prepare every quote from an old Word document.”',
-    '“The website doesn’t connect to our system.”',
-    '“Someone checks this portal every morning.”',
-    '“If nobody follows up, the enquiry disappears.”',
-    '“We rebuild this report every Friday.”'
+    '“We ask every customer the same five questions manually.”',
+    '“Someone has to copy this information from emails into Excel.”',
+    '“We assemble every quote from an old Word document and hope pricing is current.”',
+    '“Our web inquiries don’t connect to our ERP or sales system.”',
+    '“Someone has to check multiple public portals every morning for new tenders.”',
+    '“If nobody manually follows up, high-value inquiries slip away.”',
+    '“We spend half of Friday rebuilding the same weekly report.”'
   ];
 
   const technologies = [
-    'APIs',
-    'n8n',
     'Python',
-    'browser automation',
-    'spreadsheets',
-    'databases',
-    'Google Workspace',
-    'AI models',
-    'custom scripts',
-    'lightweight applications'
+    'REST & Webhook APIs',
+    'n8n Automation',
+    'Headless Browser Automation',
+    'SQL & Parquet Pipelines',
+    'Google Workspace & Cloud Sync',
+    'Deterministic AI Parsing',
+    'Custom CLI Scripts',
+    'Lightweight Web Applications'
   ];
 
   const candidateWorkflows = [
-    'Enquiry qualification',
-    'WhatsApp-compatible intake workflows',
-    'Document processing',
-    'Quotation preparation',
-    'Lead routing',
-    'Follow-up',
-    'File processing',
-    'Spreadsheet automation',
-    'Data cleaning',
-    'Recurring reporting',
-    'Cross-system updates',
-    'Web research and monitoring',
-    'Browser-based repetitive tasks'
+    'Inbound Inquiry Qualification',
+    'WhatsApp Business Intake Pipelines',
+    'PDF Specification & Drawing Extraction',
+    'Commercial Quotation Assembly',
+    'Lead Routing & Escalation',
+    'Customer Follow-Up Sequencing',
+    'Vendor Price Catalog Normalization',
+    'Multi-Source Spreadsheet Automation',
+    'Dataset Cleaning & Deduplication',
+    'Recurring Executive Reporting',
+    'Cross-System ERP / CRM Sync',
+    'Procurement Portal Web Monitoring'
   ];
 
   const automationDiagramSteps = [
-    { label: 'CUSTOMER', type: 'human', desc: 'Inbound enquiry via WhatsApp or web' },
-    { label: 'WHATSAPP', type: 'system', desc: 'Incoming webhook & session trigger' },
-    { label: 'INTAKE', type: 'system', desc: 'Automated qualification & question sequence' },
-    { label: 'DATA / DOCUMENTS', type: 'system', desc: 'File parsing & attachment validation' },
-    { label: 'RULES + AUTOMATION', type: 'system', desc: 'Routing logic, schema check & dispatch' },
-    { label: 'TEAM', type: 'human', desc: 'Operations engineer takes pre-prepared job' },
+    { label: 'Customer Influx', type: 'human', desc: 'Inbound enquiry via WhatsApp, web, or email' },
+    { label: 'Webhook Receiver', type: 'system', desc: 'Immediate event capture and session initialization' },
+    { label: 'Qualification', type: 'system', desc: 'Automated scoping & required specification prompts' },
+    { label: 'Document Parsing', type: 'system', desc: 'Attachment extraction & schema normalization' },
+    { label: 'Routing & Dispatch', type: 'system', desc: 'Rules-based assignment to engineering queue' },
+    { label: 'Operations Desk', type: 'human', desc: 'Sales engineer receives organized, verified dossier' },
   ];
 
   return (
@@ -81,85 +79,85 @@ export const AutomationPage: React.FC = () => {
 
         {/* ─── HERO ────────────────────────────────────────────── */}
         <section className="space-y-6 max-w-4xl">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            02 / OPERATIONAL AUTOMATION
+          <div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">
+            Operational Automation
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#181816] font-display leading-[1.12]">
-            When every new enquiry starts another mini administrative project.
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 font-display leading-[1.12]">
+            When every new enquiry triggers another administrative project.
           </h1>
 
-          <div className="space-y-3 text-base sm:text-lg text-[#33312C] font-body leading-relaxed max-w-3xl">
+          <div className="space-y-4 text-base sm:text-lg text-slate-700 font-body leading-relaxed max-w-3xl">
             <p>
-              Some businesses do not sell standard products with a Buy Now button.
+              In operational and industrial businesses, customers rarely buy off a standard digital storefront. Every new request requires gathering technical requirements, validating specifications, calculating pricing, and tracking follow-ups across email and spreadsheets.
             </p>
-            <p>
-              Every job needs questions answered, information collected, a scope prepared, a quotation sent and somebody to follow up.
-            </p>
-            <p className="font-semibold text-[#181816] pt-1">
-              I build workflows around that kind of work.
+            <p className="text-slate-500">
+              I build custom automation systems around those exact procedures — eliminating manual transcription while keeping experienced people in charge of technical and commercial sign-offs.
             </p>
           </div>
 
-          <div className="pt-4">
+          <div className="pt-2">
             <Link
               to="/contact"
-              className="btn-primary px-6 py-3.5"
+              className="btn-primary px-6 py-3.5 text-sm"
             >
-              <span>Show Me the Process</span>
+              <span>Discuss Your Process</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
 
-        {/* ─── ENGINEERING MANUAL SCHEMATIC DIAGRAM ────────────── */}
-        <section className="catalogue-sheet p-6 sm:p-8 space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3">
-            <span className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-              [SCHEMATIC / AUTO-FLOW-01: COMPONENT TRACE]
-            </span>
-            <div className="flex items-center gap-4 font-mono-tech text-[11px]">
+        {/* ─── WORKFLOW PIPELINE COMPONENT ─────────────────────── */}
+        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 space-y-6 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-4">
+            <div className="flex items-center gap-2">
+              <Workflow className="w-4 h-4 text-amber-600" />
+              <span className="text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
+                Sample Commercial Intake Architecture
+              </span>
+            </div>
+            <div className="flex items-center gap-4 text-xs font-body">
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 bg-[#B58A2A]" />
-                <span className="text-[#33312C]">Gold: Automated Step</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-600" />
+                <span className="text-slate-700 font-medium">Automated Pipeline</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 bg-[#181816]" />
-                <span className="text-[#33312C]">Graphite: Human Step</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-slate-800" />
+                <span className="text-slate-700 font-medium">Human Checkpoint</span>
               </span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 font-mono-tech">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
             {automationDiagramSteps.map((step, idx) => {
               const isAuto = step.type === 'system';
               return (
                 <div
                   key={idx}
-                  className={`p-4 border ${
+                  className={`p-4 rounded-lg border ${
                     isAuto
-                      ? 'border-[#B58A2A] bg-[#F6F0DC]'
-                      : 'border-[#181816] bg-[#FFFFFF]'
+                      ? 'border-amber-300 bg-amber-50/40 text-slate-900'
+                      : 'border-slate-800 bg-slate-900 text-white'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] text-[#77736A]">
+                    <span className={`text-xs font-mono-tech font-semibold ${isAuto ? 'text-amber-700' : 'text-amber-400'}`}>
                       0{idx + 1}.
                     </span>
                     <span
-                      className={`text-[9px] px-1 py-0.2 font-semibold uppercase ${
+                      className={`text-[10px] px-2 py-0.5 rounded font-medium ${
                         isAuto
-                          ? 'bg-[#B58A2A] text-[#FFFFFF]'
-                          : 'bg-[#181816] text-[#FCFBF7]'
+                          ? 'bg-amber-100 text-amber-800'
+                          : 'bg-slate-800 text-slate-200'
                       }`}
                     >
-                      {isAuto ? 'AUTO' : 'HUMAN'}
+                      {isAuto ? 'System' : 'Human'}
                     </span>
                   </div>
-                  <div className="font-bold text-xs sm:text-sm text-[#181816] mb-1">
+                  <div className="font-bold text-sm mb-1 font-body">
                     {step.label}
                   </div>
-                  <div className="text-[11px] text-[#77736A] font-body leading-tight">
+                  <div className={`text-xs font-body leading-relaxed ${isAuto ? 'text-slate-600' : 'text-slate-300'}`}>
                     {step.desc}
                   </div>
                 </div>
@@ -167,50 +165,54 @@ export const AutomationPage: React.FC = () => {
             })}
           </div>
 
-          <div className="pt-3 border-t border-[#D9D4C8] text-xs font-mono-tech text-[#77736A]">
-            Labelled component trace from engineering workflow manual.
+          <div className="pt-3 border-t border-slate-100 text-xs text-slate-500 font-body">
+            Automating the routine stages of data capture and document assembly, leaving commercial decisions with your team.
           </div>
         </section>
 
-        {/* ─── PROBLEMS SECTION: 7 STATEMENTS ──────────────────── */}
-        <section className="catalogue-sheet p-6 sm:p-10 space-y-8">
+        {/* ─── COMMON OPERATIONAL SYMPTOMS ─────────────────────── */}
+        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-10 space-y-8 shadow-sm">
           <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-              [DIAGNOSTIC CRITERIA]
+            <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
+              Operational Symptoms
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-[#181816] font-display">
-              Good automation often starts with a sentence like this.
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 font-display">
+              Where high-value automation starts.
             </h2>
+            <p className="text-sm text-slate-600 font-body max-w-2xl">
+              If any of these sound familiar, your team is likely losing productive hours to manual transcription and disjointed tooling:
+            </p>
           </div>
 
-          <div className="space-y-3 max-w-3xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-4xl">
             {problemStatements.map((stmt, idx) => (
               <div
                 key={idx}
-                className="p-4 border-l-3 border-[#B58A2A] bg-[#FCFBF7] text-base sm:text-lg font-medium text-[#181816] font-body"
+                className="p-4 rounded-lg border border-slate-200 bg-slate-50/50 text-sm font-medium text-slate-800 font-body flex items-start gap-3"
               >
-                {stmt}
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 flex-shrink-0" />
+                <span className="leading-relaxed">{stmt}</span>
               </div>
             ))}
           </div>
         </section>
 
-        {/* ─── WHAT SITS UNDERNEATH ────────────────────────────── */}
+        {/* ─── PRAGMATIC TECHNOLOGY APPROACH ───────────────────── */}
         <section className="space-y-6">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [IMPLEMENTATION PRAGMATISM]
+          <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
+            Technology Approach
           </div>
 
-          <h2 className="text-3xl font-bold text-[#181816] font-display">
-            The implementation depends on the process.
+          <h2 className="text-3xl font-bold text-slate-900 font-display">
+            The process dictates the architecture, not a predetermined vendor.
           </h2>
 
-          <div className="space-y-3 text-base text-[#77736A] font-body leading-relaxed max-w-3xl">
+          <div className="space-y-3 text-base text-slate-600 font-body leading-relaxed max-w-3xl">
             <p>
-              I do not sell a predetermined stack.
+              I do not sell an inflexible proprietary platform or push unnecessary tools. We start with how your team operates today, identify where information is lost or delayed, and deploy the most maintainable technology for the job.
             </p>
             <p>
-              The process determines the implementation.
+              Depending on scale and security requirements, that might mean a lightweight Python script, an automated n8n pipeline, a headless browser monitor, or structured database synchronization.
             </p>
           </div>
 
@@ -219,7 +221,7 @@ export const AutomationPage: React.FC = () => {
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1.5 border border-[#D9D4C8] bg-[#FFFFFF] font-mono-tech text-xs text-[#181816]"
+                className="px-3 py-1.5 rounded-md border border-slate-200 bg-white font-mono-tech text-xs text-slate-800 shadow-2xs font-medium"
               >
                 {tech}
               </span>
@@ -228,55 +230,53 @@ export const AutomationPage: React.FC = () => {
         </section>
 
         {/* ─── COMMON WORKFLOWS ────────────────────────────────── */}
-        <section className="catalogue-sheet p-6 sm:p-10 space-y-8">
+        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-10 space-y-8 shadow-sm">
           <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-              [PROCESS CATALOGUE]
+            <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
+              Candidate Workflows
             </div>
-            <h2 className="text-3xl font-bold text-[#181816] font-display">
-              Examples of work worth examining
+            <h2 className="text-3xl font-bold text-slate-900 font-display">
+              Candidate processes for automation
             </h2>
+            <p className="text-sm text-slate-600 font-body max-w-2xl">
+              Typical workflows where structured automation delivers measurable operational savings:
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-[#181816] font-body">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-slate-800 font-body">
             {candidateWorkflows.map((item, idx) => (
               <div
                 key={idx}
-                className="p-3.5 border border-[#D9D4C8] bg-[#FCFBF7] flex items-center gap-2.5"
+                className="p-3.5 rounded-lg border border-slate-200 bg-slate-50/50 flex items-center gap-3"
               >
-                <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold">
-                  {idx < 9 ? `0${idx + 1}` : idx + 1}.
-                </span>
-                <span>{item}</span>
+                <CheckCircle2 className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                <span className="font-medium">{item}</span>
               </div>
             ))}
           </div>
         </section>
 
         {/* ─── FINAL CTA ───────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 sm:p-12 space-y-6 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            IRREGULAR WORKFLOWS
+        <section className="bg-white border border-slate-200 rounded-xl p-8 sm:p-12 space-y-6 shadow-sm">
+          <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
+            Bespoke Operational Pipelines
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#181816] font-display">
-            Have something stranger?
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 font-display">
+            Have a specialized or non-standard workflow?
           </h2>
 
-          <p className="text-xl text-[#181816] font-semibold font-body">
-            Good.
-          </p>
-
-          <p className="text-sm sm:text-base text-[#77736A] font-body max-w-2xl leading-relaxed">
-            The most valuable automations are often processes that standard software vendors dismiss as too bespoke or messy.
+          <p className="text-base text-slate-600 font-body max-w-2xl leading-relaxed">
+            The most valuable automations are often the processes off-the-shelf software vendors dismiss as too bespoke or messy. If your team relies on an unusual sequence of scripts, file transformations, or manual checkpoints, let's explore how to make it robust and maintainable.
           </p>
 
           <div className="pt-2">
             <Link
               to="/contact"
-              className="btn-primary px-6 py-3.5"
+              className="btn-primary px-6 py-3.5 text-sm"
             >
-              <span>Describe the workflow →</span>
+              <span>Describe Your Workflow</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </section>

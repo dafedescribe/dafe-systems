@@ -122,20 +122,20 @@ export const TeachingPage: React.FC = () => {
 
         {/* ─── HERO ────────────────────────────────────────────── */}
         <section className="space-y-6 max-w-4xl">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            04 / SYSTEMS EDUCATION & TRAINING
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Systems Education & Technical Training
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#181816] font-display leading-[1.12]">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 font-display leading-[1.12]">
             Learn what is happening underneath the button.
           </h1>
 
-          <div className="space-y-3 text-base sm:text-lg text-[#33312C] font-body leading-relaxed max-w-3xl">
+          <div className="space-y-3 text-base sm:text-lg text-slate-700 font-body leading-relaxed max-w-3xl">
             <p>
-              I teach AI and digital systems in a way that helps people understand what they are using, not just memorise where to click.
+              I teach AI engineering and workflow automation so participants understand the mechanics of the tools they deploy, rather than merely memorizing interfaces.
             </p>
-            <p className="text-[#77736A]">
-              Sessions can be adapted for nontechnical teams, teachers, young learners and people beginning to build with AI.
+            <p className="text-slate-600">
+              Curricula are tailored for nontechnical operations teams, educators, engineering cohorts, and professionals integrating AI into business processes.
             </p>
           </div>
 
@@ -152,12 +152,12 @@ export const TeachingPage: React.FC = () => {
 
         {/* ─── THREE LEARNING AREAS ────────────────────────────── */}
         <section className="space-y-6">
-          <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
-            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-              [CURRICULUM ARCHITECTURE]
+          <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+            <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
+              Curriculum Architecture
             </div>
-            <div className="font-mono-tech text-xs text-[#77736A]">
-              THREE PILLARS
+            <div className="text-xs text-slate-500 font-mono-tech">
+              Three Learning Pillars
             </div>
           </div>
 
@@ -165,30 +165,30 @@ export const TeachingPage: React.FC = () => {
             {learningAreas.map((area) => (
               <div
                 key={area.code}
-                className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between"
+                className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-2xs hover:shadow-md transition-shadow"
               >
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-2">
-                    <span className="font-mono-tech text-xs text-[#B58A2A] uppercase font-semibold">
-                      [{area.code}]
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <span className="font-mono-tech text-xs text-amber-700 uppercase font-semibold">
+                      {area.code}
                     </span>
-                    <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] font-semibold">
-                      PILLAR
+                    <span className="text-[11px] px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">
+                      Pillar
                     </span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
                     {area.label}
                   </h2>
 
-                  <p className="text-xs text-[#77736A] font-body leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
                     {area.desc}
                   </p>
 
-                  <ul className="space-y-2 pt-3 border-t border-[#D9D4C8]">
+                  <ul className="space-y-2 pt-3 border-t border-slate-100">
                     {area.items.map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-[#33312C] font-body">
-                        <span className="w-1.5 h-1.5 bg-[#B58A2A] flex-shrink-0" />
+                      <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-body">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-600 flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -200,13 +200,13 @@ export const TeachingPage: React.FC = () => {
         </section>
 
         {/* ─── CURRENT TEACHING TOPICS ─────────────────────────── */}
-        <section className="catalogue-sheet p-6 sm:p-10 space-y-8">
+        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-10 space-y-8 shadow-sm">
           <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-              [TOPIC REGISTER]
+            <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
+              Core Topics
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-[#181816] font-display">
-              Current teaching topics
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 font-display">
+              Technical subjects covered
             </h2>
           </div>
 
@@ -214,12 +214,12 @@ export const TeachingPage: React.FC = () => {
             {currentTopics.map((topic, idx) => (
               <div
                 key={idx}
-                className="p-4 border border-[#D9D4C8] bg-[#FCFBF7] flex flex-col justify-between"
+                className="p-4 rounded-lg border border-slate-200 bg-slate-50/50 flex flex-col justify-between"
               >
-                <span className="font-mono-tech text-xs text-[#B58A2A] mb-2 font-semibold">
+                <span className="font-mono-tech text-xs text-amber-700 mb-2 font-semibold">
                   0{idx + 1}.
                 </span>
-                <span className="text-sm font-bold text-[#181816] font-body">
+                <span className="text-sm font-bold text-slate-900 font-body">
                   {topic}
                 </span>
               </div>
@@ -229,24 +229,24 @@ export const TeachingPage: React.FC = () => {
 
         {/* ─── AUDIENCES ───────────────────────────────────────── */}
         <section className="space-y-6">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [LEARNER PROFILES]
+          <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
+            Target Audiences
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-[#181816] font-display">
-            Audiences
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 font-display">
+            Who these programmes are designed for
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {audiences.map((aud, idx) => (
               <div
                 key={idx}
-                className="catalogue-sheet p-5"
+                className="bg-white border border-slate-200 rounded-xl p-5 shadow-2xs"
               >
-                <div className="font-bold text-base text-[#181816] mb-1 font-body">
+                <div className="font-bold text-base text-slate-900 mb-1.5 font-body">
                   {aud.title}
                 </div>
-                <div className="text-xs sm:text-sm text-[#77736A] font-body leading-relaxed">
+                <div className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
                   {aud.desc}
                 </div>
               </div>
@@ -255,13 +255,13 @@ export const TeachingPage: React.FC = () => {
         </section>
 
         {/* ─── CATALOGUE SPECIMENS / WORKSHOP MATERIALS ────────── */}
-        <section className="catalogue-sheet p-6 sm:p-10 space-y-8">
+        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-10 space-y-8 shadow-sm">
           <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-              [CURRICULUM SPECIMENS & WORKSHOP MODULES]
+            <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
+              Course Modules & Hands-on Materials
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-[#181816] font-display">
-              Documented course materials and modules.
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 font-display">
+              Documented course syllabus and practical modules.
             </h2>
           </div>
 
@@ -269,50 +269,50 @@ export const TeachingPage: React.FC = () => {
             {curriculumArtifacts.map((art, idx) => (
               <div
                 key={idx}
-                className="p-6 border border-[#D9D4C8] bg-[#FCFBF7] space-y-3"
+                className="p-6 rounded-lg border border-slate-200 bg-slate-50/50 space-y-3"
               >
-                <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-2 font-mono-tech text-xs">
-                  <span className="text-[#B58A2A] font-semibold">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-2 font-mono-tech text-xs">
+                  <span className="text-amber-700 font-semibold">
                     {art.ref}
                   </span>
-                  <span className="text-[#77736A]">
+                  <span className="text-slate-500">
                     {art.duration}
                   </span>
                 </div>
 
-                <div className="text-xl font-bold text-[#181816] font-display">
+                <div className="text-xl font-bold text-slate-900 font-display">
                   {art.title}
                 </div>
 
-                <div className="text-xs font-mono-tech text-[#77736A]">
-                  AUDIENCE: {art.audience.toUpperCase()}
+                <div className="text-xs font-mono-tech text-slate-500">
+                  Target Audience: {art.audience}
                 </div>
 
-                <p className="text-xs sm:text-sm text-[#33312C] font-body leading-relaxed pt-1">
-                  <strong className="text-[#181816]">Objective: </strong>
+                <p className="text-xs sm:text-sm text-slate-700 font-body leading-relaxed pt-1">
+                  <strong className="text-slate-900">Learning Goal: </strong>
                   {art.learningGoal}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="pt-4 border-t border-[#D9D4C8] font-mono-tech text-xs text-[#77736A]">
-            Technical instruction delivered through AppClick and independent corporate workshops.
+          <div className="pt-4 border-t border-slate-200 text-xs text-slate-500 font-body">
+            Technical instruction delivered through AppClick Technology and independent corporate workshops.
           </div>
         </section>
 
         {/* ─── FINAL CTA ───────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 sm:p-12 space-y-6 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            TRAINING INTAKE
+        <section className="bg-white border border-slate-200 rounded-xl p-8 sm:p-12 space-y-6 shadow-sm">
+          <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
+            Corporate Training Inquiries
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#181816] font-display">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 font-display">
             Discuss a Training Session
           </h2>
 
-          <p className="text-sm sm:text-base text-[#77736A] font-body max-w-2xl leading-relaxed">
-            Tell me about your team, your current challenges with AI or automation, and what you want participants to be able to build or evaluate after the session.
+          <p className="text-sm sm:text-base text-slate-600 font-body max-w-2xl leading-relaxed">
+            Tell me about your team, your current challenges with AI or automation, and what practical skills you want participants to take away from the session.
           </p>
 
           <div className="pt-2">

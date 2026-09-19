@@ -56,41 +56,41 @@ export const CommercialReportingPage: React.FC = () => {
 
         {/* ─── HERO ────────────────────────────────────────────── */}
         <section className="space-y-6">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [DATA PIPELINES / COMMERCIAL INTELLIGENCE]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Data Pipelines & Commercial Intelligence
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#181816] font-display leading-[1.12]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 font-display leading-[1.12]">
             If the report is rebuilt the same way every month, inspect the process.
           </h1>
 
-          <div className="space-y-4 text-base sm:text-lg text-[#33312C] font-body leading-relaxed">
+          <div className="space-y-4 text-base sm:text-lg text-slate-700 font-body leading-relaxed">
             <p>
-              Spreadsheets are often perfectly good tools.
+              Spreadsheets are exceptional tools for ad-hoc analysis. The friction arises when operational teams spend hours every week manually exporting CSVs, copying columns across workbooks, and patching broken formulas just to generate management reporting.
             </p>
             <p>
-              The waste appears when people repeatedly clean, combine, copy and restructure the same information just to produce the next report.
+              I build deterministic data pipelines that extract raw transactional records, reconcile anomalies, and compile production-grade executive digests automatically.
             </p>
           </div>
         </section>
 
         {/* ─── EXAMPLES OF SPREADSHEET WASTE ───────────────────── */}
         <section className="catalogue-sheet p-6 sm:p-8 space-y-6">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            [RECURRING WASTE PATTERNS]
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Common Friction Points
           </div>
 
-          <h2 className="text-2xl font-bold text-[#181816] font-display">
-            Familiar friction in operational reporting:
+          <h2 className="text-2xl font-bold text-slate-900 font-display">
+            Familiar bottlenecks in operational reporting:
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             {examples.map((item, idx) => (
               <div
                 key={idx}
-                className="p-3.5 border border-[#D9D4C8] bg-[#FCFBF7] flex items-start gap-3 text-sm text-[#181816] font-body"
+                className="p-4 border border-slate-200 bg-white rounded-lg shadow-sm flex items-start gap-3 text-sm text-slate-800 font-body"
               >
-                <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold">
+                <span className="font-mono-tech text-xs text-amber-700 font-semibold">
                   0{idx + 1}.
                 </span>
                 <span>{item}</span>
@@ -100,28 +100,28 @@ export const CommercialReportingPage: React.FC = () => {
         </section>
 
         {/* ─── PROOF BLOCK ─────────────────────────────────────── */}
-        <section className="catalogue-sheet p-6 sm:p-8 space-y-4 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
+        <section className="catalogue-sheet p-6 sm:p-8 space-y-4 border-t-2 border-t-amber-600">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold uppercase">
-              REF. DS-001 · VERIFIED PROOF
+            <span className="font-mono-tech text-xs text-amber-700 font-semibold uppercase">
+              Proven Case Study · Internal Build
             </span>
-            <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
-              INTERNAL BUILD
+            <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-semibold">
+              PYTHON & DUCKDB
             </span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-bold text-[#181816] font-display">
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
             1,000,000+ rows processed in under 10 minutes.
           </h3>
 
-          <p className="text-sm sm:text-base text-[#77736A] font-body leading-relaxed">
-            A chunked Python workflow replaced a complex multi-file reconciliation job that crashed standard spreadsheet software, delivering cleaned Parquet partitions and an executive digest in 8.7 minutes.
+          <p className="text-sm sm:text-base text-slate-600 font-body leading-relaxed">
+            A chunked data pipeline replaced a multi-file Excel workflow that crashed memory limits, completing data transformation and generating an executive summary in 8.7 minutes with full audit logs.
           </p>
 
           <div className="pt-2">
             <Link
               to="/work/million-row-pipeline"
-              className="inline-flex items-center gap-1.5 font-mono-tech text-xs uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
+              className="inline-flex items-center gap-1.5 font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-900 font-semibold hover:text-amber-700 transition-colors"
             >
               <span>See the technical project breakdown</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -130,15 +130,15 @@ export const CommercialReportingPage: React.FC = () => {
         </section>
 
         {/* ─── CTA ─────────────────────────────────────────────── */}
-        <section className="catalogue-sheet p-8 space-y-5 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            [DATA AUDIT]
+        <section className="catalogue-sheet p-8 space-y-5 border-t-2 border-t-amber-600">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Data Workflow Audit
           </div>
-          <h2 className="text-2xl font-bold text-[#181816] font-display">
+          <h2 className="text-2xl font-bold text-slate-900 font-display">
             Show Me the Data Workflow
           </h2>
-          <p className="text-sm sm:text-base text-[#77736A] font-body leading-relaxed">
-            Send an outline of the exports, tables, and steps your team combines to build your recurring reports.
+          <p className="text-sm sm:text-base text-slate-600 font-body leading-relaxed">
+            Send an outline of the exports, tables, and steps your team combines to build recurring reports. We will assess pipeline feasibility.
           </p>
           <div className="pt-2">
             <Link

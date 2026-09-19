@@ -2,40 +2,32 @@ import React, { useState } from 'react';
 import { Link, useRouter } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { PROJECTS, Project } from '../data/projectsData';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { PROJECTS, ProjectCategory } from '../data/projectsData';
 
 export const WorkPage: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<string>('All');
   const { navigate } = useRouter();
+  const [activeFilter, setActiveFilter] = useState<string>('ALL');
+
+  const categories: string[] = ['ALL', 'INDUSTRY', 'DATA', 'AI', 'MEDIA', 'EDUCATION'];
+
+  const filteredProjects = activeFilter === 'ALL'
+    ? PROJECTS
+    : PROJECTS.filter((p) => p.category.toUpperCase() === activeFilter);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Automation, Data, AI & Web Projects | Odafe Amalega',
+    name: 'Verified Systems & Engineering Case Studies | Odafe Amalega',
     url: 'https://www.dafe.name.ng/work',
-    description: 'Client work, internal systems, prototypes and teaching projects by Odafe Amalega.'
+    description: 'Verified engineering case studies, data pipelines, and workflow automation systems built by Odafe Amalega.'
   };
-
-  const categories = [
-    'All',
-    'Industry',
-    'Automation & Data',
-    'Web',
-    'AI & Media',
-    'Teaching',
-    'Experiments'
-  ];
-
-  const filteredProjects = activeFilter === 'All'
-    ? PROJECTS
-    : PROJECTS.filter((p) => p.category === activeFilter);
 
   return (
     <div className="min-h-screen">
       <SeoHead
-        title="Automation, Data, AI & Web Projects | Odafe Amalega"
-        description="Client work, internal systems, experiments and teaching projects. Every item is labelled so you know what kind of work you are looking at."
+        title="Verified Systems & Case Studies | DafeDeScribe"
+        description="Verified engineering case studies, data pipelines, and workflow automation systems built by Odafe Amalega. Documented constraints, architectures, and verified outcomes."
         canonicalPath="/work"
         jsonLd={jsonLd}
       />
@@ -43,39 +35,39 @@ export const WorkPage: React.FC = () => {
       <main className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-20 space-y-16">
         <Breadcrumbs items={[{ label: 'WORK', path: '/work' }]} />
 
-        {/* ─── HEADER / MASTER CATALOGUE ───────────────────────── */}
+        {/* ─── HEADER ──────────────────────────────────────────── */}
         <section className="space-y-4 max-w-4xl">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A] font-semibold">
-            03 / MASTER SYSTEMS CATALOGUE
+          <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
+            Selected Systems & Projects
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#181816] font-display">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 font-display">
             Selected Work
           </h1>
 
-          <div className="space-y-2 text-base sm:text-lg text-[#77736A] font-body leading-relaxed max-w-3xl">
+          <div className="space-y-2 text-base sm:text-lg text-slate-600 font-body leading-relaxed max-w-3xl">
             <p>
-              Client work, internal systems, experiments and teaching projects.
+              Production systems, data pipelines, commercial prototypes, and training curricula.
             </p>
-            <p className="font-medium text-[#181816]">
-              Every item is documented with verifiable constraints, architecture, and verified outcomes.
+            <p className="font-medium text-slate-900">
+              Each project is documented with real operational constraints, software architecture, and verified outcomes.
             </p>
           </div>
         </section>
 
         {/* ─── CATEGORY FILTERS ────────────────────────────────── */}
-        <section className="border-y border-[#D9D4C8] py-3.5 flex flex-wrap items-center gap-2">
-          <span className="font-mono-tech text-xs text-[#77736A] uppercase mr-2">
-            FILTER:
+        <section className="border-y border-slate-200 py-3.5 flex flex-wrap items-center gap-2">
+          <span className="text-xs font-mono-tech text-slate-500 uppercase mr-2 font-medium">
+            Filter:
           </span>
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
-              className={`px-3 py-1 text-xs font-mono-tech uppercase tracking-[0.08em] transition-colors border ${
+              className={`px-3 py-1.5 text-xs font-mono-tech uppercase tracking-wider transition-colors rounded-md border ${
                 activeFilter === cat
-                  ? 'bg-[#181816] text-[#FCFBF7] border-[#181816]'
-                  : 'bg-[#FCFBF7] text-[#77736A] border-[#D9D4C8] hover:border-[#181816] hover:text-[#181816]'
+                  ? 'bg-slate-900 text-white border-slate-900 font-semibold'
+                  : 'bg-white text-slate-600 border-slate-200 hover:border-slate-400 hover:text-slate-900'
               }`}
             >
               {cat}
@@ -83,14 +75,14 @@ export const WorkPage: React.FC = () => {
           ))}
         </section>
 
-        {/* ─── 1. TECHNICAL CATALOGUE INDEX TABLE ──────────────── */}
-        <section className="catalogue-sheet overflow-hidden">
-          <div className="p-4 sm:p-5 border-b border-[#D9D4C8] bg-[#F5F1E7] flex items-center justify-between">
-            <span className="font-mono-tech text-xs text-[#181816] font-semibold uppercase tracking-[0.08em]">
-              TECHNICAL REGISTER / {filteredProjects.length} ENTRIES
+        {/* ─── 1. MASTER PROJECT INDEX TABLE ───────────────────── */}
+        <section className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+          <div className="p-4 sm:p-5 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <span className="text-xs font-mono-tech text-slate-900 font-semibold uppercase tracking-wider">
+              Project Directory · {filteredProjects.length} Verified Builds
             </span>
-            <span className="font-mono-tech text-[11px] text-[#77736A]">
-              CLICK ANY ROW TO OPEN PROJECT DOSSIER
+            <span className="text-xs text-slate-500 font-body">
+              Click any row to read the complete technical breakdown
             </span>
           </div>
 
@@ -98,11 +90,11 @@ export const WorkPage: React.FC = () => {
             <table className="catalogue-table">
               <thead>
                 <tr>
-                  <th style={{ width: '130px' }}>REF</th>
-                  <th>PROJECT TITLE</th>
-                  <th style={{ width: '180px' }}>FIELD</th>
-                  <th style={{ width: '160px' }}>STATUS / TYPE</th>
-                  <th style={{ width: '90px' }}>YEAR</th>
+                  <th style={{ width: '130px' }}>Reference</th>
+                  <th>Project Title</th>
+                  <th style={{ width: '180px' }}>Field</th>
+                  <th style={{ width: '160px' }}>Status / Scope</th>
+                  <th style={{ width: '90px' }}>Year</th>
                 </tr>
               </thead>
               <tbody>
@@ -119,32 +111,32 @@ export const WorkPage: React.FC = () => {
                     tabIndex={0}
                     role="link"
                     aria-label={`View case study: ${p.title}`}
-                    className="cursor-pointer transition-colors focus:bg-[#F6F0DC] focus:outline-none"
+                    className="cursor-pointer transition-colors hover:bg-slate-50 focus:bg-amber-50 focus:outline-none"
                   >
-                    <td className="font-mono-tech text-xs text-[#B58A2A] font-semibold whitespace-nowrap">
+                    <td className="font-mono-tech text-xs text-amber-700 font-semibold whitespace-nowrap">
                       {p.refId}
                     </td>
-                    <td className="font-medium text-[#181816] font-body">
+                    <td className="font-medium text-slate-900 font-body">
                       <div className="flex items-center justify-between gap-2">
                         <Link
                           to={`/work/${p.slug}`}
-                          className="hover:text-[#B58A2A] transition-colors"
+                          className="hover:text-amber-700 transition-colors"
                           onClick={(e) => e.stopPropagation()}
                         >
                           {p.title}
                         </Link>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-[#B58A2A] opacity-0 group-hover:opacity-100" />
+                        <ArrowUpRight className="w-3.5 h-3.5 text-amber-700 opacity-0 group-hover:opacity-100" />
                       </div>
                     </td>
-                    <td className="text-xs text-[#77736A] font-mono-tech">
+                    <td className="text-xs text-slate-500 font-mono-tech">
                       {p.category.toUpperCase()}
                     </td>
                     <td>
-                      <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold whitespace-nowrap">
+                      <span className="text-xs px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium whitespace-nowrap">
                         {p.label}
                       </span>
                     </td>
-                    <td className="font-mono-tech text-xs text-[#77736A]">
+                    <td className="text-xs text-slate-500 font-mono-tech">
                       {p.year}
                     </td>
                   </tr>
@@ -154,14 +146,14 @@ export const WorkPage: React.FC = () => {
           </div>
         </section>
 
-        {/* ─── 2. VISUAL PROJECT PLATES & SPREADS ───────────────── */}
+        {/* ─── 2. FEATURED PROJECT CARDS ───────────────────────── */}
         <section className="space-y-6 pt-6">
-          <div className="flex items-center justify-between border-b border-[#D9D4C8] pb-3">
-            <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-[#77736A]">
-              [CATALOGUE PLATES & SPECIFICATION SPREADS]
+          <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+            <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
+              Detailed Case Studies
             </div>
-            <div className="font-mono-tech text-xs text-[#B58A2A]">
-              PLATES 01–0{filteredProjects.length}
+            <div className="text-xs text-slate-500 font-mono-tech">
+              Architecture & Outcomes
             </div>
           </div>
 
@@ -169,50 +161,77 @@ export const WorkPage: React.FC = () => {
             {filteredProjects.map((proj) => (
               <article
                 key={proj.slug}
-                className="catalogue-sheet p-6 sm:p-8 flex flex-col justify-between hover:border-[#181816] transition-colors"
+                className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all"
               >
                 <div className="space-y-4">
-                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D4C8] pb-3">
-                    <span className="font-mono-tech text-xs text-[#B58A2A] font-semibold">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                    <span className="font-mono-tech text-xs text-amber-700 font-semibold">
                       {proj.refId} · {proj.tag}
                     </span>
-                    <span className="font-mono-tech text-[10px] px-2 py-0.5 bg-[#F5F1E7] text-[#33312C] border border-[#D9D4C8] font-semibold">
+                    <span className="text-xs px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">
                       {proj.label}
                     </span>
                   </div>
 
-                  <h2 className="text-2xl font-bold text-[#181816] font-display">
+                  <h2 className="text-2xl font-bold text-slate-900 font-display">
                     {proj.title}
                   </h2>
 
-                  <p className="text-sm text-[#77736A] leading-relaxed font-body">
+                  <p className="text-sm text-slate-600 font-body leading-relaxed">
                     {proj.oneLiner}
                   </p>
 
-                  <div className="p-3.5 bg-[#FCFBF7] border border-[#D9D4C8] space-y-1">
-                    <span className="font-mono-tech text-[10px] text-[#B58A2A] uppercase tracking-wider block">
-                      VERIFIED RESULT
-                    </span>
-                    <p className="text-xs sm:text-sm font-medium text-[#181816]">
+                  <div className="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-3">
+                    <div>
+                      <strong className="text-slate-900">Constraint: </strong>
+                      {proj.constraints}
+                    </div>
+                    <div>
+                      <strong className="text-slate-900">Outcome: </strong>
                       {proj.result}
-                    </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-[#D9D4C8] mt-6 flex items-center justify-between font-mono-tech text-xs">
-                  <span className="text-[#77736A]">
-                    {proj.category} · {proj.year}
-                  </span>
+                <div className="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
                   <Link
                     to={`/work/${proj.slug}`}
-                    className="inline-flex items-center gap-1.5 uppercase tracking-[0.08em] text-[#181816] font-semibold hover:text-[#B58A2A] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
                   >
-                    <span>OPEN PROJECT</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <span>Read case study breakdown</span>
+                    <span>→</span>
                   </Link>
+                  <span className="text-xs text-slate-400 font-mono-tech">
+                    {proj.year}
+                  </span>
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        {/* ─── FINAL CTA ───────────────────────────────────────── */}
+        <section className="bg-white border border-slate-200 rounded-xl p-8 sm:p-12 space-y-6 shadow-sm">
+          <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
+            Have a Similar Operational Challenge?
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 font-display">
+            Let's evaluate your operational process.
+          </h2>
+
+          <p className="text-sm sm:text-base text-slate-600 font-body max-w-2xl leading-relaxed">
+            Send me an outline of your current manual workflow. We'll assess where the data is getting held up and provide practical architecture recommendations.
+          </p>
+
+          <div className="pt-2">
+            <Link
+              to="/contact"
+              className="btn-primary px-6 py-3.5 text-sm"
+            >
+              <span>Discuss Your Workflow</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </section>
 

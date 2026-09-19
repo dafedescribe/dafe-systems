@@ -50,41 +50,39 @@ export const ContactPage: React.FC = () => {
 
         {/* ─── HEADER ──────────────────────────────────────────── */}
         <section className="space-y-4">
-          <div className="flex items-center gap-2 font-mono-tech text-xs tracking-[0.1em] uppercase text-[#B58A2A]">
-            <span className="font-semibold">WORKFLOW ENQUIRY / REF. NEW</span>
-            <span className="text-[#D9D4C8]">|</span>
-            <span className="text-[#77736A]">SPECIFICATION SHEET</span>
+          <div className="flex items-center gap-2 font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            <span>Direct Engineering Consultation</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#181816] font-display leading-[1.15]">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 font-display leading-[1.15]">
             Show me the workflow.
           </h1>
 
-          <div className="space-y-1 text-base sm:text-lg text-[#77736A] font-body">
-            <p className="font-semibold text-[#181816]">
-              Do not write a technical brief.
+          <div className="space-y-1.5 text-base sm:text-lg text-slate-600 font-body">
+            <p className="font-semibold text-slate-900">
+              You don't need a polished technical brief or RFP.
             </p>
             <p>
-              Describe what happens today.
+              Simply describe what happens manually today, where the handoffs bottleneck, and what software your team currently touches.
             </p>
           </div>
         </section>
 
         {/* ─── INQUIRY TYPE SWITCHER ───────────────────────────── */}
-        <div className="flex border border-[#D9D4C8] bg-[#F5F1E7] p-1 text-xs font-mono-tech uppercase">
+        <div className="flex border border-slate-200 bg-slate-100 p-1 rounded-lg text-xs font-mono-tech uppercase">
           <button
             type="button"
             onClick={() => {
               setInquiryType('workflow');
               setSubmitted(false);
             }}
-            className={`flex-1 min-h-[44px] py-3 px-4 flex items-center justify-center transition-colors ${
+            className={`flex-1 min-h-[44px] py-3 px-4 rounded-md flex items-center justify-center transition-all ${
               inquiryType === 'workflow'
-                ? 'bg-[#181816] text-[#FCFBF7] font-semibold'
-                : 'text-[#77736A] hover:text-[#181816]'
+                ? 'bg-slate-900 text-white font-semibold shadow-sm'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            [01] Commercial & Operational Workflow
+            Commercial & Operational Workflows
           </button>
           <button
             type="button"
@@ -92,31 +90,31 @@ export const ContactPage: React.FC = () => {
               setInquiryType('teaching');
               setSubmitted(false);
             }}
-            className={`flex-1 min-h-[44px] py-3 px-4 flex items-center justify-center transition-colors ${
+            className={`flex-1 min-h-[44px] py-3 px-4 rounded-md flex items-center justify-center transition-all ${
               inquiryType === 'teaching'
-                ? 'bg-[#181816] text-[#FCFBF7] font-semibold'
-                : 'text-[#77736A] hover:text-[#181816]'
+                ? 'bg-slate-900 text-white font-semibold shadow-sm'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            [02] Training & Workshops
+            Technical Training & Workshops
           </button>
         </div>
 
         {/* ─── SUBMISSION STATE ────────────────────────────────── */}
         {submitted ? (
-          <div className="catalogue-sheet p-8 sm:p-10 space-y-6 border border-[#D9D4C8] border-t-2 border-t-[#B58A2A]">
+          <div className="catalogue-sheet p-8 sm:p-10 space-y-6 border-t-2 border-t-amber-600">
             <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-6 h-6 text-[#B58A2A]" />
-              <h2 className="text-2xl font-bold text-[#181816] font-display">
-                Workflow Specification Logged.
+              <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+              <h2 className="text-2xl font-bold text-slate-900 font-display">
+                Inquiry Received.
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-[#33312C] font-body leading-relaxed">
-              Thank you, {name || 'there'}. I personally review incoming workflows and respond with specific technical notes on feasibility, potential bottlenecks, and appropriate tools.
+            <p className="text-sm sm:text-base text-slate-700 font-body leading-relaxed">
+              Thank you, {name || 'there'}. I personally review incoming workflows and respond within 24 hours with concrete technical notes on feasibility, potential bottlenecks, and appropriate tools.
             </p>
-            <div className="pt-3 border-t border-[#D9D4C8] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <span className="font-mono-tech text-xs text-[#77736A]">
-                Need immediate discussion?
+            <div className="pt-3 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <span className="font-mono-tech text-xs text-slate-500">
+                Need an immediate conversation?
               </span>
               <a
                 href={whatsAppUrl}
@@ -130,14 +128,14 @@ export const ContactPage: React.FC = () => {
             </div>
           </div>
         ) : (
-          /* ─── INTAKE FORM (SPECIFICATION SHEET STYLE) ────────── */
+          /* ─── INTAKE FORM ────────────────────────────────────── */
           <form onSubmit={handleSubmit} className="catalogue-sheet p-6 sm:p-10 space-y-6">
             
             {/* Primary Question */}
             {inquiryType === 'workflow' ? (
               <div className="space-y-2">
-                <label htmlFor="workflow-input" className="block font-mono-tech text-xs uppercase tracking-[0.08em] font-semibold text-[#181816]">
-                  WHAT KEEPS GETTING REPEATED?
+                <label htmlFor="workflow-input" className="block font-mono-tech text-xs uppercase tracking-[0.08em] font-semibold text-slate-900">
+                  What keeps getting repeated?
                 </label>
                 <textarea
                   id="workflow-input"
@@ -145,14 +143,14 @@ export const ContactPage: React.FC = () => {
                   rows={5}
                   value={workflowText}
                   onChange={(e) => setWorkflowText(e.target.value)}
-                  placeholder="Example: A customer messages us on WhatsApp, we ask for their site details, send the information to an engineer and then prepare a quote manually."
-                  className="catalogue-input w-full p-4 text-sm font-body text-[#181816] placeholder:text-[#AAA397] leading-relaxed"
+                  placeholder="Example: A customer messages us on WhatsApp or email, we extract site details, send the spec to an engineer, and then assemble a quote manually across three spreadsheets."
+                  className="w-full p-4 text-sm font-body text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600 leading-relaxed"
                 />
               </div>
             ) : (
               <div className="space-y-2">
-                <label htmlFor="teaching-goal" className="block font-mono-tech text-xs uppercase tracking-[0.08em] font-semibold text-[#181816]">
-                  WHAT DO YOU WANT PEOPLE TO BE ABLE TO DO AFTER THE SESSION?
+                <label htmlFor="teaching-goal" className="block font-mono-tech text-xs uppercase tracking-[0.08em] font-semibold text-slate-900">
+                  What should your team be able to build after the session?
                 </label>
                 <textarea
                   id="teaching-goal"
@@ -160,16 +158,16 @@ export const ContactPage: React.FC = () => {
                   rows={5}
                   value={teachingGoal}
                   onChange={(e) => setTeachingGoal(e.target.value)}
-                  placeholder="Example: I want our 12 operational managers to understand how APIs connect spreadsheets to our CRM, and build their first automated triage workflow in n8n without writing code."
-                  className="catalogue-input w-full p-4 text-sm font-body text-[#181816] placeholder:text-[#AAA397] leading-relaxed"
+                  placeholder="Example: I want our 12 operational managers to understand how APIs connect spreadsheets to our database, and build their first automated triage workflow without code."
+                  className="w-full p-4 text-sm font-body text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600 leading-relaxed"
                 />
               </div>
             )}
 
             {/* Name */}
             <div className="space-y-2">
-              <label htmlFor="user-name" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-[#77736A]">
-                NAME
+              <label htmlFor="user-name" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-600">
+                Your Name
               </label>
               <input
                 id="user-name"
@@ -178,14 +176,14 @@ export const ContactPage: React.FC = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Jane Smith"
-                className="catalogue-input w-full p-3 text-sm font-body text-[#181816]"
+                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
               />
             </div>
 
             {/* Company / Website */}
             <div className="space-y-2">
-              <label htmlFor="user-company" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-[#77736A]">
-                {inquiryType === 'workflow' ? 'COMPANY / WEBSITE' : 'ORGANISATION / SCHOOL / BUSINESS'}
+              <label htmlFor="user-company" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-600">
+                {inquiryType === 'workflow' ? 'Company / Website' : 'Organisation / School / Business'}
               </label>
               <input
                 id="user-company"
@@ -194,14 +192,14 @@ export const ContactPage: React.FC = () => {
                 value={organization}
                 onChange={(e) => setOrganization(e.target.value)}
                 placeholder={inquiryType === 'workflow' ? 'Apex Industrial Supplies (apexsupplies.com)' : 'St. Jude Educational Institute'}
-                className="catalogue-input w-full p-3 text-sm font-body text-[#181816]"
+                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
               />
             </div>
 
             {/* Email or WhatsApp */}
             <div className="space-y-2">
-              <label htmlFor="user-contact" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-[#77736A]">
-                EMAIL OR WHATSAPP
+              <label htmlFor="user-contact" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-600">
+                Email or WhatsApp Number
               </label>
               <input
                 id="user-contact"
@@ -210,14 +208,14 @@ export const ContactPage: React.FC = () => {
                 value={contactInfo}
                 onChange={(e) => setContactInfo(e.target.value)}
                 placeholder="jane@company.com or +234..."
-                className="catalogue-input w-full p-3 text-sm font-body text-[#181816]"
+                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
               />
             </div>
 
             {/* Current Tools */}
             <div className="space-y-2">
-              <label htmlFor="current-tools" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-[#77736A]">
-                CURRENT TOOLS (SOFTWARE / SPREADSHEETS)
+              <label htmlFor="current-tools" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-600">
+                Current Tools (Software / Spreadsheets / ERP)
               </label>
               <input
                 id="current-tools"
@@ -225,22 +223,22 @@ export const ContactPage: React.FC = () => {
                 value={currentTools}
                 onChange={(e) => setCurrentTools(e.target.value)}
                 placeholder="Excel, Gmail, QuickBooks, WhatsApp, custom ERP, etc."
-                className="catalogue-input w-full p-3 text-sm font-body text-[#181816]"
+                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
               />
             </div>
 
             {/* Optional: Example Link / Notes */}
             <div className="space-y-2">
-              <label htmlFor="optional-notes" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-[#77736A]">
-                {inquiryType === 'workflow' ? 'OPTIONAL: SAMPLE DOCUMENT LINK OR CONTEXT' : 'OPTIONAL: AUDIENCE BACKGROUND & COHORT SIZE'}
+              <label htmlFor="optional-notes" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-600">
+                {inquiryType === 'workflow' ? 'Sample Document Link or Additional Notes (Optional)' : 'Audience Background & Cohort Size (Optional)'}
               </label>
               <input
                 id="optional-notes"
                 type="text"
                 value={optionalNote}
                 onChange={(e) => setOptionalNote(e.target.value)}
-                placeholder={inquiryType === 'workflow' ? 'Google Drive / Dropbox link, or extra details' : 'e.g. 15 participants, nontechnical operations team'}
-                className="catalogue-input w-full p-3 text-sm font-body text-[#181816]"
+                placeholder={inquiryType === 'workflow' ? 'Google Drive / Dropbox link, or extra context' : 'e.g. 15 participants, operations & finance team'}
+                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
               />
             </div>
 
@@ -250,14 +248,14 @@ export const ContactPage: React.FC = () => {
                 type="submit"
                 className="btn-primary px-7 py-3.5"
               >
-                <span>{inquiryType === 'workflow' ? 'SEND WORKFLOW →' : 'DISCUSS TRAINING →'}</span>
+                <span>{inquiryType === 'workflow' ? 'Submit Workflow Details' : 'Submit Training Inquiry'}</span>
               </button>
 
               <a
                 href={whatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono-tech text-xs text-[#77736A] hover:text-[#181816] transition-colors"
+                className="inline-flex items-center gap-1.5 font-mono-tech text-xs text-slate-600 hover:text-slate-900 transition-colors"
               >
                 <span>Or message directly on WhatsApp (+2348148794458)</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -268,8 +266,8 @@ export const ContactPage: React.FC = () => {
         )}
 
         {/* ─── CONFIDENTIALITY NOTE ────────────────────────────── */}
-        <div className="border-t border-[#D9D4C8] pt-6 font-mono-tech text-xs text-[#77736A] leading-relaxed">
-          CONFIDENTIALITY: All workflows, business processes, and shared sample documents are handled directly by Odafe Amalega under strict professional discretion.
+        <div className="border-t border-slate-200 pt-6 font-mono-tech text-xs text-slate-500 leading-relaxed">
+          Confidentiality: All business processes, workflows, and sample records are reviewed exclusively by Odafe Amalega under strict professional discretion.
         </div>
 
       </main>
