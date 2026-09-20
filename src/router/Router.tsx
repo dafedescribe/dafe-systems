@@ -12,8 +12,12 @@ const RouterContext = createContext<RouterContextType>({
 
 export const useRouter = () => useContext(RouterContext);
 
-export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const RouterProvider: React.FC<{ children: React.ReactNode; initialPath?: string }> = ({
+  children,
+  initialPath,
+}) => {
   const [path, setPath] = useState<string>(() => {
+    if (initialPath) return initialPath;
     if (typeof window !== 'undefined') {
       const p = window.location.pathname;
       return p === '' ? '/' : p;

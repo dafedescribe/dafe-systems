@@ -16,9 +16,7 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
   let NoteBody;
   try {
     article = getNoteEntry(slug);
-    NoteBody = React.lazy(() =>
-      Promise.resolve({ default: getNoteComponent(slug) })
-    );
+    NoteBody = getNoteComponent(slug);
   } catch {
     return (
       <div className="max-w-4xl mx-auto px-6 py-20 text-center space-y-4">

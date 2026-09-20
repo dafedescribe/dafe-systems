@@ -73,9 +73,9 @@ const AppRoutes: React.FC = () => {
   );
 };
 
-export default function App() {
+export default function App({ initialPath }: { initialPath?: string }) {
   return (
-    <RouterProvider>
+    <RouterProvider initialPath={initialPath}>
       <AppRoutes />
     </RouterProvider>
   );
