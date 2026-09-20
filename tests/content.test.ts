@@ -1,8 +1,13 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import * as React from 'react';
-import { getAllNotes, getNote } from '../src/content/notes';
+import { getAllNotes, getNote, getNoteComponent } from '../src/content/notes';
 import { mdxComponents } from '../src/content/mdx-components';
+import { extractNotes } from '../scripts/extract-notes';
+
+const repoRoot = join(__dirname, '..');
 
 describe('notes content', () => {
   it('loads notes with unique slugs', () => {
@@ -22,8 +27,48 @@ describe('notes content', () => {
     expect(getNote('no-such-post')).toBeUndefined();
   });
 
-  it('rich components render with design classes', () => {
-    const html = renderToStaticMarkup(
+  it('manifest matches content files (re-run prebuild after editing)', () => {
+    const fresh = extractNotes(join(repoRoot, 'content', 'notes'));
+    const stored = JSON.parse(readFileSync(join(repoRoot, 'src', 'content', 'notes-manifest.json'), 'utf8'));
+    expect(fresh).toEqual(stored);
+  });
+
+  it('keeps every legacy slug (URL freeze)', () => {
+    const slugs = getAllNotes()
+      .map((n) => n.slug)
+      .sort();
+    expect(slugs).toEqual(
+      [
+        'api-vs-browser-automation',
+        'automate-tender-monitoring',
+        'explaining-apis-to-nontechnical-learners',
+        'how-to-process-rfqs-email-pdf-excel',
+        'million-rows-python',
+        'n8n-vs-python',
+        'rfq-automation-for-manufacturers',
+      ].sort()
+    );
+  });
+
+  it('preserves body text (spot-check first paragraphs)', () => {
+    const rfq = readFileSync(
+      join(repoRoot, 'content', 'notes', 'rfq-automation-for-manufacturers.mdx'),
+      'utf8'
+    );
+    expect(rfq).toContain('When software vendors pitch "AI-powered sales automation"');
+    const n8n = readFileSync(join(repoRoot, 'content', 'notes', 'n8n-vs-python.mdx'), 'utf8');
+    expect(n8n).toContain('One of the most persistent debates in workflow engineering');
+  });
+
+  it('renders a full migrated post with pull quote', async () => {
+    const Body = getNoteComponent('n8n-vs-python');
+    const html = renderToStaticMarkup(React.createElement(Body, { components: mdxComponents }));
+    expect(html).toContain('One of the most persistent debates in workflow engineering');
+    expect(html).toContain('border-amber-600');
+    expect(html).toContain('Choose the tool that minimizes operational friction');
+  });
+
+  it('rich components render with design classes', () => {    const html = renderToStaticMarkup(
       React.createElement(mdxComponents.PullQuote, null, 'Remember this line')
     );
     expect(html).toContain('border-amber-600');

@@ -1,0 +1,142 @@
+[
+  {
+    "title": "RFQ Automation for Manufacturers: What Should Actually Be Automated?",
+    "cluster": "Industrial / RFQ",
+    "date": "2026-03-01T00:00:00.000Z",
+    "summary": "Why letting an AI calculate pricing unsupervised is a mistake, and how to automate the heavy information preparation layer instead.",
+    "cover": "/uploads/2026-09/rfq-automation-for-manufacturers-cover.webp",
+    "coverAlt": "Manufacturing estimator reviewing structured quotation line items on screen",
+    "tags": [
+      "rfq",
+      "manufacturing",
+      "quoting",
+      "document-extraction"
+    ],
+    "targetServiceUrl": "/industry/rfq-automation",
+    "targetServiceLabel": "RFQ automation for industrial suppliers",
+    "draft": false,
+    "slug": "rfq-automation-for-manufacturers",
+    "wordCount": 280,
+    "headings": []
+  },
+  {
+    "title": "How to Automate Tender Monitoring Across Multiple Procurement Portals",
+    "cluster": "Tender Monitoring",
+    "date": "2026-02-01T00:00:00.000Z",
+    "summary": "Why basic keyword alerts produce overwhelming noise and how to design a structured opportunity review queue.",
+    "cover": "/uploads/2026-09/automate-tender-monitoring-cover.webp",
+    "coverAlt": "Dashboard queue of filtered tender opportunities with deadlines",
+    "tags": [
+      "tenders",
+      "procurement",
+      "monitoring",
+      "triage"
+    ],
+    "targetServiceUrl": "/industry/tender-monitoring",
+    "targetServiceLabel": "Tender monitoring systems for industrial contractors",
+    "draft": false,
+    "slug": "automate-tender-monitoring",
+    "wordCount": 309,
+    "headings": []
+  },
+  {
+    "title": "How to Process RFQs From Email, PDF and Excel",
+    "cluster": "Industrial / RFQ",
+    "date": "2026-02-01T00:00:00.000Z",
+    "summary": "A step-by-step breakdown of an automated pipeline turning messy incoming attachments into structured quotation line items.",
+    "cover": "/uploads/2026-09/how-to-process-rfqs-email-pdf-excel-cover.webp",
+    "coverAlt": "Email with PDF and Excel attachments flowing into a structured intake pipeline",
+    "tags": [
+      "rfq",
+      "email",
+      "pdf",
+      "excel",
+      "pipeline"
+    ],
+    "targetServiceUrl": "/industry/rfq-automation",
+    "targetServiceLabel": "Explore our RFQ preparation engine",
+    "draft": false,
+    "slug": "how-to-process-rfqs-email-pdf-excel",
+    "wordCount": 360,
+    "headings": []
+  },
+  {
+    "title": "API vs Browser Automation: What Happens When the Software Has No API?",
+    "cluster": "Automation Architecture",
+    "date": "2026-01-01T00:00:00.000Z",
+    "summary": "Navigating legacy industrial software, ERP portals, and government databases that refuse to talk to modern tools.",
+    "cover": "/uploads/2026-09/api-vs-browser-automation-cover.webp",
+    "coverAlt": "Legacy ERP portal in a browser beside API connection diagram",
+    "tags": [
+      "api",
+      "browser-automation",
+      "erp",
+      "playwright"
+    ],
+    "targetServiceUrl": "/automation",
+    "targetServiceLabel": "Workflow integration and automation",
+    "draft": false,
+    "slug": "api-vs-browser-automation",
+    "wordCount": 259,
+    "headings": []
+  },
+  {
+    "title": "n8n vs Python: Which Should Handle the Workflow?",
+    "cluster": "Automation Architecture",
+    "date": "2026-01-01T00:00:00.000Z",
+    "summary": "A pragmatic framework for choosing between low-code visual automation and custom code in business workflows.",
+    "cover": "/uploads/2026-09/n8n-vs-python-cover.webp",
+    "coverAlt": "Visual workflow canvas beside Python code editor",
+    "tags": [
+      "n8n",
+      "python",
+      "architecture",
+      "orchestration"
+    ],
+    "targetServiceUrl": "/automation",
+    "targetServiceLabel": "Explore custom automation workflows",
+    "draft": false,
+    "slug": "n8n-vs-python",
+    "wordCount": 272,
+    "headings": []
+  },
+  {
+    "title": "How I Explain APIs to Nontechnical Learners",
+    "cluster": "Teaching & Systems Literacy",
+    "date": "2025-12-01T00:00:00.000Z",
+    "summary": "The mental models that help operational teams and students understand how software talks to software.",
+    "cover": "/uploads/2026-09/explaining-apis-to-nontechnical-learners-cover.webp",
+    "coverAlt": "Whiteboard sketch of a restaurant order slip as an API analogy",
+    "tags": [
+      "api",
+      "teaching",
+      "mental-models"
+    ],
+    "targetServiceUrl": "/teaching",
+    "targetServiceLabel": "Practical AI and systems training",
+    "draft": false,
+    "slug": "explaining-apis-to-nontechnical-learners",
+    "wordCount": 274,
+    "headings": []
+  },
+  {
+    "title": "How I Processed More Than One Million Rows in Under Ten Minutes",
+    "cluster": "Data & Python",
+    "date": "2025-12-01T00:00:00.000Z",
+    "summary": "Engineering techniques for chunking, vectorized cleaning, and memory management when Excel breaks down.",
+    "cover": "/uploads/2026-09/million-rows-python-cover.webp",
+    "coverAlt": "Terminal showing chunked processing of a million-row CSV file",
+    "tags": [
+      "python",
+      "polars",
+      "data",
+      "performance"
+    ],
+    "targetServiceUrl": "/work/million-row-pipeline",
+    "targetServiceLabel": "View the 1M+ row project case study",
+    "draft": false,
+    "slug": "million-rows-python",
+    "wordCount": 310,
+    "headings": []
+  }
+]

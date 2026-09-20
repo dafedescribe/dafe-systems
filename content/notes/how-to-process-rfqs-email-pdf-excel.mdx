@@ -1,0 +1,32 @@
+---
+title: "How to Process RFQs From Email, PDF and Excel"
+cluster: "Industrial / RFQ"
+date: 2026-02-01
+summary: "A step-by-step breakdown of an automated pipeline turning messy incoming attachments into structured quotation line items."
+cover: "/uploads/2026-09/how-to-process-rfqs-email-pdf-excel-cover.webp"
+coverAlt: "Email with PDF and Excel attachments flowing into a structured intake pipeline"
+tags: ["rfq", "email", "pdf", "excel", "pipeline"]
+targetServiceUrl: "/industry/rfq-automation"
+targetServiceLabel: "Explore our RFQ preparation engine"
+draft: false
+---
+
+Industrial buyers send quote requests in whatever format is convenient for them. One client types a 10-line bulleted list into an email from an iPad on a job site. Another sends a 28-page PDF purchase specification with terms buried on page 14. A third sends an Excel spreadsheet with merged cells and missing column headers.
+
+<PullQuote>The solution is not to change customer behavior; it is to build an adaptable intake pipeline on your side.</PullQuote>
+
+Attempting to force every client into a rigid web portal form fails because busy purchasing managers will simply send the request to a competitor who accepts email attachments.
+
+Here is the architecture of an intake workflow that handles multi-format RFQ documents reliably:
+
+Step 1: Mailbox Listener and Attachment Classification. A dedicated inbox (e.g., rfq@company.com) receives the message. An automated webhook listener triggers on new mail, inspects sender domains against existing CRM records, and categorizes incoming attachments by MIME type (PDF, XLSX, CSV, image scans).
+
+Step 2: Tabular Extraction vs. Text Parsing. For Excel files, Python scripts using libraries like openpyxl extract row blocks while ignoring formatting artifacts like merged headers. For digital PDFs, coordinate-aware parsers extract table bounding boxes. For scanned paper documents, OCR extracts raw text coordinates.
+
+Step 3: Schema Normalization with Constrained Models. The raw extracted text is passed to an AI parser governed by strict JSON Schema definitions. The prompt does not ask the model to "think creatively"; it asks it to map detected fields into explicit keys: part_number, description, quantity, unit_of_measure, target_delivery_date, and raw_drawing_reference.
+
+Step 4: Catalog Matching and Missing Field Detection. The normalized output is cross-referenced against your master inventory or parts catalog. If a customer part number is recognized, internal SKU and standard cost baseline are attached. If a required field is missing (such as material grade or delivery zip code), the system flags it as an attention item.
+
+Step 5: Review Queue Injection. Rather than generating an automated customer response, the system injects a pre-populated draft quotation into your review queue, displaying original attachments side-by-side with parsed fields.
+
+By isolating document normalization from quoting decisions, your team gets clean structured data without exposing the business to automated quotation errors.

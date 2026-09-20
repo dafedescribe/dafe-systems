@@ -1,0 +1,26 @@
+---
+title: "API vs Browser Automation: What Happens When the Software Has No API?"
+cluster: "Automation Architecture"
+date: 2026-01-01
+summary: "Navigating legacy industrial software, ERP portals, and government databases that refuse to talk to modern tools."
+cover: "/uploads/2026-09/api-vs-browser-automation-cover.webp"
+coverAlt: "Legacy ERP portal in a browser beside API connection diagram"
+tags: ["api", "browser-automation", "erp", "playwright"]
+targetServiceUrl: "/automation"
+targetServiceLabel: "Workflow integration and automation"
+draft: false
+---
+
+In a modern tech startup, every tool has a clean REST or GraphQL API with webhook support. In the industrial and operational world, businesses rely on legacy ERPs from 2004, state regulatory portals, and proprietary supplier platforms with zero programmatic interfaces.
+
+When a crucial workflow touches one of these systems, traditional software consultants throw up their hands and demand a six-figure ERP replacement project. But replacing core business software that has run factory operations for twenty years is risky, disruptive, and expensive.
+
+The practical alternative is understanding when to use APIs and when to deploy controlled browser automation.
+
+APIs are always the first choice: they are deterministic, fast, consume minimal resources, and do not break when a button moves three pixels to the left. If a private API or undocumented network endpoint exists behind the browser UI, reverse-engineering that network request is far more reliable than clicking visual buttons.
+
+However, when a portal enforces complex session authentication, client-side cryptographic tokens, or active JavaScript challenges, headless browser automation (using modern engines like Playwright) becomes a legitimate operational tool.
+
+To build durable browser automation that does not break every week, follow three engineering rules: first, select elements by immutable semantic attributes or data roles rather than fragile CSS classes; second, implement explicit state-waiting instead of arbitrary sleep timers; and third, wrap every browser task in clear failure alerts so staff are notified immediately if a portal changes its layout.
+
+<PullQuote>You do not have to wait for legacy vendors to modernize their software before removing manual data entry from your daily operations.</PullQuote>

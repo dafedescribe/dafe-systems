@@ -1,0 +1,26 @@
+---
+title: "n8n vs Python: Which Should Handle the Workflow?"
+cluster: "Automation Architecture"
+date: 2026-01-01
+summary: "A pragmatic framework for choosing between low-code visual automation and custom code in business workflows."
+cover: "/uploads/2026-09/n8n-vs-python-cover.webp"
+coverAlt: "Visual workflow canvas beside Python code editor"
+tags: ["n8n", "python", "architecture", "orchestration"]
+targetServiceUrl: "/automation"
+targetServiceLabel: "Explore custom automation workflows"
+draft: false
+---
+
+One of the most persistent debates in workflow engineering is whether to use visual workflow platforms like n8n or write custom Python scripts.
+
+Dogmatic visual builders claim code is obsolete. Dogmatic software engineers claim low-code tools are toys that do not scale. Both views miss the operational reality of running business systems.
+
+The truth is that n8n and Python excel at completely different parts of the systems stack, and the most robust business architectures often use both in tandem.
+
+When n8n is the right choice: n8n is exceptional as an orchestration and routing bus. It provides pre-built authentication, webhook endpoints, scheduled triggers, retry loops, credential management, and execution logging out of the box. If a workflow involves listening for an incoming webhook, querying an API, sending a Slack alert, and updating an Airtable or Postgres row, building that in n8n takes hours instead of days and provides a visual execution log that makes troubleshooting straightforward.
+
+When Python is mandatory: Python is superior when the work involves heavy data transformation, complex branching logic, proprietary algorithms, document manipulation, or high-volume processing. If you need to clean 500,000 spreadsheet rows, extract tabular data from non-standard PDFs, manipulate video via FFmpeg, or interface with specialized machine learning libraries, visual nodes become unwieldy and slow.
+
+The Hybrid Architecture: In production systems, we frequently use n8n as the orchestration front-end and trigger containerized Python scripts for heavy computation. n8n catches the inbound webhook, verifies the payload, passes execution to a Python microservice via HTTP, and takes the structured output to distribute notifications and update business databases.
+
+<PullQuote>Choose the tool that minimizes operational friction and makes failure states obvious.</PullQuote>

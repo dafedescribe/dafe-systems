@@ -1,0 +1,30 @@
+---
+title: "How I Processed More Than One Million Rows in Under Ten Minutes"
+cluster: "Data & Python"
+date: 2025-12-01
+summary: "Engineering techniques for chunking, vectorized cleaning, and memory management when Excel breaks down."
+cover: "/uploads/2026-09/million-rows-python-cover.webp"
+coverAlt: "Terminal showing chunked processing of a million-row CSV file"
+tags: ["python", "polars", "data", "performance"]
+targetServiceUrl: "/work/million-row-pipeline"
+targetServiceLabel: "View the 1M+ row project case study"
+draft: false
+---
+
+Most business data processing tasks do not require distributed Spark clusters or massive cloud data warehouses. What they require is clean, single-node systems programming that respects memory limits and hardware vectorization.
+
+A common scenario across operational companies: multi-year transactional logs or multi-depot inventory exports grow beyond 1,000,000 rows. A business analyst tries to open the CSV in Excel, waits four minutes for the application to respond, and is greeted by an error message informing them that the file exceeds the 1,048,576-row spreadsheet limit.
+
+Even when split into multiple workbooks, running VLOOKUPs or cleaning dates across these files leads to frozen screens, memory thrashing, and corrupted files.
+
+Here is how we architected a Python workflow that parsed, cleaned, deduplicated, and aggregated 1,140,000+ records in 8 minutes and 42 seconds on a standard 16GB laptop:
+
+1. Avoid Loading Everything into RAM: Loading raw multi-gigabyte CSV text files directly into unconstrained memory generates massive heap overhead. We used Polars batched streaming readers (`read_csv_batched`) to ingest fixed chunks of 50,000 rows at a time.
+
+2. Vectorized Regex and Type Casting: Rather than iterating row-by-row with slow Python loops, transformations were applied across entire column vectors in Rust-backed memory. Currency strings with mixed symbols ($ , € , N) were stripped using compiled regular expressions and cast to 64-bit floating-point arrays.
+
+3. High-Speed In-Memory Hashing: To detect duplicate transaction rows across disparate files without quadratic comparison cost, primary key tuples were hashed with 64-bit integer hashes and checked against a fast bit-set filter.
+
+4. Columnar Storage: Cleaned outputs were serialized directly into compressed Apache Parquet files. Parquet files take up a fraction of the disk space of raw CSVs and can be queried in milliseconds using SQL engines like DuckDB.
+
+<PullQuote>The result is a reliable script that turns an agonizing multi-day manual chore into an automated command-line job that finishes before your coffee gets cold.</PullQuote>
