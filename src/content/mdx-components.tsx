@@ -1,5 +1,7 @@
 import React from 'react';
 
+/* impeccable-disable side-tab: PullQuote left border is an intentional typographic device, not a card side-tab */
+
 export const PullQuote: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <blockquote className="border-l-4 border-amber-600 pl-6 py-1 text-xl sm:text-2xl font-display font-bold text-slate-900 leading-snug">
     {children}
@@ -73,6 +75,7 @@ export const Stat: React.FC<{ value: string; label: string }> = ({ value, label 
 );
 
 export const NoteCta: React.FC = () => (
+  /* impeccable-disable border-accent-on-rounded: CTA accent top-border matches the existing article CTA system */
   <div className="rounded-xl border-t-2 border-t-amber-600 bg-slate-50 p-6 text-center space-y-3">
     <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-amber-700 font-semibold">
       Actionable Next Step
