@@ -2,13 +2,23 @@ import React from 'react';
 import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { ARTICLES } from '../data/articlesData';
+import { getNoteComponent, getNoteEntry, readTimeOf } from '../content/notes';
+import { mdxComponents } from '../content/mdx-components';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
-export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
-  const article = ARTICLES.find((a) => a.slug === slug);
+function displayDate(d: Date): string {
+  return d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+}
 
-  if (!article) {
+export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
+  let article;
+  let NoteBody;
+  try {
+    article = getNoteEntry(slug);
+    NoteBody = React.lazy(() =>
+      Promise.resolve({ default: getNoteComponent(slug) })
+    );
+  } catch {
     return (
       <div className="max-w-4xl mx-auto px-6 py-20 text-center space-y-4">
         <h1 className="text-3xl font-bold text-[#181816] font-display">Technical Note Not Found</h1>
@@ -19,6 +29,9 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
       </div>
     );
   }
+
+  const readTime = readTimeOf(article);
+  const dateDisplay = displayDate(article.date);
 
   const jsonLd = [
     {
@@ -36,7 +49,7 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
         name: 'DafeDeScribe',
         url: 'https://www.dafe.name.ng/'
       },
-      datePublished: article.date,
+      datePublished: article.date.toISOString(),
       mainEntityOfPage: `https://www.dafe.name.ng/notes/${article.slug}`
     },
     {
@@ -75,7 +88,7 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
               Technical Note · {article.cluster}
             </span>
             <span className="text-slate-500">
-              {article.readTime.toUpperCase()} · {article.date}
+              {readTime.toUpperCase()} · {dateDisplay}
             </span>
           </div>
 
@@ -100,11 +113,9 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
 
         {/* ─── BULLETIN BODY ───────────────────────────────────── */}
         <div className="catalogue-sheet p-6 sm:p-10 space-y-6 text-base sm:text-lg text-slate-700 font-body leading-[1.8]">
-          {article.content.map((paragraph, idx) => (
-            <p key={idx}>
-              {paragraph}
-            </p>
-          ))}
+          <React.Suspense fallback={<p className="text-slate-500">Loading note…</p>}>
+            <NoteBody components={mdxComponents} />
+          </React.Suspense>
         </div>
 
         {/* ─── AUTHOR SPECIFICATION ────────────────────────────── */}

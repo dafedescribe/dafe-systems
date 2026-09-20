@@ -1,76 +1,42 @@
-import matter from 'gray-matter';
-import { z } from 'zod';
+import type { ComponentType } from 'react';
+import type { NoteEntry, NoteMeta } from './note-schema';
+import manifest from './notes-manifest.json';
 
-export const CLUSTERS = [
-  'Industrial / RFQ',
-  'Tender Monitoring',
-  'Automation Architecture',
-  'Data & Python',
-  'Teaching & Systems Literacy',
-] as const;
+type ManifestEntry = Omit<NoteEntry, 'date'> & { date: string };
 
-export const NoteMetaSchema = z.object({
-  title: z.string().min(10).max(120),
-  cluster: z.enum(CLUSTERS),
-  date: z.coerce.date(),
-  summary: z.string().min(40).max(300),
-  cover: z.string().regex(/^\/uploads\/[a-z0-9\-/]+\.(webp|jpg|jpeg|png)$/),
-  coverAlt: z.string().min(10).max(200),
-  tags: z.array(z.string().regex(/^[a-z0-9-]+$/)).max(6).default([]),
-  targetServiceUrl: z.string().regex(/^\/(industry|automation|work|contact)/),
-  targetServiceLabel: z.string().min(5).max(80),
-  draft: z.boolean().default(false),
-});
-
-export type NoteMeta = z.infer<typeof NoteMetaSchema> & { slug: string };
-
-const rawFiles = import.meta.glob('../../content/notes/*.mdx', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-}) as Record<string, string>;
-
-function slugOf(path: string): string {
-  return path.split('/').pop()!.replace(/\.mdx$/, '');
+function revive(e: ManifestEntry): NoteEntry {
+  return { ...e, date: new Date(e.date) };
 }
 
-function rawOf(slug: string): string | undefined {
-  const key = Object.keys(rawFiles).find((p) => slugOf(p) === slug);
-  return key ? rawFiles[key] : undefined;
+const componentModules = import.meta.glob(
+  ['../../content/notes/*.mdx', '!../../content/notes/_*', '!../../content/notes/.*'],
+  { eager: true }
+) as Record<string, { default: ComponentType<{ components?: Record<string, ComponentType<any>> }> }>;
+
+function moduleFor(slug: string) {
+  const key = Object.keys(componentModules).find((p) => p.split('/').pop() === `${slug}.mdx`);
+  if (!key) throw new Error(`unknown note module: ${slug}`);
+  return componentModules[key].default;
 }
 
-export function getNoteRaw(slug: string): string {
-  const raw = rawOf(slug);
-  if (!raw) throw new Error(`unknown note: ${slug}`);
-  return raw;
+export function getAllNotes(): NoteEntry[] {
+  return (manifest as ManifestEntry[]).map(revive);
 }
 
-export function getAllNotes(): NoteMeta[] {
-  return Object.entries(rawFiles)
-    .filter(([p]) => !p.split('/').pop()!.startsWith('_') && !p.split('/').pop()!.startsWith('.'))
-    .map(([path, raw]) => {
-      const { data } = matter(raw);
-      return { ...NoteMetaSchema.parse(data), slug: slugOf(path) };
-    })
-    .filter((n) => !n.draft)
-    .sort((a, b) => b.date.getTime() - a.date.getTime());
-}
-
-export function getNote(slug: string): NoteMeta | undefined {
+export function getNote(slug: string): NoteEntry | undefined {
   return getAllNotes().find((n) => n.slug === slug);
 }
 
-export function readTimeOf(raw: string): string {
-  const words = raw
-    .replace(/^---[\s\S]*?---/, '')
-    .split(/\s+/)
-    .filter(Boolean).length;
-  return `${Math.max(1, Math.round(words / 200))} min read`;
+export function getNoteEntry(slug: string): NoteEntry {
+  const found = getAllNotes().find((n) => n.slug === slug);
+  if (!found) throw new Error(`unknown note: ${slug}`);
+  return found;
 }
 
-export function headingsOf(raw: string): { text: string }[] {
-  return raw
-    .split('\n')
-    .filter((l) => l.startsWith('## '))
-    .map((l) => ({ text: l.slice(3).trim() }));
+export function getNoteComponent(slug: string): ComponentType<{ components?: Record<string, ComponentType<any>> }> {
+  return moduleFor(slug);
+}
+
+export function readTimeOf(entry: Pick<NoteEntry, 'wordCount'>): string {
+  return `${Math.max(1, Math.round(entry.wordCount / 200))} min read`;
 }
