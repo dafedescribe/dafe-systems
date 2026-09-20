@@ -20,8 +20,14 @@ export function listRoutes() {
   return ['/notes', ...readManifest().map((n) => `/notes/${n.slug}`)];
 }
 
+export function escapeHead(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 export function composeHead({ title, description, path, image, published }) {
   const url = `${SITE}${path}`;
+  const t = escapeHead(title);
+  const d = escapeHead(description);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -33,17 +39,17 @@ export function composeHead({ title, description, path, image, published }) {
     mainEntityOfPage: url,
   };
   return [
-    `<title>${title}</title>`,
-    `<meta name="description" content="${description}" />`,
+    `<title>${t}</title>`,
+    `<meta name="description" content="${d}" />`,
     `<link rel="canonical" href="${url}" />`,
     `<meta property="og:type" content="article" />`,
-    `<meta property="og:title" content="${title}" />`,
-    `<meta property="og:description" content="${description}" />`,
+    `<meta property="og:title" content="${t}" />`,
+    `<meta property="og:description" content="${d}" />`,
     `<meta property="og:url" content="${url}" />`,
     `<meta property="og:image" content="${SITE}${image}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
-    `<meta name="twitter:title" content="${title}" />`,
-    `<meta name="twitter:description" content="${description}" />`,
+    `<meta name="twitter:title" content="${t}" />`,
+    `<meta name="twitter:description" content="${d}" />`,
     `<meta name="twitter:image" content="${SITE}${image}" />`,
     `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
   ].join('\n  ');

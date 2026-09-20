@@ -4,7 +4,7 @@
  * schema, and writes src/content/notes-manifest.json consumed by the app.
  * Run: npx tsx scripts/extract-notes.ts  (also wired as `prebuild`)
  */
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
@@ -33,21 +33,58 @@ function headingsOf(body: string): { text: string; id: string }[] {
     .map((text) => ({ text, id: slugger.slug(text) }));
 }
 
-export function extractNotes(contentDir = join(repoRoot, 'content', 'notes')): ManifestEntry[] {
-  return readdirSync(contentDir)
-    .filter((f) => f.endsWith('.mdx') && !f.startsWith('_') && !f.startsWith('.'))
-    .map((file) => {
-      const raw = readFileSync(join(contentDir, file), 'utf8');
-      const { data, content: body } = matter(raw);
-      const meta = NoteMetaSchema.parse(data);
-      return {
-        ...meta,
-        date: meta.date.toISOString(),
-        slug: slugOf(file),
-        wordCount: wordsOf(body),
-        headings: headingsOf(body),
-      };
-    })
+const UPLOAD_BUDGET = 2 * 1024 * 1024;
+
+function assertUploadBudget(publicDir: string, src: string, file: string): void {
+  if (!src.startsWith('/')) return;
+  const abs = join(publicDir, src.replace(/^\//, ''));
+  let size: number;
+  try {
+    size = statSync(abs).size;
+  } catch {
+    throw new Error(`${file}: upload ${src} not found in public/`);
+  }
+  if (size > UPLOAD_BUDGET) {
+    throw new Error(`${file}: upload ${src} is ${size} bytes (limit ${UPLOAD_BUDGET})`);
+  }
+}
+
+function bodyUploads(body: string): string[] {
+  const found = new Set<string>();
+  for (const m of body.matchAll(/src="(\/[^"]+)"/g)) found.add(m[1]);
+  return [...found];
+}
+
+export function extractNotes(
+  contentDir = join(repoRoot, 'content', 'notes'),
+  publicDir = join(repoRoot, 'public')
+): ManifestEntry[] {
+  const entries: ManifestEntry[] = [];
+  for (const file of readdirSync(contentDir)) {
+    if (!file.endsWith('.mdx') || file.startsWith('_') || file.startsWith('.')) continue;
+    const raw = readFileSync(join(contentDir, file), 'utf8');
+    const { data, content: body } = matter(raw);
+    let meta;
+    try {
+      meta = NoteMetaSchema.parse(data);
+    } catch (e) {
+      if (data && (data as any).draft === true) {
+        console.warn(`skip draft ${file}: ${e instanceof Error ? e.message.split('\n')[0] : e}`);
+        continue;
+      }
+      throw new Error(`${file}: ${e instanceof Error ? e.message : e}`);
+    }
+    assertUploadBudget(publicDir, meta.cover, file);
+    for (const src of bodyUploads(body)) assertUploadBudget(publicDir, src, file);
+    entries.push({
+      ...meta,
+      date: meta.date.toISOString(),
+      slug: slugOf(file),
+      wordCount: wordsOf(body),
+      headings: headingsOf(body),
+    });
+  }
+  return entries
     .filter((n) => !n.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }

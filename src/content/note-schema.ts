@@ -13,7 +13,7 @@ export const NoteMetaSchema = z.object({
   cluster: z.enum(CLUSTERS),
   date: z.coerce.date(),
   summary: z.string().min(40).max(300),
-  cover: z.string().regex(/^\/uploads\/[a-z0-9\-/]+\.(webp|jpg|jpeg|png)$/),
+  cover: z.string().regex(/^\/uploads\/[a-z0-9\-/]+\.(webp|jpg|jpeg|png)$/i),
   coverAlt: z.string().min(10).max(200),
   tags: z.array(z.string().regex(/^[a-z0-9-]+$/)).max(6).default([]),
   targetServiceUrl: z.string().regex(/^\/(industry|automation|work|teaching|contact)/),

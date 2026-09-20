@@ -1,4 +1,5 @@
-import { existsSync, readFileSync, statSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -118,5 +119,37 @@ describe('notes content', () => {
     );
     expect(fig).toContain('loading="lazy"');
     expect(fig).toContain('alt="Descriptive alt text here"');
+  });
+
+  it('skips invalid drafts instead of breaking the build', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'notes-'));
+    writeFileSync(
+      join(dir, 'half-written.mdx'),
+      '---\ntitle: "Too short"\ndraft: true\n---\n\nWIP body.\n'
+    );
+    expect(extractNotes(dir)).toEqual([]);
+  });
+
+  it('rejects oversize covers naming file and bytes', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'notes-'));
+    const pub = mkdtempSync(join(tmpdir(), 'public-'));
+    mkdirSync(join(pub, 'uploads'));
+    writeFileSync(join(pub, 'uploads', 'huge.webp'), Buffer.alloc(2 * 1024 * 1024 + 1));    writeFileSync(
+      join(dir, 'big-post.mdx'),
+      '---\ntitle: "A post with an oversize cover image here"\ncluster: "Automation Architecture"\ndate: 2026-09-19\nsummary: "A summary long enough to pass the minimum forty character requirement."\ncover: "/uploads/huge.webp"\ncoverAlt: "Alt text long enough to pass validation here"\ntargetServiceUrl: "/automation"\ntargetServiceLabel: "Explore custom automation workflows"\ndraft: false\n---\n\nBody.\n'
+    );
+    expect(() => extractNotes(dir, pub)).toThrow(/huge\.webp.*2097153/);
+  });
+
+  it('accepts uppercase image extensions from phones', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'notes-'));
+    const pub = mkdtempSync(join(tmpdir(), 'public-'));
+    mkdirSync(join(pub, 'uploads'));
+    writeFileSync(join(pub, 'uploads', 'photo.JPG'), Buffer.alloc(10));
+    writeFileSync(
+      join(dir, 'phone-post.mdx'),
+      '---\ntitle: "A post with a phone photo cover here"\ncluster: "Automation Architecture"\ndate: 2026-09-19\nsummary: "A summary long enough to pass the minimum forty character requirement."\ncover: "/uploads/photo.JPG"\ncoverAlt: "Alt text long enough to pass validation here"\ntargetServiceUrl: "/automation"\ntargetServiceLabel: "Explore custom automation workflows"\ndraft: false\n---\n\nBody.\n'
+    );
+    expect(extractNotes(dir, pub).map((n) => n.slug)).toEqual(['phone-post']);
   });
 });

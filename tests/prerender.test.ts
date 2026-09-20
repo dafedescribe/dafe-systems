@@ -30,6 +30,20 @@ describe('prerender', () => {
     expect(head).not.toContain('content="/uploads');
   });
 
+  it('escapes CMS text in head tags', () => {
+    const head = composeHead({
+      title: 'Say "hi" <boss> & co | DafeDeScribe',
+      description: 'A "quoted" <tag> & more.',
+      path: '/notes/x',
+      image: '/og-image.png',
+      published: '2026-09-19',
+    });
+    expect(head).not.toContain('"hi"');
+    expect(head).toContain('&quot;hi&quot;');
+    expect(head).toContain('&lt;boss&gt;');
+    expect(head).toContain('&amp;');
+  });
+
   it('sitemap covers notes and excludes private routes', () => {
     const xml = sitemapXml();
     expect(xml).toContain('<loc>https://www.dafe.name.ng/notes</loc>');
@@ -37,6 +51,16 @@ describe('prerender', () => {
     expect(xml).toContain('<loc>https://www.dafe.name.ng/work</loc>');
     expect(xml).not.toContain('/admin');
     expect(xml).not.toContain('/lab');
+  });
+
+  it('prerender markers wrap only replaceable meta (favicons/fonts stay static)', () => {
+    const html = readFileSync(join(REPO_ROOT, 'index.html'), 'utf8');
+    const block = html.split('<!--prerender-head-->')[1].split('<!--/prerender-head-->')[0];
+    expect(block).toContain('<title>');
+    expect(block).toContain('og:image');
+    expect(block).not.toContain('favicon');
+    expect(block).not.toContain('fonts.googleapis');
+    expect(block).not.toContain('theme-color');
   });
 
   it('vercel rewrite serves the SPA shell but leaves content routes alone', () => {
