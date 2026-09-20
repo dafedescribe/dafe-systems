@@ -15,6 +15,8 @@ export const ARTICLES: Article[] = getAllNotes().map((n) => ({
   date: displayDate(n.date),
   readTime: readTimeOf(n),
   summary: n.summary,
+  cover: n.cover,
+  coverAlt: n.coverAlt,
   targetServiceUrl: n.targetServiceUrl,
   targetServiceLabel: n.targetServiceLabel,
   content: [],

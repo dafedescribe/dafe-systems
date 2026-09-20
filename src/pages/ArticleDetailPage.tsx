@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { getNoteComponent, getNoteEntry, readTimeOf } from '../content/notes';
+import { ReadingProgress, ShareRow, TableOfContents } from '../components/article-chrome';
+import { getAllNotes, getNoteComponent, getNoteEntry, readTimeOf } from '../content/notes';
 import { mdxComponents } from '../content/mdx-components';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
@@ -32,6 +33,12 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
 
   const readTime = readTimeOf(article);
   const dateDisplay = displayDate(article.date);
+  const canonicalPath = `/notes/${article.slug}`;
+
+  const related = [
+    ...getAllNotes().filter((n) => n.slug !== article.slug && n.cluster === article.cluster),
+    ...getAllNotes().filter((n) => n.slug !== article.slug && n.cluster !== article.cluster),
+  ].slice(0, 3);
 
   const jsonLd = [
     {
@@ -65,11 +72,13 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
 
   return (
     <div className="min-h-screen">
+      <ReadingProgress />
       <SeoHead
         title={`${article.title} | DafeDeScribe`}
         description={article.summary}
-        canonicalPath={`/notes/${article.slug}`}
+        canonicalPath={canonicalPath}
         ogType="article"
+        ogImage={`https://www.dafe.name.ng${article.cover}`}
         jsonLd={jsonLd}
       />
 
@@ -80,6 +89,16 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
             { label: article.cluster.toUpperCase(), path: '/notes' },
           ]}
         />
+
+        {/* ─── COVER HERO ──────────────────────────────────────── */}
+        <div className="overflow-hidden rounded-2xl border border-slate-200 aspect-video bg-slate-900">
+          <img
+            src={article.cover}
+            alt={article.coverAlt}
+            fetchPriority="high"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
         {/* ─── BULLETIN HEADER ─────────────────────────────────── */}
         <header className="catalogue-sheet p-6 sm:p-8 space-y-4">
@@ -111,11 +130,19 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
           </div>
         </header>
 
-        {/* ─── BULLETIN BODY ───────────────────────────────────── */}
-        <div className="catalogue-sheet p-6 sm:p-10 space-y-6 text-base sm:text-lg text-slate-700 font-body leading-[1.8]">
-          <React.Suspense fallback={<p className="text-slate-500">Loading note…</p>}>
-            <NoteBody components={mdxComponents} />
-          </React.Suspense>
+        {/* ─── BULLETIN BODY + TOC ─────────────────────────────── */}
+        <div className="lg:grid lg:grid-cols-[1fr_220px] lg:gap-10 items-start">
+          <div className="catalogue-sheet p-6 sm:p-10 space-y-6 text-base sm:text-lg text-slate-700 font-body leading-[1.8] min-w-0">
+            <React.Suspense fallback={<p className="text-slate-500">Loading note…</p>}>
+              <NoteBody components={mdxComponents} />
+            </React.Suspense>
+            <ShareRow title={article.title} path={canonicalPath} />
+          </div>
+          {article.headings.length > 0 && (
+            <aside className="hidden lg:block sticky top-24">
+              <TableOfContents headings={article.headings} />
+            </aside>
+          )}
         </div>
 
         {/* ─── AUTHOR SPECIFICATION ────────────────────────────── */}
@@ -133,6 +160,40 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
             <Link to="/about" className="text-slate-900 font-semibold hover:text-amber-700 transition-colors">
               View engineering background & credentials →
             </Link>
+          </div>
+        </section>
+
+        {/* ─── RELATED NOTES ───────────────────────────────────── */}
+        <section className="space-y-4">
+          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
+            Related Notes
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {related.map((rel) => (
+              <Link
+                key={rel.slug}
+                to={`/notes/${rel.slug}`}
+                className="catalogue-sheet overflow-hidden group hover:border-slate-400 transition-colors"
+              >
+                <div className="aspect-video overflow-hidden bg-slate-900">
+                  <img
+                    src={rel.cover}
+                    alt={rel.coverAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="font-mono-tech text-[10px] uppercase tracking-widest text-amber-700 font-semibold mb-1">
+                    {rel.cluster}
+                  </div>
+                  <div className="font-display font-bold text-slate-900 leading-snug group-hover:text-amber-700 transition-colors">
+                    {rel.title}
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 

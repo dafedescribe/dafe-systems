@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react';
-import type { NoteEntry, NoteMeta } from './note-schema';
+import type { NoteEntry } from './note-schema';
 import manifest from './notes-manifest.json';
 
 type ManifestEntry = Omit<NoteEntry, 'date'> & { date: string };

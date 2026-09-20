@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import mdx from '@mdx-js/rollup';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import rehypeSlug from 'rehype-slug';
 import path from 'path';
 import { defineConfig } from 'vite';
 
@@ -14,6 +15,7 @@ export default defineConfig(({ mode }) => {
       mdx({
         providerImportSource: '@mdx-js/react',
         remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+        rehypePlugins: [rehypeSlug],
       }),
     ],
     resolve: {

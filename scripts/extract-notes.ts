@@ -8,6 +8,7 @@ import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
+import GithubSlugger from 'github-slugger';
 import { NoteMetaSchema, type NoteEntry } from '../src/content/note-schema.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -23,11 +24,13 @@ function wordsOf(body: string): number {
   return body.split(/\s+/).filter(Boolean).length;
 }
 
-function headingsOf(body: string): { text: string }[] {
+function headingsOf(body: string): { text: string; id: string }[] {
+  const slugger = new GithubSlugger();
   return body
     .split('\n')
     .filter((l) => l.startsWith('## '))
-    .map((l) => ({ text: l.slice(3).trim() }));
+    .map((l) => l.slice(3).trim())
+    .map((text) => ({ text, id: slugger.slug(text) }));
 }
 
 export function extractNotes(contentDir = join(repoRoot, 'content', 'notes')): ManifestEntry[] {

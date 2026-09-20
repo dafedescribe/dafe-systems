@@ -1,10 +1,11 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import * as React from 'react';
 import { getAllNotes, getNote, getNoteComponent } from '../src/content/notes';
 import { mdxComponents } from '../src/content/mdx-components';
+import { ReadingProgress, ShareRow, TableOfContents } from '../src/components/article-chrome';
 import { extractNotes } from '../scripts/extract-notes';
 
 const repoRoot = join(__dirname, '..');
@@ -68,7 +69,43 @@ describe('notes content', () => {
     expect(html).toContain('Choose the tool that minimizes operational friction');
   });
 
-  it('rich components render with design classes', () => {    const html = renderToStaticMarkup(
+  it('every published cover exists in public/ and fits the upload budget', () => {
+    for (const n of getAllNotes()) {
+      const file = join(repoRoot, 'public', n.cover);
+      expect(existsSync(file), `missing cover for ${n.slug}: ${n.cover}`).toBe(true);
+      expect(statSync(file).size, `${n.cover} over 2 MB`).toBeLessThanOrEqual(2 * 1024 * 1024);
+    }
+  });
+
+  it('TOC renders anchors matching heading ids', () => {
+    const html = renderToStaticMarkup(
+      React.createElement(TableOfContents, {
+        headings: [
+          { text: 'Fixture heading', id: 'fixture-heading' },
+          { text: 'Second section', id: 'second-section' },
+        ],
+      })
+    );
+    expect(html).toContain('href="#fixture-heading"');
+    expect(html).toContain('Second section');
+  });
+
+  it('ShareRow links the absolute canonical URL', () => {
+    const html = renderToStaticMarkup(
+      React.createElement(ShareRow, { title: 'Some post', path: '/notes/some-post' })
+    );
+    expect(html).toContain(encodeURIComponent('https://www.dafe.name.ng/notes/some-post'));
+    expect(html).toContain('wa.me/?text=');
+  });
+
+  it('ReadingProgress renders a zero-scale fixed bar initially', () => {
+    const html = renderToStaticMarkup(React.createElement(ReadingProgress));
+    expect(html).toContain('fixed');
+    expect(html).toContain('scaleX(0)');
+  });
+
+  it('rich components render with design classes', () => {
+    const html = renderToStaticMarkup(
       React.createElement(mdxComponents.PullQuote, null, 'Remember this line')
     );
     expect(html).toContain('border-amber-600');

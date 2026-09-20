@@ -83,8 +83,20 @@ export const NotesPage: React.FC = () => {
             return (
               <article
                 key={art.slug}
-                className="catalogue-sheet p-6 sm:p-8 hover:border-slate-400 transition-colors group"
+                className="catalogue-sheet overflow-hidden hover:border-slate-400 transition-colors group"
               >
+                <Link to={`/notes/${art.slug}`} aria-label={art.title}>
+                  <div className="aspect-video overflow-hidden bg-slate-900">
+                    <img
+                      src={art.cover}
+                      alt={art.coverAlt}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform"
+                    />
+                  </div>
+                </Link>
+                <div className="p-6 sm:p-8">
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3 mb-4">
                   <div className="flex items-center gap-2 font-mono-tech text-xs">
                     <span className="text-amber-700 font-semibold">
@@ -123,6 +135,7 @@ export const NotesPage: React.FC = () => {
                     <span>Read Article</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
+                </div>
                 </div>
               </article>
             );

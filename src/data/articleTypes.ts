@@ -5,6 +5,8 @@ export interface Article {
   date: string;
   readTime: string;
   summary: string;
+  cover: string;
+  coverAlt: string;
   targetServiceUrl: string;
   targetServiceLabel: string;
   content: string[];
