@@ -8,6 +8,7 @@
     "build": "node scripts/generate-sitemap.mjs && vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "setup:gmail": "node scripts/setup-gmail.mjs",
+    "upload:site": "python scripts/upload_server.py",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "test": "vitest run",

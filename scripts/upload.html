@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DafeDeScribe / Asset Intake</title>
+  <style>
+    :root { color-scheme: light; --ink: #1d211d; --muted: #687066; --paper: #f6f4ee; --line: #d8d7ce; --accent: #d47a2e; --accent-dark: #9e4e18; --green: #2f7656; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; color: var(--ink); background: radial-gradient(circle at 76% 8%, #e8ddc8 0, transparent 28rem), var(--paper); font-family: Georgia, 'Times New Roman', serif; }
+    .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 32px 0 72px; }
+    header { display: flex; justify-content: space-between; gap: 24px; align-items: end; padding-bottom: 44px; border-bottom: 1px solid var(--line); }
+    .kicker, .meta, button, .file-kind { font: 700 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; }
+    .kicker { color: var(--accent-dark); }
+    h1 { max-width: 700px; margin: 14px 0 0; font-size: clamp(42px, 7vw, 82px); line-height: .9; letter-spacing: -.055em; font-weight: 500; }
+    .status { max-width: 220px; color: var(--muted); font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; text-align: right; }
+    main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 56px; padding-top: 56px; }
+    .intro { max-width: 590px; color: #50574f; font-size: 20px; line-height: 1.45; }
+    .dropzone { position: relative; min-height: 330px; display: grid; place-items: center; margin-top: 30px; padding: 32px; border: 1px dashed #9e9e92; background: rgba(255,255,255,.34); transition: .2s ease; }
+    .dropzone:hover, .dropzone.dragging { border-color: var(--accent); background: #f3e5d2; transform: translateY(-2px); }
+    input[type=file] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+    .drop-content { pointer-events: none; text-align: center; }
+    .drop-mark { width: 60px; height: 60px; display: grid; place-items: center; margin: 0 auto 20px; border: 1px solid var(--ink); border-radius: 50%; font-size: 32px; }
+    .drop-title { margin: 0 0 8px; font-size: 27px; }
+    .drop-help { margin: 0; color: var(--muted); font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .panel { border-left: 1px solid var(--line); padding-left: 28px; }
+    .panel h2 { margin: 0 0 18px; font-size: 15px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+    .routes { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+    .routes li { padding: 14px 0; border-top: 1px solid var(--line); }
+    .routes strong { display: block; margin-bottom: 5px; font: 700 12px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .routes span { color: var(--muted); font-size: 15px; }
+    #results { display: grid; gap: 10px; margin-top: 24px; }
+    .file { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 15px 16px; background: #fff; border: 1px solid var(--line); }
+    .file-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; }
+    .file-path { margin-top: 5px; color: var(--muted); font: 11px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .file-kind { color: var(--green); white-space: nowrap; }
+    .message { margin-top: 18px; color: var(--green); font: 13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .error { color: #a33f2b; }
+    @media (max-width: 760px) { .shell { width: min(100% - 28px, 600px); } header { display: block; } .status { max-width: none; margin-top: 22px; text-align: left; } main { display: block; padding-top: 36px; } .panel { margin-top: 44px; padding: 28px 0 0; border-top: 1px solid var(--line); border-left: 0; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div><div class="kicker">DafeDeScribe / Local workspace</div><h1>Bring the materials in.</h1></div>
+      <div class="status">LOCAL ONLY<br />Files write directly to this Codespace.<br />Nothing is sent to a public service.</div>
+    </header>
+    <main>
+      <section>
+        <p class="intro">Drop the images, documents, and notes you want the site to use. The intake desk sorts each file into the folder where the build expects it.</p>
+        <div class="dropzone" id="dropzone">
+          <input id="files" type="file" multiple accept=".avif,.gif,.jpeg,.jpg,.png,.svg,.webp,.doc,.docx,.pdf,.txt,.md,.mdx" />
+          <div class="drop-content"><div class="drop-mark">↑</div><h2 class="drop-title">Choose files or drop them here</h2><p class="drop-help">Images · PDFs · Word documents · MDX notes</p></div>
+        </div>
+        <div id="message" class="message" aria-live="polite"></div>
+        <div id="results"></div>
+      </section>
+      <aside class="panel"><h2>Where things go</h2><ul class="routes"><li><strong>Images</strong><span>public/uploads/ · up to 2 MB each</span></li><li><strong>Documents</strong><span>public/docs/ · PDF, DOC, DOCX, TXT</span></li><li><strong>Site notes</strong><span>content/notes/ · Markdown or MDX</span></li></ul><p class="drop-help" style="margin-top: 28px">Existing files are never overwritten. A numbered copy is created instead.</p></aside>
+    </main>
+  </div>
+  <script>
+    const input = document.querySelector('#files');
+    const dropzone = document.querySelector('#dropzone');
+    const message = document.querySelector('#message');
+    const results = document.querySelector('#results');
+    const formatBytes = (bytes) => `${(bytes / 1024).toFixed(bytes > 1024 * 1024 ? 1 : 0)} KB`;
+    function render(files) {
+      results.innerHTML = files.map((file) => `<div class="file"><div><div class="file-name">${file.name}</div><div class="file-path">${file.path} · ${formatBytes(file.bytes)}</div></div><div class="file-kind">saved</div></div>`).join('');
+    }
+    async function upload(files) {
+      if (!files.length) return;
+      message.className = 'message'; message.textContent = `Sorting ${files.length} file${files.length === 1 ? '' : 's'}…`;
+      const body = new FormData(); files.forEach((file) => body.append('files', file, file.name));
+      try {
+        const response = await fetch('/upload', { method: 'POST', body });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'Upload failed');
+        message.textContent = `${data.files.length} file${data.files.length === 1 ? '' : 's'} saved to the repository.`;
+        render(data.files);
+      } catch (error) { message.className = 'message error'; message.textContent = error.message; }
+      input.value = '';
+    }
+    input.addEventListener('change', () => upload([...input.files]));
+    ['dragenter', 'dragover'].forEach((event) => dropzone.addEventListener(event, (e) => { e.preventDefault(); dropzone.classList.add('dragging'); }));
+    ['dragleave', 'drop'].forEach((event) => dropzone.addEventListener(event, (e) => { e.preventDefault(); dropzone.classList.remove('dragging'); }));
+    dropzone.addEventListener('drop', (e) => upload([...e.dataTransfer.files]));
+  </script>
+</body>
+</html>
