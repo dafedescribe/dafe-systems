@@ -8,34 +8,29 @@ const environments = [
 ];
 
 export const TrustRail: React.FC = () => (
-  <section className="trust-rail border-y border-stone-300/90 py-6" aria-labelledby="trust-rail-title">
-    <div className="grid gap-6 lg:grid-cols-[minmax(220px,0.7fr)_minmax(0,2.3fr)] lg:items-center">
-      <div className="lg:border-r lg:border-stone-300 lg:pr-8">
-        <h2 id="trust-rail-title" className="max-w-sm font-display text-xl leading-tight text-slate-950 sm:text-2xl">
-          Experience across industrial, education & technical environments
-        </h2>
-      </div>
+  <section className="trust-rail" aria-labelledby="trust-rail-title">
+    <h2 id="trust-rail-title" className="max-w-lg font-display text-2xl leading-tight text-slate-950 sm:text-3xl">
+      Experience across industrial, education &amp; technical environments
+    </h2>
 
-      <div className="grid grid-cols-2 gap-x-5 gap-y-5 md:grid-cols-4">
-        {environments.map((environment) => (
-          <div key={environment.name} className="group flex min-w-0 items-center gap-3">
-            <div className="grid h-12 w-12 flex-none place-items-center border border-stone-300 bg-white p-1.5 transition-colors group-hover:border-amber-700">
-              <img
-                src={environment.logo}
-                alt={`${environment.name} logo`}
-                width={48}
-                height={48}
-                loading="lazy"
-                className="h-full w-full object-contain grayscale transition-[filter] group-hover:grayscale-0"
-              />
-            </div>
-            <div className="min-w-0">
-              <div className="truncate text-sm font-bold text-slate-900">{environment.name}</div>
-              <div className="mt-0.5 text-[11px] leading-snug text-slate-500">{environment.context}</div>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="mt-7 grid grid-cols-2 border-y border-stone-300">
+      {environments.map((environment, index) => (
+        <div
+          key={environment.name}
+          className={`flex min-w-0 flex-col items-center py-6 text-center sm:py-7 ${index % 2 === 1 ? 'border-l border-stone-300 pl-4' : 'pr-4'} ${index > 1 ? 'border-t border-stone-300' : ''}`}
+        >
+          <img
+            src={environment.logo}
+            alt={`${environment.name} logo`}
+            width={88}
+            height={88}
+            loading="eager"
+            className="h-[88px] w-[88px] object-contain"
+          />
+          <div className="mt-4 text-base font-bold text-slate-950">{environment.name}</div>
+          <div className="mt-1 max-w-[18ch] text-xs leading-relaxed text-slate-600">{environment.context}</div>
+        </div>
+      ))}
     </div>
   </section>
 );

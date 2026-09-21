@@ -67,7 +67,7 @@ export const HomePage: React.FC = () => {
 
       <main className="editorial-home mx-auto max-w-[1440px] px-6 pb-20 pt-10 sm:px-12 sm:pb-28 sm:pt-16 lg:px-16">
         <section className="editorial-hero relative border-b border-stone-300 pb-14 sm:pb-20">
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="hero-reveal space-y-7 lg:col-span-7">
               <h1 className="hero-display max-w-[13ch] font-display font-medium leading-[0.94] tracking-[-0.04em] text-slate-950">I build systems for work that has outgrown manual handling.</h1>
               <p className="max-w-2xl text-lg leading-relaxed text-slate-700 sm:text-xl">I turn document-heavy, repetitive operations into clear workflows—especially RFQ intake, tender discovery, quotation coordination, and high-volume data processing.</p>
@@ -81,13 +81,12 @@ export const HomePage: React.FC = () => {
                 <div><span className="block font-mono-tech text-[9px] uppercase tracking-wider text-slate-400">Delivery</span>{t('home.location')}</div>
               </div>
             </div>
-            <div className="hero-reveal-delay mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none"><FounderPortrait /></div>
+            <div className="hero-reveal-delay lg:col-span-5"><TrustRail /></div>
           </div>
+          <div className="mt-9 flex justify-end"><FounderPortrait /></div>
         </section>
 
-        <div className="py-10 sm:py-12"><TrustRail /></div>
-
-        <section className="grid gap-10 border-b border-stone-300 pb-16 pt-4 sm:pb-20 lg:grid-cols-12 lg:gap-14">
+        <section className="grid gap-10 border-b border-stone-300 py-16 sm:py-20 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
             <div className="space-y-5 lg:sticky lg:top-28">
               <h2 className="max-w-md font-display text-4xl leading-[1.02] tracking-[-0.035em] text-slate-950 sm:text-5xl">The software follows the work—not the other way around.</h2>
