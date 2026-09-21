@@ -9,6 +9,8 @@ import { HomePage } from '../src/pages/HomePage';
 import { IndustryPage } from '../src/pages/IndustryPage';
 import { AutomationPage } from '../src/pages/AutomationPage';
 import { WorkPage } from '../src/pages/WorkPage';
+import { TeachingPage } from '../src/pages/TeachingPage';
+import { AboutPage } from '../src/pages/AboutPage';
 
 const renderShell = (node: React.ReactNode, path = '/') => renderToStaticMarkup(
   React.createElement(
@@ -74,6 +76,23 @@ describe('site-wide editorial system', () => {
 
     expect(html.match(/data-featured-project="true"/g)).toHaveLength(3);
     expect(html.match(/data-project-directory-entry="true"/g)?.length).toBeGreaterThan(0);
+    expect(html).not.toContain('rounded-xl');
+  });
+
+  it('limits Teaching to four representative modules without duplicate topic grids', () => {
+    const html = renderPage(React.createElement(TeachingPage), '/teaching');
+
+    expect(html.match(/data-teaching-module="true"/g)).toHaveLength(4);
+    expect(html).not.toContain('Technical subjects covered');
+    expect(html).not.toContain('rounded-xl');
+  });
+
+  it('uses the approved portrait quietly on About', () => {
+    const html = renderPage(React.createElement(AboutPage), '/about');
+
+    expect(html).toContain('replicate-image-style-precisely-20260919112129.jpeg');
+    expect(html).toContain('id="about-identity"');
+    expect(html).not.toContain('Active Inquiries Open');
     expect(html).not.toContain('rounded-xl');
   });
 });
