@@ -28,15 +28,25 @@ export const Navbar: React.FC = () => {
           {/* Brand Wordmark & Technical Identifier */}
           <Link
             to="/"
-            className="flex flex-col group py-1"
-            aria-label="DafeDeScribe Index"
+            className="flex items-center gap-3 group py-1"
+            aria-label="DafeDeScribe Home"
           >
-            <span className="font-bold tracking-tight text-lg sm:text-xl text-slate-900 font-body">
-              DafeDeScribe
-            </span>
-            <span className="font-mono-tech text-[10px] tracking-[0.12em] uppercase text-slate-500">
-              SYSTEMS · AUTOMATION · EDUCATION
-            </span>
+            <img
+              src="/logo.png"
+              alt="DafeDeScribe Logo"
+              className="w-8 h-8 rounded object-cover border border-slate-200 shadow-2xs"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
+            <div className="flex flex-col">
+              <span className="font-bold tracking-tight text-lg sm:text-xl text-slate-900 font-body">
+                DafeDeScribe
+              </span>
+              <span className="font-mono-tech text-[10px] tracking-[0.12em] uppercase text-slate-500">
+                SYSTEMS · AUTOMATION · EDUCATION
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -66,7 +76,18 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Primary CTA & Mobile Drawer Toggle */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex items-center gap-1.5 text-xs font-mono-tech uppercase tracking-wider text-slate-600 hover:text-slate-900 transition-colors py-2 px-2.5 rounded-lg border border-slate-200 hover:border-slate-400 bg-white"
+              download="Odafe-Amalega-CV.pdf"
+            >
+              <span>CV (PDF)</span>
+              <ArrowUpRight className="w-3 h-3 text-slate-400" />
+            </a>
+
             <Link
               to="/contact"
               className="hidden sm:inline-flex btn-primary px-4 py-2.5"
@@ -112,7 +133,7 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          <div className="pt-2 border-t border-slate-200">
+          <div className="pt-2 border-t border-slate-200 space-y-2">
             <Link
               to="/contact"
               onClick={() => setMobileOpen(false)}
@@ -121,6 +142,17 @@ export const Navbar: React.FC = () => {
               <span>Show Me the Workflow</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
+
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary w-full py-2.5 text-xs font-mono-tech flex items-center justify-center gap-2"
+              download="Odafe-Amalega-CV.pdf"
+            >
+              <span>Download CV (PDF)</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
+            </a>
           </div>
         </div>
       )}

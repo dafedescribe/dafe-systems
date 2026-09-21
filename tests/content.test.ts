@@ -7,6 +7,7 @@ import * as React from 'react';
 import { getAllNotes, getNote, getNoteComponent } from '../src/content/notes';
 import { mdxComponents } from '../src/content/mdx-components';
 import { ReadingProgress, ShareRow, TableOfContents } from '../src/components/article-chrome';
+import { WorkPage } from '../src/pages/WorkPage';
 import { extractNotes } from '../scripts/extract-notes';
 
 const repoRoot = join(__dirname, '..');
@@ -151,5 +152,12 @@ describe('notes content', () => {
       '---\ntitle: "A post with a phone photo cover here"\ncluster: "Automation Architecture"\ndate: 2026-09-19\nsummary: "A summary long enough to pass the minimum forty character requirement."\ncover: "/uploads/photo.JPG"\ncoverAlt: "Alt text long enough to pass validation here"\ntargetServiceUrl: "/automation"\ntargetServiceLabel: "Explore custom automation workflows"\ndraft: false\n---\n\nBody.\n'
     );
     expect(extractNotes(dir, pub).map((n) => n.slug)).toEqual(['phone-post']);
+  });
+});
+
+describe('work catalogue', () => {
+  it('renders each project constraint in the catalogue cards', () => {
+    const html = renderToStaticMarkup(React.createElement(WorkPage));
+    expect(html).toContain('Memory limits on standard local hardware');
   });
 });

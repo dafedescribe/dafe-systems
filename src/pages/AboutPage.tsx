@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { ArrowRight, CheckCircle2, GraduationCap, Briefcase, Code2, Wrench } from 'lucide-react';
+import { ArrowRight, CheckCircle2, GraduationCap, Briefcase, Code2, Wrench, FileText, ArrowUpRight, Download } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   const jsonLd = {
@@ -78,6 +78,28 @@ export const AboutPage: React.FC = () => {
             <div className="text-sm text-slate-500 font-body flex items-center gap-2">
               <Briefcase className="w-4 h-4 text-slate-400" />
               <span>Technical Instructor at <strong className="text-slate-900 font-semibold">AppClick Technology</strong></span>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary px-4 py-2 text-xs flex items-center gap-2"
+                download="Odafe-Amalega-CV.pdf"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Download CV (PDF)</span>
+              </a>
+              <a
+                href="https://wa.me/2348148794458"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary px-4 py-2 text-xs flex items-center gap-2"
+              >
+                <span>WhatsApp Direct</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
+              </a>
             </div>
           </div>
 
@@ -195,13 +217,25 @@ export const AboutPage: React.FC = () => {
 
           {/* Footer Actions */}
           <div className="border-t border-slate-100 pt-8 flex flex-wrap items-center justify-between gap-4">
-            <Link
-              to="/work"
-              className="btn-primary px-6 py-3"
-            >
-              <span>Explore Verified Work</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                to="/work"
+                className="btn-primary px-6 py-3"
+              >
+                <span>Explore Verified Work</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary px-5 py-3 flex items-center gap-2"
+                download="Odafe-Amalega-CV.pdf"
+              >
+                <Download className="w-4 h-4 text-slate-500" />
+                <span>Download CV (PDF)</span>
+              </a>
+            </div>
 
             <Link
               to="/contact"

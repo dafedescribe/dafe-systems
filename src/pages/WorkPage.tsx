@@ -3,7 +3,7 @@ import { Link, useRouter } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { PROJECTS, ProjectCategory } from '../data/projectsData';
+import { PROJECTS } from '../data/projectsData';
 
 export const WorkPage: React.FC = () => {
   const { navigate } = useRouter();
@@ -184,7 +184,7 @@ export const WorkPage: React.FC = () => {
                   <div className="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-3">
                     <div>
                       <strong className="text-slate-900">Constraint: </strong>
-                      {proj.constraints}
+                      {proj.constraint}
                     </div>
                     <div>
                       <strong className="text-slate-900">Outcome: </strong>

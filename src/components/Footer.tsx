@@ -10,13 +10,23 @@ export const Footer: React.FC = () => {
           
           {/* Col 1: Brand & Role */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex flex-col">
-              <span className="font-bold tracking-tight text-xl text-slate-900 font-body">
-                DafeDeScribe
-              </span>
-              <span className="font-mono-tech text-[10px] tracking-[0.12em] uppercase text-slate-500">
-                SYSTEMS · AUTOMATION · EDUCATION
-              </span>
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo.png"
+                alt="DafeDeScribe Logo"
+                className="w-9 h-9 rounded object-cover border border-slate-200"
+                onError={(e) => {
+                  (e.target as HTMLElement).style.display = 'none';
+                }}
+              />
+              <div className="flex flex-col">
+                <span className="font-bold tracking-tight text-xl text-slate-900 font-body">
+                  DafeDeScribe
+                </span>
+                <span className="font-mono-tech text-[10px] tracking-[0.12em] uppercase text-slate-500">
+                  SYSTEMS · AUTOMATION · EDUCATION
+                </span>
+              </div>
             </div>
             
             <p className="text-sm text-slate-600 font-body leading-relaxed max-w-md">
@@ -108,6 +118,18 @@ export const Footer: React.FC = () => {
                 <Link to="/about" className="text-slate-600 hover:text-slate-900 transition-colors">
                   About & Background
                 </Link>
+              </li>
+              <li>
+                <a
+                  href="/cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center gap-1"
+                  download="Odafe-Amalega-CV.pdf"
+                >
+                  <span>Curriculum Vitae (PDF)</span>
+                  <ArrowUpRight className="w-3 h-3 text-slate-400" />
+                </a>
               </li>
               <li>
                 <Link to="/contact" className="text-slate-900 font-semibold hover:text-amber-700 transition-colors">
