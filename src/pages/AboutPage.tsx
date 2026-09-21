@@ -263,7 +263,7 @@ export const AboutPage: React.FC = () => {
                 to="/work"
                 className="btn-primary px-6 py-3"
               >
-                <span>Explore Verified Work</span>
+                <span>Explore Documented Work</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a

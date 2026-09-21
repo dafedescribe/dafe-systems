@@ -99,7 +99,7 @@ export const LabPage: React.FC = () => {
               to="/work"
               className="btn-primary px-5 py-3"
             >
-              <span>View Verified Work</span>
+              <span>View Documented Work</span>
             </Link>
             <Link
               to="/contact"

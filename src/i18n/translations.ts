@@ -20,7 +20,7 @@ const english = {
   'home.eyebrow': 'Odafe Amalega · DafeDeScribe',
   'home.title': 'I build systems for work that has outgrown manual handling.',
   'home.primaryCta': 'Discuss a Workflow',
-  'home.secondaryCta': 'Explore Verified Work',
+  'home.secondaryCta': 'Explore Documented Work',
   'home.location': 'Based in Ibadan, Nigeria · Working globally',
   'contact.eyebrow': 'Direct Engineering Consultation',
   'contact.title': 'Show me the workflow.',

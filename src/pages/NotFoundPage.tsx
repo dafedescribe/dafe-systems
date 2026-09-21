@@ -40,7 +40,7 @@ export const NotFoundPage: React.FC = () => {
           to="/work"
           className="btn-secondary px-5 py-2.5"
         >
-          Verified Work
+          Documented Work
         </Link>
       </div>
     </div>

@@ -65,8 +65,11 @@ const AppRoutes: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FCFBF7] text-[#181816] font-body antialiased selection:bg-[#E6D8AF] selection:text-[#181816]">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-slate-900 focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white">
+        Skip to main content
+      </a>
       <Navbar />
-      <div className="flex-1">
+      <div id="main-content" className="flex-1">
         {ContentComponent}
       </div>
       <Footer />

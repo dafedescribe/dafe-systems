@@ -49,7 +49,7 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
         num: '04',
         title: 'System Dispatch',
         desc: 'Binding quotation is assembled, dispatched to the customer, and synchronized back into ERP and CRM databases.',
-        badge: 'Verified',
+        badge: 'Dispatched',
         badgeColor: 'bg-emerald-50 text-emerald-800 font-medium',
         icon: CheckCircle2
       }

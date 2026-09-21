@@ -112,7 +112,7 @@ export const ContactPage: React.FC = () => {
               setInquiryType('workflow');
               setSubmitted(false);
             }}
-            className={`flex-1 min-h-[44px] py-3 px-4 rounded-md flex items-center justify-center transition-all ${
+              className={`flex-1 min-h-[44px] py-3 px-4 rounded-md flex items-center justify-center transition-colors ${
               inquiryType === 'workflow'
                 ? 'bg-slate-900 text-white font-semibold shadow-sm'
                 : 'text-slate-600 hover:text-slate-900'
@@ -126,7 +126,7 @@ export const ContactPage: React.FC = () => {
               setInquiryType('teaching');
               setSubmitted(false);
             }}
-            className={`flex-1 min-h-[44px] py-3 px-4 rounded-md flex items-center justify-center transition-all ${
+              className={`flex-1 min-h-[44px] py-3 px-4 rounded-md flex items-center justify-center transition-colors ${
               inquiryType === 'teaching'
                 ? 'bg-slate-900 text-white font-semibold shadow-sm'
                 : 'text-slate-600 hover:text-slate-900'
@@ -180,6 +180,8 @@ export const ContactPage: React.FC = () => {
                 </label>
                 <textarea
                   id="workflow-input"
+                  name="description"
+                  autoComplete="off"
                   required
                   rows={5}
                   value={workflowText}
@@ -195,6 +197,8 @@ export const ContactPage: React.FC = () => {
                 </label>
                 <textarea
                   id="teaching-goal"
+                  name="description"
+                  autoComplete="off"
                   required
                   rows={5}
                   value={teachingGoal}
@@ -212,6 +216,8 @@ export const ContactPage: React.FC = () => {
               </label>
               <input
                 id="user-name"
+                name="name"
+                autoComplete="name"
                 type="text"
                 required
                 value={name}
@@ -233,6 +239,8 @@ export const ContactPage: React.FC = () => {
               </label>
               <input
                 id="user-company"
+                name="organization"
+                autoComplete="organization"
                 type="text"
                 value={organization}
                 onChange={(e) => setOrganization(e.target.value)}
@@ -248,6 +256,8 @@ export const ContactPage: React.FC = () => {
               </label>
               <input
                 id="user-contact"
+                name="contactInfo"
+                autoComplete="off"
                 type="text"
                 required
                 value={contactInfo}
@@ -264,6 +274,8 @@ export const ContactPage: React.FC = () => {
               </label>
               <input
                 id="current-tools"
+                name="currentTools"
+                autoComplete="off"
                 type="text"
                 value={currentTools}
                 onChange={(e) => setCurrentTools(e.target.value)}
@@ -279,6 +291,8 @@ export const ContactPage: React.FC = () => {
               </label>
               <input
                 id="optional-notes"
+                name="optionalNote"
+                autoComplete="off"
                 type="text"
                 value={optionalNote}
                 onChange={(e) => setOptionalNote(e.target.value)}
