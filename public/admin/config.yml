@@ -7,8 +7,10 @@ backend:
 publish_mode: simple
 media_folder: public/uploads
 public_folder: /uploads
-media_library:
-  max_file_size: 2097152
+media_libraries:
+  default:
+    config:
+      max_file_size: 2097152
 collections:
   - name: notes
     label: Notes
