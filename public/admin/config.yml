@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: dafedescribe/dafe-systems
-  branch: content-authoring
+  branch: main
   base_url: https://www.dafe.name.ng
   auth_endpoint: /api/auth
 publish_mode: simple
