@@ -27,4 +27,26 @@ describe('homepage trust presentation', () => {
     expect(home).toContain('<TrustRail />');
     expect(home.indexOf('<TrustRail />')).toBeLessThan(home.indexOf('industrialEvidence.map'));
   });
+
+  it('keeps the mobile header controls inside a 390px viewport', () => {
+    const navbar = read('../src/components/Navbar.tsx');
+    expect(navbar).toContain('className="hidden sm:block"');
+    expect(navbar).not.toContain('className="hidden sm:inline-flex btn-primary');
+  });
+
+  it('uses a flat editorial ledger for the hero workflow', () => {
+    const diagram = read('../src/components/ProcessDiagram.tsx');
+    const heroBranch = diagram.slice(0, diagram.indexOf('// RFQ Architecture Diagram'));
+    expect(heroBranch).toContain('divide-y divide-stone-300');
+    expect(heroBranch).not.toContain('rounded-lg');
+    expect(heroBranch).not.toContain('rounded-full');
+  });
+
+  it('qualifies prototype and internal-build outcomes on the homepage', () => {
+    const home = read('../src/pages/HomePage.tsx');
+    expect(home).toContain('Target: reduce estimator preparation');
+    expect(home).toContain('Target: replace 10+ hours');
+    expect(home).toContain('Build goal: keep approved quotations visible');
+    expect(home).not.toContain('project.result}</dd>');
+  });
 });

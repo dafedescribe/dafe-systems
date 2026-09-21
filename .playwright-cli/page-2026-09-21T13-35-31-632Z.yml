@@ -1,0 +1,231 @@
+- generic [ref=f1e3]:
+  - link "Skip to main content" [ref=f1e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f1e5]:
+    - generic [ref=f1e7]:
+      - link "DafeDeScribe Home" [ref=f1e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f1e9]
+        - generic [ref=f1e10]:
+          - generic [ref=f1e11]: DafeDeScribe
+          - generic [ref=f1e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - navigation [ref=f1e13]:
+        - link "01 INDUSTRY" [ref=f1e14] [cursor=pointer]:
+          - /url: /industry
+          - generic [ref=f1e15]: "01"
+          - generic [ref=f1e16]: INDUSTRY
+        - link "02 AUTOMATION" [ref=f1e17] [cursor=pointer]:
+          - /url: /automation
+          - generic [ref=f1e18]: "02"
+          - generic [ref=f1e19]: AUTOMATION
+        - link "03 WORK" [ref=f1e20] [cursor=pointer]:
+          - /url: /work
+          - generic [ref=f1e21]: "03"
+          - generic [ref=f1e22]: WORK
+        - link "04 TEACHING" [ref=f1e23] [cursor=pointer]:
+          - /url: /teaching
+          - generic [ref=f1e24]: "04"
+          - generic [ref=f1e25]: TEACHING
+        - link "05 NOTES" [ref=f1e26] [cursor=pointer]:
+          - /url: /notes
+          - generic [ref=f1e27]: "05"
+          - generic [ref=f1e28]: NOTES
+        - link "06 ABOUT" [ref=f1e29] [cursor=pointer]:
+          - /url: /about
+          - generic [ref=f1e30]: "06"
+          - generic [ref=f1e31]: ABOUT
+      - generic [ref=f1e33]:
+        - generic [ref=f1e34]:
+          - generic [ref=f1e35]: Language
+          - combobox "Language" [ref=f1e36]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - link "CV (PDF)" [ref=f1e37] [cursor=pointer]:
+          - /url: /cv.pdf
+        - link "Show Me the Workflow" [ref=f1e43] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f1e50]:
+    - navigation "Breadcrumb" [ref=f1e51]:
+      - list [ref=f1e52]:
+        - listitem [ref=f1e53]:
+          - link "INDEX" [ref=f1e54] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f1e55]:
+          - generic [ref=f1e58]: ABOUT
+    - article [ref=f1e59]:
+      - generic [ref=f1e60]:
+        - generic [ref=f1e61]:
+          - generic [ref=f1e62]: Founder & Systems Builder
+          - generic [ref=f1e63]: Active Inquiries Open
+        - heading "Odafe Amalega" [level=1] [ref=f1e64]
+        - generic [ref=f1e65]: AI Workflow Engineer · Systems Builder · Technical Educator
+        - generic [ref=f1e70]:
+          - text: Technical Instructor at
+          - strong [ref=f1e71]: AppClick Technology
+        - generic [ref=f1e72]:
+          - link "Download CV (PDF)" [ref=f1e73] [cursor=pointer]:
+            - /url: /cv.pdf
+          - link "WhatsApp Direct" [ref=f1e78] [cursor=pointer]:
+            - /url: https://wa.me/2349132480302
+        - generic [ref=f1e83]:
+          - generic [ref=f1e84]: Based in Ibadan, Nigeria
+          - generic [ref=f1e85]: /
+          - generic [ref=f1e86]: Working globally
+      - generic [ref=f1e87]:
+        - generic [ref=f1e88]:
+          - generic [ref=f1e89]: Environments I Understand
+          - generic [ref=f1e90]: Industrial operations · education · construction · automation
+        - generic [ref=f1e91]:
+          - generic [ref=f1e92]:
+            - img "AppClick Academy logo" [ref=f1e93]
+            - generic [ref=f1e94]:
+              - generic [ref=f1e95]: AppClick
+              - generic [ref=f1e96]: Technical instruction
+          - generic [ref=f1e97]:
+            - img "New Edition College logo" [ref=f1e98]
+            - generic [ref=f1e99]:
+              - generic [ref=f1e100]: New Edition
+              - generic [ref=f1e101]: Education & internal systems
+          - generic [ref=f1e102]:
+            - img "SR Construction logo" [ref=f1e103]
+            - generic [ref=f1e104]:
+              - generic [ref=f1e105]: SR Construction
+              - generic [ref=f1e106]: Construction context
+          - generic [ref=f1e107]:
+            - img "Dangote logo" [ref=f1e108]
+            - generic [ref=f1e109]:
+              - generic [ref=f1e110]: Dangote Cement
+              - generic [ref=f1e111]: Industrial exposure
+        - paragraph [ref=f1e112]: Industrial exposure at Dangote Cement and independent freelance systems work complete the picture.
+      - generic [ref=f1e113]:
+        - paragraph [ref=f1e114]: I design and build workflow automation, custom data pipelines, and practical AI systems for businesses whose operations have outgrown manual handling.
+        - paragraph [ref=f1e115]: "My work focuses on the commercial workflows of industrial and operational businesses: managing inbound RFQs, tracking tenders across public and private procurement boards, assembling complex quotations, and generating recurring operational reports."
+        - paragraph [ref=f1e116]: "My background is in engineering (B.Eng from Federal University Oye-Ekiti). That engineering training fundamentally shapes how I approach software: I look at how information physically moves through a business, isolate the specific bottlenecks causing delay or error, and build reliable, deterministic systems that keep experienced people in control of key decisions."
+        - paragraph [ref=f1e117]: Alongside engineering systems, I teach applied AI, APIs, and automation at AppClick Technology. Teaching forces clarity — if you cannot explain how a workflow functions in plain terms without relying on buzzwords, you probably should not be building it for production.
+      - generic [ref=f1e118]:
+        - generic [ref=f1e119]: Core Technical Capabilities
+        - generic [ref=f1e125]:
+          - generic [ref=f1e126]: Workflow Architecture
+          - generic [ref=f1e129]: Python Development
+          - generic [ref=f1e132]: REST & Webhook APIs
+          - generic [ref=f1e135]: n8n Workflow Automation
+          - generic [ref=f1e138]: Browser & Web Automation
+          - generic [ref=f1e141]: Data Cleaning & Parquet Pipelines
+          - generic [ref=f1e144]: Google Workspace & Cloud Sync
+          - generic [ref=f1e147]: Deterministic AI Orchestration
+          - generic [ref=f1e150]: Lightweight Web Applications
+          - generic [ref=f1e153]: Corporate Technical Instruction
+      - generic [ref=f1e156]:
+        - generic [ref=f1e157]: Representative Work & Proof
+        - generic [ref=f1e161]:
+          - generic [ref=f1e162]:
+            - generic [ref=f1e163]: 1,000,000+ Rows Pipeline
+            - paragraph [ref=f1e164]: Chunked Python pipeline processing reconciliation datasets in under 10 minutes without spreadsheet crashes.
+          - generic [ref=f1e165]:
+            - generic [ref=f1e166]: End-to-End Media Assembly
+            - paragraph [ref=f1e167]: Automated audio transcription, semantic chunking, and programmatic video compilation orchestrated via Python and FFmpeg.
+          - generic [ref=f1e168]:
+            - generic [ref=f1e169]: Industrial Commercial Systems
+            - paragraph [ref=f1e170]: Quotation management, RFQ extraction, and tender discovery pipelines built for engineering and supply businesses.
+          - generic [ref=f1e171]:
+            - generic [ref=f1e172]: Practical Technical Training
+            - paragraph [ref=f1e173]: Hands-on curriculum on APIs, automation logic, and applied AI tools designed specifically for non-technical teams.
+      - generic [ref=f1e174]:
+        - generic [ref=f1e175]: Education & Credentials
+        - generic [ref=f1e180]:
+          - generic [ref=f1e181]:
+            - generic [ref=f1e182]:
+              - generic [ref=f1e183]: Bachelor of Engineering (B.Eng)
+              - generic [ref=f1e184]: Federal University Oye-Ekiti
+            - generic [ref=f1e185]: Engineering Foundations & Analytical Modelling
+          - generic [ref=f1e186]:
+            - generic [ref=f1e187]:
+              - generic [ref=f1e188]: ALX Professional Programmes
+              - generic [ref=f1e189]: AI Career Essentials & Data Analytics
+            - generic [ref=f1e190]: Certified Professional Track
+      - generic [ref=f1e191]:
+        - generic [ref=f1e192]:
+          - link "Explore Documented Work" [ref=f1e193] [cursor=pointer]:
+            - /url: /work
+          - link "Download CV (PDF)" [ref=f1e197] [cursor=pointer]:
+            - /url: /cv.pdf
+        - link "Discuss a Workflow" [ref=f1e202] [cursor=pointer]:
+          - /url: /contact
+  - contentinfo [ref=f1e204]:
+    - generic [ref=f1e205]:
+      - generic [ref=f1e206]:
+        - generic [ref=f1e207]:
+          - generic [ref=f1e208]:
+            - img "DafeDeScribe Logo" [ref=f1e209]
+            - generic [ref=f1e210]:
+              - generic [ref=f1e211]: DafeDeScribe
+              - generic [ref=f1e212]: SYSTEMS · AUTOMATION · EDUCATION
+          - paragraph [ref=f1e213]:
+            - text: The professional portfolio of
+            - strong [ref=f1e214]: Odafe Amalega
+            - text: . Designing workflow automation, data processing, and AI systems for industrial and operational businesses, and delivering practical technical training.
+          - generic [ref=f1e215]:
+            - generic [ref=f1e216]: AI Workflow Engineer · Systems Builder · Educator
+            - generic [ref=f1e217]: Currently instructing at AppClick
+        - generic [ref=f1e218]:
+          - generic [ref=f1e219]: 01 / INDUSTRY
+          - list [ref=f1e220]:
+            - listitem [ref=f1e221]:
+              - link "Commercial Systems Overview" [ref=f1e222] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f1e223]:
+              - link "RFQ Automation" [ref=f1e224] [cursor=pointer]:
+                - /url: /industry/rfq-automation
+            - listitem [ref=f1e225]:
+              - link "Tender Monitoring" [ref=f1e226] [cursor=pointer]:
+                - /url: /industry/tender-monitoring
+            - listitem [ref=f1e227]:
+              - link "Quotation Workflows" [ref=f1e228] [cursor=pointer]:
+                - /url: /industry/quotation-workflows
+            - listitem [ref=f1e229]:
+              - link "Commercial Reporting" [ref=f1e230] [cursor=pointer]:
+                - /url: /industry/commercial-reporting
+        - generic [ref=f1e231]:
+          - generic [ref=f1e232]: 02 / PRACTICE
+          - list [ref=f1e233]:
+            - listitem [ref=f1e234]:
+              - link "Automation" [ref=f1e235] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f1e236]:
+              - link "Teaching & Training" [ref=f1e237] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f1e238]:
+              - link "Selected Work" [ref=f1e239] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f1e240]:
+              - link "Notes & Bulletins" [ref=f1e241] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f1e242]:
+              - link "Lab & Prototypes" [ref=f1e243] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f1e244]:
+          - generic [ref=f1e245]: 03 / CONTACT
+          - list [ref=f1e246]:
+            - listitem [ref=f1e247]:
+              - link "About & Background" [ref=f1e248] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f1e249]:
+              - link "Curriculum Vitae (PDF)" [ref=f1e250] [cursor=pointer]:
+                - /url: /cv.pdf
+            - listitem [ref=f1e255]:
+              - link "Submit a Workflow" [ref=f1e256] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f1e257]:
+              - link "WhatsApp Direct" [ref=f1e258] [cursor=pointer]:
+                - /url: https://wa.me/2349132480302
+      - generic [ref=f1e263]:
+        - generic [ref=f1e264]: © 2026 DafeDeScribe · Odafe Amalega. All rights reserved.
+        - generic [ref=f1e265]:
+          - generic [ref=f1e266]: Engineering Systems & Workflow Architecture
+          - generic [ref=f1e267]: "|"
+          - link "Direct Inquiry" [ref=f1e268] [cursor=pointer]:
+            - /url: /contact

@@ -1,0 +1,171 @@
+- generic [active] [ref=f1e1]:
+  - article [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - generic [ref=f1e4]:
+        - heading "Odafe Amalega" [level=1] [ref=f1e5]
+        - generic [ref=f1e6]: Workflow Automation & Systems Engineer
+      - generic [ref=f1e7]:
+        - generic [ref=f1e8]: Ibadan, Nigeria · Available globally
+        - link "+234 913 248 0302" [ref=f1e9] [cursor=pointer]:
+          - /url: tel:+2349132480302
+        - link "dafedescribe@gmail.com" [ref=f1e10] [cursor=pointer]:
+          - /url: mailto:dafedescribe@gmail.com
+        - link "www.dafe.name.ng" [ref=f1e11] [cursor=pointer]:
+          - /url: https://www.dafe.name.ng
+        - link "linkedin.com/in/odafe-amalega" [ref=f1e12] [cursor=pointer]:
+          - /url: https://linkedin.com/in/odafe-amalega
+    - generic [ref=f1e13]:
+      - generic [ref=f1e14]:
+        - strong [ref=f1e15]: Current focus
+        - text: Industrial commercial workflowsData pipelinesApplied technical training
+      - paragraph [ref=f1e16]: Systems builder with a mechanical engineering foundation, focused on turning repetitive, document-heavy operations into maintainable workflows. Builds with Python, APIs, n8n, databases, and structured AI extraction while keeping experienced people in control of commercial decisions. Also teaches practical automation and systems literacy to nontechnical professionals.
+    - generic [ref=f1e17]:
+      - generic [ref=f1e18]:
+        - heading "Selected Systems" [level=2] [ref=f1e19]
+        - generic [ref=f1e20]: Scope stated explicitly
+      - generic [ref=f1e21]:
+        - generic [ref=f1e22]:
+          - generic [ref=f1e23]: REF. DS-003
+          - generic [ref=f1e24]: PROTOTYPE
+        - generic [ref=f1e25]:
+          - heading "Industrial RFQ Intake & Specification Preparation" [level=3] [ref=f1e26]
+          - paragraph [ref=f1e27]: Structures line items, part specifications, quantities, and delivery terms from email, PDF, and spreadsheet inputs into a human review queue.
+          - paragraph [ref=f1e28]: "Target outcome: reduce estimator preparation from 25 minutes to under 3 minutes of focused verification."
+      - generic [ref=f1e29]:
+        - generic [ref=f1e30]:
+          - generic [ref=f1e31]: REF. DS-004
+          - generic [ref=f1e32]: PROTOTYPE
+        - generic [ref=f1e33]:
+          - heading "Multi-Portal Tender Discovery & Filter Queue" [level=3] [ref=f1e34]
+          - paragraph [ref=f1e35]: Monitors fragmented procurement portals, detects new notices, extracts requirements, and filters opportunities against defined capability criteria.
+          - paragraph [ref=f1e36]: Designed to replace 10+ hours of weekly manual portal checking with a consolidated opportunity brief.
+      - generic [ref=f1e37]:
+        - generic [ref=f1e38]:
+          - generic [ref=f1e39]: REF. DS-005
+          - generic [ref=f1e40]: INTERNAL BUILD
+        - generic [ref=f1e41]:
+          - heading "Commercial Quotation Coordination & Follow-Up" [level=3] [ref=f1e42]
+          - paragraph [ref=f1e43]: Tracks approved quotes, customer engagement, follow-up timing, and reporting without forcing sales teams into heavyweight CRM administration.
+          - paragraph [ref=f1e44]: Keeps quotation status and follow-up prompts visible in one lightweight operational record.
+      - generic [ref=f1e45]:
+        - generic [ref=f1e46]:
+          - generic [ref=f1e47]: REF. DS-001
+          - generic [ref=f1e48]: INTERNAL BUILD
+        - generic [ref=f1e49]:
+          - heading "Million-Row Data Processing Pipeline" [level=3] [ref=f1e50]
+          - paragraph [ref=f1e51]: Chunked Python and Polars workflow for normalization, validation, deduplication, and Parquet export beyond spreadsheet limits.
+          - paragraph [ref=f1e52]: Processed 1.14M+ rows in 8 minutes 42 seconds with zero dropped rows in the documented run.
+      - generic [ref=f1e53]:
+        - generic [ref=f1e54]:
+          - generic [ref=f1e55]: REF. DS-006
+          - generic [ref=f1e56]: TRAINING
+        - generic [ref=f1e57]:
+          - heading "Practical AI, Automation & API Curriculum" [level=3] [ref=f1e58]
+          - paragraph [ref=f1e59]: Hands-on modules covering workflow mental models, API anatomy, webhooks, structured AI outputs, validation, and responsible error handling.
+          - paragraph [ref=f1e60]: Designed for professionals who need to build and reason about working systems—not only operate software interfaces.
+    - generic [ref=f1e61]:
+      - generic [ref=f1e62]: DafeDeScribe · Systems / Automation / Education
+      - generic [ref=f1e63]: Page 1 / 2
+  - article [ref=f1e64]:
+    - generic [ref=f1e65]:
+      - generic [ref=f1e66]:
+        - heading "Odafe Amalega" [level=1] [ref=f1e67]
+        - generic [ref=f1e68]: Workflow Automation & Systems Engineer
+      - generic [ref=f1e69]:
+        - link "dafedescribe@gmail.com" [ref=f1e70] [cursor=pointer]:
+          - /url: mailto:dafedescribe@gmail.com
+        - 'link "Portfolio: dafe.name.ng/work" [ref=f1e71] [cursor=pointer]':
+          - /url: https://www.dafe.name.ng/work
+    - generic [ref=f1e72]:
+      - generic [ref=f1e73]:
+        - heading "Experience" [level=2] [ref=f1e74]
+        - generic [ref=f1e75]: Operations / teaching / automation
+      - generic [ref=f1e76]:
+        - generic [ref=f1e77]:
+          - strong [ref=f1e78]: Independent Systems Builder
+          - text: 2025 — PresentIbadan / Remote
+        - generic [ref=f1e79]:
+          - heading "Workflow Automation & Technical Delivery" [level=3] [ref=f1e80]
+          - list [ref=f1e81]:
+            - listitem [ref=f1e82]: Map operational processes and build targeted automations for intake, data routing, reporting, CRM/ERP support, and staff handover.
+            - listitem [ref=f1e83]: Combine no-code orchestration with Python, databases, webhooks, and APIs according to reliability and maintenance needs.
+            - listitem [ref=f1e84]: Produce plain-language documentation and practical training so teams can operate delivered workflows confidently.
+      - generic [ref=f1e85]:
+        - generic [ref=f1e86]:
+          - strong [ref=f1e87]: AppClick Technology
+          - text: CurrentTechnical instruction
+        - generic [ref=f1e88]:
+          - heading "Applied AI & Automation Instructor" [level=3] [ref=f1e89]
+          - list [ref=f1e90]:
+            - listitem [ref=f1e91]: Teach practical systems literacy across APIs, automation logic, data handling, webhooks, and AI-assisted workflows.
+            - listitem [ref=f1e92]: Translate technical concepts into project-based sessions for learners with varied backgrounds.
+      - generic [ref=f1e93]:
+        - generic [ref=f1e94]:
+          - strong [ref=f1e95]: New Edition International Schools
+          - text: 2021 — 20232024
+        - generic [ref=f1e96]:
+          - heading "Technology Teacher & IT Trainer" [level=3] [ref=f1e97]
+          - list [ref=f1e98]:
+            - listitem [ref=f1e99]: Designed and delivered Basic Technology instruction, adapting material to different learner levels and assessment results.
+            - listitem [ref=f1e100]: Introduced UiPath and UI.vision automation for repetitive administrative document workflows and trained staff to operate the systems.
+            - listitem [ref=f1e101]: Produced structured guides supporting continued use after training.
+      - generic [ref=f1e102]:
+        - generic [ref=f1e103]:
+          - strong [ref=f1e104]: Dangote Cement PLC
+          - text: Sep 2023 — Jun 2024Ibese Plant
+        - generic [ref=f1e105]:
+          - heading "NYSC Trainee" [level=3] [ref=f1e106]
+          - list [ref=f1e107]:
+            - listitem [ref=f1e108]: Worked within a large industrial operating environment with structured safety, reporting, and cross-departmental communication practices.
+            - listitem [ref=f1e109]: Developed direct familiarity with the discipline and coordination required in industrial operations at scale.
+      - generic [ref=f1e110]:
+        - generic [ref=f1e111]:
+          - strong [ref=f1e112]: Earlier Automation & Product Work
+          - text: 2022 — 2024
+        - generic [ref=f1e113]:
+          - heading "Research, Data Automation & UX" [level=3] [ref=f1e114]
+          - list [ref=f1e115]:
+            - listitem [ref=f1e116]: Built automated research workflows for Deevamart / Flogram and delivered structured usability feedback and interface copy for Easit Technologies.
+            - listitem [ref=f1e117]: Built a personal data pipeline for 700,000+ rows of broker data using RPA, cloud virtual machines, Excel automation, and Python-assisted processing.
+    - generic [ref=f1e118]:
+      - generic [ref=f1e119]:
+        - heading "Capabilities" [level=2] [ref=f1e120]
+        - generic [ref=f1e121]: Practical working stack
+      - generic [ref=f1e122]:
+        - generic [ref=f1e123]:
+          - strong [ref=f1e124]: Workflow Automation
+          - text: n8n · Make.com · Zapier · UiPath · UI.vision · process mapping · exception handling
+        - generic [ref=f1e125]:
+          - strong [ref=f1e126]: Data & Engineering
+          - text: Python · Polars · Excel / Google Sheets · PostgreSQL · MySQL · MongoDB · data validation
+        - generic [ref=f1e127]:
+          - strong [ref=f1e128]: Integration
+          - text: REST APIs · webhooks · structured JSON · email/document intake · CRM and Odoo ERP support
+        - generic [ref=f1e129]:
+          - strong [ref=f1e130]: Training & Enablement
+          - text: Curriculum design · project-based instruction · technical documentation · staff handover
+    - generic [ref=f1e131]:
+      - generic [ref=f1e132]:
+        - heading "Education & Development" [level=2] [ref=f1e133]
+        - generic [ref=f1e134]: Foundation and continued learning
+      - generic [ref=f1e135]:
+        - generic [ref=f1e136]:
+          - strong [ref=f1e137]: B.Eng. Mechanical Engineering
+          - text: Federal University Oye-Ekiti · Second Class Lower · CGPA 3.22/5.00
+        - generic [ref=f1e138]: 2018 — 2023
+      - generic [ref=f1e139]:
+        - generic [ref=f1e140]:
+          - strong [ref=f1e141]: HNG Internship — No-Code Automation Track
+          - text: Stage 5 completion
+        - generic [ref=f1e142]: "2024"
+      - generic [ref=f1e143]:
+        - strong [ref=f1e145]: ALX Africa — Virtual Assistant Training
+        - generic [ref=f1e146]: "2024"
+      - generic [ref=f1e147]:
+        - generic [ref=f1e148]:
+          - strong [ref=f1e149]: Additional Development
+          - text: Software Engineering, Tech4Dev · Intermediate Soft Skills, Jobberman Nigeria · self-directed study across automation, databases, ERP, and Python
+        - generic [ref=f1e150]: Ongoing
+    - generic [ref=f1e151]:
+      - generic [ref=f1e152]: References available on request · Updated 2026
+      - generic [ref=f1e153]: Page 2 / 2

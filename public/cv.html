@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Odafe Amalega — Workflow Automation &amp; Systems Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#17201b; --muted:#5f675f; --paper:#f7f5ef; --line:#d7d5ca; --accent:#a9531c; --green:#2f7656; }
+    * { box-sizing:border-box; }
+    html { background:#d9d8d1; color:var(--ink); font-family:"Hanken Grotesk", Arial, sans-serif; font-size:10.2pt; line-height:1.38; }
+    body { margin:0; }
+    .page { position:relative; width:210mm; min-height:297mm; margin:8mm auto; padding:13mm 15mm 12mm; overflow:hidden; background:var(--paper); box-shadow:0 8px 30px rgba(0,0,0,.12); }
+    .page::after { position:absolute; right:-45mm; top:-52mm; width:120mm; height:120mm; border:1px solid rgba(169,83,28,.18); border-radius:50%; content:""; }
+    header { position:relative; z-index:1; display:grid; grid-template-columns:1fr auto; gap:12mm; align-items:end; padding-bottom:6mm; border-bottom:1px solid var(--ink); }
+    .label,.meta,.status { font-family:"IBM Plex Mono", "Courier New", monospace; text-transform:uppercase; letter-spacing:.1em; }
+    h1 { margin:0 0 1mm; font-family:"Source Serif 4", Georgia, serif; font-size:31pt; line-height:.95; font-weight:500; letter-spacing:-.035em; }
+    .role { font-family:"Source Serif 4", Georgia, serif; font-size:13pt; color:#39423c; }
+    .contact { display:grid; gap:1.3mm; text-align:right; color:var(--muted); font-size:8.7pt; }
+    a { color:inherit; text-decoration:none; }
+    .intro { display:grid; grid-template-columns:39mm 1fr; gap:9mm; padding:6mm 0; border-bottom:1px solid var(--line); }
+    .availability { align-self:start; padding:3mm; border:1px solid var(--line); font-size:8.5pt; color:var(--muted); }
+    .availability strong { display:block; margin-bottom:1mm; color:var(--green); font-family:"IBM Plex Mono", monospace; font-size:8pt; text-transform:uppercase; letter-spacing:.08em; }
+    .summary { margin:0; font-family:"Source Serif 4", Georgia, serif; font-size:12.2pt; line-height:1.48; }
+    section { padding-top:5mm; }
+    .section-head { display:flex; justify-content:space-between; align-items:baseline; gap:5mm; margin-bottom:3mm; padding-bottom:1.7mm; border-bottom:1px solid var(--line); }
+    h2 { margin:0; font-family:"Source Serif 4", Georgia, serif; font-size:15pt; font-weight:500; }
+    .section-head span { color:var(--muted); font-family:"IBM Plex Mono", monospace; font-size:7.5pt; text-transform:uppercase; letter-spacing:.08em; }
+    .project { display:grid; grid-template-columns:28mm 1fr; gap:5mm; padding:3mm 0; border-bottom:1px solid var(--line); break-inside:avoid; }
+    .project:last-child { border-bottom:0; }
+    .status { display:inline-block; margin-top:.8mm; color:var(--accent); font-size:7.2pt; font-weight:700; }
+    h3 { margin:0 0 .8mm; font-size:10.6pt; line-height:1.2; }
+    p { margin:0; }
+    .project p,.job li { color:#3f4842; font-size:9.2pt; }
+    .result { margin-top:1mm !important; color:var(--ink) !important; font-weight:700; }
+    .job { display:grid; grid-template-columns:44mm 1fr; gap:5mm; padding:3.2mm 0; border-bottom:1px solid var(--line); break-inside:avoid; }
+    .job:last-child { border-bottom:0; }
+    .job-meta { color:var(--muted); font-size:8.4pt; }
+    .job-meta strong { display:block; margin-bottom:.6mm; color:var(--ink); font-size:9pt; }
+    ul { margin:1.2mm 0 0; padding-left:4mm; }
+    li { margin:.7mm 0; }
+    .skills { display:grid; grid-template-columns:repeat(2,1fr); gap:0 8mm; }
+    .skill { padding:2.6mm 0; border-bottom:1px solid var(--line); break-inside:avoid; }
+    .skill strong { display:block; margin-bottom:.8mm; font-size:9.2pt; }
+    .skill span { color:var(--muted); font-size:8.8pt; }
+    .education { display:grid; grid-template-columns:1fr auto; gap:2mm 8mm; padding:3mm 0; border-bottom:1px solid var(--line); }
+    .education strong { font-size:9.6pt; }
+    .education span { color:var(--muted); font-size:8.5pt; }
+    footer { position:absolute; left:15mm; right:15mm; bottom:8mm; display:flex; justify-content:space-between; padding-top:2mm; border-top:1px solid var(--line); color:var(--muted); font-family:"IBM Plex Mono", monospace; font-size:7pt; text-transform:uppercase; letter-spacing:.08em; }
+    .compact { font-size:9.5pt; }
+    .compact section { padding-top:3.2mm; }
+    .compact .section-head { margin-bottom:1.8mm; padding-bottom:1.2mm; }
+    .compact .job { padding:2.1mm 0; }
+    .compact .job li { margin:.35mm 0; font-size:8.7pt; }
+    .compact .skill { padding:1.8mm 0; }
+    .compact .education { padding:1.9mm 0; }
+    @page { size:A4; margin:0; }
+    @media print { html { background:white; } .page { width:210mm; height:297mm; min-height:0; margin:0; box-shadow:none; page-break-after:always; } .page:last-child { page-break-after:auto; } }
+    @media screen and (max-width:760px) { .page { width:100%; min-height:auto; margin:0; padding:24px; } header,.intro,.job,.project { grid-template-columns:1fr; gap:10px; } .contact { text-align:left; } footer { position:static; margin-top:24px; } }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div><h1>Odafe Amalega</h1><div class="role">Workflow Automation &amp; Systems Engineer</div></div>
+      <div class="contact">
+        <span>Ibadan, Nigeria · Available globally</span>
+        <a href="tel:+2349132480302">+234 913 248 0302</a>
+        <a href="mailto:dafedescribe@gmail.com">dafedescribe@gmail.com</a>
+        <a href="https://www.dafe.name.ng">www.dafe.name.ng</a>
+        <a href="https://linkedin.com/in/odafe-amalega">linkedin.com/in/odafe-amalega</a>
+      </div>
+    </header>
+
+    <div class="intro">
+      <div class="availability"><strong>Current focus</strong>Industrial commercial workflows<br />Data pipelines<br />Applied technical training</div>
+      <p class="summary">Systems builder with a mechanical engineering foundation, focused on turning repetitive, document-heavy operations into maintainable workflows. Builds with Python, APIs, n8n, databases, and structured AI extraction while keeping experienced people in control of commercial decisions. Also teaches practical automation and systems literacy to nontechnical professionals.</p>
+    </div>
+
+    <section>
+      <div class="section-head"><h2>Selected Systems</h2><span>Scope stated explicitly</span></div>
+      <div class="project"><div><div class="label">REF. DS-003</div><div class="status">PROTOTYPE</div></div><div><h3>Industrial RFQ Intake &amp; Specification Preparation</h3><p>Structures line items, part specifications, quantities, and delivery terms from email, PDF, and spreadsheet inputs into a human review queue.</p><p class="result">Target outcome: reduce estimator preparation from 25 minutes to under 3 minutes of focused verification.</p></div></div>
+      <div class="project"><div><div class="label">REF. DS-004</div><div class="status">PROTOTYPE</div></div><div><h3>Multi-Portal Tender Discovery &amp; Filter Queue</h3><p>Monitors fragmented procurement portals, detects new notices, extracts requirements, and filters opportunities against defined capability criteria.</p><p class="result">Designed to replace 10+ hours of weekly manual portal checking with a consolidated opportunity brief.</p></div></div>
+      <div class="project"><div><div class="label">REF. DS-005</div><div class="status">INTERNAL BUILD</div></div><div><h3>Commercial Quotation Coordination &amp; Follow-Up</h3><p>Tracks approved quotes, customer engagement, follow-up timing, and reporting without forcing sales teams into heavyweight CRM administration.</p><p class="result">Keeps quotation status and follow-up prompts visible in one lightweight operational record.</p></div></div>
+      <div class="project"><div><div class="label">REF. DS-001</div><div class="status">INTERNAL BUILD</div></div><div><h3>Million-Row Data Processing Pipeline</h3><p>Chunked Python and Polars workflow for normalization, validation, deduplication, and Parquet export beyond spreadsheet limits.</p><p class="result">Processed 1.14M+ rows in 8 minutes 42 seconds with zero dropped rows in the documented run.</p></div></div>
+      <div class="project"><div><div class="label">REF. DS-006</div><div class="status">TRAINING</div></div><div><h3>Practical AI, Automation &amp; API Curriculum</h3><p>Hands-on modules covering workflow mental models, API anatomy, webhooks, structured AI outputs, validation, and responsible error handling.</p><p class="result">Designed for professionals who need to build and reason about working systems—not only operate software interfaces.</p></div></div>
+    </section>
+
+    <footer><span>DafeDeScribe · Systems / Automation / Education</span><span>Page 1 / 2</span></footer>
+  </article>
+
+  <article class="page compact">
+    <header>
+      <div><h1 style="font-size:25pt">Odafe Amalega</h1><div class="role">Workflow Automation &amp; Systems Engineer</div></div>
+      <div class="contact"><a href="mailto:dafedescribe@gmail.com">dafedescribe@gmail.com</a><a href="https://www.dafe.name.ng/work">Portfolio: dafe.name.ng/work</a></div>
+    </header>
+
+    <section>
+      <div class="section-head"><h2>Experience</h2><span>Operations / teaching / automation</span></div>
+      <div class="job"><div class="job-meta"><strong>Independent Systems Builder</strong>2025 — Present<br />Ibadan / Remote</div><div><h3>Workflow Automation &amp; Technical Delivery</h3><ul><li>Map operational processes and build targeted automations for intake, data routing, reporting, CRM/ERP support, and staff handover.</li><li>Combine no-code orchestration with Python, databases, webhooks, and APIs according to reliability and maintenance needs.</li><li>Produce plain-language documentation and practical training so teams can operate delivered workflows confidently.</li></ul></div></div>
+      <div class="job"><div class="job-meta"><strong>AppClick Technology</strong>Current<br />Technical instruction</div><div><h3>Applied AI &amp; Automation Instructor</h3><ul><li>Teach practical systems literacy across APIs, automation logic, data handling, webhooks, and AI-assisted workflows.</li><li>Translate technical concepts into project-based sessions for learners with varied backgrounds.</li></ul></div></div>
+      <div class="job"><div class="job-meta"><strong>New Edition International Schools</strong>2021 — 2023<br />2024</div><div><h3>Technology Teacher &amp; IT Trainer</h3><ul><li>Designed and delivered Basic Technology instruction, adapting material to different learner levels and assessment results.</li><li>Introduced UiPath and UI.vision automation for repetitive administrative document workflows and trained staff to operate the systems.</li><li>Produced structured guides supporting continued use after training.</li></ul></div></div>
+      <div class="job"><div class="job-meta"><strong>Dangote Cement PLC</strong>Sep 2023 — Jun 2024<br />Ibese Plant</div><div><h3>NYSC Trainee</h3><ul><li>Worked within a large industrial operating environment with structured safety, reporting, and cross-departmental communication practices.</li><li>Developed direct familiarity with the discipline and coordination required in industrial operations at scale.</li></ul></div></div>
+      <div class="job"><div class="job-meta"><strong>Earlier Automation &amp; Product Work</strong>2022 — 2024</div><div><h3>Research, Data Automation &amp; UX</h3><ul><li>Built automated research workflows for Deevamart / Flogram and delivered structured usability feedback and interface copy for Easit Technologies.</li><li>Built a personal data pipeline for 700,000+ rows of broker data using RPA, cloud virtual machines, Excel automation, and Python-assisted processing.</li></ul></div></div>
+    </section>
+
+    <section>
+      <div class="section-head"><h2>Capabilities</h2><span>Practical working stack</span></div>
+      <div class="skills">
+        <div class="skill"><strong>Workflow Automation</strong><span>n8n · Make.com · Zapier · UiPath · UI.vision · process mapping · exception handling</span></div>
+        <div class="skill"><strong>Data &amp; Engineering</strong><span>Python · Polars · Excel / Google Sheets · PostgreSQL · MySQL · MongoDB · data validation</span></div>
+        <div class="skill"><strong>Integration</strong><span>REST APIs · webhooks · structured JSON · email/document intake · CRM and Odoo ERP support</span></div>
+        <div class="skill"><strong>Training &amp; Enablement</strong><span>Curriculum design · project-based instruction · technical documentation · staff handover</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><h2>Education &amp; Development</h2><span>Foundation and continued learning</span></div>
+      <div class="education"><div><strong>B.Eng. Mechanical Engineering</strong><br /><span>Federal University Oye-Ekiti · Second Class Lower · CGPA 3.22/5.00</span></div><span>2018 — 2023</span></div>
+      <div class="education"><div><strong>HNG Internship — No-Code Automation Track</strong><br /><span>Stage 5 completion</span></div><span>2024</span></div>
+      <div class="education"><div><strong>ALX Africa — Virtual Assistant Training</strong></div><span>2024</span></div>
+      <div class="education"><div><strong>Additional Development</strong><br /><span>Software Engineering, Tech4Dev · Intermediate Soft Skills, Jobberman Nigeria · self-directed study across automation, databases, ERP, and Python</span></div><span>Ongoing</span></div>
+    </section>
+
+    <footer><span>References available on request · Updated 2026</span><span>Page 2 / 2</span></footer>
+  </article>
+</body>
+</html>

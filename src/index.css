@@ -204,21 +204,8 @@ a {
   --editorial-paper: #f6f4ee;
 }
 
-.editorial-hero::before {
-  position: absolute;
-  z-index: -1;
-  top: -8rem;
-  right: -12rem;
-  width: 42rem;
-  height: 42rem;
-  border-radius: 9999px;
-  background: radial-gradient(circle, rgba(213, 178, 124, 0.28) 0%, rgba(246, 244, 238, 0) 68%);
-  content: '';
-  pointer-events: none;
-}
-
 .hero-display {
-  font-size: clamp(3.25rem, 6.2vw, 6.8rem);
+  font-size: clamp(3.25rem, 6.2vw, 6rem);
   text-wrap: balance;
 }
 
@@ -247,6 +234,12 @@ a {
   .hero-reveal,
   .hero-reveal-delay {
     transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .editorial-home .font-mono-tech {
+    font-size: 0.6875rem;
   }
 }
 

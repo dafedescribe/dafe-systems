@@ -10,10 +10,7 @@ const environments = [
 export const TrustRail: React.FC = () => (
   <section className="trust-rail border-y border-stone-300/90 py-6" aria-labelledby="trust-rail-title">
     <div className="grid gap-6 lg:grid-cols-[minmax(220px,0.7fr)_minmax(0,2.3fr)] lg:items-center">
-      <div className="space-y-2 lg:border-r lg:border-stone-300 lg:pr-8">
-        <div className="font-mono-tech text-[10px] font-bold uppercase tracking-[0.14em] text-amber-800">
-          Working Context
-        </div>
+      <div className="lg:border-r lg:border-stone-300 lg:pr-8">
         <h2 id="trust-rail-title" className="max-w-sm font-display text-xl leading-tight text-slate-950 sm:text-2xl">
           Experience across industrial, education & technical environments
         </h2>

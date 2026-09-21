@@ -1,0 +1,311 @@
+- generic [ref=f3e3]:
+  - link "Skip to main content" [ref=f3e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f3e5]:
+    - generic [ref=f3e7]:
+      - link "DafeDeScribe Home" [ref=f3e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f3e9]
+        - generic [ref=f3e10]:
+          - generic [ref=f3e11]: DafeDeScribe
+          - generic [ref=f3e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - generic [ref=f3e13]:
+        - generic [ref=f3e14]:
+          - generic [ref=f3e15]: Language
+          - combobox "Language" [ref=f3e16]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - button "Open Navigation" [ref=f3e17]
+  - main [ref=f3e21]:
+    - generic [ref=f3e23]:
+      - generic [ref=f3e24]:
+        - heading "I build systems for work that has outgrown manual handling." [level=1] [ref=f3e25]
+        - paragraph [ref=f3e26]: I turn document-heavy, repetitive operations into clear workflows—especially RFQ intake, tender discovery, quotation coordination, and high-volume data processing.
+        - generic [ref=f3e27]:
+          - link "Discuss a workflow" [ref=f3e28] [cursor=pointer]:
+            - /url: /contact
+          - link "Explore documented work" [ref=f3e31] [cursor=pointer]:
+            - /url: /work
+        - generic [ref=f3e35]:
+          - generic [ref=f3e36]:
+            - generic [ref=f3e37]: Focus
+            - text: Industrial commercial operations
+          - generic [ref=f3e38]:
+            - generic [ref=f3e39]: Method
+            - text: Automate preparation, retain judgement
+          - generic [ref=f3e40]:
+            - generic [ref=f3e41]: Delivery
+            - text: Based in Ibadan, Nigeria · Working globally
+      - figure "Odafe Amalega Workflow Automation & Systems Engineer" [ref=f3e43]:
+        - generic [ref=f3e44]:
+          - img "Odafe Amalega, workflow automation and systems engineer" [ref=f3e45]
+          - generic [ref=f3e47]:
+            - generic [ref=f3e48]: Odafe Amalega
+            - generic [ref=f3e49]: Workflow Automation & Systems Engineer
+    - region [ref=f3e53]:
+      - generic [ref=f3e54]:
+        - heading "Experience across industrial, education & technical environments" [level=2] [ref=f3e56]
+        - generic [ref=f3e57]:
+          - generic [ref=f3e58]:
+            - img "AppClick logo" [ref=f3e60]
+            - generic [ref=f3e61]:
+              - generic [ref=f3e62]: AppClick
+              - generic [ref=f3e63]: Technical instruction
+          - generic [ref=f3e64]:
+            - img "New Edition logo" [ref=f3e66]
+            - generic [ref=f3e67]:
+              - generic [ref=f3e68]: New Edition
+              - generic [ref=f3e69]: Education & internal systems
+          - generic [ref=f3e70]:
+            - img "SR Construction logo" [ref=f3e72]
+            - generic [ref=f3e73]:
+              - generic [ref=f3e74]: SR Construction
+              - generic [ref=f3e75]: Construction context
+          - generic [ref=f3e76]:
+            - img "Dangote Cement logo" [ref=f3e78]
+            - generic [ref=f3e79]:
+              - generic [ref=f3e80]: Dangote Cement
+              - generic [ref=f3e81]: Industrial exposure
+    - generic [ref=f3e82]:
+      - generic [ref=f3e84]:
+        - heading "The software follows the work—not the other way around." [level=2] [ref=f3e85]
+        - paragraph [ref=f3e86]: The useful system is the one your team can understand, review, and maintain after handover. Automation prepares the decision; experienced people keep control of it.
+      - region "Operational Workflow Architecture" [ref=f3e88]:
+        - generic [ref=f3e89]:
+          - generic [ref=f3e90]: Operational pipeline
+          - generic [ref=f3e91]: Automated Intake · Human Sign-off
+        - generic [ref=f3e92]:
+          - generic [ref=f3e93]:
+            - generic [ref=f3e94]: "01"
+            - heading "Unstructured Influx" [level=4] [ref=f3e99]
+            - paragraph [ref=f3e100]: Incoming customer emails, engineering PDFs, and custom Excel sheets arrive through commercial channels.
+            - generic [ref=f3e101]: Inflow
+          - generic [ref=f3e102]:
+            - generic [ref=f3e103]: "02"
+            - heading "Automated Extraction" [level=4] [ref=f3e108]
+            - paragraph [ref=f3e109]: Deterministic parsers and AI models extract line items, match SKUs, normalize quantities, and flag missing specifications.
+            - generic [ref=f3e110]: Automated
+          - generic [ref=f3e111]:
+            - generic [ref=f3e112]: "03"
+            - heading "Engineering Review" [level=4] [ref=f3e118]
+            - paragraph [ref=f3e119]: Sales engineers evaluate margin thresholds, inventory availability, and technical constraints.
+            - generic [ref=f3e120]: Human checkpoint
+          - generic [ref=f3e121]:
+            - generic [ref=f3e122]: "04"
+            - heading "System Dispatch" [level=4] [ref=f3e127]
+            - paragraph [ref=f3e128]: Binding quotation is assembled, dispatched to the customer, and synchronized back into ERP and CRM databases.
+            - generic [ref=f3e129]: Dispatched
+        - generic [ref=f3e130]:
+          - generic [ref=f3e131]: Deterministic preparation
+          - generic [ref=f3e132]: Human commercial control
+    - generic [ref=f3e133]:
+      - generic [ref=f3e134]:
+        - heading "Start with the operational problem." [level=2] [ref=f3e135]
+        - paragraph [ref=f3e136]: No software shopping list required. The workflow determines the architecture.
+      - generic [ref=f3e137]:
+        - article [ref=f3e138]:
+          - generic [ref=f3e139]:
+            - generic [ref=f3e140]: "01"
+            - generic [ref=f3e141]: Industrial systems
+          - heading "Move RFQs, tenders, and quotations without losing commercial control." [level=3] [ref=f3e142]
+          - paragraph [ref=f3e143]: Structured preparation for businesses that make, supply, install, or maintain technical equipment.
+          - link "Explore industrial systems" [ref=f3e144] [cursor=pointer]:
+            - /url: /industry
+        - article [ref=f3e147]:
+          - generic [ref=f3e148]:
+            - generic [ref=f3e149]: "02"
+            - generic [ref=f3e150]: Operational automation
+          - heading "Connect the spreadsheets, documents, inboxes, and software your team already uses." [level=3] [ref=f3e151]
+          - paragraph [ref=f3e152]: Targeted workflows built around the actual handoffs, exceptions, and approvals in your operation.
+          - link "Explore automation" [ref=f3e153] [cursor=pointer]:
+            - /url: /automation
+        - article [ref=f3e156]:
+          - generic [ref=f3e157]:
+            - generic [ref=f3e158]: "03"
+            - generic [ref=f3e159]: Applied training
+          - heading "Teach teams how automation works underneath the interface." [level=3] [ref=f3e160]
+          - paragraph [ref=f3e161]: Practical instruction in APIs, workflow logic, data handling, and responsible AI-assisted systems.
+          - link "Explore training" [ref=f3e162] [cursor=pointer]:
+            - /url: /teaching
+    - generic [ref=f3e166]:
+      - generic [ref=f3e167]:
+        - heading "Systems for the work behind the sale." [level=2] [ref=f3e168]
+        - paragraph [ref=f3e169]: Each record states its scope. Prototype means prototype; internal build means internal build.
+      - generic [ref=f3e170]:
+        - article [ref=f3e171]:
+          - generic [ref=f3e172]:
+            - generic [ref=f3e173]:
+              - generic [ref=f3e174]: REF. DS-003
+              - generic [ref=f3e175]: PROTOTYPE
+            - generic [ref=f3e176]:
+              - heading "Industrial RFQ Intake & Specification Preparation Engine" [level=3] [ref=f3e177]
+              - paragraph [ref=f3e178]: Automated extraction of customer line items, part specifications, and delivery terms from messy email bodies and PDF attachments into a verified review queue.
+              - generic [ref=f3e179]:
+                - generic [ref=f3e180]:
+                  - term [ref=f3e181]: Input
+                  - definition [ref=f3e182]: Inbound RFQ emails with attached multi-page PDF specifications or Excel requisition files.
+                - generic [ref=f3e183]:
+                  - term [ref=f3e184]: Output
+                  - definition [ref=f3e185]: Normalized RFQ draft for an ERP or review queue, ready for estimator verification.
+                - generic [ref=f3e186]:
+                  - term [ref=f3e187]: Target outcome
+                  - definition [ref=f3e188]: "Target: reduce estimator preparation from 25 minutes to under 3 minutes of focused verification."
+              - link "Read the workflow breakdown" [ref=f3e189] [cursor=pointer]:
+                - /url: /work/industrial-rfq-intake
+        - article [ref=f3e193]:
+          - generic [ref=f3e194]:
+            - generic [ref=f3e195]:
+              - generic [ref=f3e196]: REF. DS-004
+              - generic [ref=f3e197]: PROTOTYPE
+            - generic [ref=f3e198]:
+              - heading "Multi-Portal Tender Discovery & Filter Queue" [level=3] [ref=f3e199]
+              - paragraph [ref=f3e200]: Scheduled automated scrapers and API monitors tracking procurement notices across fragmented buyer portals and delivering filtered, scored summaries.
+              - generic [ref=f3e201]:
+                - generic [ref=f3e202]:
+                  - term [ref=f3e203]: Input
+                  - definition [ref=f3e204]: 7 external procurement portals and public tender gazette listings.
+                - generic [ref=f3e205]:
+                  - term [ref=f3e206]: Output
+                  - definition [ref=f3e207]: Consolidated opportunity brief and synchronized pipeline table for review.
+                - generic [ref=f3e208]:
+                  - term [ref=f3e209]: Target outcome
+                  - definition [ref=f3e210]: "Target: replace 10+ hours of weekly portal checking with a scheduled, filtered review queue."
+              - link "Read the workflow breakdown" [ref=f3e211] [cursor=pointer]:
+                - /url: /work/tender-monitoring-engine
+        - article [ref=f3e215]:
+          - generic [ref=f3e216]:
+            - generic [ref=f3e217]:
+              - generic [ref=f3e218]: REF. DS-005
+              - generic [ref=f3e219]: INTERNAL BUILD
+            - generic [ref=f3e220]:
+              - heading "Commercial Quotation Coordination & Follow-Up Pipeline" [level=3] [ref=f3e221]
+              - paragraph [ref=f3e222]: An automated quotation coordination workflow tracking proposal lifecycle, customer engagement, and scheduled follow-up cadence.
+              - generic [ref=f3e223]:
+                - generic [ref=f3e224]:
+                  - term [ref=f3e225]: Input
+                  - definition [ref=f3e226]: Approved quote PDF and customer contact details.
+                - generic [ref=f3e227]:
+                  - term [ref=f3e228]: Output
+                  - definition [ref=f3e229]: A lightweight record of quotation status, engagement, and scheduled follow-up prompts.
+                - generic [ref=f3e230]:
+                  - term [ref=f3e231]: Build goal
+                  - definition [ref=f3e232]: "Build goal: keep approved quotations visible and prompt timely follow-up without adding sales-rep administration."
+              - link "Read the workflow breakdown" [ref=f3e233] [cursor=pointer]:
+                - /url: /work/commercial-quotation-tracker
+    - generic [ref=f3e237]:
+      - heading "From friction to a maintainable build." [level=2] [ref=f3e239]
+      - list [ref=f3e240]:
+        - listitem [ref=f3e241]:
+          - generic [ref=f3e242]: "01"
+          - heading "Show me the workflow" [level=3] [ref=f3e243]
+          - paragraph [ref=f3e244]: Bring the process as it exists. No polished brief or RFP is required.
+        - listitem [ref=f3e245]:
+          - generic [ref=f3e246]: "02"
+          - heading "Map the bottleneck" [level=3] [ref=f3e247]
+          - paragraph [ref=f3e248]: We identify inputs, handoffs, rules, exceptions, and the output your team needs.
+        - listitem [ref=f3e249]:
+          - generic [ref=f3e250]: "03"
+          - heading "Build the smallest useful system" [level=3] [ref=f3e251]
+          - paragraph [ref=f3e252]: The simplest maintainable path wins, with human review where judgement matters.
+    - generic [ref=f3e253]:
+      - generic [ref=f3e254]:
+        - heading "Teams learn the workflow, not just the tool." [level=2] [ref=f3e255]
+        - paragraph [ref=f3e256]: Through AppClick Technology, I teach practical automation, APIs, data handling, and AI-assisted engineering to professionals who need systems literacy they can apply.
+        - link "Explore applied training" [ref=f3e257] [cursor=pointer]:
+          - /url: /teaching
+      - generic [ref=f3e261]:
+        - generic [ref=f3e262]:
+          - term [ref=f3e263]: Context
+          - definition [ref=f3e264]: Current applied AI and automation instruction through AppClick Technology.
+        - generic [ref=f3e265]:
+          - term [ref=f3e266]: Curriculum
+          - definition [ref=f3e267]: Workflow mental models, API anatomy, webhooks, structured outputs, validation, and responsible error handling.
+        - generic [ref=f3e268]:
+          - term [ref=f3e269]: Delivery
+          - definition [ref=f3e270]: Project-based instruction for professionals with varied technical backgrounds.
+    - generic [ref=f3e273]:
+      - generic [ref=f3e274]:
+        - heading "What keeps getting copied, checked, searched, or re-entered?" [level=2] [ref=f3e275]
+        - paragraph [ref=f3e276]: Describe what happens today. I will help identify where automation is useful, where human control must stay, and the smallest sensible path forward.
+      - generic [ref=f3e277]:
+        - link "Show me the workflow" [ref=f3e278] [cursor=pointer]:
+          - /url: /contact
+        - generic [ref=f3e281]: No polished brief required
+  - contentinfo [ref=f3e285]:
+    - generic [ref=f3e286]:
+      - generic [ref=f3e287]:
+        - generic [ref=f3e288]:
+          - generic [ref=f3e289]:
+            - img "DafeDeScribe Logo" [ref=f3e290]
+            - generic [ref=f3e291]:
+              - generic [ref=f3e292]: DafeDeScribe
+              - generic [ref=f3e293]: SYSTEMS · AUTOMATION · EDUCATION
+          - paragraph [ref=f3e294]:
+            - text: The professional portfolio of
+            - strong [ref=f3e295]: Odafe Amalega
+            - text: . Designing workflow automation, data processing, and AI systems for industrial and operational businesses, and delivering practical technical training.
+          - generic [ref=f3e296]:
+            - generic [ref=f3e297]: AI Workflow Engineer · Systems Builder · Educator
+            - generic [ref=f3e298]: Currently instructing at AppClick
+        - generic [ref=f3e299]:
+          - generic [ref=f3e300]: 01 / INDUSTRY
+          - list [ref=f3e301]:
+            - listitem [ref=f3e302]:
+              - link "Commercial Systems Overview" [ref=f3e303] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f3e304]:
+              - link "RFQ Automation" [ref=f3e305] [cursor=pointer]:
+                - /url: /industry/rfq-automation
+            - listitem [ref=f3e306]:
+              - link "Tender Monitoring" [ref=f3e307] [cursor=pointer]:
+                - /url: /industry/tender-monitoring
+            - listitem [ref=f3e308]:
+              - link "Quotation Workflows" [ref=f3e309] [cursor=pointer]:
+                - /url: /industry/quotation-workflows
+            - listitem [ref=f3e310]:
+              - link "Commercial Reporting" [ref=f3e311] [cursor=pointer]:
+                - /url: /industry/commercial-reporting
+        - generic [ref=f3e312]:
+          - generic [ref=f3e313]: 02 / PRACTICE
+          - list [ref=f3e314]:
+            - listitem [ref=f3e315]:
+              - link "Automation" [ref=f3e316] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f3e317]:
+              - link "Teaching & Training" [ref=f3e318] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f3e319]:
+              - link "Selected Work" [ref=f3e320] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f3e321]:
+              - link "Notes & Bulletins" [ref=f3e322] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f3e323]:
+              - link "Lab & Prototypes" [ref=f3e324] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f3e325]:
+          - generic [ref=f3e326]: 03 / CONTACT
+          - list [ref=f3e327]:
+            - listitem [ref=f3e328]:
+              - link "About & Background" [ref=f3e329] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f3e330]:
+              - link "Curriculum Vitae (PDF)" [ref=f3e331] [cursor=pointer]:
+                - /url: /cv.pdf
+            - listitem [ref=f3e336]:
+              - link "Submit a Workflow" [ref=f3e337] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f3e338]:
+              - link "WhatsApp Direct" [ref=f3e339] [cursor=pointer]:
+                - /url: https://wa.me/2349132480302
+      - generic [ref=f3e344]:
+        - generic [ref=f3e345]: © 2026 DafeDeScribe · Odafe Amalega. All rights reserved.
+        - generic [ref=f3e346]:
+          - generic [ref=f3e347]: Engineering Systems & Workflow Architecture
+          - generic [ref=f3e348]: "|"
+          - link "Direct Inquiry" [ref=f3e349] [cursor=pointer]:
+            - /url: /contact

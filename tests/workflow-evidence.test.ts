@@ -11,7 +11,7 @@ describe('workflow evidence presentation', () => {
     expect(homeSource).toContain('industrial-rfq-intake');
     expect(homeSource).toContain('tender-monitoring-engine');
     expect(homeSource).toContain('commercial-quotation-tracker');
-    expect(homeSource).toContain('How I work');
+    expect(homeSource).toContain('From friction to a maintainable build.');
   });
 
   it('uses precise evidence language instead of blanket verified claims', () => {
