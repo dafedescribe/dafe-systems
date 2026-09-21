@@ -2,16 +2,15 @@
 
 ## Contact form: Gmail delivery
 
-The public contact form sends inquiries through the Vercel `/api/contact` function and Gmail API. It does not expose a Gmail password or OAuth client secret in the browser.
+The public contact form sends inquiries through the Vercel `/api/contact` function and Gmail SMTP. It does not expose your Gmail password or app password in the browser.
 
 Configure these server-side Vercel environment variables for Production (and Preview if you want to test there):
 
-- `GOOGLE_CLIENT_ID` — OAuth client ID for the Gmail account.
-- `GOOGLE_CLIENT_SECRET` — OAuth client secret.
-- `GOOGLE_REFRESH_TOKEN` — offline refresh token granted for the Gmail account.
+- `GMAIL_USER` — the Gmail address that will send the message.
+- `GMAIL_APP_PASSWORD` — the 16-character Google App Password, not your normal Gmail password.
 - `CONTACT_TO_EMAIL` — inbox that should receive inquiries.
 
-The Google OAuth consent must include the Gmail send scope (`https://www.googleapis.com/auth/gmail.send`). Use a dedicated sender account where practical. Never commit these values to the repository or place them in `VITE_*` variables.
+To create the app password, turn on 2-Step Verification for the sending Gmail account, then open [Google App Passwords](https://myaccount.google.com/apppasswords), create one named `DafeDeScribe`, and copy the generated value into `GMAIL_APP_PASSWORD`. Never commit these values to the repository or place them in `VITE_*` variables.
 
 If a prospect cannot submit, the form keeps WhatsApp as a direct fallback. The form only shows “Inquiry Received” after Gmail accepts the message.
 

@@ -1,5 +1,7 @@
 # Global Contact Delivery & Language Support Implementation Plan
 
+> Superseded implementation detail: the contact delivery portion originally described here used Gmail OAuth. The shipped implementation uses Gmail SMTP with `GMAIL_USER` and `GMAIL_APP_PASSWORD`; the language work remains current.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Deliver contact inquiries to Gmail through a separate Google OAuth channel and add browser-detected, manually overrideable support for English, French, Portuguese, Spanish, German, and Turkish.

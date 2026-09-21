@@ -1,7 +1,9 @@
 # Global Contact Delivery & Language Support
 
+> Implementation note: the original OAuth design was simplified after review. The shipped implementation uses Gmail SMTP with a Gmail App Password; see `docs/owner-playbook.md` for the current setup.
+
 **Date:** 2026-09-21  
-**Status:** Design approved; awaiting spec review  
+**Status:** Implemented; SMTP delivery supersedes the original OAuth design
 **Scope:** DafeDeScribe public contact flow and first multilingual site layer
 
 ## Goal

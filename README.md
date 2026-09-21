@@ -15,4 +15,4 @@ Useful checks:
 - `npm run lint` — run the TypeScript check.
 - `npm run build` — build and prerender the site.
 
-The contact API requires the Gmail environment variables documented in [the owner playbook](docs/owner-playbook.md). Keep OAuth credentials server-side only.
+The contact API requires the Gmail environment variables documented in [the owner playbook](docs/owner-playbook.md). Keep the app password server-side only.

@@ -1,13 +1,22 @@
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
+
+const { createTransport, sendMail } = vi.hoisted(() => ({
+  createTransport: vi.fn(),
+  sendMail: vi.fn(),
+}));
+
+vi.mock('nodemailer', () => ({
+  default: { createTransport },
+}));
+
 import handler from '../api/contact.js';
 
 const contactPageSource = readFileSync(new URL('../src/pages/ContactPage.tsx', import.meta.url), 'utf8');
 
 const envKeys = [
-  'GOOGLE_CLIENT_ID',
-  'GOOGLE_CLIENT_SECRET',
-  'GOOGLE_REFRESH_TOKEN',
+  'GMAIL_USER',
+  'GMAIL_APP_PASSWORD',
   'CONTACT_TO_EMAIL',
 ] as const;
 
@@ -81,27 +90,27 @@ describe('contact endpoint', () => {
     expect(res.body).toContain('not configured');
   });
 
-  it('refreshes OAuth and sends a Gmail message', async () => {
-    process.env.GOOGLE_CLIENT_ID = 'client-id';
-    process.env.GOOGLE_CLIENT_SECRET = 'client-secret';
-    process.env.GOOGLE_REFRESH_TOKEN = 'refresh-token';
+  it('sends a Gmail message through SMTP using an app password', async () => {
+    process.env.GMAIL_USER = 'odafe@example.com';
+    process.env.GMAIL_APP_PASSWORD = 'app-password';
     process.env.CONTACT_TO_EMAIL = 'odafe@example.com';
-    const calls: { input: string; init: RequestInit }[] = [];
-    globalThis.fetch = async (input, init = {}) => {
-      calls.push({ input: String(input), init });
-      if (calls.length === 1) return new Response(JSON.stringify({ access_token: 'access-token' }), { status: 200 });
-      return new Response(JSON.stringify({ id: 'message-id' }), { status: 200 });
-    };
+    sendMail.mockResolvedValue({ messageId: 'message-id' });
+    createTransport.mockReturnValue({ sendMail });
 
     const res = nodeRes();
     await handler({ method: 'POST', headers: {}, body: JSON.stringify(validBody()) }, res);
 
     expect(res.statusCode).toBe(200);
-    expect(calls).toHaveLength(2);
-    expect(calls[0].input).toContain('oauth2.googleapis.com/token');
-    expect(calls[1].input).toContain('gmail.googleapis.com');
-    expect(String(calls[1].init.body)).toContain('raw');
-    expect(String(calls[1].init.body)).not.toContain('client-secret');
+    expect(createTransport).toHaveBeenCalledWith(expect.objectContaining({
+      host: 'smtp.gmail.com',
+      secure: true,
+      auth: { user: 'odafe@example.com', pass: 'app-password' },
+    }));
+    expect(sendMail).toHaveBeenCalledWith(expect.objectContaining({
+      from: 'odafe@example.com',
+      to: 'odafe@example.com',
+      replyTo: 'jane@example.com',
+    }));
   });
 });
 
