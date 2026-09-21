@@ -11,6 +11,7 @@ import { AutomationPage } from '../src/pages/AutomationPage';
 import { WorkPage } from '../src/pages/WorkPage';
 import { TeachingPage } from '../src/pages/TeachingPage';
 import { AboutPage } from '../src/pages/AboutPage';
+import { ContactPage } from '../src/pages/ContactPage';
 
 const renderShell = (node: React.ReactNode, path = '/') => renderToStaticMarkup(
   React.createElement(
@@ -93,6 +94,14 @@ describe('site-wide editorial system', () => {
     expect(html).toContain('replicate-image-style-precisely-20260919112129.jpeg');
     expect(html).toContain('id="about-identity"');
     expect(html).not.toContain('Active Inquiries Open');
+    expect(html).not.toContain('rounded-xl');
+  });
+
+  it('sets a personal response expectation while preserving WhatsApp fallback', () => {
+    const html = renderPage(React.createElement(ContactPage), '/contact');
+
+    expect(html).toContain('I reply personally');
+    expect(html).toContain('https://wa.me/2349132480302');
     expect(html).not.toContain('rounded-xl');
   });
 });
