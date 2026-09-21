@@ -8,6 +8,7 @@ import { RouterProvider } from '../src/router/Router';
 import { HomePage } from '../src/pages/HomePage';
 import { IndustryPage } from '../src/pages/IndustryPage';
 import { AutomationPage } from '../src/pages/AutomationPage';
+import { WorkPage } from '../src/pages/WorkPage';
 
 const renderShell = (node: React.ReactNode, path = '/') => renderToStaticMarkup(
   React.createElement(
@@ -66,5 +67,13 @@ describe('site-wide editorial system', () => {
     expect(html).toContain('href="/industry"');
     expect(html).toContain('href="/work"');
     expect(html).not.toContain('Candidate processes for automation');
+  });
+
+  it('expands three projects and keeps the remaining work compact', () => {
+    const html = renderPage(React.createElement(WorkPage), '/work');
+
+    expect(html.match(/data-featured-project="true"/g)).toHaveLength(3);
+    expect(html.match(/data-project-directory-entry="true"/g)?.length).toBeGreaterThan(0);
+    expect(html).not.toContain('rounded-xl');
   });
 });
