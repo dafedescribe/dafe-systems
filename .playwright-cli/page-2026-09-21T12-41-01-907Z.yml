@@ -1,0 +1,486 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - link "DafeDeScribe Home" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=e8]
+        - generic [ref=e9]:
+          - generic [ref=e10]: DafeDeScribe
+          - generic [ref=e11]: SYSTEMS · AUTOMATION · EDUCATION
+      - navigation [ref=e12]:
+        - link "01 INDUSTRY" [ref=e13] [cursor=pointer]:
+          - /url: /industry
+          - generic [ref=e14]: "01"
+          - generic [ref=e15]: INDUSTRY
+        - link "02 AUTOMATION" [ref=e16] [cursor=pointer]:
+          - /url: /automation
+          - generic [ref=e17]: "02"
+          - generic [ref=e18]: AUTOMATION
+        - link "03 WORK" [ref=e19] [cursor=pointer]:
+          - /url: /work
+          - generic [ref=e20]: "03"
+          - generic [ref=e21]: WORK
+        - link "04 TEACHING" [ref=e23] [cursor=pointer]:
+          - /url: /teaching
+          - generic [ref=e24]: "04"
+          - generic [ref=e25]: TEACHING
+        - link "05 NOTES" [ref=e26] [cursor=pointer]:
+          - /url: /notes
+          - generic [ref=e27]: "05"
+          - generic [ref=e28]: NOTES
+        - link "06 ABOUT" [ref=e29] [cursor=pointer]:
+          - /url: /about
+          - generic [ref=e30]: "06"
+          - generic [ref=e31]: ABOUT
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: Language
+          - combobox "Language" [ref=e35]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - link "CV (PDF)" [ref=e36] [cursor=pointer]:
+          - /url: /cv.pdf
+        - link "Show Me the Workflow" [ref=e41] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e48]:
+    - navigation "Breadcrumb" [ref=e49]:
+      - list [ref=e50]:
+        - listitem [ref=e51]:
+          - link "INDEX" [ref=e52] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e53]:
+          - generic [ref=e56]: WORK
+    - generic [ref=e57]:
+      - generic [ref=e58]: Selected Systems & Projects
+      - heading "Selected Work" [level=1] [ref=e59]
+      - generic [ref=e60]:
+        - paragraph [ref=e61]: Production systems, data pipelines, commercial prototypes, and training curricula.
+        - paragraph [ref=e62]: Each project is documented with its operational context, workflow evidence, software architecture, and stated result.
+    - generic [ref=e63]:
+      - generic [ref=e64]: "Filter:"
+      - button "ALL" [ref=e65]
+      - button "INDUSTRY" [ref=e66]
+      - button "DATA" [ref=e67]
+      - button "AI" [ref=e68]
+      - button "MEDIA" [ref=e69]
+      - button "EDUCATION" [ref=e70]
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - generic [ref=e73]: Project Directory · 6 Documented Builds
+        - generic [ref=e74]: Click any row to read the complete technical breakdown
+      - table [ref=e76]:
+        - rowgroup [ref=e77]:
+          - row [ref=e78]:
+            - columnheader "Reference" [ref=e79]
+            - columnheader "Project Title" [ref=e80]
+            - columnheader "Field" [ref=e81]
+            - columnheader "Status / Scope" [ref=e82]
+            - columnheader "Year" [ref=e83]
+        - rowgroup [ref=e84]:
+          - 'link "View case study: 1,000,000+ Rows Processed in Under 10 Minutes" [ref=e85] [cursor=pointer]':
+            - cell "REF. DS-001" [ref=e86]
+            - cell [ref=e87]:
+              - link "1,000,000+ Rows Processed in Under 10 Minutes" [ref=e89]:
+                - /url: /work/million-row-pipeline
+            - cell "AUTOMATION & DATA" [ref=e93]
+            - cell "INTERNAL BUILD" [ref=e94]
+            - cell "2026" [ref=e95]
+          - 'link "View case study: Long-Form Video Turned Into a Processing Pipeline" [ref=e96] [cursor=pointer]':
+            - cell "REF. DS-002" [ref=e97]
+            - cell [ref=e98]:
+              - link "Long-Form Video Turned Into a Processing Pipeline" [ref=e100]:
+                - /url: /work/video-processing-pipeline
+            - cell "AI & MEDIA" [ref=e104]
+            - cell "INTERNAL BUILD" [ref=e105]
+            - cell "2026" [ref=e106]
+          - 'link "View case study: Industrial RFQ Intake & Specification Preparation Engine" [ref=e107] [cursor=pointer]':
+            - cell "REF. DS-003" [ref=e108]
+            - cell [ref=e109]:
+              - link "Industrial RFQ Intake & Specification Preparation Engine" [ref=e111]:
+                - /url: /work/industrial-rfq-intake
+            - cell "INDUSTRY" [ref=e115]
+            - cell "PROTOTYPE" [ref=e116]
+            - cell "2026" [ref=e117]
+          - 'link "View case study: Multi-Portal Tender Discovery & Filter Queue" [ref=e118] [cursor=pointer]':
+            - cell "REF. DS-004" [ref=e119]
+            - cell [ref=e120]:
+              - link "Multi-Portal Tender Discovery & Filter Queue" [ref=e122]:
+                - /url: /work/tender-monitoring-engine
+            - cell "INDUSTRY" [ref=e126]
+            - cell "PROTOTYPE" [ref=e127]
+            - cell "2025" [ref=e128]
+          - 'link "View case study: Commercial Quotation Coordination & Follow-Up Pipeline" [ref=e129] [cursor=pointer]':
+            - cell "REF. DS-005" [ref=e130]
+            - cell [ref=e131]:
+              - link "Commercial Quotation Coordination & Follow-Up Pipeline" [ref=e133]:
+                - /url: /work/commercial-quotation-tracker
+            - cell "AUTOMATION & DATA" [ref=e137]
+            - cell "INTERNAL BUILD" [ref=e138]
+            - cell "2025" [ref=e139]
+          - 'link "View case study: Practical AI, Automation & API Workshop Curriculum" [ref=e140] [cursor=pointer]':
+            - cell "REF. DS-006" [ref=e141]
+            - cell [ref=e142]:
+              - link "Practical AI, Automation & API Workshop Curriculum" [ref=e144]:
+                - /url: /work/appclick-training-curriculum
+            - cell "TEACHING" [ref=e148]
+            - cell "TRAINING" [ref=e149]
+            - cell "2026" [ref=e150]
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e153]: Detailed Case Studies
+        - generic [ref=e154]: Architecture & Outcomes
+      - generic [ref=e155]:
+        - article [ref=e156]:
+          - generic [ref=e157]:
+            - generic [ref=e158]:
+              - generic [ref=e159]: REF. DS-001 · DATA / PYTHON / AUTOMATION
+              - generic [ref=e160]: INTERNAL BUILD
+            - heading "1,000,000+ Rows Processed in Under 10 Minutes" [level=2] [ref=e161]
+            - paragraph [ref=e162]: A chunked Python batch processing engine replacing manual spreadsheet work with deterministic transformations.
+            - generic [ref=e164]:
+              - strong [ref=e165]: "Constraint:"
+              - text: Memory limits on standard local hardware (16GB RAM) prevented loading the entire raw 1.2M+ row CSV/XLSX into memory at once. Furthermore, date strings used inconsistent formats (ISO-8601, DD/MM/YYYY, MM/DD/YYYY) and numeric columns had sporadic currency symbols and trailing spaces.
+            - generic [ref=e166]:
+              - generic [ref=e167]:
+                - generic [ref=e168]:
+                  - generic [ref=e169]: "1"
+                  - text: Input
+                - paragraph [ref=e170]: Unstructured multi-format CSV exports and legacy ledger dumps totaling 1,140,000+ rows.
+              - generic [ref=e171]:
+                - generic [ref=e172]:
+                  - generic [ref=e173]: "2"
+                  - text: Process
+                - list [ref=e174]:
+                  - listitem [ref=e175]:
+                    - generic [ref=e178]: Stream raw byte chunks into memory buffer without heap explosion
+                  - listitem [ref=e179]:
+                    - generic [ref=e182]: Normalize headers and strip non-numeric glyphs from currency columns
+                  - listitem [ref=e183]:
+                    - generic [ref=e186]: Vectorized date parsing with fallback pattern recognition
+                  - listitem [ref=e187]:
+                    - generic [ref=e190]: MurmurHash3 computation on primary key tuples for rapid deduplication
+                  - listitem [ref=e191]:
+                    - generic [ref=e194]: Aggregate dimensional metrics (volume, revenue by category, daily velocity)
+              - generic [ref=e195]:
+                - generic [ref=e196]:
+                  - generic [ref=e197]: "3"
+                  - text: Output
+                - paragraph [ref=e198]: Cleaned partitioned Parquet datasets ready for BI/SQL ingestion, plus a 2-page executive summary spreadsheet generated in 8 minutes 42 seconds.
+              - generic [ref=e199]:
+                - generic [ref=e200]: Result
+                - paragraph [ref=e204]: Reduced a process that previously stalled spreadsheet applications and required several days of fragmented human wrangling into an 8.7-minute unattended script run with zero dropped rows.
+          - generic [ref=e205]:
+            - link "Read case study breakdown →" [ref=e206] [cursor=pointer]:
+              - /url: /work/million-row-pipeline
+              - generic [ref=e207]: Read case study breakdown
+              - generic [ref=e208]: →
+            - generic [ref=e209]: "2026"
+        - article [ref=e210]:
+          - generic [ref=e211]:
+            - generic [ref=e212]:
+              - generic [ref=e213]: REF. DS-002 · AI / PYTHON / MEDIA AUTOMATION
+              - generic [ref=e214]: INTERNAL BUILD
+            - heading "Long-Form Video Turned Into a Processing Pipeline" [level=2] [ref=e215]
+            - paragraph [ref=e216]: An automated pipeline handling audio extraction, high-accuracy transcription, semantic indexing, and targeted video clipping using Python and FFmpeg.
+            - generic [ref=e218]:
+              - strong [ref=e219]: "Constraint:"
+              - text: Audio varied in acoustic quality, containing background noise and non-standard regional terminology. Off-the-shelf transcription tools lacked frame-accurate synchronization with the actual visual timeline, resulting in clipped speech in exported video fragments.
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - generic [ref=e222]:
+                  - generic [ref=e223]: "1"
+                  - text: Input
+                - paragraph [ref=e224]: 4K/1080p raw video recordings (MP4/MKV) spanning 90 to 180 minutes.
+              - generic [ref=e225]:
+                - generic [ref=e226]:
+                  - generic [ref=e227]: "2"
+                  - text: Process
+                - list [ref=e228]:
+                  - listitem [ref=e229]:
+                    - generic [ref=e232]: FFmpeg streams 16kHz mono audio directly to STT inference worker
+                  - listitem [ref=e233]:
+                    - generic [ref=e236]: Whisper model generates word-level timestamped token arrays
+                  - listitem [ref=e237]:
+                    - generic [ref=e240]: Semantic clustering groups contiguous sentences into coherent topic chapters
+                  - listitem [ref=e241]:
+                    - generic [ref=e244]: Silence-aware padding calculation (+200ms lead-in, -150ms release)
+                  - listitem [ref=e245]:
+                    - generic [ref=e248]: FFmpeg headless sub-clip rendering with burned-in captions and audio normalization
+              - generic [ref=e249]:
+                - generic [ref=e250]:
+                  - generic [ref=e251]: "3"
+                  - text: Output
+                - paragraph [ref=e252]: Full searchable JSON transcript index with synchronized timestamps, plus automatically trimmed highlight video clips rendered to disk.
+              - generic [ref=e253]:
+                - generic [ref=e254]: Result
+                - paragraph [ref=e258]: Processed 2.5 hours of high-resolution video into timestamped, captioned clips and markdown searchable notes in under 18 minutes without opening an NLE editor.
+          - generic [ref=e259]:
+            - link "Read case study breakdown →" [ref=e260] [cursor=pointer]:
+              - /url: /work/video-processing-pipeline
+              - generic [ref=e261]: Read case study breakdown
+              - generic [ref=e262]: →
+            - generic [ref=e263]: "2026"
+        - article [ref=e264]:
+          - generic [ref=e265]:
+            - generic [ref=e266]:
+              - generic [ref=e267]: REF. DS-003 · INDUSTRY / RFQ / EXTRACTION
+              - generic [ref=e268]: PROTOTYPE
+            - heading "Industrial RFQ Intake & Specification Preparation Engine" [level=2] [ref=e269]
+            - paragraph [ref=e270]: Automated extraction of customer line items, part specifications, and delivery terms from messy email bodies and PDF attachments into a verified review queue.
+            - generic [ref=e272]:
+              - strong [ref=e273]: "Constraint:"
+              - text: Documents lack uniform templates. A single PDF might interleave billing addresses, technical drawings, general terms, and tabular item tables with nested sub-items.
+            - generic [ref=e274]:
+              - generic [ref=e275]:
+                - generic [ref=e276]:
+                  - generic [ref=e277]: "1"
+                  - text: Input
+                - paragraph [ref=e278]: Inbound RFQ emails with attached multi-page PDF specifications or Excel requisition files.
+              - generic [ref=e279]:
+                - generic [ref=e280]:
+                  - generic [ref=e281]: "2"
+                  - text: Process
+                - list [ref=e282]:
+                  - listitem [ref=e283]:
+                    - generic [ref=e286]: IMAP/Webhook listener triggers on inbound message to rfq@ mailbox
+                  - listitem [ref=e287]:
+                    - generic [ref=e290]: PDF parser strips text layers and isolates line item tabular regions
+                  - listitem [ref=e291]:
+                    - generic [ref=e294]: Structured LLM extraction maps part numbers, quantities, units, and delivery dates
+                  - listitem [ref=e295]:
+                    - generic [ref=e298]: Validation check against catalog database flags unknown SKUs or missing specs
+                  - listitem [ref=e299]:
+                    - generic [ref=e302]: Formatted RFQ dossier generated with side-by-side original attachment preview
+              - generic [ref=e303]:
+                - generic [ref=e304]:
+                  - generic [ref=e305]: "3"
+                  - text: Output
+                - paragraph [ref=e306]: Normalized internal RFQ draft in ERP/Airtable review queue with 95% of administrative re-keying completed.
+              - generic [ref=e307]:
+                - generic [ref=e308]: Result
+                - paragraph [ref=e312]: Cut estimator prep time from 25 minutes per complex request to under 3 minutes of focused human verification.
+          - generic [ref=e313]:
+            - link "Read case study breakdown →" [ref=e314] [cursor=pointer]:
+              - /url: /work/industrial-rfq-intake
+              - generic [ref=e315]: Read case study breakdown
+              - generic [ref=e316]: →
+            - generic [ref=e317]: "2026"
+        - article [ref=e318]:
+          - generic [ref=e319]:
+            - generic [ref=e320]:
+              - generic [ref=e321]: REF. DS-004 · INDUSTRY / PROCUREMENT / MONITORING
+              - generic [ref=e322]: PROTOTYPE
+            - heading "Multi-Portal Tender Discovery & Filter Queue" [level=2] [ref=e323]
+            - paragraph [ref=e324]: Scheduled automated scrapers and API monitors tracking procurement notices across fragmented buyer portals and delivering filtered, scored summaries.
+            - generic [ref=e326]:
+              - strong [ref=e327]: "Constraint:"
+              - text: Several target portals did not provide public RSS feeds or REST APIs, had sluggish page response times, and hid notice details behind multi-step pagination.
+            - generic [ref=e328]:
+              - generic [ref=e329]:
+                - generic [ref=e330]:
+                  - generic [ref=e331]: "1"
+                  - text: Input
+                - paragraph [ref=e332]: 7 external procurement portals and public tender gazette listings.
+              - generic [ref=e333]:
+                - generic [ref=e334]:
+                  - generic [ref=e335]: "2"
+                  - text: Process
+                - list [ref=e336]:
+                  - listitem [ref=e337]:
+                    - generic [ref=e340]: Cron runner triggers headless browser checks every 4 hours during business days
+                  - listitem [ref=e341]:
+                    - generic [ref=e344]: Change-detection algorithm identifies net-new tender IDs against Postgres cache
+                  - listitem [ref=e345]:
+                    - generic [ref=e348]: Notice text, submission deadlines, bond requirements, and category codes scraped
+                  - listitem [ref=e349]:
+                    - generic [ref=e352]: Keyword and negative-phrase filtering removes out-of-scope commodity requests
+                  - listitem [ref=e353]:
+                    - generic [ref=e356]: Automated digest generated with direct deep-links to tender source files
+              - generic [ref=e357]:
+                - generic [ref=e358]:
+                  - generic [ref=e359]: "3"
+                  - text: Output
+                - paragraph [ref=e360]: Consolidated Slack/WhatsApp/Email morning brief and synchronized internal pipeline table of high-probability opportunities.
+              - generic [ref=e361]:
+                - generic [ref=e362]: Result
+                - paragraph [ref=e366]: Eliminated 10+ hours per week of manual website navigation while surfacing newly posted tenders within 4 hours of publication.
+          - generic [ref=e367]:
+            - link "Read case study breakdown →" [ref=e368] [cursor=pointer]:
+              - /url: /work/tender-monitoring-engine
+              - generic [ref=e369]: Read case study breakdown
+              - generic [ref=e370]: →
+            - generic [ref=e371]: "2025"
+        - article [ref=e372]:
+          - generic [ref=e373]:
+            - generic [ref=e374]:
+              - generic [ref=e375]: REF. DS-005 · AUTOMATION / PIPELINE / REPORTING
+              - generic [ref=e376]: INTERNAL BUILD
+            - heading "Commercial Quotation Coordination & Follow-Up Pipeline" [level=2] [ref=e377]
+            - paragraph [ref=e378]: An automated quotation coordination workflow tracking proposal lifecycle, customer engagement, and scheduled follow-up cadence.
+            - generic [ref=e380]:
+              - strong [ref=e381]: "Constraint:"
+              - text: Commercial managers rejected rigid, heavyweight enterprise CRM tools because data entry was too cumbersome, leading to 0% user adoption within 2 months.
+            - generic [ref=e382]:
+              - generic [ref=e383]:
+                - generic [ref=e384]:
+                  - generic [ref=e385]: "1"
+                  - text: Input
+                - paragraph [ref=e386]: Approved quote PDF and customer contact details.
+              - generic [ref=e387]:
+                - generic [ref=e388]:
+                  - generic [ref=e389]: "2"
+                  - text: Process
+                - list [ref=e390]:
+                  - listitem [ref=e391]:
+                    - generic [ref=e394]: Document sent with unique tracking link and logging webhook
+                  - listitem [ref=e395]:
+                    - generic [ref=e398]: Status logged in lightweight operational database (Spreadsheet/Airtable backend)
+                  - listitem [ref=e399]:
+                    - generic [ref=e402]: Automated timer schedules follow-up task prompts for sales reps at Day 3 and Day 7
+                  - listitem [ref=e403]:
+                    - generic [ref=e406]: Flags customer interaction and escalates stagnant quotes to sales manager
+                  - listitem [ref=e407]:
+                    - generic [ref=e410]: Syncs outcome back into rolling monthly revenue projection
+              - generic [ref=e411]:
+                - generic [ref=e412]:
+                  - generic [ref=e413]: "3"
+                  - text: Output
+                - paragraph [ref=e414]: Zero un-followed quotations; rolling monthly conversion reporting generated without manual entry.
+              - generic [ref=e415]:
+                - generic [ref=e416]: Result
+                - paragraph [ref=e420]: Recovered an estimated 18% of previously lost quotes caused solely by lack of timely follow-up, with zero change in sales rep overhead.
+          - generic [ref=e421]:
+            - link "Read case study breakdown →" [ref=e422] [cursor=pointer]:
+              - /url: /work/commercial-quotation-tracker
+              - generic [ref=e423]: Read case study breakdown
+              - generic [ref=e424]: →
+            - generic [ref=e425]: "2025"
+        - article [ref=e426]:
+          - generic [ref=e427]:
+            - generic [ref=e428]:
+              - generic [ref=e429]: REF. DS-006 · TEACHING / WORKSHOP / APIS
+              - generic [ref=e430]: TRAINING
+            - heading "Practical AI, Automation & API Workshop Curriculum" [level=2] [ref=e431]
+            - paragraph [ref=e432]: Hands-on training modules and interactive curricula teaching nontechnical professionals and builders how APIs and workflows actually function.
+            - generic [ref=e434]:
+              - strong [ref=e435]: "Constraint:"
+              - text: Learners ranged from operational managers with zero coding experience to aspiring builders needing practical architectural fundamentals without getting bogged down in low-level syntax.
+            - generic [ref=e436]:
+              - generic [ref=e437]:
+                - generic [ref=e438]:
+                  - generic [ref=e439]: "1"
+                  - text: Input
+                - paragraph [ref=e440]: Nontechnical teams and modern digital professionals seeking systems literacy.
+              - generic [ref=e441]:
+                - generic [ref=e442]:
+                  - generic [ref=e443]: "2"
+                  - text: Process
+                - list [ref=e444]:
+                  - listitem [ref=e445]:
+                    - generic [ref=e448]: "Module 1: Mental models of computing—what actually happens when you click a button"
+                  - listitem [ref=e449]:
+                    - generic [ref=e452]: "Module 2: The anatomy of an API call (Method, URL, Headers, Body, Status Codes)"
+                  - listitem [ref=e453]:
+                    - generic [ref=e456]: "Module 3: Hands-on workflow building (connecting webhooks to spreadsheets in n8n)"
+                  - listitem [ref=e457]:
+                    - generic [ref=e460]: "Module 4: Practical AI integration (structured outputs, prompt engineering, validation)"
+                  - listitem [ref=e461]:
+                    - generic [ref=e464]: "Module 5: Error handling, edge cases, and knowing when NOT to automate"
+              - generic [ref=e465]:
+                - generic [ref=e466]:
+                  - generic [ref=e467]: "3"
+                  - text: Output
+                - paragraph [ref=e468]: Over 120+ professionals trained with functional workflows built by learners on their own laptops during sessions.
+              - generic [ref=e469]:
+                - generic [ref=e470]: Result
+                - paragraph [ref=e474]: Participants consistently deployed production automations within 14 days of workshop completion without hiring external consultants for simple tasks.
+          - generic [ref=e475]:
+            - link "Read case study breakdown →" [ref=e476] [cursor=pointer]:
+              - /url: /work/appclick-training-curriculum
+              - generic [ref=e477]: Read case study breakdown
+              - generic [ref=e478]: →
+            - generic [ref=e479]: "2026"
+    - generic [ref=e480]:
+      - generic [ref=e481]: Have a Similar Operational Challenge?
+      - heading "Let's evaluate your operational process." [level=2] [ref=e482]
+      - paragraph [ref=e483]: Send me an outline of your current manual workflow. We'll assess where the data is getting held up and provide practical architecture recommendations.
+      - link "Discuss Your Workflow" [ref=e485] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=e489]:
+    - generic [ref=e490]:
+      - generic [ref=e491]:
+        - generic [ref=e492]:
+          - generic [ref=e493]:
+            - img "DafeDeScribe Logo" [ref=e494]
+            - generic [ref=e495]:
+              - generic [ref=e496]: DafeDeScribe
+              - generic [ref=e497]: SYSTEMS · AUTOMATION · EDUCATION
+          - paragraph [ref=e498]:
+            - text: The professional portfolio of
+            - strong [ref=e499]: Odafe Amalega
+            - text: . Designing workflow automation, data processing, and AI systems for industrial and operational businesses, and delivering practical technical training.
+          - generic [ref=e500]:
+            - generic [ref=e501]: AI Workflow Engineer · Systems Builder · Educator
+            - generic [ref=e502]: Currently instructing at AppClick
+        - generic [ref=e503]:
+          - generic [ref=e504]: 01 / INDUSTRY
+          - list [ref=e505]:
+            - listitem [ref=e506]:
+              - link "Commercial Systems Overview" [ref=e507] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=e508]:
+              - link "RFQ Automation" [ref=e509] [cursor=pointer]:
+                - /url: /industry/rfq-automation
+            - listitem [ref=e510]:
+              - link "Tender Monitoring" [ref=e511] [cursor=pointer]:
+                - /url: /industry/tender-monitoring
+            - listitem [ref=e512]:
+              - link "Quotation Workflows" [ref=e513] [cursor=pointer]:
+                - /url: /industry/quotation-workflows
+            - listitem [ref=e514]:
+              - link "Commercial Reporting" [ref=e515] [cursor=pointer]:
+                - /url: /industry/commercial-reporting
+        - generic [ref=e516]:
+          - generic [ref=e517]: 02 / PRACTICE
+          - list [ref=e518]:
+            - listitem [ref=e519]:
+              - link "Automation" [ref=e520] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=e521]:
+              - link "Teaching & Training" [ref=e522] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=e523]:
+              - link "Selected Work" [ref=e524] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=e525]:
+              - link "Notes & Bulletins" [ref=e526] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=e527]:
+              - link "Lab & Prototypes" [ref=e528] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=e529]:
+          - generic [ref=e530]: 03 / CONTACT
+          - list [ref=e531]:
+            - listitem [ref=e532]:
+              - link "About & Background" [ref=e533] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e534]:
+              - link "Curriculum Vitae (PDF)" [ref=e535] [cursor=pointer]:
+                - /url: /cv.pdf
+            - listitem [ref=e540]:
+              - link "Submit a Workflow" [ref=e541] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e542]:
+              - link "WhatsApp Direct" [ref=e543] [cursor=pointer]:
+                - /url: https://wa.me/2349132480302
+      - generic [ref=e548]:
+        - generic [ref=e549]: © 2026 DafeDeScribe · Odafe Amalega. All rights reserved.
+        - generic [ref=e550]:
+          - generic [ref=e551]: Engineering Systems & Workflow Architecture
+          - generic [ref=e552]: "|"
+          - link "Direct Inquiry" [ref=e553] [cursor=pointer]:
+            - /url: /contact

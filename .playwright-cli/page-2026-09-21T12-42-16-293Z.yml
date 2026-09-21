@@ -1,0 +1,276 @@
+- generic [ref=e554]:
+  - link "Skip to main content" [ref=e555] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e556]:
+    - generic [ref=e558]:
+      - link "DafeDeScribe Home" [ref=e559] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=e560]
+        - generic [ref=e561]:
+          - generic [ref=e562]: DafeDeScribe
+          - generic [ref=e563]: SYSTEMS · AUTOMATION · EDUCATION
+      - navigation [ref=e564]:
+        - link "01 INDUSTRY" [ref=e565] [cursor=pointer]:
+          - /url: /industry
+          - generic [ref=e566]: "01"
+          - generic [ref=e567]: INDUSTRY
+        - link "02 AUTOMATION" [ref=e568] [cursor=pointer]:
+          - /url: /automation
+          - generic [ref=e569]: "02"
+          - generic [ref=e570]: AUTOMATION
+        - link "03 WORK" [ref=e571] [cursor=pointer]:
+          - /url: /work
+          - generic [ref=e572]: "03"
+          - generic [ref=e573]: WORK
+        - link "04 TEACHING" [ref=e575] [cursor=pointer]:
+          - /url: /teaching
+          - generic [ref=e576]: "04"
+          - generic [ref=e577]: TEACHING
+        - link "05 NOTES" [ref=e578] [cursor=pointer]:
+          - /url: /notes
+          - generic [ref=e579]: "05"
+          - generic [ref=e580]: NOTES
+        - link "06 ABOUT" [ref=e581] [cursor=pointer]:
+          - /url: /about
+          - generic [ref=e582]: "06"
+          - generic [ref=e583]: ABOUT
+      - generic [ref=e584]:
+        - generic [ref=e585]:
+          - generic [ref=e586]: Language
+          - combobox "Language" [ref=e587]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - link "CV (PDF)" [ref=e588] [cursor=pointer]:
+          - /url: /cv.pdf
+        - link "Show Me the Workflow" [ref=e593] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e600]:
+    - navigation "Breadcrumb" [ref=e601]:
+      - list [ref=e602]:
+        - listitem [ref=e603]:
+          - link "INDEX" [ref=e604] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e605]:
+          - generic [ref=e608]: WORK
+    - generic [ref=e609]:
+      - generic [ref=e610]: Selected Systems & Projects
+      - heading "Selected Work" [level=1] [ref=e611]
+      - generic [ref=e612]:
+        - paragraph [ref=e613]: Production systems, data pipelines, commercial prototypes, and training curricula.
+        - paragraph [ref=e614]: Each project is documented with its operational context, workflow evidence, software architecture, and stated result.
+    - generic [ref=e615]:
+      - generic [ref=e616]: "Filter:"
+      - button "ALL" [ref=e617]
+      - button "INDUSTRY" [active] [ref=e618]
+      - button "DATA" [ref=e619]
+      - button "AI" [ref=e620]
+      - button "MEDIA" [ref=e621]
+      - button "EDUCATION" [ref=e622]
+    - generic [ref=e623]:
+      - generic [ref=e624]:
+        - generic [ref=e625]: Project Directory · 2 Documented Builds
+        - generic [ref=e626]: Click any row to read the complete technical breakdown
+      - table [ref=e628]:
+        - rowgroup [ref=e629]:
+          - row [ref=e630]:
+            - columnheader "Reference" [ref=e631]
+            - columnheader "Project Title" [ref=e632]
+            - columnheader "Field" [ref=e633]
+            - columnheader "Status / Scope" [ref=e634]
+            - columnheader "Year" [ref=e635]
+        - rowgroup [ref=e636]:
+          - 'link "View case study: Industrial RFQ Intake & Specification Preparation Engine" [ref=e659] [cursor=pointer]':
+            - cell "REF. DS-003" [ref=e660]
+            - cell [ref=e661]:
+              - link "Industrial RFQ Intake & Specification Preparation Engine" [ref=e663]:
+                - /url: /work/industrial-rfq-intake
+            - cell "INDUSTRY" [ref=e667]
+            - cell "PROTOTYPE" [ref=e668]
+            - cell "2026" [ref=e669]
+          - 'link "View case study: Multi-Portal Tender Discovery & Filter Queue" [ref=e670] [cursor=pointer]':
+            - cell "REF. DS-004" [ref=e671]
+            - cell [ref=e672]:
+              - link "Multi-Portal Tender Discovery & Filter Queue" [ref=e674]:
+                - /url: /work/tender-monitoring-engine
+            - cell "INDUSTRY" [ref=e678]
+            - cell "PROTOTYPE" [ref=e679]
+            - cell "2025" [ref=e680]
+    - generic [ref=e703]:
+      - generic [ref=e704]:
+        - generic [ref=e705]: Detailed Case Studies
+        - generic [ref=e706]: Architecture & Outcomes
+      - generic [ref=e707]:
+        - article [ref=e816]:
+          - generic [ref=e817]:
+            - generic [ref=e818]:
+              - generic [ref=e819]: REF. DS-003 · INDUSTRY / RFQ / EXTRACTION
+              - generic [ref=e820]: PROTOTYPE
+            - heading "Industrial RFQ Intake & Specification Preparation Engine" [level=2] [ref=e821]
+            - paragraph [ref=e822]: Automated extraction of customer line items, part specifications, and delivery terms from messy email bodies and PDF attachments into a verified review queue.
+            - generic [ref=e824]:
+              - strong [ref=e825]: "Constraint:"
+              - text: Documents lack uniform templates. A single PDF might interleave billing addresses, technical drawings, general terms, and tabular item tables with nested sub-items.
+            - generic [ref=e826]:
+              - generic [ref=e827]:
+                - generic [ref=e828]:
+                  - generic [ref=e829]: "1"
+                  - text: Input
+                - paragraph [ref=e830]: Inbound RFQ emails with attached multi-page PDF specifications or Excel requisition files.
+              - generic [ref=e831]:
+                - generic [ref=e832]:
+                  - generic [ref=e833]: "2"
+                  - text: Process
+                - list [ref=e834]:
+                  - listitem [ref=e835]:
+                    - generic [ref=e838]: IMAP/Webhook listener triggers on inbound message to rfq@ mailbox
+                  - listitem [ref=e839]:
+                    - generic [ref=e842]: PDF parser strips text layers and isolates line item tabular regions
+                  - listitem [ref=e843]:
+                    - generic [ref=e846]: Structured LLM extraction maps part numbers, quantities, units, and delivery dates
+                  - listitem [ref=e847]:
+                    - generic [ref=e850]: Validation check against catalog database flags unknown SKUs or missing specs
+                  - listitem [ref=e851]:
+                    - generic [ref=e854]: Formatted RFQ dossier generated with side-by-side original attachment preview
+              - generic [ref=e855]:
+                - generic [ref=e856]:
+                  - generic [ref=e857]: "3"
+                  - text: Output
+                - paragraph [ref=e858]: Normalized internal RFQ draft in ERP/Airtable review queue with 95% of administrative re-keying completed.
+              - generic [ref=e859]:
+                - generic [ref=e860]: Result
+                - paragraph [ref=e864]: Cut estimator prep time from 25 minutes per complex request to under 3 minutes of focused human verification.
+          - generic [ref=e865]:
+            - link "Read case study breakdown →" [ref=e866] [cursor=pointer]:
+              - /url: /work/industrial-rfq-intake
+              - generic [ref=e867]: Read case study breakdown
+              - generic [ref=e868]: →
+            - generic [ref=e869]: "2026"
+        - article [ref=e870]:
+          - generic [ref=e871]:
+            - generic [ref=e872]:
+              - generic [ref=e873]: REF. DS-004 · INDUSTRY / PROCUREMENT / MONITORING
+              - generic [ref=e874]: PROTOTYPE
+            - heading "Multi-Portal Tender Discovery & Filter Queue" [level=2] [ref=e875]
+            - paragraph [ref=e876]: Scheduled automated scrapers and API monitors tracking procurement notices across fragmented buyer portals and delivering filtered, scored summaries.
+            - generic [ref=e878]:
+              - strong [ref=e879]: "Constraint:"
+              - text: Several target portals did not provide public RSS feeds or REST APIs, had sluggish page response times, and hid notice details behind multi-step pagination.
+            - generic [ref=e880]:
+              - generic [ref=e881]:
+                - generic [ref=e882]:
+                  - generic [ref=e883]: "1"
+                  - text: Input
+                - paragraph [ref=e884]: 7 external procurement portals and public tender gazette listings.
+              - generic [ref=e885]:
+                - generic [ref=e886]:
+                  - generic [ref=e887]: "2"
+                  - text: Process
+                - list [ref=e888]:
+                  - listitem [ref=e889]:
+                    - generic [ref=e892]: Cron runner triggers headless browser checks every 4 hours during business days
+                  - listitem [ref=e893]:
+                    - generic [ref=e896]: Change-detection algorithm identifies net-new tender IDs against Postgres cache
+                  - listitem [ref=e897]:
+                    - generic [ref=e900]: Notice text, submission deadlines, bond requirements, and category codes scraped
+                  - listitem [ref=e901]:
+                    - generic [ref=e904]: Keyword and negative-phrase filtering removes out-of-scope commodity requests
+                  - listitem [ref=e905]:
+                    - generic [ref=e908]: Automated digest generated with direct deep-links to tender source files
+              - generic [ref=e909]:
+                - generic [ref=e910]:
+                  - generic [ref=e911]: "3"
+                  - text: Output
+                - paragraph [ref=e912]: Consolidated Slack/WhatsApp/Email morning brief and synchronized internal pipeline table of high-probability opportunities.
+              - generic [ref=e913]:
+                - generic [ref=e914]: Result
+                - paragraph [ref=e918]: Eliminated 10+ hours per week of manual website navigation while surfacing newly posted tenders within 4 hours of publication.
+          - generic [ref=e919]:
+            - link "Read case study breakdown →" [ref=e920] [cursor=pointer]:
+              - /url: /work/tender-monitoring-engine
+              - generic [ref=e921]: Read case study breakdown
+              - generic [ref=e922]: →
+            - generic [ref=e923]: "2025"
+    - generic [ref=e1032]:
+      - generic [ref=e1033]: Have a Similar Operational Challenge?
+      - heading "Let's evaluate your operational process." [level=2] [ref=e1034]
+      - paragraph [ref=e1035]: Send me an outline of your current manual workflow. We'll assess where the data is getting held up and provide practical architecture recommendations.
+      - link "Discuss Your Workflow" [ref=e1037] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=e1041]:
+    - generic [ref=e1042]:
+      - generic [ref=e1043]:
+        - generic [ref=e1044]:
+          - generic [ref=e1045]:
+            - img "DafeDeScribe Logo" [ref=e1046]
+            - generic [ref=e1047]:
+              - generic [ref=e1048]: DafeDeScribe
+              - generic [ref=e1049]: SYSTEMS · AUTOMATION · EDUCATION
+          - paragraph [ref=e1050]:
+            - text: The professional portfolio of
+            - strong [ref=e1051]: Odafe Amalega
+            - text: . Designing workflow automation, data processing, and AI systems for industrial and operational businesses, and delivering practical technical training.
+          - generic [ref=e1052]:
+            - generic [ref=e1053]: AI Workflow Engineer · Systems Builder · Educator
+            - generic [ref=e1054]: Currently instructing at AppClick
+        - generic [ref=e1055]:
+          - generic [ref=e1056]: 01 / INDUSTRY
+          - list [ref=e1057]:
+            - listitem [ref=e1058]:
+              - link "Commercial Systems Overview" [ref=e1059] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=e1060]:
+              - link "RFQ Automation" [ref=e1061] [cursor=pointer]:
+                - /url: /industry/rfq-automation
+            - listitem [ref=e1062]:
+              - link "Tender Monitoring" [ref=e1063] [cursor=pointer]:
+                - /url: /industry/tender-monitoring
+            - listitem [ref=e1064]:
+              - link "Quotation Workflows" [ref=e1065] [cursor=pointer]:
+                - /url: /industry/quotation-workflows
+            - listitem [ref=e1066]:
+              - link "Commercial Reporting" [ref=e1067] [cursor=pointer]:
+                - /url: /industry/commercial-reporting
+        - generic [ref=e1068]:
+          - generic [ref=e1069]: 02 / PRACTICE
+          - list [ref=e1070]:
+            - listitem [ref=e1071]:
+              - link "Automation" [ref=e1072] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=e1073]:
+              - link "Teaching & Training" [ref=e1074] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=e1075]:
+              - link "Selected Work" [ref=e1076] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=e1077]:
+              - link "Notes & Bulletins" [ref=e1078] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=e1079]:
+              - link "Lab & Prototypes" [ref=e1080] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=e1081]:
+          - generic [ref=e1082]: 03 / CONTACT
+          - list [ref=e1083]:
+            - listitem [ref=e1084]:
+              - link "About & Background" [ref=e1085] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e1086]:
+              - link "Curriculum Vitae (PDF)" [ref=e1087] [cursor=pointer]:
+                - /url: /cv.pdf
+            - listitem [ref=e1092]:
+              - link "Submit a Workflow" [ref=e1093] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e1094]:
+              - link "WhatsApp Direct" [ref=e1095] [cursor=pointer]:
+                - /url: https://wa.me/2349132480302
+      - generic [ref=e1100]:
+        - generic [ref=e1101]: © 2026 DafeDeScribe · Odafe Amalega. All rights reserved.
+        - generic [ref=e1102]:
+          - generic [ref=e1103]: Engineering Systems & Workflow Architecture
+          - generic [ref=e1104]: "|"
+          - link "Direct Inquiry" [ref=e1105] [cursor=pointer]:
+            - /url: /contact
