@@ -5,6 +5,7 @@ import { ProcessDiagram } from '../components/ProcessDiagram';
 import { ArrowRight, ArrowUpRight, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
 import { PROJECTS } from '../data/projectsData';
 import { useI18n } from '../i18n/I18nProvider';
+import { WorkflowEvidence, WorkflowEvidenceHeading } from '../components/WorkflowEvidence';
 
 export const HomePage: React.FC = () => {
   const { t } = useI18n();
@@ -25,7 +26,7 @@ export const HomePage: React.FC = () => {
     }
   };
 
-  const proofItems = PROJECTS.filter((p) => p.featuredOnHome).slice(0, 3);
+  const industrialEvidence = PROJECTS.filter((p) => ['industrial-rfq-intake', 'tender-monitoring-engine', 'commercial-quotation-tracker'].includes(p.slug));
 
   return (
     <div className="min-h-screen">
@@ -191,7 +192,7 @@ export const HomePage: React.FC = () => {
               Background & Credentials
             </h2>
             <span className="text-xs text-slate-500 font-body">
-              Verified professional roles, engineering degree & accredited programmes
+              Professional roles, engineering degree & accredited programmes
             </span>
           </div>
 
@@ -242,115 +243,60 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* ─── SECTION 4: FEATURED CASE STUDIES ────────────────── */}
+        {/* ─── SECTION 4: INDUSTRIAL WORKFLOW EVIDENCE ─────────── */}
         <section className="space-y-6">
           <div className="flex items-center justify-between border-b border-slate-200 pb-3">
             <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
-              Verified Production Projects
+              Workflow Evidence
             </div>
             <div className="text-xs text-slate-500 font-mono-tech">
-              Case Studies & Systems
+              Industrial commercial operations
             </div>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 font-display">
-            Selected Work & Architecture
+            Systems for the work behind the sale.
           </h2>
+          <p className="max-w-3xl text-base text-slate-600 font-body leading-relaxed">
+            These documented builds show how messy inputs become reviewable outputs across RFQ intake, tender discovery, and quotation coordination. The status on each card tells you what is a prototype, internal build, or training asset.
+          </p>
 
           <div className="space-y-5">
-            {/* Proof item 1: 1M rows */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 hover:border-slate-400 hover:shadow-md transition-all">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                <div className="flex items-center gap-2 font-mono-tech text-xs">
-                  <span className="text-amber-700 font-semibold">Case Study DS-001</span>
-                  <span className="text-slate-300">|</span>
-                  <span className="text-slate-500">Data Engineering · Python · Parquet</span>
+            {industrialEvidence.map((project) => (
+              <article key={project.slug} className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 hover:border-slate-400 hover:shadow-md transition-all space-y-5">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex items-center gap-2 font-mono-tech text-xs"><span className="text-amber-700 font-semibold">{project.refId}</span><span className="text-slate-300">|</span><span className="text-slate-500">{project.tag}</span></div>
+                  <span className="text-xs px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full font-medium">{project.label}</span>
                 </div>
-                <span className="text-xs px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full font-medium">
-                  Internal Production Build
-                </span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mb-2">
-                1,000,000+ Rows Processed in Under 10 Minutes
-              </h3>
-
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl mb-5 font-body">
-                A chunked Python pipeline replaced a recurring multi-source reconciliation process that consistently crashed standard spreadsheet software, producing clean partitioned Parquet outputs in 8.7 minutes.
-              </p>
-
-              <Link
-                to="/work/million-row-pipeline"
-                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
-              >
-                <span>Read the technical breakdown</span>
-                <span>→</span>
-              </Link>
-            </div>
-
-            {/* Proof item 2: Video pipeline */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 hover:border-slate-400 hover:shadow-md transition-all">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                <div className="flex items-center gap-2 font-mono-tech text-xs">
-                  <span className="text-amber-700 font-semibold">Case Study DS-002</span>
-                  <span className="text-slate-300">|</span>
-                  <span className="text-slate-500">Python · FFmpeg · Media Automation</span>
-                </div>
-                <span className="text-xs px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-full font-medium">
-                  Internal Production Build
-                </span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mb-2">
-                Automated Long-Form Video Assembly Pipeline
-              </h3>
-
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl mb-5 font-body">
-                An end-to-end media automation system handling audio extraction, semantic transcription, highlight scoring, and programmatic compilation using Python and FFmpeg.
-              </p>
-
-              <Link
-                to="/work/video-processing-pipeline"
-                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
-              >
-                <span>Read the technical breakdown</span>
-                <span>→</span>
-              </Link>
-            </div>
-
-            {/* Proof item 3: RFQ Intake Prototype */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 hover:border-slate-400 hover:shadow-md transition-all">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                <div className="flex items-center gap-2 font-mono-tech text-xs">
-                  <span className="text-amber-700 font-semibold">Case Study DS-003</span>
-                  <span className="text-slate-300">|</span>
-                  <span className="text-slate-500">RFQ Intake · Multi-Format Parsing · Extraction</span>
-                </div>
-                <span className="text-xs px-2.5 py-0.5 bg-amber-50 text-amber-800 rounded-full font-medium">
-                  Operational Prototype
-                </span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mb-2">
-                Industrial RFQ Intake & Specification Extraction Engine
-              </h3>
-
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl mb-5 font-body">
-                Automated parsing of customer line items, part numbers, material grades, and delivery terms from inbound email attachments and PDFs into a standardized review workbench.
-              </p>
-
-              <Link
-                to="/work/industrial-rfq-intake"
-                className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"
-              >
-                <span>Read the technical breakdown</span>
-                <span>→</span>
-              </Link>
-            </div>
+                <div><h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display mb-2">{project.title}</h3><p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl font-body">{project.oneLiner}</p></div>
+                <WorkflowEvidence project={project} compact />
+                <Link to={`/work/${project.slug}`} className="inline-flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700 transition-colors"><span>Read the workflow breakdown</span><span>→</span></Link>
+              </article>
+            ))}
           </div>
         </section>
 
-        {/* ─── SECTION 5: BUILDER PROFILE SUMMARY ──────────────── */}
+        {/* ─── SECTION 5: HOW I WORK ──────────────────────────── */}
+        <section className="space-y-6">
+          <WorkflowEvidenceHeading />
+          <div className="flex items-center justify-between"><div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">How I work</div><Link to="/contact" className="text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold hover:text-amber-700">Start with a conversation →</Link></div>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 font-display">A clear path from operational friction to a maintainable build.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              ['01', 'Show me the workflow', 'Bring the manual process as it exists. You do not need a polished brief or RFP.'],
+              ['02', 'Map the bottleneck', 'We identify the inputs, handoffs, rules, exceptions, and the output your team actually needs.'],
+              ['03', 'Build the smallest useful system', 'I recommend the simplest maintainable path, with human review where commercial judgement matters.']
+            ].map(([number, title, copy]) => <div key={number} className="bg-white border border-slate-200 rounded-xl p-6 space-y-3"><div className="text-xs font-mono-tech text-amber-700 font-semibold">{number}</div><h3 className="text-xl font-bold text-slate-900 font-display">{title}</h3><p className="text-sm text-slate-600 font-body leading-relaxed">{copy}</p></div>)}
+          </div>
+        </section>
+
+        {/* ─── SECTION 6: TRAINING PROOF ───────────────────────── */}
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
+          <div className="space-y-2 max-w-2xl"><div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">Training that produces working systems</div><h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">Teams learn the workflow, not just the tool.</h2><p className="text-sm text-slate-600 font-body leading-relaxed">Through AppClick Technology, I teach practical automation, APIs, data handling, and AI-assisted engineering to professionals who need systems literacy they can apply.</p></div>
+          <Link to="/teaching" className="btn-secondary px-5 py-3 text-sm flex-shrink-0">Explore applied training <ArrowUpRight className="w-4 h-4" /></Link>
+        </section>
+
+        {/* ─── SECTION 7: BUILDER PROFILE SUMMARY ──────────────── */}
         <section className="border-t border-slate-200 pt-12 space-y-6 max-w-3xl">
           <div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">
             About the Builder
@@ -383,7 +329,7 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* ─── SECTION 6: FINAL CTA ────────────────────────────── */}
+        {/* ─── SECTION 8: FINAL CTA ────────────────────────────── */}
         <section className="bg-white border border-slate-200 rounded-xl p-8 sm:p-14 space-y-6 shadow-sm">
           <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
             Start a Conversation

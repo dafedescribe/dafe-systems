@@ -4,30 +4,39 @@ import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { PROJECTS } from '../data/projectsData';
+import { WorkflowEvidence } from '../components/WorkflowEvidence';
 
 export const WorkPage: React.FC = () => {
   const { navigate } = useRouter();
   const [activeFilter, setActiveFilter] = useState<string>('ALL');
 
   const categories: string[] = ['ALL', 'INDUSTRY', 'DATA', 'AI', 'MEDIA', 'EDUCATION'];
+  const categoryMap: Record<string, string[]> = {
+    ALL: [],
+    INDUSTRY: ['Industry'],
+    DATA: ['Automation & Data'],
+    AI: ['AI & Media'],
+    MEDIA: ['Web', 'AI & Media'],
+    EDUCATION: ['Teaching']
+  };
 
   const filteredProjects = activeFilter === 'ALL'
     ? PROJECTS
-    : PROJECTS.filter((p) => p.category.toUpperCase() === activeFilter);
+    : PROJECTS.filter((p) => categoryMap[activeFilter].includes(p.category));
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Verified Systems & Engineering Case Studies | Odafe Amalega',
+    name: 'Documented Systems & Engineering Case Studies | Odafe Amalega',
     url: 'https://www.dafe.name.ng/work',
-    description: 'Verified engineering case studies, data pipelines, and workflow automation systems built by Odafe Amalega.'
+    description: 'Documented engineering case studies, data pipelines, and workflow automation systems built by Odafe Amalega.'
   };
 
   return (
     <div className="min-h-screen">
       <SeoHead
-        title="Verified Systems & Case Studies | DafeDeScribe"
-        description="Verified engineering case studies, data pipelines, and workflow automation systems built by Odafe Amalega. Documented constraints, architectures, and verified outcomes."
+        title="Documented Systems & Case Studies | DafeDeScribe"
+        description="Documented engineering case studies, data pipelines, and workflow automation systems built by Odafe Amalega. See the constraints, workflow evidence, architecture, and stated results."
         canonicalPath="/work"
         jsonLd={jsonLd}
       />
@@ -50,7 +59,7 @@ export const WorkPage: React.FC = () => {
               Production systems, data pipelines, commercial prototypes, and training curricula.
             </p>
             <p className="font-medium text-slate-900">
-              Each project is documented with real operational constraints, software architecture, and verified outcomes.
+              Each project is documented with its operational context, workflow evidence, software architecture, and stated result.
             </p>
           </div>
         </section>
@@ -79,7 +88,7 @@ export const WorkPage: React.FC = () => {
         <section className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
           <div className="p-4 sm:p-5 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <span className="text-xs font-mono-tech text-slate-900 font-semibold uppercase tracking-wider">
-              Project Directory · {filteredProjects.length} Verified Builds
+              Project Directory · {filteredProjects.length} Documented Builds
             </span>
             <span className="text-xs text-slate-500 font-body">
               Click any row to read the complete technical breakdown
@@ -182,15 +191,9 @@ export const WorkPage: React.FC = () => {
                   </p>
 
                   <div className="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-3">
-                    <div>
-                      <strong className="text-slate-900">Constraint: </strong>
-                      {proj.constraint}
-                    </div>
-                    <div>
-                      <strong className="text-slate-900">Outcome: </strong>
-                      {proj.result}
-                    </div>
+                    <div><strong className="text-slate-900">Constraint: </strong>{proj.constraint}</div>
                   </div>
+                  <WorkflowEvidence project={proj} compact />
                 </div>
 
                 <div className="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">

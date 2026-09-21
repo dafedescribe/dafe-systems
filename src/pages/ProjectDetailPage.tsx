@@ -3,7 +3,8 @@ import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { PROJECTS } from '../data/projectsData';
-import { ArrowRight, ArrowUpRight, CheckCircle2, Code2, Terminal, Workflow } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, CheckCircle2, Code2, Terminal } from 'lucide-react';
+import { WorkflowEvidence, WorkflowEvidenceHeading } from '../components/WorkflowEvidence';
 
 export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
   const project = PROJECTS.find((p) => p.slug === slug);
@@ -131,69 +132,10 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
           </p>
         </section>
 
-        {/* ─── WORKFLOW PIPELINE ───────────────────────────────── */}
+        {/* ─── WORKFLOW EVIDENCE ──────────────────────────────── */}
         <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 space-y-6 shadow-sm">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-            <div className="flex items-center gap-2">
-              <Workflow className="w-4 h-4 text-amber-600" />
-              <span className="text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
-                Pipeline Transformations
-              </span>
-            </div>
-            <span className="text-xs text-slate-500 font-mono-tech">
-              Input → Processing → Output
-            </span>
-          </div>
-
-          <div className="space-y-4 text-xs font-body">
-            {/* Input */}
-            <div className="p-4 rounded-lg border border-slate-200 bg-slate-50/60">
-              <div className="text-xs font-mono-tech text-slate-500 uppercase tracking-wider mb-1">
-                01 · Raw Inflow
-              </div>
-              <div className="font-medium text-slate-900 text-sm">
-                {project.workflow.input}
-              </div>
-            </div>
-
-            {/* Processing Steps */}
-            <div className="p-4 rounded-lg border border-slate-200 bg-slate-50/40 space-y-3">
-              <div className="text-xs font-mono-tech text-amber-700 uppercase tracking-wider font-semibold">
-                02 · Automated Processing & Transformation
-              </div>
-              <div className="space-y-2">
-                {project.workflow.processing.map((step, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-600 mt-2 flex-shrink-0" />
-                    <span>{step}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Output */}
-            <div className="p-4 rounded-lg border border-emerald-200 bg-emerald-50/50">
-              <div className="text-xs font-mono-tech text-emerald-800 uppercase tracking-wider mb-1 font-semibold">
-                03 · Verified Output
-              </div>
-              <div className="font-medium text-slate-900 text-sm">
-                {project.workflow.output}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── RESULT & IMPACT ─────────────────────────────────── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 space-y-3 shadow-2xs">
-          <div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">
-            Operational Outcome
-          </div>
-          <div className="text-xl font-bold text-slate-900 font-display">
-            Measurable Operational Results
-          </div>
-          <p className="text-base sm:text-lg text-slate-800 font-body leading-relaxed font-medium">
-            {project.result}
-          </p>
+          <WorkflowEvidenceHeading />
+          <WorkflowEvidence project={project} />
         </section>
 
         {/* ─── TECHNICAL NOTES & CODE EXTRACT ─────────────────── */}
@@ -224,7 +166,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
                   <Terminal className="w-3.5 h-3.5 text-amber-400" />
                   <span>Pipeline Code Extract</span>
                 </div>
-                <span className="text-amber-400 text-[11px]">Production Pipeline Script</span>
+                <span className="text-amber-400 text-[11px]">Implementation Extract</span>
               </div>
               <pre className="leading-relaxed">
                 <code>{project.technicalNotes.codeSnippet}</code>
