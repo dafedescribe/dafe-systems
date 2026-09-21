@@ -63,7 +63,7 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
       >
         <div className="flex items-center justify-between border-b border-slate-100 pb-4">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-amber-600" aria-hidden="true" />
             <span className="font-mono-tech text-xs tracking-wider text-slate-900 uppercase font-semibold">
               Operational Pipeline Architecture
             </span>

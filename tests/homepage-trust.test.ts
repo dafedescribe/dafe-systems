@@ -20,4 +20,11 @@ describe('homepage trust presentation', () => {
     expect(trust).toContain('Dangote Cement');
     expect(trust.toLowerCase()).not.toContain('trusted by');
   });
+
+  it('integrates identity and trust before operational evidence', () => {
+    const home = read('../src/pages/HomePage.tsx');
+    expect(home).toContain('<FounderPortrait />');
+    expect(home).toContain('<TrustRail />');
+    expect(home.indexOf('<TrustRail />')).toBeLessThan(home.indexOf('industrialEvidence.map'));
+  });
 });
