@@ -1,5 +1,24 @@
 # Owner Playbook: Publishing Notes Posts
 
+## Contact form: Gmail delivery
+
+The public contact form sends inquiries through the Vercel `/api/contact` function and Gmail API. It does not expose a Gmail password or OAuth client secret in the browser.
+
+Configure these server-side Vercel environment variables for Production (and Preview if you want to test there):
+
+- `GOOGLE_CLIENT_ID` — OAuth client ID for the Gmail account.
+- `GOOGLE_CLIENT_SECRET` — OAuth client secret.
+- `GOOGLE_REFRESH_TOKEN` — offline refresh token granted for the Gmail account.
+- `CONTACT_TO_EMAIL` — inbox that should receive inquiries.
+
+The Google OAuth consent must include the Gmail send scope (`https://www.googleapis.com/auth/gmail.send`). Use a dedicated sender account where practical. Never commit these values to the repository or place them in `VITE_*` variables.
+
+If a prospect cannot submit, the form keeps WhatsApp as a direct fallback. The form only shows “Inquiry Received” after Gmail accepts the message.
+
+## Languages
+
+The site detects the visitor's first supported browser language on first visit. Visitors can override it with the language selector, and their choice is saved in the browser. Supported languages are English, French, Portuguese, Spanish, German, and Turkish. Long-form technical notes remain in English for accuracy; the navigation, calls to action, homepage entry points, and inquiry flow are translated.
+
 Publish a post from your phone in ~5 minutes. No code, no laptop needed.
 
 ## Publish a new post

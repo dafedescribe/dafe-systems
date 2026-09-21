@@ -4,8 +4,10 @@ import { SeoHead } from '../components/SeoHead';
 import { ProcessDiagram } from '../components/ProcessDiagram';
 import { ArrowRight, ArrowUpRight, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
 import { PROJECTS } from '../data/projectsData';
+import { useI18n } from '../i18n/I18nProvider';
 
 export const HomePage: React.FC = () => {
+  const { t } = useI18n();
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -43,11 +45,11 @@ export const HomePage: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             <div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-amber-600" />
-              <span>Odafe Amalega · DafeDeScribe</span>
+              <span>{t('home.eyebrow')}</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-[64px] font-bold tracking-tight text-slate-900 font-display leading-[1.08]">
-              I build systems for work that has outgrown manual handling.
+              {t('home.title')}
             </h1>
 
             <div className="space-y-4 text-base sm:text-lg text-slate-700 font-body leading-relaxed max-w-2xl">
@@ -64,7 +66,7 @@ export const HomePage: React.FC = () => {
                 to="/contact"
                 className="btn-primary px-6 py-3.5 text-sm"
               >
-                <span>Discuss a Workflow</span>
+                <span>{t('home.primaryCta')}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -72,7 +74,7 @@ export const HomePage: React.FC = () => {
                 to="/work"
                 className="btn-secondary px-6 py-3.5 text-sm"
               >
-                <span>Explore Verified Work</span>
+                <span>{t('home.secondaryCta')}</span>
                 <ArrowUpRight className="w-4 h-4 text-slate-500" />
               </Link>
             </div>

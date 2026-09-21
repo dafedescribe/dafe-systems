@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { Link, useRouter } from '../router/Router';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { useI18n } from '../i18n/I18nProvider';
+import { LanguageSelector } from './LanguageSelector';
 
 export const Navbar: React.FC = () => {
   const { path } = useRouter();
+  const { t } = useI18n();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { num: '01', label: 'INDUSTRY', to: '/industry' },
-    { num: '02', label: 'AUTOMATION', to: '/automation' },
-    { num: '03', label: 'WORK', to: '/work' },
-    { num: '04', label: 'TEACHING', to: '/teaching' },
-    { num: '05', label: 'NOTES', to: '/notes' },
-    { num: '06', label: 'ABOUT', to: '/about' },
+    { num: '01', label: t('nav.industry'), to: '/industry' },
+    { num: '02', label: t('nav.automation'), to: '/automation' },
+    { num: '03', label: t('nav.work'), to: '/work' },
+    { num: '04', label: t('nav.teaching'), to: '/teaching' },
+    { num: '05', label: t('nav.notes'), to: '/notes' },
+    { num: '06', label: t('nav.about'), to: '/about' },
   ];
 
   const isActive = (to: string) => {
@@ -77,6 +80,7 @@ export const Navbar: React.FC = () => {
 
           {/* Primary CTA & Mobile Drawer Toggle */}
           <div className="flex items-center gap-3">
+            <LanguageSelector />
             <a
               href="/cv.pdf"
               target="_blank"
@@ -92,7 +96,7 @@ export const Navbar: React.FC = () => {
               to="/contact"
               className="hidden sm:inline-flex btn-primary px-4 py-2.5"
             >
-              <span>Show Me the Workflow</span>
+              <span>{t('nav.showWorkflow')}</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
 
@@ -100,7 +104,7 @@ export const Navbar: React.FC = () => {
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden min-h-[44px] min-w-[44px] p-2 flex items-center justify-center text-slate-900 border border-slate-200 rounded-lg hover:bg-slate-100"
-              aria-label={mobileOpen ? 'Close Navigation' : 'Open Navigation'}
+              aria-label={mobileOpen ? t('nav.close') : t('nav.open')}
               aria-expanded={mobileOpen}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -113,7 +117,7 @@ export const Navbar: React.FC = () => {
       {mobileOpen && (
         <div className="md:hidden border-t border-slate-200 bg-white px-6 py-5 space-y-4">
           <div className="font-mono-tech text-[10px] text-slate-500 tracking-[0.1em] uppercase">
-            Navigation Menu
+            {t('nav.open')}
           </div>
           <nav className="grid grid-cols-1 gap-1.5 text-xs font-mono-tech">
             {navLinks.map((link) => (
@@ -139,7 +143,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileOpen(false)}
               className="btn-primary w-full py-3"
             >
-              <span>Show Me the Workflow</span>
+              <span>{t('nav.showWorkflow')}</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
 
@@ -150,7 +154,7 @@ export const Navbar: React.FC = () => {
               className="btn-secondary w-full py-2.5 text-xs font-mono-tech flex items-center justify-center gap-2"
               download="Odafe-Amalega-CV.pdf"
             >
-              <span>Download CV (PDF)</span>
+              <span>{t('nav.downloadCv')}</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
             </a>
           </div>

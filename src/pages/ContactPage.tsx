@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { ArrowRight, Send, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { useI18n } from '../i18n/I18nProvider';
 
 export const ContactPage: React.FC = () => {
+  const { t } = useI18n();
   const [inquiryType, setInquiryType] = useState<'workflow' | 'teaching'>('workflow');
   const [workflowText, setWorkflowText] = useState('');
   const [teachingGoal, setTeachingGoal] = useState('');
@@ -13,6 +15,8 @@ export const ContactPage: React.FC = () => {
   const [currentTools, setCurrentTools] = useState('');
   const [optionalNote, setOptionalNote] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -31,9 +35,41 @@ export const ContactPage: React.FC = () => {
 
   const whatsAppUrl = `https://wa.me/2348148794458?text=${encodeURIComponent(getWhatsAppMessage())}`;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      inquiryType,
+      description: inquiryType === 'workflow' ? workflowText : teachingGoal,
+      name,
+      organization,
+      contactInfo,
+      currentTools,
+      optionalNote,
+      website: String(formData.get('website') || ''),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Message delivery failed. Please use WhatsApp instead.');
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Message delivery failed. Please use WhatsApp instead.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -106,7 +142,7 @@ export const ContactPage: React.FC = () => {
             <div className="flex items-center gap-3">
               <CheckCircle2 className="w-6 h-6 text-emerald-600" />
               <h2 className="text-2xl font-bold text-slate-900 font-display">
-                Inquiry Received.
+                {t('contact.received')}
               </h2>
             </div>
             <p className="text-sm sm:text-base text-slate-700 font-body leading-relaxed">
@@ -130,6 +166,11 @@ export const ContactPage: React.FC = () => {
         ) : (
           /* ─── INTAKE FORM ────────────────────────────────────── */
           <form onSubmit={handleSubmit} className="catalogue-sheet p-6 sm:p-10 space-y-6">
+
+            <div className="absolute -left-[9999px]" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
             
             {/* Primary Question */}
             {inquiryType === 'workflow' ? (
@@ -246,9 +287,10 @@ export const ContactPage: React.FC = () => {
             <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="btn-primary px-7 py-3.5"
               >
-                <span>{inquiryType === 'workflow' ? 'Submit Workflow Details' : 'Submit Training Inquiry'}</span>
+                <span>{isSubmitting ? t('contact.sending') : inquiryType === 'workflow' ? t('contact.submit') : t('contact.trainingSubmit')}</span>
               </button>
 
               <a
@@ -257,10 +299,14 @@ export const ContactPage: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 font-mono-tech text-xs text-slate-600 hover:text-slate-900 transition-colors"
               >
-                <span>Or message directly on WhatsApp (+2348148794458)</span>
+                <span>{t('contact.whatsapp')}</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
+
+            <p aria-live="polite" className="text-sm text-red-700" role="alert">
+              {submitError}
+            </p>
 
           </form>
         )}

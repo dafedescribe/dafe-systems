@@ -19,6 +19,7 @@ import { ArticleDetailPage } from './pages/ArticleDetailPage';
 import { ContactPage } from './pages/ContactPage';
 import { LabPage } from './pages/LabPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { I18nProvider } from './i18n/I18nProvider';
 
 const AppRoutes: React.FC = () => {
   const { path } = useRouter();
@@ -75,8 +76,10 @@ const AppRoutes: React.FC = () => {
 
 export default function App({ initialPath }: { initialPath?: string }) {
   return (
-    <RouterProvider initialPath={initialPath}>
-      <AppRoutes />
-    </RouterProvider>
+    <I18nProvider>
+      <RouterProvider initialPath={initialPath}>
+        <AppRoutes />
+      </RouterProvider>
+    </I18nProvider>
   );
 }
