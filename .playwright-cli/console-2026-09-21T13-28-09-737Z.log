@@ -9,3 +9,29 @@
 [ 1065026ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3100/node_modules/.vite/deps/react-dom_client.js?v=530f192b:20100
 [ 1095548ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3100/node_modules/.vite/deps/react-dom_client.js?v=530f192b:20100
 [ 1113952ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3100/node_modules/.vite/deps/react-dom_client.js?v=530f192b:20100
+[ 1280576ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:3100/@vite/client:963
+[ 1280730ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1281779ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1282787ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1283793ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1284797ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1285799ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1286801ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1287803ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1288807ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1289809ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1290813ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1291817ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1292819ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1293820ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1294832ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1295835ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1296837ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1297839ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1298844ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1299847ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1300854ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1301858ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1302864ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1303870ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
+[ 1304883ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3100/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3100/@vite/client:1034
