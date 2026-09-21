@@ -39,7 +39,7 @@ Make the public inquiry form deliver real messages to Odafe's Gmail inbox and ma
 ### Language
 
 - Detect the initial language from `navigator.languages` on the client.
-- Supported languages in the first pass: English (`en`), French (`fr`), Portuguese (`pt`), Spanish (`es`), and German (`de`).
+- Supported languages in the first pass: English (`en`), French (`fr`), Portuguese (`pt`), Spanish (`es`), German (`de`), and Turkish (`tr`).
 - Unsupported languages fall back to English.
 - Add a visible language selector that overrides detection and persists the preference in `localStorage`.
 - Keep user-entered form content in its original language; only interface copy is translated.
