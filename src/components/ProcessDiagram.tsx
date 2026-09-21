@@ -25,91 +25,69 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
         num: '01',
         title: 'Unstructured Influx',
         desc: 'Incoming customer emails, engineering PDFs, and custom Excel sheets arrive through commercial channels.',
-        badge: 'Inflow',
-        badgeColor: 'bg-slate-100 text-slate-700',
+        state: 'Inflow',
         icon: FileText
       },
       {
         num: '02',
         title: 'Automated Extraction',
         desc: 'Deterministic parsers and AI models extract line items, match SKUs, normalize quantities, and flag missing specifications.',
-        badge: 'Automated',
-        badgeColor: 'bg-amber-100 text-amber-800 font-semibold',
+        state: 'Automated',
         icon: Cpu
       },
       {
         num: '03',
         title: 'Engineering Review',
         desc: 'Sales engineers evaluate margin thresholds, inventory availability, and technical constraints.',
-        badge: 'Human Checkpoint',
-        badgeColor: 'bg-slate-900 text-white font-medium',
+        state: 'Human checkpoint',
         icon: UserCheck
       },
       {
         num: '04',
         title: 'System Dispatch',
         desc: 'Binding quotation is assembled, dispatched to the customer, and synchronized back into ERP and CRM databases.',
-        badge: 'Dispatched',
-        badgeColor: 'bg-emerald-50 text-emerald-800 font-medium',
+        state: 'Dispatched',
         icon: CheckCircle2
       }
     ];
 
     return (
       <div 
-        className="bg-white border border-slate-200 rounded-xl p-6 sm:p-7 shadow-sm space-y-6" 
+        className="border-y border-stone-300"
         role="region" 
         aria-label="Operational Workflow Architecture"
       >
-        <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse" />
-            <span className="font-mono-tech text-xs tracking-wider text-slate-900 uppercase font-semibold">
-              Operational Pipeline Architecture
-            </span>
-          </div>
-          <span className="text-xs text-slate-500 font-medium">
+        <div className="flex flex-col justify-between gap-2 border-b border-stone-300 py-4 sm:flex-row sm:items-center">
+          <span className="font-mono-tech text-xs font-semibold uppercase tracking-wider text-slate-900">
+            Operational pipeline
+          </span>
+          <span className="text-xs font-medium text-slate-500">
             Automated Intake · Human Sign-off
           </span>
         </div>
 
-        <div className="space-y-3">
-          {steps.map((step, idx) => {
+        <div className="divide-y divide-stone-300">
+          {steps.map((step) => {
             const Icon = step.icon;
             return (
-              <div key={step.num} className="relative">
-                <div className="p-4 rounded-lg border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-colors flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-md bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 text-slate-700 shadow-2xs">
-                    <Icon className="w-4 h-4 text-slate-700" />
-                  </div>
-                  
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs font-mono-tech text-slate-400 font-medium">{step.num}</span>
-                        <h4 className="text-sm font-bold text-slate-900 font-body">{step.title}</h4>
-                      </div>
-                      <span className={`text-[11px] px-2 py-0.5 rounded-full ${step.badgeColor}`}>
-                        {step.badge}
-                      </span>
-                    </div>
-                    <p className="text-xs text-slate-600 leading-relaxed font-body">
-                      {step.desc}
-                    </p>
-                  </div>
+              <div key={step.num} className="grid gap-3 py-5 sm:grid-cols-[36px_150px_minmax(0,1fr)_120px] sm:items-start sm:gap-4">
+                <div className="flex items-center gap-3 text-amber-800 sm:block">
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  <span className="font-mono-tech text-xs font-semibold sm:mt-3 sm:block">{step.num}</span>
                 </div>
-
-                {idx < steps.length - 1 && (
-                  <div className="flex justify-center py-1">
-                    <div className="w-0.5 h-3 bg-slate-200" />
-                  </div>
-                )}
+                <h4 className="font-display text-lg leading-tight text-slate-950">{step.title}</h4>
+                <p className="text-sm leading-relaxed text-slate-600">
+                  {step.desc}
+                </p>
+                <div className="font-mono-tech text-[11px] font-semibold uppercase tracking-wider text-slate-500 sm:text-right">
+                  {step.state}
+                </div>
               </div>
             );
           })}
         </div>
 
-        <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+        <div className="flex items-center justify-between border-t border-stone-300 py-4 text-xs text-slate-500">
           <span className="font-medium text-slate-700">Deterministic preparation</span>
           <span className="text-amber-700 font-semibold">Human commercial control</span>
         </div>

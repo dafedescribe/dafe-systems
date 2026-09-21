@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-21T13:45:00Z",
+  "title": "Design System: DafeDeScribe Technical Workbench Editorial",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#FAFAF9", "tonalRamp": ["#24231f", "#46443d", "#6a675e", "#908d83", "#b7b4aa", "#d8d6cf", "#eeece7", "#fafaf9"] },
+      "ink": { "role": "neutral", "displayName": "Slate Ink", "canonical": "#0F172A", "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#f1f5f9"] },
+      "amber": { "role": "primary", "displayName": "Workbench Amber", "canonical": "#B45309", "tonalRamp": ["#451a03", "#78350f", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fde68a", "#fffbeb"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Editorial Display", "purpose": "The homepage thesis and major propositions." },
+      "body": { "displayName": "Operational Body", "purpose": "Plain-language explanations and controls." },
+      "data": { "displayName": "Evidence Data", "purpose": "References, status, scope, sequence, and measurements only." }
+    },
+    "shadows": [
+      { "name": "control-low", "value": "0 1px 2px rgba(15, 23, 42, 0.04)", "purpose": "Quiet separation for interactive controls." },
+      { "name": "surface-hover", "value": "0 4px 12px -2px rgba(15, 23, 42, 0.06)", "purpose": "Hover response on legacy compact catalogue surfaces." }
+    ],
+    "motion": [
+      { "name": "editorial-rise", "value": "560ms cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Single first-view entrance, disabled under reduced motion." },
+      { "name": "control-state", "value": "150ms ease", "purpose": "Button, input, and border state changes." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main workflow inquiry action.",
+      "html": "<button class=\"ds-btn-primary\">Discuss a workflow</button>",
+      "css": ".ds-btn-primary { background:#B45309; color:#fff; border:1px solid #92400E; border-radius:6px; padding:14px 24px; font:600 13px 'Hanken Grotesk',sans-serif; transition:background-color 150ms ease,box-shadow 150ms ease; box-shadow:0 1px 2px rgba(180,83,9,.15); } .ds-btn-primary:hover { background:#92400E; box-shadow:0 2px 4px rgba(180,83,9,.25); } .ds-btn-primary:focus-visible { outline:2px solid #B45309; outline-offset:2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary routes such as documented work and training.",
+      "html": "<button class=\"ds-btn-secondary\">Explore documented work</button>",
+      "css": ".ds-btn-secondary { background:#fff; color:#0F172A; border:1px solid #CBD5E1; border-radius:6px; padding:14px 24px; font:600 13px 'Hanken Grotesk',sans-serif; transition:background-color 150ms ease,border-color 150ms ease; } .ds-btn-secondary:hover { background:#F8FAFC; border-color:#334155; } .ds-btn-secondary:focus-visible { outline:2px solid #B45309; outline-offset:2px; }"
+    },
+    {
+      "name": "Evidence Ledger",
+      "kind": "custom",
+      "refersTo": "evidence-ledger",
+      "description": "Flat ruled record for project scope, inputs, outputs, and qualified outcomes.",
+      "html": "<article class=\"ds-ledger\"><div class=\"ds-ledger-ref\">REF. DS-003 · PROTOTYPE</div><h3>Industrial RFQ Intake</h3><dl><div><dt>Input</dt><dd>Email, PDF, spreadsheet</dd></div><div><dt>Target outcome</dt><dd>Reduce preparation time while retaining human verification.</dd></div></dl></article>",
+      "css": ".ds-ledger { color:#0F172A; border-top:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; padding:24px 0; font-family:'Hanken Grotesk',sans-serif; } .ds-ledger-ref, .ds-ledger dt { color:#B45309; font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.08em; text-transform:uppercase; } .ds-ledger h3 { margin:12px 0; font:400 28px/1.1 'Source Serif 4',serif; } .ds-ledger dl { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:0; } .ds-ledger dd { margin:6px 0 0; color:#334155; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "description": "Plain workflow intake field.",
+      "html": "<input class=\"ds-input\" aria-label=\"Work email\" placeholder=\"you@company.com\">",
+      "css": ".ds-input { background:#fff; color:#0F172A; border:1px solid #E2E8F0; border-radius:6px; padding:12px 14px; font:400 16px 'Hanken Grotesk',sans-serif; caret-color:#B45309; } .ds-input:focus { outline:none; border-color:#B45309; box-shadow:0 0 0 3px rgba(180,83,9,.15); }"
+    },
+    {
+      "name": "Trust Mark",
+      "kind": "custom",
+      "description": "Factual organization context without endorsement language.",
+      "html": "<div class=\"ds-trust\"><div class=\"ds-mark\"></div><div><strong>Organization</strong><span>Working context</span></div></div>",
+      "css": ".ds-trust { display:flex; align-items:center; gap:12px; color:#0F172A; font-family:'Hanken Grotesk',sans-serif; } .ds-mark { width:48px; height:48px; border:1px solid #CBD5E1; background:#fff; } .ds-trust strong { display:block; font-size:14px; } .ds-trust span { display:block; margin-top:2px; color:#64748B; font-size:11px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Technical Workbench Editorial",
+    "overview": "DafeDeScribe reads like an engineering dossier with a human author: warm paper, decisive editorial type, factual operating evidence, and fine rules that organize rather than decorate. It is precise and commercially calm, not a generic SaaS dashboard or an AI spectacle. The identity stays personal through one supplied portrait, a named founder, and factual experience context. Proof is carried by workflow inputs, outputs, scope labels, and documented outcomes; visual polish never substitutes for evidence.",
+    "keyCharacteristics": ["Warm paper and slate ink with restrained burnt amber.", "Asymmetric editorial compositions paced by open space and thin rules.", "One decisive human portrait and authentic organization marks.", "Flat evidence ledgers instead of repeated rounded cards.", "Explicit scope language: prototype, internal build, training, target, and build goal."],
+    "rules": [
+      { "name": "The Scarce Amber Rule", "body": "Amber identifies action, state, or evidence; it does not flood whole sections.", "section": "colors" },
+      { "name": "The Evidence Type Rule", "body": "IBM Plex Mono is reserved for real data, references, scope, status, and controls; never place decorative eyebrow copy above a heading.", "section": "typography" },
+      { "name": "The Ruled Surface Rule", "body": "Prefer one boundary—usually a fine rule—over a bordered card plus a broad shadow.", "section": "elevation" }
+    ],
+    "dos": ["Do lead with the operational problem and show how information moves.", "Do use thin rules, changing density, and open space to pace long pages.", "Do pair every organization mark with an accurate role or context.", "Do keep the supplied portrait natural, rectangular, and clearly captioned.", "Do qualify prototypes and internal builds at the point of evidence."],
+    "donts": ["Don't use generic SaaS card stacks or status pills as the main page grammar.", "Don't add decorative pre-heading eyebrows or monospace marketing slogans.", "Don't use gradients, glass, busy diagrams, or continuous motion to imply technical sophistication.", "Don't describe employment, exposure, education, or prototypes as client endorsement.", "Don't present targets or modelled outcomes as completed commercial results."]
+  }
+}

@@ -29,6 +29,17 @@ The homepage becomes a “technical workbench editorial” surface.
 - Motion: one quiet entrance sequence at most; disabled under reduced-motion preferences.
 - Graphics: functional workflow notation only. No decorative charts, orbiting shapes, gradients associated with generic AI products, or continuous animation.
 
+## Direction Contract
+
+This direction was approved in the project brainstorm before the Impeccable review workflow was introduced, so no Impeccable seed key exists. The approval source is this committed specification and the user's explicit instruction to proceed inline.
+
+- **World:** a warm technical workbench editorial—part engineering dossier, part independent-practice profile.
+- **First viewport:** the operational proposition and founder identity share the frame; a supplied portrait makes the practice accountable, while the first action asks about the prospect's workflow.
+- **Visitor path:** proposition → contextual experience marks → operating method → evidence ledger → working process → training proof → inquiry.
+- **Signature interaction:** one restrained first-view entrance; the rest of the page relies on ruled reading rhythm and direct links rather than decorative motion.
+- **Cross-surface reach:** the same warm paper, editorial serif, restrained amber, factual labels, and thin rules continue into the two-page CV.
+- **Honest risk:** an editorial system can become too quiet or text-dense; portrait, logo context, workflow notation, and clear actions must keep it human and scannable.
+
 ## Homepage Architecture
 
 ### 1. Hero
