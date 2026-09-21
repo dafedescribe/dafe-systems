@@ -12,6 +12,10 @@ function requiredString(value, max = 4000) {
   return typeof value === 'string' && value.trim().length > 0 && value.length <= max;
 }
 
+function optionalString(value, max) {
+  return value === undefined || value === null || value === '' || requiredString(value, max);
+}
+
 function headerSafe(value) {
   return value.replace(/[\r\n]/g, ' ').trim();
 }
@@ -31,10 +35,10 @@ function validatePayload(payload) {
   if (!payload || !['workflow', 'teaching'].includes(payload.inquiryType)) return false;
   if (!requiredString(payload.description, 8000)) return false;
   if (!requiredString(payload.name, 160)) return false;
-  if (!requiredString(payload.organization, 240)) return false;
   if (!requiredString(payload.contactInfo, 240)) return false;
-  if (payload.currentTools !== undefined && !requiredString(payload.currentTools, 1000)) return false;
-  if (payload.optionalNote !== undefined && !requiredString(payload.optionalNote, 2000)) return false;
+  if (!optionalString(payload.organization, 240)) return false;
+  if (!optionalString(payload.currentTools, 1000)) return false;
+  if (!optionalString(payload.optionalNote, 2000)) return false;
   return true;
 }
 
@@ -44,7 +48,7 @@ function inquiryText(payload) {
     label,
     '',
     `Name: ${payload.name}`,
-    `Organisation: ${payload.organization}`,
+    `Organisation: ${payload.organization || 'Not provided'}`,
     `Contact: ${payload.contactInfo}`,
     `Current tools: ${payload.currentTools || 'Not specified'}`,
     '',

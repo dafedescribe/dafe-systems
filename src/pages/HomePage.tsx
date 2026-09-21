@@ -48,6 +48,12 @@ export const HomePage: React.FC = () => {
               <span>{t('home.eyebrow')}</span>
             </div>
 
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-slate-500">
+              <span>{t('home.location')}</span>
+              <span className="hidden sm:inline text-slate-300">/</span>
+              <span>Remote-ready · Global delivery</span>
+            </div>
+
             <h1 className="text-4xl sm:text-6xl lg:text-[64px] font-bold tracking-tight text-slate-900 font-display leading-[1.08]">
               {t('home.title')}
             </h1>

@@ -71,6 +71,19 @@ describe('contact endpoint', () => {
     expect(res.body).toContain('required');
   });
 
+  it('accepts an inquiry without an organization so prospects can start quickly', async () => {
+    process.env.GMAIL_USER = 'odafe@example.com';
+    process.env.GMAIL_APP_PASSWORD = 'app-password';
+    process.env.CONTACT_TO_EMAIL = 'odafe@example.com';
+    sendMail.mockResolvedValue({ messageId: 'message-id' });
+    createTransport.mockReturnValue({ sendMail });
+    const body = { ...validBody() };
+    delete (body as Partial<typeof body>).organization;
+    const res = nodeRes();
+    await handler({ method: 'POST', headers: {}, body: JSON.stringify(body) }, res);
+    expect(res.statusCode).toBe(200);
+  });
+
   it('silently accepts honeypot submissions without calling Google', async () => {
     let calls = 0;
     globalThis.fetch = async () => {

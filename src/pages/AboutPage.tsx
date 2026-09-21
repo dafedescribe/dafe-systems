@@ -94,7 +94,7 @@ export const AboutPage: React.FC = () => {
                 <span>{t('about.cv')}</span>
               </a>
               <a
-                href="https://wa.me/2348148794458"
+                href="https://wa.me/2349132480302"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary px-4 py-2 text-xs flex items-center gap-2"
@@ -103,7 +103,46 @@ export const AboutPage: React.FC = () => {
                 <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
               </a>
             </div>
+
+            <div className="pt-1 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono-tech uppercase tracking-[0.08em] text-slate-500">
+              <span>Based in Ibadan, Nigeria</span>
+              <span className="text-slate-300">/</span>
+              <span>Working globally</span>
+            </div>
           </div>
+
+          {/* Proof environments */}
+          <section className="border-b border-slate-100 pb-8 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
+                Environments I Understand
+              </div>
+              <div className="text-xs text-slate-500 font-body">
+                Industrial operations · education · construction · automation
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <div className="flex items-center gap-3 p-3 border border-slate-200 bg-slate-50/60 rounded-lg">
+                <img src="/uploads/images-2.jpeg" alt="AppClick Academy logo" className="w-12 h-12 rounded object-contain bg-white border border-slate-200" />
+                <div><div className="text-sm font-bold text-slate-900">AppClick</div><div className="text-xs text-slate-500">Technical instruction</div></div>
+              </div>
+              <div className="flex items-center gap-3 p-3 border border-slate-200 bg-slate-50/60 rounded-lg">
+                <img src="/uploads/logo.jpg" alt="New Edition College logo" className="w-12 h-12 rounded object-contain bg-white border border-slate-200" />
+                <div><div className="text-sm font-bold text-slate-900">New Edition</div><div className="text-xs text-slate-500">Education & internal systems</div></div>
+              </div>
+              <div className="flex items-center gap-3 p-3 border border-slate-200 bg-slate-50/60 rounded-lg">
+                <img src="/uploads/src-logopng.png" alt="SR Construction logo" className="w-12 h-12 rounded object-contain bg-white border border-slate-200" />
+                <div><div className="text-sm font-bold text-slate-900">SR Construction</div><div className="text-xs text-slate-500">Construction context</div></div>
+              </div>
+              <div className="flex items-center gap-3 p-3 border border-slate-200 bg-slate-50/60 rounded-lg">
+                <img src="/uploads/download-1.png" alt="Dangote logo" className="w-12 h-12 rounded object-contain bg-white border border-slate-200" />
+                <div><div className="text-sm font-bold text-slate-900">Dangote Cement</div><div className="text-xs text-slate-500">Industrial exposure</div></div>
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-500 font-body">Industrial exposure at Dangote Cement and independent freelance systems work complete the picture.</p>
+          </section>
 
           {/* Narrative Overview */}
           <section className="space-y-5 text-base sm:text-lg text-slate-700 font-body leading-relaxed">

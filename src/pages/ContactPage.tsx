@@ -33,7 +33,7 @@ export const ContactPage: React.FC = () => {
     return `Hi Odafe, I want to show you a workflow.\n\nRepeated Process:\n${workflowText || 'Not specified'}\n\nName: ${name}\nCompany: ${organization}\nContact: ${contactInfo}\nCurrent Tools: ${currentTools}\nNote: ${optionalNote}`;
   };
 
-  const whatsAppUrl = `https://wa.me/2348148794458?text=${encodeURIComponent(getWhatsAppMessage())}`;
+  const whatsAppUrl = `https://wa.me/2349132480302?text=${encodeURIComponent(getWhatsAppMessage())}`;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -96,7 +96,7 @@ export const ContactPage: React.FC = () => {
 
           <div className="space-y-1.5 text-base sm:text-lg text-slate-600 font-body">
             <p className="font-semibold text-slate-900">
-              You don't need a polished technical brief or RFP.
+              No polished brief or RFP needed.
             </p>
             <p>
               Simply describe what happens manually today, where the handoffs bottleneck, and what software your team currently touches.
@@ -221,15 +221,19 @@ export const ContactPage: React.FC = () => {
               />
             </div>
 
+            <details className="group border-t border-slate-200 pt-5">
+              <summary className="cursor-pointer list-none font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-600">
+                Add context <span className="text-slate-400">(optional)</span>
+              </summary>
+
             {/* Company / Website */}
-            <div className="space-y-2">
+            <div className="space-y-2 pt-5">
               <label htmlFor="user-company" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-600">
                 {inquiryType === 'workflow' ? 'Company / Website' : 'Organisation / School / Business'}
               </label>
               <input
                 id="user-company"
                 type="text"
-                required
                 value={organization}
                 onChange={(e) => setOrganization(e.target.value)}
                 placeholder={inquiryType === 'workflow' ? 'Apex Industrial Supplies (apexsupplies.com)' : 'St. Jude Educational Institute'}
@@ -282,6 +286,8 @@ export const ContactPage: React.FC = () => {
                 className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
               />
             </div>
+
+            </details>
 
             {/* Submit Button & WhatsApp Alternative */}
             <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">

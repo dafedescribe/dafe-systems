@@ -138,7 +138,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://wa.me/2348148794458"
+                  href="https://wa.me/2349132480302"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-slate-600 hover:text-slate-900 transition-colors"
