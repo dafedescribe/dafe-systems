@@ -12,6 +12,15 @@ import { WorkPage } from '../src/pages/WorkPage';
 import { TeachingPage } from '../src/pages/TeachingPage';
 import { AboutPage } from '../src/pages/AboutPage';
 import { ContactPage } from '../src/pages/ContactPage';
+import { RfqPage } from '../src/pages/RfqPage';
+import { TenderPage } from '../src/pages/TenderPage';
+import { QuotationPage } from '../src/pages/QuotationPage';
+import { CommercialReportingPage } from '../src/pages/CommercialReportingPage';
+import { NotesPage } from '../src/pages/NotesPage';
+import { ProjectDetailPage } from '../src/pages/ProjectDetailPage';
+import { ArticleDetailPage } from '../src/pages/ArticleDetailPage';
+import { LabPage } from '../src/pages/LabPage';
+import { NotFoundPage } from '../src/pages/NotFoundPage';
 
 const renderShell = (node: React.ReactNode, path = '/') => renderToStaticMarkup(
   React.createElement(
@@ -103,5 +112,25 @@ describe('site-wide editorial system', () => {
     expect(html).toContain('I reply personally');
     expect(html).toContain('https://wa.me/2349132480302');
     expect(html).not.toContain('rounded-xl');
+  });
+
+  it('uses the flat editorial grammar across remaining public routes', () => {
+    const routes: Array<[React.ReactNode, string]> = [
+      [React.createElement(RfqPage), '/industry/rfq-automation'],
+      [React.createElement(TenderPage), '/industry/tender-monitoring'],
+      [React.createElement(QuotationPage), '/industry/quotation-workflows'],
+      [React.createElement(CommercialReportingPage), '/industry/commercial-reporting'],
+      [React.createElement(NotesPage), '/notes'],
+      [React.createElement(ProjectDetailPage, { slug: 'million-row-pipeline' }), '/work/million-row-pipeline'],
+      [React.createElement(ArticleDetailPage, { slug: 'rfq-automation-for-manufacturers' }), '/notes/rfq-automation-for-manufacturers'],
+      [React.createElement(LabPage), '/lab'],
+      [React.createElement(NotFoundPage), '/missing'],
+    ];
+
+    for (const [page, path] of routes) {
+      const html = renderPage(page, path);
+      expect(html, path).not.toContain('rounded-xl');
+      expect(html, path).not.toContain('shadow-sm');
+    }
   });
 });

@@ -61,36 +61,40 @@
   font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
-/* Modern Technical Cards & Panels */
+/* Flat editorial evidence surfaces */
 .catalogue-sheet {
-  background-color: var(--paper-bright);
-  border: 1px solid var(--rule);
-  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
-  border-radius: 8px;
+  background-color: transparent;
+  border-block: 1px solid var(--rule);
+  border-inline: 0;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .catalogue-plate {
-  background-color: var(--paper-bright);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  background-color: transparent;
+  border-block: 1px solid var(--rule);
+  border-inline: 0;
+  border-radius: 0;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .catalogue-plate:hover {
   border-color: var(--rule-strong);
-  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+  background-color: var(--paper-bright);
 }
 
 .catalogue-inset {
   background-color: var(--paper-warm);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
+  border-block: 1px solid var(--rule);
+  border-inline: 0;
+  border-radius: 0;
 }
 
 .catalogue-archive {
   background-color: var(--paper-deep);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
+  border-block: 1px solid var(--rule);
+  border-inline: 0;
+  border-radius: 0;
 }
 
 /* Button System */

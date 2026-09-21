@@ -99,7 +99,7 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
   if (type === 'rfq') {
     return (
       <div 
-        className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 my-8 shadow-sm" 
+        className="my-8 border-y border-stone-300 bg-white p-6 sm:p-8"
         role="region" 
         aria-label="RFQ Intake and Preparation Engine Architecture"
       >
@@ -220,7 +220,7 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
 
     return (
       <div 
-        className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 my-8 shadow-sm" 
+        className="my-8 border-y border-stone-300 bg-white p-6 sm:p-8"
         role="region" 
         aria-label="Tender Discovery and Qualification Pipeline Architecture"
       >
@@ -287,7 +287,7 @@ export const ProcessDiagram: React.FC<ProcessDiagramProps> = ({ type = 'commerci
 
   return (
     <div 
-      className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 my-8 shadow-sm" 
+      className="my-8 border-y border-stone-300 bg-white p-6 sm:p-8"
       role="region" 
       aria-label="Commercial Order Lifecycle Flow Schematic"
     >
