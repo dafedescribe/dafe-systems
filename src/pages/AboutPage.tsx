@@ -3,8 +3,10 @@ import { Link } from '../router/Router';
 import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { ArrowRight, CheckCircle2, GraduationCap, Briefcase, Code2, Wrench, FileText, ArrowUpRight, Download } from 'lucide-react';
+import { useI18n } from '../i18n/I18nProvider';
 
 export const AboutPage: React.FC = () => {
+  const { t } = useI18n();
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -60,10 +62,10 @@ export const AboutPage: React.FC = () => {
           <div className="border-b border-slate-100 pb-8 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">
-                Founder & Systems Builder
+                {t('about.eyebrow')}
               </span>
               <span className="text-xs font-mono-tech px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full font-medium">
-                Active Inquiries Open
+                {t('about.active')}
               </span>
             </div>
 
@@ -89,7 +91,7 @@ export const AboutPage: React.FC = () => {
                 download="Odafe-Amalega-CV.pdf"
               >
                 <Download className="w-3.5 h-3.5" />
-                <span>Download CV (PDF)</span>
+                <span>{t('about.cv')}</span>
               </a>
               <a
                 href="https://wa.me/2348148794458"
@@ -123,7 +125,7 @@ export const AboutPage: React.FC = () => {
           <section className="border-t border-slate-100 pt-8 space-y-4">
             <div className="flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
               <Code2 className="w-4 h-4 text-amber-600" />
-              <span>Core Technical Capabilities</span>
+              <span>{t('about.capabilities')}</span>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
@@ -143,7 +145,7 @@ export const AboutPage: React.FC = () => {
           <section className="border-t border-slate-100 pt-8 space-y-4">
             <div className="flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
               <Wrench className="w-4 h-4 text-amber-600" />
-              <span>Representative Work & Proof</span>
+              <span>{t('about.proof')}</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -189,7 +191,7 @@ export const AboutPage: React.FC = () => {
           <section className="border-t border-slate-100 pt-8 space-y-4">
             <div className="flex items-center gap-2 text-xs font-mono-tech uppercase tracking-wider text-slate-900 font-semibold">
               <GraduationCap className="w-4 h-4 text-amber-600" />
-              <span>Education & Credentials</span>
+              <span>{t('about.credentials')}</span>
             </div>
 
             <div className="space-y-4 text-sm text-slate-800 font-body">

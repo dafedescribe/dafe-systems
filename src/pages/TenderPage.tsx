@@ -4,8 +4,10 @@ import { SeoHead } from '../components/SeoHead';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { ProcessDiagram } from '../components/ProcessDiagram';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { useI18n } from '../i18n/I18nProvider';
 
 export const TenderPage: React.FC = () => {
+  const { t } = useI18n();
   const jsonLd = [
     {
       '@context': 'https://schema.org',
@@ -49,11 +51,11 @@ export const TenderPage: React.FC = () => {
         {/* ─── HERO ────────────────────────────────────────────── */}
         <section className="space-y-6">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
-            Procurement Monitoring & Opportunity Triage
+            {t('tender.eyebrow')}
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 font-display leading-[1.12]">
-            Stop checking the same tender sources every morning.
+            {t('tender.title')}
           </h1>
 
           <div className="space-y-4 text-base sm:text-lg text-slate-700 font-body leading-relaxed">
@@ -74,11 +76,11 @@ export const TenderPage: React.FC = () => {
         {/* ─── CORE PRINCIPLE ──────────────────────────────────── */}
         <section className="catalogue-sheet p-6 sm:p-8 space-y-4">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
-            Operational Governance
+            {t('tender.governance')}
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
-            Automate discovery and summarization. Keep bidding decisions human.
+            {t('tender.principle')}
           </h2>
 
           <div className="space-y-3 text-sm sm:text-base text-slate-600 font-body leading-relaxed">
@@ -113,7 +115,7 @@ export const TenderPage: React.FC = () => {
         {/* ─── RELEVANT NOTES ──────────────────────────────────── */}
         <section className="border-t border-slate-200 pt-8 space-y-4">
           <div className="font-mono-tech text-xs uppercase tracking-[0.1em] text-slate-500">
-            Related Technical Articles
+            {t('tender.related')}
           </div>
           <Link
             to="/notes/automate-tender-monitoring"
@@ -134,10 +136,10 @@ export const TenderPage: React.FC = () => {
         {/* ─── CTA ─────────────────────────────────────────────── */}
         <section className="catalogue-sheet p-8 space-y-5 border-t-2 border-t-amber-600">
           <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
-            Opportunity Pipeline Audit
+            {t('tender.ctaEyebrow')}
           </div>
           <h2 className="text-2xl font-bold text-slate-900 font-display">
-            Show Me Your Tender Sources
+            {t('tender.ctaTitle')}
           </h2>
           <p className="text-sm sm:text-base text-slate-600 font-body leading-relaxed">
             List the procurement boards, utility sites, or buyer portals your commercial team monitors. We will assess the extraction architecture and draft a unified triage queue.
@@ -147,7 +149,7 @@ export const TenderPage: React.FC = () => {
               to="/contact"
               className="btn-primary px-6 py-3.5"
             >
-              <span>Show Me Your Tender Sources</span>
+              <span>{t('tender.ctaButton')}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
