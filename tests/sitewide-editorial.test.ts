@@ -6,6 +6,8 @@ import { Footer } from '../src/components/Footer';
 import { I18nProvider } from '../src/i18n/I18nProvider';
 import { RouterProvider } from '../src/router/Router';
 import { HomePage } from '../src/pages/HomePage';
+import { IndustryPage } from '../src/pages/IndustryPage';
+import { AutomationPage } from '../src/pages/AutomationPage';
 
 const renderShell = (node: React.ReactNode, path = '/') => renderToStaticMarkup(
   React.createElement(
@@ -46,5 +48,23 @@ describe('site-wide editorial system', () => {
 
     expect(html).not.toContain('Start with the operational problem.');
     expect(html).not.toContain('The software follows the work—not the other way around.');
+  });
+
+  it('makes Industry the complete commercial services overview', () => {
+    const html = renderPage(React.createElement(IndustryPage), '/industry');
+
+    for (const route of ['/industry/rfq-automation', '/industry/tender-monitoring', '/industry/quotation-workflows', '/industry/commercial-reporting']) {
+      expect(html).toContain(`href="${route}"`);
+    }
+    expect(html).not.toContain('rounded-xl');
+    expect(html).not.toContain('shadow-sm');
+  });
+
+  it('keeps Automation concise and points to Industry and Work', () => {
+    const html = renderPage(React.createElement(AutomationPage), '/automation');
+
+    expect(html).toContain('href="/industry"');
+    expect(html).toContain('href="/work"');
+    expect(html).not.toContain('Candidate processes for automation');
   });
 });
