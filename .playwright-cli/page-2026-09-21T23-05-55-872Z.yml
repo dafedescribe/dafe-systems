@@ -1,0 +1,295 @@
+- generic [ref=f4e3]:
+  - link "Skip to main content" [ref=f4e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f4e5]:
+    - generic [ref=f4e7]:
+      - link "DafeDeScribe Home" [ref=f4e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f4e9]
+        - generic [ref=f4e10]:
+          - generic [ref=f4e11]: DafeDeScribe
+          - generic [ref=f4e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - navigation [ref=f4e13]:
+        - link "01 INDUSTRY" [ref=f4e14] [cursor=pointer]:
+          - /url: /industry
+          - generic [ref=f4e15]: "01"
+          - generic [ref=f4e16]: INDUSTRY
+        - link "02 AUTOMATION" [ref=f4e17] [cursor=pointer]:
+          - /url: /automation
+          - generic [ref=f4e18]: "02"
+          - generic [ref=f4e19]: AUTOMATION
+        - link "03 WORK" [ref=f4e20] [cursor=pointer]:
+          - /url: /work
+          - generic [ref=f4e21]: "03"
+          - generic [ref=f4e22]: WORK
+        - link "04 TEACHING" [ref=f4e23] [cursor=pointer]:
+          - /url: /teaching
+          - generic [ref=f4e24]: "04"
+          - generic [ref=f4e25]: TEACHING
+        - link "05 NOTES" [ref=f4e27] [cursor=pointer]:
+          - /url: /notes
+          - generic [ref=f4e28]: "05"
+          - generic [ref=f4e29]: NOTES
+        - link "06 ABOUT" [ref=f4e30] [cursor=pointer]:
+          - /url: /about
+          - generic [ref=f4e31]: "06"
+          - generic [ref=f4e32]: ABOUT
+      - generic [ref=f4e33]:
+        - generic [ref=f4e34]:
+          - generic [ref=f4e35]: Language
+          - combobox "Language" [ref=f4e36]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - link "CV (PDF)" [ref=f4e37] [cursor=pointer]:
+          - /url: /cv.pdf
+        - link "Show Me the Workflow" [ref=f4e43] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f4e50]:
+    - navigation "Breadcrumb" [ref=f4e51]:
+      - list [ref=f4e52]:
+        - listitem [ref=f4e53]:
+          - link "INDEX" [ref=f4e54] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f4e55]:
+          - generic [ref=f4e58]: TEACHING
+    - generic [ref=f4e59]:
+      - generic [ref=f4e60]: Systems Education & Technical Training
+      - heading "Learn what is happening underneath the button." [level=1] [ref=f4e61]
+      - generic [ref=f4e62]:
+        - paragraph [ref=f4e63]: I teach AI engineering and workflow automation so participants understand the mechanics of the tools they deploy, rather than merely memorizing interfaces.
+        - paragraph [ref=f4e64]: Curricula are tailored for nontechnical operations teams, educators, engineering cohorts, and professionals integrating AI into business processes.
+      - link "Discuss Training" [ref=f4e66] [cursor=pointer]:
+        - /url: /contact
+    - generic [ref=f4e70]:
+      - generic [ref=f4e71]:
+        - generic [ref=f4e72]: Curriculum Architecture
+        - generic [ref=f4e73]: Three Learning Pillars
+      - generic [ref=f4e74]:
+        - generic [ref=f4e76]:
+          - generic [ref=f4e77]:
+            - generic [ref=f4e78]: MOD-01
+            - generic [ref=f4e79]: Pillar
+          - heading "Understand" [level=2] [ref=f4e80]
+          - paragraph [ref=f4e81]: First-principles mental models of computational systems.
+          - list [ref=f4e82]:
+            - listitem [ref=f4e83]:
+              - generic [ref=f4e85]: AI models & token mechanics
+            - listitem [ref=f4e86]:
+              - generic [ref=f4e88]: APIs & HTTP methods
+            - listitem [ref=f4e89]:
+              - generic [ref=f4e91]: Data structures & schemas
+            - listitem [ref=f4e92]:
+              - generic [ref=f4e94]: Software systems fundamentals
+            - listitem [ref=f4e95]:
+              - generic [ref=f4e97]: Security & credential hygiene
+        - generic [ref=f4e99]:
+          - generic [ref=f4e100]:
+            - generic [ref=f4e101]: MOD-02
+            - generic [ref=f4e102]: Pillar
+          - heading "Use" [level=2] [ref=f4e103]
+          - paragraph [ref=f4e104]: Direct practical application in everyday digital operations.
+          - list [ref=f4e105]:
+            - listitem [ref=f4e106]:
+              - generic [ref=f4e108]: AI productivity & synthesis
+            - listitem [ref=f4e109]:
+              - generic [ref=f4e111]: Targeted web & market research
+            - listitem [ref=f4e112]:
+              - generic [ref=f4e114]: Structured content workflows
+            - listitem [ref=f4e115]:
+              - generic [ref=f4e117]: Automation tools & triggers
+            - listitem [ref=f4e118]:
+              - generic [ref=f4e120]: Responsible verification habits
+        - generic [ref=f4e122]:
+          - generic [ref=f4e123]:
+            - generic [ref=f4e124]: MOD-03
+            - generic [ref=f4e125]: Pillar
+          - heading "Build" [level=2] [ref=f4e126]
+          - paragraph [ref=f4e127]: Creating tangible workflows, prototypes, and functional software.
+          - list [ref=f4e128]:
+            - listitem [ref=f4e129]:
+              - generic [ref=f4e131]: API endpoint chaining
+            - listitem [ref=f4e132]:
+              - generic [ref=f4e134]: Visual automation in n8n
+            - listitem [ref=f4e135]:
+              - generic [ref=f4e137]: Workflow automation logic
+            - listitem [ref=f4e138]:
+              - generic [ref=f4e140]: Vibe coding & AI-assisted development
+            - listitem [ref=f4e141]:
+              - generic [ref=f4e143]: Web prototypes & data views
+    - generic [ref=f4e144]:
+      - generic [ref=f4e145]:
+        - generic [ref=f4e146]: Core Topics
+        - heading "Technical subjects covered" [level=2] [ref=f4e147]
+      - generic [ref=f4e148]:
+        - generic [ref=f4e149]:
+          - generic [ref=f4e150]: "01."
+          - generic [ref=f4e151]: AI foundations and literacy
+        - generic [ref=f4e152]:
+          - generic [ref=f4e153]: "02."
+          - generic [ref=f4e154]: Workflow automation
+        - generic [ref=f4e155]:
+          - generic [ref=f4e156]: "03."
+          - generic [ref=f4e157]: APIs in plain English
+        - generic [ref=f4e158]:
+          - generic [ref=f4e159]: "04."
+          - generic [ref=f4e160]: Vibe coding
+        - generic [ref=f4e161]:
+          - generic [ref=f4e162]: "05."
+          - generic [ref=f4e163]: Digital productivity
+        - generic [ref=f4e164]:
+          - generic [ref=f4e165]: "06."
+          - generic [ref=f4e166]: AI image and video workflows
+        - generic [ref=f4e167]:
+          - generic [ref=f4e168]: "07."
+          - generic [ref=f4e169]: Building websites and app prototypes with AI
+        - generic [ref=f4e170]:
+          - generic [ref=f4e171]: "08."
+          - generic [ref=f4e172]: Automation thinking for nontechnical learners
+    - generic [ref=f4e173]:
+      - generic [ref=f4e174]: Target Audiences
+      - heading "Who these programmes are designed for" [level=2] [ref=f4e175]
+      - generic [ref=f4e176]:
+        - generic [ref=f4e177]:
+          - generic [ref=f4e178]: Teams
+          - generic [ref=f4e179]: Operational, commercial, and executive teams modernising daily workflows.
+        - generic [ref=f4e180]:
+          - generic [ref=f4e181]: Teachers
+          - generic [ref=f4e182]: Educators needing clear literacy on generative tools and classroom ethics.
+        - generic [ref=f4e183]:
+          - generic [ref=f4e184]: Young learners
+          - generic [ref=f4e185]: Next-generation builders discovering programming and systems thinking.
+        - generic [ref=f4e186]:
+          - generic [ref=f4e187]: Professionals
+          - generic [ref=f4e188]: Analysts, operations leads, and consultants removing clerical friction.
+        - generic [ref=f4e189]:
+          - generic [ref=f4e190]: Training organisations
+          - generic [ref=f4e191]: Institutional partners delivering structured digital bootcamps.
+        - generic [ref=f4e192]:
+          - generic [ref=f4e193]: Business owners
+          - generic [ref=f4e194]: Founders evaluating what automation can realistically achieve.
+    - generic [ref=f4e195]:
+      - generic [ref=f4e196]:
+        - generic [ref=f4e197]: Course Modules & Hands-on Materials
+        - heading "Documented course syllabus and practical modules." [level=2] [ref=f4e198]
+      - generic [ref=f4e199]:
+        - generic [ref=f4e200]:
+          - generic [ref=f4e201]:
+            - generic [ref=f4e202]: TRAINING REF. EDU-014
+            - generic [ref=f4e203]: Half-Day Intensive (4 Hours)
+          - generic [ref=f4e204]: API Fundamentals & Webhook Systems
+          - generic [ref=f4e205]: "Target Audience: Nontechnical Teams & Operational Managers"
+          - paragraph [ref=f4e206]:
+            - strong [ref=f4e207]: "Learning Goal:"
+            - text: Inspect raw HTTP requests, map JSON payloads, and connect spreadsheets to databases via webhook automation without code fatigue.
+        - generic [ref=f4e208]:
+          - generic [ref=f4e209]:
+            - generic [ref=f4e210]: TRAINING REF. EDU-022
+            - generic [ref=f4e211]: Full-Day Hands-on Lab (7 Hours)
+          - generic [ref=f4e212]: n8n Workflow Construction Sandbox
+          - generic [ref=f4e213]: "Target Audience: Builders, Analysts & Administrative Leads"
+          - paragraph [ref=f4e214]:
+            - strong [ref=f4e215]: "Learning Goal:"
+            - text: "Build 3 production-grade automations: customer qualification bot, automated PDF extraction, and scheduled reporting digest."
+        - generic [ref=f4e216]:
+          - generic [ref=f4e217]:
+            - generic [ref=f4e218]: TRAINING REF. EDU-031
+            - generic [ref=f4e219]: 3-Hour Interactive Seminar
+          - generic [ref=f4e220]: Practical AI Literacy for Educators & Teachers
+          - generic [ref=f4e221]: "Target Audience: Secondary & Higher Ed Faculty"
+          - paragraph [ref=f4e222]:
+            - strong [ref=f4e223]: "Learning Goal:"
+            - text: Understand token mechanics, detect hallucination patterns, and establish responsible student generative AI guidelines.
+        - generic [ref=f4e224]:
+          - generic [ref=f4e225]:
+            - generic [ref=f4e226]: TRAINING REF. EDU-045
+            - generic [ref=f4e227]: Weekend Workshop (2 x 4 Hours)
+          - generic [ref=f4e228]: Vibe Coding & Systems Thinking for Builders
+          - generic [ref=f4e229]: "Target Audience: Aspiring Creators & Young Professionals"
+          - paragraph [ref=f4e230]:
+            - strong [ref=f4e231]: "Learning Goal:"
+            - text: Leverage modern AI models to build, debug, and deploy functional web prototypes cleanly from first principles.
+      - generic [ref=f4e232]: Technical instruction delivered through AppClick Technology and independent corporate workshops.
+    - generic [ref=f4e233]:
+      - generic [ref=f4e234]: Corporate Training Inquiries
+      - heading "Discuss a Training Session" [level=2] [ref=f4e235]
+      - paragraph [ref=f4e236]: Tell me about your team, your current challenges with AI or automation, and what practical skills you want participants to take away from the session.
+      - link "Discuss Training" [ref=f4e238] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f4e242]:
+    - generic [ref=f4e243]:
+      - generic [ref=f4e244]:
+        - generic [ref=f4e245]:
+          - generic [ref=f4e246]:
+            - img "DafeDeScribe Logo" [ref=f4e247]
+            - generic [ref=f4e248]:
+              - generic [ref=f4e249]: DafeDeScribe
+              - generic [ref=f4e250]: SYSTEMS · AUTOMATION · EDUCATION
+          - paragraph [ref=f4e251]:
+            - text: The professional portfolio of
+            - strong [ref=f4e252]: Odafe Amalega
+            - text: . Designing workflow automation, data processing, and AI systems for industrial and operational businesses, and delivering practical technical training.
+          - generic [ref=f4e253]:
+            - generic [ref=f4e254]: AI Workflow Engineer · Systems Builder · Educator
+            - generic [ref=f4e255]: Currently instructing at AppClick
+        - generic [ref=f4e256]:
+          - generic [ref=f4e257]: 01 / INDUSTRY
+          - list [ref=f4e258]:
+            - listitem [ref=f4e259]:
+              - link "Commercial Systems Overview" [ref=f4e260] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f4e261]:
+              - link "RFQ Automation" [ref=f4e262] [cursor=pointer]:
+                - /url: /industry/rfq-automation
+            - listitem [ref=f4e263]:
+              - link "Tender Monitoring" [ref=f4e264] [cursor=pointer]:
+                - /url: /industry/tender-monitoring
+            - listitem [ref=f4e265]:
+              - link "Quotation Workflows" [ref=f4e266] [cursor=pointer]:
+                - /url: /industry/quotation-workflows
+            - listitem [ref=f4e267]:
+              - link "Commercial Reporting" [ref=f4e268] [cursor=pointer]:
+                - /url: /industry/commercial-reporting
+        - generic [ref=f4e269]:
+          - generic [ref=f4e270]: 02 / PRACTICE
+          - list [ref=f4e271]:
+            - listitem [ref=f4e272]:
+              - link "Automation" [ref=f4e273] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f4e274]:
+              - link "Teaching & Training" [ref=f4e275] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f4e276]:
+              - link "Selected Work" [ref=f4e277] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f4e278]:
+              - link "Notes & Bulletins" [ref=f4e279] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f4e280]:
+              - link "Lab & Prototypes" [ref=f4e281] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f4e282]:
+          - generic [ref=f4e283]: 03 / CONTACT
+          - list [ref=f4e284]:
+            - listitem [ref=f4e285]:
+              - link "About & Background" [ref=f4e286] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f4e287]:
+              - link "Curriculum Vitae (PDF)" [ref=f4e288] [cursor=pointer]:
+                - /url: /cv.pdf
+            - listitem [ref=f4e293]:
+              - link "Submit a Workflow" [ref=f4e294] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=f4e295]:
+              - link "WhatsApp Direct" [ref=f4e296] [cursor=pointer]:
+                - /url: https://wa.me/2349132480302
+      - generic [ref=f4e301]:
+        - generic [ref=f4e302]: © 2026 DafeDeScribe · Odafe Amalega. All rights reserved.
+        - generic [ref=f4e303]:
+          - generic [ref=f4e304]: Engineering Systems & Workflow Architecture
+          - generic [ref=f4e305]: "|"
+          - link "Direct Inquiry" [ref=f4e306] [cursor=pointer]:
+            - /url: /contact
