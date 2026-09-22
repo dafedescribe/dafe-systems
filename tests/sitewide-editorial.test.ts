@@ -140,4 +140,21 @@ describe('site-wide editorial system', () => {
     expect(getBreadcrumbKey(item, 0)).toBe('/notes:0');
     expect(getBreadcrumbKey(item, 1)).toBe('/notes:1');
   });
+
+  it('presents the founder publicly as Anthony Amalega', () => {
+    const publicIdentitySurfaces = [
+      renderShell(React.createElement(Navbar)),
+      renderShell(React.createElement(Footer)),
+      renderPage(React.createElement(HomePage)),
+      renderPage(React.createElement(AboutPage), '/about'),
+      renderPage(React.createElement(ContactPage), '/contact'),
+      renderPage(React.createElement(WorkPage), '/work'),
+      renderPage(React.createElement(TeachingPage), '/teaching'),
+      renderPage(React.createElement(ProjectDetailPage, { slug: 'million-row-pipeline' }), '/work/million-row-pipeline'),
+      renderPage(React.createElement(ArticleDetailPage, { slug: 'rfq-automation-for-manufacturers' }), '/notes/rfq-automation-for-manufacturers'),
+    ].join('\n');
+
+    expect(publicIdentitySurfaces).toContain('Anthony Amalega');
+    expect(publicIdentitySurfaces).not.toContain('Odafe Amalega');
+  });
 });

@@ -85,7 +85,7 @@ export const Navbar: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hidden lg:inline-flex items-center gap-1.5 text-xs font-mono-tech uppercase tracking-wider text-slate-600 hover:text-slate-900 transition-colors py-2 px-2.5 rounded-lg border border-slate-200 hover:border-slate-400 bg-white"
-              download="Odafe-Amalega-CV.pdf"
+              download="Anthony-Amalega-CV.pdf"
             >
               <span>CV (PDF)</span>
               <ArrowUpRight className="w-3 h-3 text-slate-400" />
@@ -153,7 +153,7 @@ export const Navbar: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary w-full py-2.5 text-xs font-mono-tech flex items-center justify-center gap-2"
-              download="Odafe-Amalega-CV.pdf"
+              download="Anthony-Amalega-CV.pdf"
             >
               <span>{t('nav.downloadCv')}</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />

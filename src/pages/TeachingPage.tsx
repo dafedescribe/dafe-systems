@@ -21,7 +21,7 @@ const modules = [
 
 export const TeachingPage: React.FC = () => (
   <div className="min-h-screen">
-    <SeoHead title="Practical AI, Automation & API Training | Odafe Amalega" description="Practical instruction in AI, automation, APIs, data handling and systems thinking for teams, professionals and educators." canonicalPath="/teaching" />
+    <SeoHead title="Practical AI, Automation & API Training | Anthony Amalega" description="Practical instruction in AI, automation, APIs, data handling and systems thinking for teams, professionals and educators." canonicalPath="/teaching" />
     <main className="mx-auto max-w-[1440px] px-6 pb-16 pt-10 sm:px-12 sm:pb-20 sm:pt-14 lg:px-16">
       <EditorialPageHeader
         indexLabel="TEACHING"

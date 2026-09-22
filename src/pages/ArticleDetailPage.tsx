@@ -46,7 +46,7 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
       description: article.summary,
       author: {
         '@type': 'Person',
-        name: 'Odafe Amalega',
+        name: 'Anthony Amalega',
         url: 'https://www.dafe.name.ng/about'
       },
       publisher: {
@@ -149,7 +149,7 @@ export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
             WRITTEN & TESTED BY
           </div>
           <div className="font-bold text-lg text-slate-900 font-body">
-            Odafe Amalega
+            Anthony Amalega
           </div>
           <p className="text-slate-600 font-body text-sm leading-relaxed">
             AI Workflow Engineer and Educator currently instructing at AppClick. Builds systems around high-value commercial processes and repetitive operational bottlenecks.

@@ -29,7 +29,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
       description: project.oneLiner,
       author: {
         '@type': 'Person',
-        name: 'Odafe Amalega'
+        name: 'Anthony Amalega'
       },
       publisher: {
         '@type': 'Organization',

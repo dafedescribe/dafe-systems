@@ -21,12 +21,12 @@ const capabilities = [
 
 export const AboutPage: React.FC = () => (
   <div className="min-h-screen">
-    <SeoHead title="About Odafe Amalega | Workflow Systems Builder & Educator" description="Odafe Amalega is an industrial engineering graduate, workflow systems builder, and technical educator based in Ibadan, Nigeria and working globally." canonicalPath="/about" />
+    <SeoHead title="About Anthony Amalega | Workflow Systems Builder & Educator" description="Anthony Amalega is an industrial engineering graduate, workflow systems builder, and technical educator based in Ibadan, Nigeria and working globally." canonicalPath="/about" />
     <main className="mx-auto max-w-[1200px] px-6 pb-16 pt-10 sm:px-12 sm:pb-20 sm:pt-14">
       <EditorialPageHeader
         indexLabel="ABOUT"
         eyebrow="Independent systems builder"
-        title="Odafe Amalega"
+        title="Anthony Amalega"
         summary={<>Industrial engineering graduate, workflow automation builder, and technical educator based in Ibadan, Nigeria and working globally.</>}
       >
         <Link to="/work" className="btn-primary px-5 py-3">Explore documented work <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
@@ -64,7 +64,7 @@ export const AboutPage: React.FC = () => (
 
       <div className="flex flex-wrap gap-3 pt-12 sm:pt-16">
         <Link to="/contact" className="btn-primary px-6 py-3.5">Discuss a workflow <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
-        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" download="Odafe-Amalega-CV.pdf" className="btn-secondary px-5 py-3.5"><Download className="h-4 w-4" aria-hidden="true" /> Download CV</a>
+        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" download="Anthony-Amalega-CV.pdf" className="btn-secondary px-5 py-3.5"><Download className="h-4 w-4" aria-hidden="true" /> Download CV</a>
         <a href="https://wa.me/2349132480302" target="_blank" rel="noopener noreferrer" className="btn-secondary px-5 py-3.5">WhatsApp <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
       </div>
     </main>

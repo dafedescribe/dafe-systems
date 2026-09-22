@@ -6,6 +6,8 @@ const cv = () => readFileSync(new URL('../public/cv.html', import.meta.url), 'ut
 describe('public CV', () => {
   it('uses accurate contact, positioning, and degree details', () => {
     const source = cv();
+    expect(source).toContain('Anthony Amalega');
+    expect(source).not.toContain('Odafe Amalega');
     expect(source).toContain('Workflow Automation &amp; Systems Engineer');
     expect(source).toContain('+234 913 248 0302');
     expect(source).toContain('dafedescribe@gmail.com');

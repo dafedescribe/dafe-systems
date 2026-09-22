@@ -17,7 +17,7 @@ export const Footer: React.FC = () => (
             </div>
           </Link>
           <p className="max-w-md text-sm leading-relaxed text-slate-600">
-            Odafe Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
+            Anthony Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
           </p>
           <div className="font-mono-tech text-xs text-slate-500">Ibadan, Nigeria · Working globally</div>
         </div>
@@ -44,7 +44,7 @@ export const Footer: React.FC = () => (
 
         <div className="space-y-3 md:col-span-2">
           <div className="font-mono-tech text-xs font-semibold uppercase tracking-[0.1em] text-amber-800">Direct</div>
-          <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" download="Odafe-Amalega-CV.pdf" className={`${linkClass} inline-flex items-center gap-1`}>
+          <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" download="Anthony-Amalega-CV.pdf" className={`${linkClass} inline-flex items-center gap-1`}>
             CV (PDF)<ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
           <a href="https://wa.me/2349132480302" target="_blank" rel="noopener noreferrer" className={`${linkClass} flex items-center gap-1`}>
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => (
       </div>
 
       <div className="mt-10 flex flex-col gap-3 border-t border-slate-200 pt-5 font-mono-tech text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-        <div>© {new Date().getFullYear()} DafeDeScribe · Odafe Amalega.</div>
+        <div>© {new Date().getFullYear()} DafeDeScribe · Anthony Amalega.</div>
         <Link to="/contact" className="hover:text-slate-950">Direct inquiry</Link>
       </div>
     </div>

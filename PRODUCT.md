@@ -14,7 +14,7 @@ web
 
 ## Product Purpose
 
-Establish Odafe Amalega as an independent technical systems builder and generate qualified workflow inquiries from industrial and operational businesses, while serving as a durable home for verified engineering case studies and technical writing.
+Establish Anthony Amalega as an independent technical systems builder and generate qualified workflow inquiries from industrial and operational businesses, while serving as a durable home for verified engineering case studies and technical writing.
 
 ## Positioning
 
@@ -37,7 +37,7 @@ Independent systems builder with an engineering degree (B.Eng Industrial Enginee
 ## Brand Commitments
 
 - Name: DafeDeScribe
-- Founder: Odafe Amalega
+- Founder: Anthony Amalega
 - Voice: Precise, competent, measured, tactile, technical, human.
 - Strict Bans: "Revolutionary", "cutting-edge", "game-changing", "supercharge", "transform your business".
 

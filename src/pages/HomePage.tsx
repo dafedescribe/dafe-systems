@@ -44,10 +44,10 @@ export const HomePage: React.FC = () => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Odafe Amalega',
+    name: 'Anthony Amalega',
     jobTitle: 'Workflow Automation & Systems Engineer',
     url: 'https://www.dafe.name.ng/',
-    description: 'Odafe Amalega builds workflow automation, data, and AI-assisted systems for industrial and operational businesses.',
+    description: 'Anthony Amalega builds workflow automation, data, and AI-assisted systems for industrial and operational businesses.',
     brand: { '@type': 'Brand', name: 'DafeDeScribe' },
   };
 
@@ -55,7 +55,7 @@ export const HomePage: React.FC = () => {
     <div className="min-h-screen overflow-x-hidden">
       <SeoHead
         title="DafeDeScribe | Workflow Automation & Industrial Systems"
-        description="Odafe Amalega builds workflow automation, data, and AI-assisted systems for industrial and operational businesses, and delivers practical technical training."
+        description="Anthony Amalega builds workflow automation, data, and AI-assisted systems for industrial and operational businesses, and delivers practical technical training."
         canonicalPath="/"
         jsonLd={jsonLd}
       />

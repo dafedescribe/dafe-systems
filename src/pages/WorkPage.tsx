@@ -26,14 +26,14 @@ export const WorkPage: React.FC = () => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Documented Systems & Engineering Case Studies | Odafe Amalega',
+    name: 'Documented Systems & Engineering Case Studies | Anthony Amalega',
     url: 'https://www.dafe.name.ng/work',
-    description: 'Documented engineering case studies, data pipelines, and workflow automation systems built by Odafe Amalega.',
+    description: 'Documented engineering case studies, data pipelines, and workflow automation systems built by Anthony Amalega.',
   };
 
   return (
     <div className="min-h-screen">
-      <SeoHead title="Documented Systems & Case Studies | DafeDeScribe" description="Documented engineering case studies, data pipelines, and workflow automation systems built by Odafe Amalega. See the constraints, workflow evidence, architecture, and stated results." canonicalPath="/work" jsonLd={jsonLd} />
+      <SeoHead title="Documented Systems & Case Studies | DafeDeScribe" description="Documented engineering case studies, data pipelines, and workflow automation systems built by Anthony Amalega. See the constraints, workflow evidence, architecture, and stated results." canonicalPath="/work" jsonLd={jsonLd} />
       <main className="mx-auto max-w-[1440px] px-6 pb-16 pt-10 sm:px-12 sm:pb-20 sm:pt-14 lg:px-16">
         <EditorialPageHeader
           indexLabel="WORK"

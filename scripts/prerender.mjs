@@ -33,7 +33,7 @@ export function composeHead({ title, description, path, image, published }) {
     '@type': 'Article',
     headline: title,
     description,
-    author: { '@type': 'Person', name: 'Odafe Amalega', url: `${SITE}/about` },
+    author: { '@type': 'Person', name: 'Anthony Amalega', url: `${SITE}/about` },
     publisher: { '@type': 'Organization', name: 'DafeDeScribe', url: `${SITE}/` },
     datePublished: published,
     mainEntityOfPage: url,

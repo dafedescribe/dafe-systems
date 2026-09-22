@@ -23,14 +23,14 @@ export const ContactPage: React.FC = () => {
     '@type': 'ContactPage',
     name: 'Show Me the Workflow | DafeDeScribe',
     url: 'https://www.dafe.name.ng/contact',
-    description: 'Submit an operational process or commercial workflow for evaluation by Odafe Amalega.'
+    description: 'Submit an operational process or commercial workflow for evaluation by Anthony Amalega.'
   };
 
   const getWhatsAppMessage = () => {
     if (inquiryType === 'teaching') {
-      return `Hi Odafe, I would like to discuss training.\n\nGoal: ${teachingGoal || 'Not specified'}\nName: ${name}\nOrg: ${organization}\nContact: ${contactInfo}\nTools: ${currentTools}`;
+      return `Hi Anthony, I would like to discuss training.\n\nGoal: ${teachingGoal || 'Not specified'}\nName: ${name}\nOrg: ${organization}\nContact: ${contactInfo}\nTools: ${currentTools}`;
     }
-    return `Hi Odafe, I want to show you a workflow.\n\nRepeated Process:\n${workflowText || 'Not specified'}\n\nName: ${name}\nCompany: ${organization}\nContact: ${contactInfo}\nCurrent Tools: ${currentTools}\nNote: ${optionalNote}`;
+    return `Hi Anthony, I want to show you a workflow.\n\nRepeated Process:\n${workflowText || 'Not specified'}\n\nName: ${name}\nCompany: ${organization}\nContact: ${contactInfo}\nCurrent Tools: ${currentTools}\nNote: ${optionalNote}`;
   };
 
   const whatsAppUrl = `https://wa.me/2349132480302?text=${encodeURIComponent(getWhatsAppMessage())}`;
@@ -76,7 +76,7 @@ export const ContactPage: React.FC = () => {
     <div className="min-h-screen">
       <SeoHead
         title="Show Me the Workflow | DafeDeScribe"
-        description="Do not write a technical brief. Describe what happens today. Workflow evaluation and practical technical training consultation with Odafe Amalega."
+        description="Do not write a technical brief. Describe what happens today. Workflow evaluation and practical technical training consultation with Anthony Amalega."
         canonicalPath="/contact"
         jsonLd={jsonLd}
       />
@@ -319,7 +319,7 @@ export const ContactPage: React.FC = () => {
         {/* ─── CONFIDENTIALITY NOTE ────────────────────────────── */}
         <div className="mt-8 grid gap-3 border-t border-slate-200 pt-6 text-xs leading-relaxed text-slate-500 sm:grid-cols-2">
           <p className="font-mono-tech">I reply personally after reviewing the workflow. If email delivery is inconvenient, WhatsApp remains available as a direct fallback.</p>
-          <p className="font-mono-tech">Confidentiality: Business processes, workflows, and sample records are reviewed exclusively by Odafe Amalega under professional discretion.</p>
+          <p className="font-mono-tech">Confidentiality: Business processes, workflows, and sample records are reviewed exclusively by Anthony Amalega under professional discretion.</p>
         </div>
 
       </main>

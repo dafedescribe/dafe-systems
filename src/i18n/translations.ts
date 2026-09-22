@@ -17,7 +17,7 @@ const english = {
   'nav.language': 'Language',
   'footer.submit': 'Submit a Workflow',
   'footer.directInquiry': 'Direct Inquiry',
-  'home.eyebrow': 'Odafe Amalega · DafeDeScribe',
+  'home.eyebrow': 'Anthony Amalega · DafeDeScribe',
   'home.title': 'I build systems for work that has outgrown manual handling.',
   'home.primaryCta': 'Discuss a Workflow',
   'home.secondaryCta': 'Explore Documented Work',
