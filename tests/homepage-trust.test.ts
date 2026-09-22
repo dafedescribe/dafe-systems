@@ -48,11 +48,11 @@ describe('homepage trust presentation', () => {
     expect(trust.toLowerCase()).not.toContain('trusted by');
   });
 
-  it('integrates identity and trust before operational evidence', () => {
+  it('integrates identity and trust before selected operational evidence', () => {
     const home = read('../src/pages/HomePage.tsx');
     expect(home).toContain('<FounderPortrait />');
     expect(home).toContain('<TrustRail />');
-    expect(home.indexOf('<TrustRail />')).toBeLessThan(home.indexOf('industrialEvidence.map'));
+    expect(home.indexOf('<TrustRail />')).toBeLessThan(home.indexOf('id="home-selected-work"'));
   });
 
   it('keeps the mobile header controls inside a 390px viewport', () => {

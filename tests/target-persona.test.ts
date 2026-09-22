@@ -20,9 +20,12 @@ describe('target persona positioning', () => {
 
   it('uses the supplied organization marks as proof, not decoration', () => {
     const aboutSource = readFileSync(new URL('../src/pages/AboutPage.tsx', import.meta.url), 'utf8');
-    expect(aboutSource).toContain('/uploads/images-2.jpeg');
-    expect(aboutSource).toContain('/uploads/logo.jpg');
-    expect(aboutSource).toContain('/uploads/src-logopng.png');
-    expect(aboutSource).toContain('/uploads/download-1.png');
+    const trustSource = readFileSync(new URL('../src/components/TrustRail.tsx', import.meta.url), 'utf8');
+    expect(aboutSource).toContain('<TrustRail />');
+    expect(trustSource).toContain('/uploads/images-2.jpeg');
+    expect(trustSource).toContain('/uploads/logo.jpg');
+    expect(trustSource).toContain('/uploads/src-logopng.png');
+    expect(trustSource).toContain('/uploads/download-1.png');
+    expect(trustSource.toLowerCase()).not.toContain('trusted by');
   });
 });

@@ -67,7 +67,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
         />
 
         {/* ─── HEADER / SUMMARY CARD ────────────────────────────── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-10 space-y-4 shadow-sm">
+        <section className="bg-white border border-slate-200 rounded-md p-6 sm:p-10 space-y-4 ">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3 font-mono-tech text-xs">
             <div className="flex items-center gap-2">
               <span className="text-amber-700 font-semibold">{project.refId}</span>
@@ -94,7 +94,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
 
         {/* ─── SITUATION & CONSTRAINT ──────────────────────────── */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-7 space-y-2.5 shadow-2xs">
+          <div className="bg-white border border-slate-200 rounded-md p-6 sm:p-7 space-y-2.5 shadow-2xs">
             <div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">
               Operational Context
             </div>
@@ -106,7 +106,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
             </p>
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-7 space-y-2.5 shadow-2xs">
+          <div className="bg-white border border-slate-200 rounded-md p-6 sm:p-7 space-y-2.5 shadow-2xs">
             <div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">
               Technical Constraints
             </div>
@@ -120,7 +120,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
         </section>
 
         {/* ─── BUILD OVERVIEW ──────────────────────────────────── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 space-y-3 shadow-2xs">
+        <section className="bg-white border border-slate-200 rounded-md p-6 sm:p-8 space-y-3 shadow-2xs">
           <div className="text-xs font-mono-tech uppercase tracking-wider text-amber-700 font-semibold">
             Engineering Solution
           </div>
@@ -133,7 +133,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
         </section>
 
         {/* ─── WORKFLOW EVIDENCE ──────────────────────────────── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 space-y-6 shadow-sm">
+        <section className="bg-white border border-slate-200 rounded-md p-6 sm:p-8 space-y-6 ">
           <WorkflowEvidenceHeading />
           <WorkflowEvidence project={project} />
         </section>
@@ -160,7 +160,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
           </p>
 
           {project.technicalNotes.codeSnippet && (
-            <div className="mt-4 rounded-xl border border-slate-800 bg-slate-950 text-slate-100 p-5 font-mono-tech text-xs overflow-x-auto shadow-md">
+            <div className="mt-4 rounded-md border border-slate-800 bg-slate-950 text-slate-100 p-5 font-mono-tech text-xs overflow-x-auto shadow-md">
               <div className="text-slate-400 pb-2 border-b border-slate-800 mb-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Terminal className="w-3.5 h-3.5 text-amber-400" />
@@ -176,7 +176,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
         </section>
 
         {/* ─── CAPABILITY PROOF ────────────────────────────────── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 space-y-4 shadow-sm">
+        <section className="bg-white border border-slate-200 rounded-md p-6 sm:p-8 space-y-4 ">
           <div className="text-xs font-mono-tech uppercase tracking-wider text-slate-500 font-semibold">
             Demonstrated Capabilities
           </div>
@@ -201,7 +201,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
                 <Link
                   key={rel.slug}
                   to={`/work/${rel.slug}`}
-                  className="bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 hover:shadow-md transition-all group"
+                  className="bg-white border border-slate-200 rounded-md p-5 hover:border-slate-400 hover:shadow-md transition-all group"
                 >
                   <div className="font-mono-tech text-[10px] text-amber-700 mb-1 font-semibold">
                     {rel.refId} · {rel.label}
@@ -219,7 +219,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
         )}
 
         {/* ─── CTA ─────────────────────────────────────────────── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-8 space-y-5 shadow-sm">
+        <section className="bg-white border border-slate-200 rounded-md p-8 space-y-5 ">
           <div className="text-xs font-mono-tech tracking-wider uppercase text-amber-700 font-semibold">
             Have a Similar Operational Challenge?
           </div>

@@ -1,332 +1,70 @@
 import React from 'react';
-import { Link } from '../router/Router';
+import { ArrowRight } from 'lucide-react';
+import { CompactCta } from '../components/CompactCta';
+import { EditorialPageHeader } from '../components/EditorialPageHeader';
+import { EditorialSection } from '../components/EditorialSection';
 import { SeoHead } from '../components/SeoHead';
-import { Breadcrumbs } from '../components/Breadcrumbs';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Link } from '../router/Router';
 
-export const TeachingPage: React.FC = () => {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'EducationalOccupationalProgram',
-    name: 'Practical AI, Automation & API Training',
-    provider: {
-      '@type': 'Person',
-      name: 'Odafe Amalega',
-      url: 'https://www.dafe.name.ng/about'
-    },
-    description: 'Practical training in AI, automation, APIs, digital productivity and vibe coding for teams, educators, young learners, and nontechnical professionals.'
-  };
+const pillars = [
+  ['Understand', 'First-principles mental models for AI, APIs, data structures, security, and software systems.'],
+  ['Use', 'Direct application through productivity, research, structured content, and workflow exercises.'],
+  ['Build', 'Tangible automations, prototypes, data views, and responsible AI-assisted applications.'],
+] as const;
 
-  const learningAreas = [
-    {
-      label: 'Understand',
-      code: 'MOD-01',
-      desc: 'First-principles mental models of computational systems.',
-      items: [
-        'AI models & token mechanics',
-        'APIs & HTTP methods',
-        'Data structures & schemas',
-        'Software systems fundamentals',
-        'Security & credential hygiene'
-      ]
-    },
-    {
-      label: 'Use',
-      code: 'MOD-02',
-      desc: 'Direct practical application in everyday digital operations.',
-      items: [
-        'AI productivity & synthesis',
-        'Targeted web & market research',
-        'Structured content workflows',
-        'Automation tools & triggers',
-        'Responsible verification habits'
-      ]
-    },
-    {
-      label: 'Build',
-      code: 'MOD-03',
-      desc: 'Creating tangible workflows, prototypes, and functional software.',
-      items: [
-        'API endpoint chaining',
-        'Visual automation in n8n',
-        'Workflow automation logic',
-        'Vibe coding & AI-assisted development',
-        'Web prototypes & data views'
-      ]
-    }
-  ];
+const modules = [
+  ['EDU-014', 'API Fundamentals & Webhook Systems', 'Half-day intensive', 'Inspect raw HTTP requests, map JSON payloads, and connect spreadsheets to databases through automation without code fatigue.'],
+  ['EDU-022', 'n8n Workflow Construction Sandbox', 'Full-day hands-on lab', 'Build three production-grade automations: customer qualification, document parsing, and scheduled reporting.'],
+  ['EDU-031', 'Practical AI Literacy for Educators & Teachers', 'Interactive seminar', 'Understand token mechanics, detect hallucination patterns, and establish responsible student generative-AI guidelines.'],
+  ['EDU-045', 'Vibe Coding & Systems Thinking for Builders', 'Weekend workshop', 'Use modern AI models to build, debug, and deploy functional web prototypes from first principles.'],
+] as const;
 
-  const currentTopics = [
-    'AI foundations and literacy',
-    'Workflow automation',
-    'APIs in plain English',
-    'Vibe coding',
-    'Digital productivity',
-    'AI image and video workflows',
-    'Building websites and app prototypes with AI',
-    'Automation thinking for nontechnical learners'
-  ];
+export const TeachingPage: React.FC = () => (
+  <div className="min-h-screen">
+    <SeoHead title="Practical AI, Automation & API Training | Odafe Amalega" description="Practical instruction in AI, automation, APIs, data handling and systems thinking for teams, professionals and educators." canonicalPath="/teaching" />
+    <main className="mx-auto max-w-[1440px] px-6 pb-16 pt-10 sm:px-12 sm:pb-20 sm:pt-14 lg:px-16">
+      <EditorialPageHeader
+        indexLabel="TEACHING"
+        eyebrow="Applied systems education"
+        title="Learn what is happening underneath the button."
+        summary={<>I teach AI engineering and workflow automation so participants understand the mechanics of the tools they deploy rather than memorising interfaces. Current applied instruction includes work through AppClick Technology.</>}
+      >
+        <Link to="/contact" className="btn-primary px-6 py-3.5">Discuss training <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+      </EditorialPageHeader>
 
-  const audiences = [
-    { title: 'Teams', desc: 'Operational, commercial, and executive teams modernising daily workflows.' },
-    { title: 'Teachers', desc: 'Educators needing clear literacy on generative tools and classroom ethics.' },
-    { title: 'Young learners', desc: 'Next-generation builders discovering programming and systems thinking.' },
-    { title: 'Professionals', desc: 'Analysts, operations leads, and consultants removing clerical friction.' },
-    { title: 'Training organisations', desc: 'Institutional partners delivering structured digital bootcamps.' },
-    { title: 'Business owners', desc: 'Founders evaluating what automation can realistically achieve.' }
-  ];
+      <EditorialSection label="Learning architecture" title="Understand. Use. Build." intro="Every programme moves from mental models to direct application and then to a working artifact.">
+        <div className="divide-y divide-stone-300 border-y border-stone-300 md:grid md:grid-cols-3 md:divide-x md:divide-y-0">
+          {pillars.map(([title, copy], index) => (
+            <article key={title} className="py-6 md:px-6 md:first:pl-0 md:last:pr-0">
+              <div className="font-mono-tech text-xs font-bold text-amber-800">0{index + 1}</div>
+              <h2 className="mt-6 font-display text-3xl text-slate-950">{title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">{copy}</p>
+            </article>
+          ))}
+        </div>
+      </EditorialSection>
 
-  const curriculumArtifacts = [
-    {
-      ref: 'TRAINING REF. EDU-014',
-      title: 'API Fundamentals & Webhook Systems',
-      audience: 'Nontechnical Teams & Operational Managers',
-      duration: 'Half-Day Intensive (4 Hours)',
-      learningGoal: 'Inspect raw HTTP requests, map JSON payloads, and connect spreadsheets to databases via webhook automation without code fatigue.'
-    },
-    {
-      ref: 'TRAINING REF. EDU-022',
-      title: 'n8n Workflow Construction Sandbox',
-      audience: 'Builders, Analysts & Administrative Leads',
-      duration: 'Full-Day Hands-on Lab (7 Hours)',
-      learningGoal: 'Build 3 production-grade automations: customer qualification bot, automated PDF extraction, and scheduled reporting digest.'
-    },
-    {
-      ref: 'TRAINING REF. EDU-031',
-      title: 'Practical AI Literacy for Educators & Teachers',
-      audience: 'Secondary & Higher Ed Faculty',
-      duration: '3-Hour Interactive Seminar',
-      learningGoal: 'Understand token mechanics, detect hallucination patterns, and establish responsible student generative AI guidelines.'
-    },
-    {
-      ref: 'TRAINING REF. EDU-045',
-      title: 'Vibe Coding & Systems Thinking for Builders',
-      audience: 'Aspiring Creators & Young Professionals',
-      duration: 'Weekend Workshop (2 x 4 Hours)',
-      learningGoal: 'Leverage modern AI models to build, debug, and deploy functional web prototypes cleanly from first principles.'
-    }
-  ];
+      <EditorialSection label="Representative modules" title="Four practical ways to teach the underlying system." intro="Modules are adapted to the audience, available time, and operational context.">
+        <div className="divide-y divide-stone-300 border-y border-stone-300">
+          {modules.map(([ref, title, format, outcome]) => (
+            <article key={ref} data-teaching-module="true" className="grid gap-4 py-6 sm:grid-cols-[120px_minmax(0,0.8fr)_minmax(0,1.2fr)] sm:items-start">
+              <div className="font-mono-tech text-xs font-bold text-amber-800">{ref}</div>
+              <div><h2 className="font-display text-2xl leading-tight text-slate-950">{title}</h2><div className="mt-2 font-mono-tech text-xs uppercase text-slate-500">{format}</div></div>
+              <p className="text-sm leading-relaxed text-slate-600">{outcome}</p>
+            </article>
+          ))}
+        </div>
+      </EditorialSection>
 
-  return (
-    <div className="min-h-screen">
-      <SeoHead
-        title="Practical AI, Automation & API Training | Odafe Amalega"
-        description="Practical AI, automation, API, digital productivity and vibe-coding training for teams, teachers, young learners and nontechnical professionals."
-        canonicalPath="/teaching"
-        jsonLd={jsonLd}
-      />
+      <EditorialSection title="Designed around the people in the room." intro="The same topic requires a different entry point for an operations team, an educator, a business owner, or a new technical builder.">
+        <dl className="grid border-y border-stone-300 md:grid-cols-3">
+          <div className="py-5 md:pr-6"><dt className="font-mono-tech text-xs font-semibold uppercase text-amber-800">Audience</dt><dd className="mt-2 text-sm leading-relaxed text-slate-700">Operational teams, professionals, educators, young learners, and training organisations.</dd></div>
+          <div className="border-t border-stone-300 py-5 md:border-l md:border-t-0 md:px-6"><dt className="font-mono-tech text-xs font-semibold uppercase text-amber-800">Delivery</dt><dd className="mt-2 text-sm leading-relaxed text-slate-700">Seminars, half-day intensives, full-day labs, and multi-session practical programmes.</dd></div>
+          <div className="border-t border-stone-300 py-5 md:border-l md:border-t-0 md:pl-6"><dt className="font-mono-tech text-xs font-semibold uppercase text-amber-800">Materials</dt><dd className="mt-2 text-sm leading-relaxed text-slate-700">Workflow maps, API examples, guided builds, validation habits, and take-home references.</dd></div>
+        </dl>
+      </EditorialSection>
 
-      <main className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-20 space-y-16 sm:space-y-24">
-        
-        <Breadcrumbs items={[{ label: 'TEACHING', path: '/teaching' }]} />
-
-        {/* ─── HERO ────────────────────────────────────────────── */}
-        <section className="space-y-6 max-w-4xl">
-          <div className="font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
-            Systems Education & Technical Training
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 font-display leading-[1.12]">
-            Learn what is happening underneath the button.
-          </h1>
-
-          <div className="space-y-3 text-base sm:text-lg text-slate-700 font-body leading-relaxed max-w-3xl">
-            <p>
-              I teach AI engineering and workflow automation so participants understand the mechanics of the tools they deploy, rather than merely memorizing interfaces.
-            </p>
-            <p className="text-slate-600">
-              Curricula are tailored for nontechnical operations teams, educators, engineering cohorts, and professionals integrating AI into business processes.
-            </p>
-          </div>
-
-          <div className="pt-4">
-            <Link
-              to="/contact"
-              className="btn-primary px-6 py-3.5"
-            >
-              <span>Discuss Training</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-
-        {/* ─── THREE LEARNING AREAS ────────────────────────────── */}
-        <section className="space-y-6">
-          <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-            <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
-              Curriculum Architecture
-            </div>
-            <div className="text-xs text-slate-500 font-mono-tech">
-              Three Learning Pillars
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {learningAreas.map((area) => (
-              <div
-                key={area.code}
-                className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-2xs hover:shadow-md transition-shadow"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                    <span className="font-mono-tech text-xs text-amber-700 uppercase font-semibold">
-                      {area.code}
-                    </span>
-                    <span className="text-[11px] px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">
-                      Pillar
-                    </span>
-                  </div>
-
-                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
-                    {area.label}
-                  </h2>
-
-                  <p className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
-                    {area.desc}
-                  </p>
-
-                  <ul className="space-y-2 pt-3 border-t border-slate-100">
-                    {area.items.map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-body">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-600 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ─── CURRENT TEACHING TOPICS ─────────────────────────── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-10 space-y-8 shadow-sm">
-          <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
-              Core Topics
-            </div>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 font-display">
-              Technical subjects covered
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-            {currentTopics.map((topic, idx) => (
-              <div
-                key={idx}
-                className="p-4 rounded-lg border border-slate-200 bg-slate-50/50 flex flex-col justify-between"
-              >
-                <span className="font-mono-tech text-xs text-amber-700 mb-2 font-semibold">
-                  0{idx + 1}.
-                </span>
-                <span className="text-sm font-bold text-slate-900 font-body">
-                  {topic}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ─── AUDIENCES ───────────────────────────────────────── */}
-        <section className="space-y-6">
-          <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
-            Target Audiences
-          </div>
-
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 font-display">
-            Who these programmes are designed for
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {audiences.map((aud, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-slate-200 rounded-xl p-5 shadow-2xs"
-              >
-                <div className="font-bold text-base text-slate-900 mb-1.5 font-body">
-                  {aud.title}
-                </div>
-                <div className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
-                  {aud.desc}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ─── CATALOGUE SPECIMENS / WORKSHOP MATERIALS ────────── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-6 sm:p-10 space-y-8 shadow-sm">
-          <div className="space-y-2">
-            <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
-              Course Modules & Hands-on Materials
-            </div>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 font-display">
-              Documented course syllabus and practical modules.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {curriculumArtifacts.map((art, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-lg border border-slate-200 bg-slate-50/50 space-y-3"
-              >
-                <div className="flex items-center justify-between border-b border-slate-200 pb-2 font-mono-tech text-xs">
-                  <span className="text-amber-700 font-semibold">
-                    {art.ref}
-                  </span>
-                  <span className="text-slate-500">
-                    {art.duration}
-                  </span>
-                </div>
-
-                <div className="text-xl font-bold text-slate-900 font-display">
-                  {art.title}
-                </div>
-
-                <div className="text-xs font-mono-tech text-slate-500">
-                  Target Audience: {art.audience}
-                </div>
-
-                <p className="text-xs sm:text-sm text-slate-700 font-body leading-relaxed pt-1">
-                  <strong className="text-slate-900">Learning Goal: </strong>
-                  {art.learningGoal}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="pt-4 border-t border-slate-200 text-xs text-slate-500 font-body">
-            Technical instruction delivered through AppClick Technology and independent corporate workshops.
-          </div>
-        </section>
-
-        {/* ─── FINAL CTA ───────────────────────────────────────── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-8 sm:p-12 space-y-6 shadow-sm">
-          <div className="font-mono-tech text-xs tracking-wider uppercase text-amber-700 font-semibold">
-            Corporate Training Inquiries
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 font-display">
-            Discuss a Training Session
-          </h2>
-
-          <p className="text-sm sm:text-base text-slate-600 font-body max-w-2xl leading-relaxed">
-            Tell me about your team, your current challenges with AI or automation, and what practical skills you want participants to take away from the session.
-          </p>
-
-          <div className="pt-2">
-            <Link
-              to="/contact"
-              className="btn-primary px-6 py-3.5"
-            >
-              <span>Discuss Training</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
-
-      </main>
-    </div>
-  );
-};
+      <div className="pt-12 sm:pt-16"><CompactCta title="Discuss a practical training session." copy="Tell me about the participants, their current experience, and the capability they should be able to apply after the session." actionLabel="Discuss training" actionTo="/contact" /></div>
+    </main>
+  </div>
+);

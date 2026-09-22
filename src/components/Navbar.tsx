@@ -11,11 +11,10 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { num: '01', label: t('nav.industry'), to: '/industry' },
-    { num: '02', label: t('nav.automation'), to: '/automation' },
-    { num: '03', label: t('nav.work'), to: '/work' },
-    { num: '04', label: t('nav.teaching'), to: '/teaching' },
-    { num: '05', label: t('nav.notes'), to: '/notes' },
-    { num: '06', label: t('nav.about'), to: '/about' },
+    { num: '02', label: t('nav.work'), to: '/work' },
+    { num: '03', label: t('nav.teaching'), to: '/teaching' },
+    { num: '04', label: t('nav.notes'), to: '/notes' },
+    { num: '05', label: t('nav.about'), to: '/about' },
   ];
 
   const isActive = (to: string) => {
@@ -53,7 +52,7 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-7 lg:gap-9 text-xs font-mono-tech tracking-[0.08em]">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-7 text-xs font-mono-tech tracking-[0.08em]">
             {navLinks.map((link) => {
               const active = isActive(link.to);
               return (

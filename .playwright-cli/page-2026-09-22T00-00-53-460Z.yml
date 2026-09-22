@@ -1,0 +1,161 @@
+- generic [ref=f11e3]:
+  - link "Skip to main content" [ref=f11e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f11e5]:
+    - generic [ref=f11e7]:
+      - link "DafeDeScribe Home" [ref=f11e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f11e9]
+        - generic [ref=f11e10]:
+          - generic [ref=f11e11]: DafeDeScribe
+          - generic [ref=f11e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - generic [ref=f11e13]:
+        - generic [ref=f11e14]:
+          - generic [ref=f11e15]: Language
+          - combobox "Language" [ref=f11e16]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - button "Open Navigation" [ref=f11e17]
+  - main [ref=f11e21]:
+    - generic [ref=f11e22]:
+      - navigation "Breadcrumb" [ref=f11e23]:
+        - list [ref=f11e24]:
+          - listitem [ref=f11e25]:
+            - link "INDEX" [ref=f11e26] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f11e27]:
+            - generic [ref=f11e30]: ABOUT
+      - generic [ref=f11e31]:
+        - generic [ref=f11e32]:
+          - generic [ref=f11e33]: Independent systems builder
+          - heading "Odafe Amalega" [level=1] [ref=f11e34]
+        - generic [ref=f11e35]:
+          - generic [ref=f11e36]: Industrial engineering graduate, workflow automation builder, and technical educator based in Ibadan, Nigeria and working globally.
+          - link "Explore documented work" [ref=f11e38] [cursor=pointer]:
+            - /url: /work
+    - generic [ref=f11e42]:
+      - generic [ref=f11e43]:
+        - paragraph [ref=f11e44]: I design and build workflow automation, custom data pipelines, and practical AI systems for businesses whose operations have outgrown manual handling.
+        - paragraph [ref=f11e45]: "My work focuses on commercial workflows in industrial and operational businesses: inbound RFQs, tender tracking, complex quotations, recurring reports, and the handoffs between people and software."
+        - paragraph [ref=f11e46]: "My B.Eng in Industrial Engineering shapes how I approach software: understand how information physically moves through a business, isolate the bottleneck, and build a deterministic system that keeps experienced people in control."
+        - paragraph [ref=f11e47]: Alongside engineering systems, I teach applied AI, APIs, and automation. If a workflow cannot be explained clearly to the people using it, it is not ready for production.
+      - figure "Odafe Amalega Independent systems builder · Ibadan, Nigeria" [ref=f11e49]:
+        - img "Odafe Amalega, workflow automation and systems engineer" [ref=f11e50]
+        - generic [ref=f11e51]:
+          - generic [ref=f11e52]: Odafe Amalega
+          - generic [ref=f11e53]: Independent systems builder · Ibadan, Nigeria
+    - generic [ref=f11e54]:
+      - generic [ref=f11e55]: Experience context
+      - region [ref=f11e58]:
+        - heading "Experience across industrial, education & technical environments" [level=2] [ref=f11e59]
+        - generic [ref=f11e60]:
+          - generic [ref=f11e61]:
+            - img "AppClick logo" [ref=f11e62]
+            - generic [ref=f11e63]: AppClick
+            - generic [ref=f11e64]: Technical instruction
+          - generic [ref=f11e65]:
+            - img "New Edition logo" [ref=f11e66]
+            - generic [ref=f11e67]: New Edition
+            - generic [ref=f11e68]: Education & internal systems
+          - generic [ref=f11e69]:
+            - img "SR Construction logo" [ref=f11e70]
+            - generic [ref=f11e71]: SR Construction
+            - generic [ref=f11e72]: Construction context
+          - generic [ref=f11e73]:
+            - img "Dangote Cement logo" [ref=f11e74]
+            - generic [ref=f11e75]: Dangote Cement
+            - generic [ref=f11e76]: Industrial exposure
+    - generic [ref=f11e77]:
+      - generic [ref=f11e78]:
+        - heading "Capabilities used across the work." [level=2] [ref=f11e80]
+        - generic [ref=f11e81]: The tool follows the operational requirement. These are recurring building blocks, not a prescribed stack.
+      - list [ref=f11e82]:
+        - listitem [ref=f11e83]: Workflow architecture
+        - listitem [ref=f11e84]: Python development
+        - listitem [ref=f11e85]: REST and webhook APIs
+        - listitem [ref=f11e86]: n8n workflow automation
+        - listitem [ref=f11e87]: Browser and web automation
+        - listitem [ref=f11e88]: Data cleaning and Parquet pipelines
+        - listitem [ref=f11e89]: Google Workspace and cloud sync
+        - listitem [ref=f11e90]: Deterministic AI orchestration
+        - listitem [ref=f11e91]: Corporate technical instruction
+    - generic [ref=f11e92]:
+      - heading "Engineering foundations and applied instruction." [level=2] [ref=f11e95]
+      - generic [ref=f11e96]:
+        - generic [ref=f11e97]:
+          - generic [ref=f11e98]:
+            - term [ref=f11e99]: Bachelor of Engineering (B.Eng)
+            - definition [ref=f11e100]: Federal University Oye-Ekiti
+          - definition [ref=f11e101]: Industrial Engineering foundations and analytical modelling
+        - generic [ref=f11e102]:
+          - generic [ref=f11e103]:
+            - term [ref=f11e104]: ALX professional programmes
+            - definition [ref=f11e105]: AI Career Essentials and Data Analytics
+          - definition [ref=f11e106]: Applied professional learning track
+        - generic [ref=f11e107]:
+          - generic [ref=f11e108]:
+            - term [ref=f11e109]: Technical instruction
+            - definition [ref=f11e110]: AppClick Technology
+          - definition [ref=f11e111]: Practical AI, automation, APIs, and systems thinking
+    - generic [ref=f11e112]:
+      - link "Discuss a workflow" [ref=f11e113] [cursor=pointer]:
+        - /url: /contact
+      - link "Download CV" [ref=f11e116] [cursor=pointer]:
+        - /url: /cv.pdf
+      - link "WhatsApp" [ref=f11e120] [cursor=pointer]:
+        - /url: https://wa.me/2349132480302
+  - contentinfo [ref=f11e124]:
+    - generic [ref=f11e125]:
+      - generic [ref=f11e126]:
+        - generic [ref=f11e127]:
+          - link "DafeDeScribe home" [ref=f11e128] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f11e129]:
+              - generic [ref=f11e130]: DafeDeScribe
+              - generic [ref=f11e131]: Systems · Automation · Education
+          - paragraph [ref=f11e132]: Odafe Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
+          - generic [ref=f11e133]: Ibadan, Nigeria · Working globally
+        - navigation "Commercial services" [ref=f11e134]:
+          - generic [ref=f11e135]: Commercial work
+          - list [ref=f11e136]:
+            - listitem [ref=f11e137]:
+              - link "Industry systems" [ref=f11e138] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f11e139]:
+              - link "Automation approach" [ref=f11e140] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f11e141]:
+              - link "Documented work" [ref=f11e142] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f11e143]:
+              - link "Show me the workflow" [ref=f11e144] [cursor=pointer]:
+                - /url: /contact
+        - navigation "Background and learning" [ref=f11e145]:
+          - generic [ref=f11e146]: Practice
+          - list [ref=f11e147]:
+            - listitem [ref=f11e148]:
+              - link "Teaching" [ref=f11e149] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f11e150]:
+              - link "Notes" [ref=f11e151] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f11e152]:
+              - link "About" [ref=f11e153] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f11e154]:
+              - link "Lab" [ref=f11e155] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f11e156]:
+          - generic [ref=f11e157]: Direct
+          - link "CV (PDF)" [ref=f11e158] [cursor=pointer]:
+            - /url: /cv.pdf
+          - link "WhatsApp" [ref=f11e162] [cursor=pointer]:
+            - /url: https://wa.me/2349132480302
+      - generic [ref=f11e166]:
+        - generic [ref=f11e167]: © 2026 DafeDeScribe · Odafe Amalega.
+        - link "Direct inquiry" [ref=f11e168] [cursor=pointer]:
+          - /url: /contact

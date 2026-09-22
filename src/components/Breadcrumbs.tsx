@@ -7,6 +7,8 @@ export interface BreadcrumbItem {
   path: string;
 }
 
+export const getBreadcrumbKey = (item: BreadcrumbItem, index: number) => `${item.path}:${index}`;
+
 export const Breadcrumbs: React.FC<{ items: BreadcrumbItem[] }> = ({ items }) => {
   return (
     <nav aria-label="Breadcrumb" className="mb-6 font-mono-tech text-xs text-[#77736A] tracking-[0.06em]">
@@ -19,7 +21,7 @@ export const Breadcrumbs: React.FC<{ items: BreadcrumbItem[] }> = ({ items }) =>
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
-            <li key={item.path} className="flex items-center gap-1.5">
+            <li key={getBreadcrumbKey(item, index)} className="flex items-center gap-1.5">
               <ChevronRight className="w-3 h-3 text-[#AAA397]" aria-hidden="true" />
               {isLast ? (
                 <span className="text-[#181816] font-semibold" aria-current="page">

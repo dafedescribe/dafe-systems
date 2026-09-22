@@ -88,7 +88,7 @@ export const CommercialReportingPage: React.FC = () => {
             {examples.map((item, idx) => (
               <div
                 key={idx}
-                className="p-4 border border-slate-200 bg-white rounded-lg shadow-sm flex items-start gap-3 text-sm text-slate-800 font-body"
+                className="p-4 border border-slate-200 bg-white rounded-lg  flex items-start gap-3 text-sm text-slate-800 font-body"
               >
                 <span className="font-mono-tech text-xs text-amber-700 font-semibold">
                   0{idx + 1}.

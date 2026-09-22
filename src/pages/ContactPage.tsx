@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SeoHead } from '../components/SeoHead';
-import { Breadcrumbs } from '../components/Breadcrumbs';
+import { EditorialPageHeader } from '../components/EditorialPageHeader';
 import { CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { useI18n } from '../i18n/I18nProvider';
 
@@ -81,41 +81,26 @@ export const ContactPage: React.FC = () => {
         jsonLd={jsonLd}
       />
 
-      <main className="max-w-3xl mx-auto px-6 sm:px-10 py-12 sm:py-20 space-y-12">
-        <Breadcrumbs items={[{ label: 'CONTACT', path: '/contact' }]} />
-
-        {/* ─── HEADER ──────────────────────────────────────────── */}
-        <section className="space-y-4">
-          <div className="flex items-center gap-2 font-mono-tech text-xs tracking-[0.1em] uppercase text-amber-700 font-semibold">
-            <span>Direct Engineering Consultation</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 font-display leading-[1.15]">
-            Show me the workflow.
-          </h1>
-
-          <div className="space-y-1.5 text-base sm:text-lg text-slate-600 font-body">
-            <p className="font-semibold text-slate-900">
-              No polished brief or RFP needed.
-            </p>
-            <p>
-              Simply describe what happens manually today, where the handoffs bottleneck, and what software your team currently touches.
-            </p>
-          </div>
-        </section>
+      <main className="mx-auto max-w-4xl px-6 pb-14 pt-10 sm:px-10 sm:pb-16 sm:pt-14">
+        <EditorialPageHeader
+          indexLabel="CONTACT"
+          eyebrow="Direct engineering consultation"
+          title="Show me the workflow."
+          summary={<><strong className="text-slate-950">No polished brief or RFP needed.</strong> Describe what happens manually today, where the handoffs bottleneck, and what software your team currently touches.</>}
+        />
 
         {/* ─── INQUIRY TYPE SWITCHER ───────────────────────────── */}
-        <div className="flex border border-slate-200 bg-slate-100 p-1 rounded-lg text-xs font-mono-tech uppercase">
+        <div className="mt-10 grid border-y border-stone-300 text-xs font-mono-tech uppercase sm:grid-cols-2">
           <button
             type="button"
             onClick={() => {
               setInquiryType('workflow');
               setSubmitted(false);
             }}
-              className={`flex-1 min-h-[44px] py-3 px-4 rounded-md flex items-center justify-center transition-colors ${
+              className={`min-h-[48px] px-4 py-3 transition-colors ${
               inquiryType === 'workflow'
-                ? 'bg-slate-900 text-white font-semibold shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-slate-900 text-white font-semibold'
+                : 'text-slate-600 hover:bg-stone-100 hover:text-slate-900'
             }`}
           >
             Commercial & Operational Workflows
@@ -126,10 +111,10 @@ export const ContactPage: React.FC = () => {
               setInquiryType('teaching');
               setSubmitted(false);
             }}
-              className={`flex-1 min-h-[44px] py-3 px-4 rounded-md flex items-center justify-center transition-colors ${
+              className={`min-h-[48px] border-t border-stone-300 px-4 py-3 transition-colors sm:border-l sm:border-t-0 ${
               inquiryType === 'teaching'
-                ? 'bg-slate-900 text-white font-semibold shadow-sm'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'bg-slate-900 text-white font-semibold'
+                : 'text-slate-600 hover:bg-stone-100 hover:text-slate-900'
             }`}
           >
             Technical Training & Workshops
@@ -138,7 +123,7 @@ export const ContactPage: React.FC = () => {
 
         {/* ─── SUBMISSION STATE ────────────────────────────────── */}
         {submitted ? (
-          <div className="catalogue-sheet p-8 sm:p-10 space-y-6 border-t-2 border-t-amber-600">
+          <div className="mt-10 space-y-6 border-y border-stone-300 py-8 sm:py-10">
             <div className="flex items-center gap-3">
               <CheckCircle2 className="w-6 h-6 text-emerald-600" />
               <h2 className="text-2xl font-bold text-slate-900 font-display">
@@ -165,7 +150,7 @@ export const ContactPage: React.FC = () => {
           </div>
         ) : (
           /* ─── INTAKE FORM ────────────────────────────────────── */
-          <form onSubmit={handleSubmit} className="catalogue-sheet p-6 sm:p-10 space-y-6">
+          <form onSubmit={handleSubmit} className="mt-10 space-y-6 border-y border-stone-300 py-8 sm:px-8 sm:py-10">
 
             <div className="absolute -left-[9999px]" aria-hidden="true">
               <label htmlFor="website">Website</label>
@@ -187,7 +172,7 @@ export const ContactPage: React.FC = () => {
                   value={workflowText}
                   onChange={(e) => setWorkflowText(e.target.value)}
                   placeholder="Example: A customer messages us on WhatsApp or email, we extract site details, send the spec to an engineer, and then assemble a quote manually across three spreadsheets."
-                  className="w-full p-4 text-sm font-body text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600 leading-relaxed"
+                  className="w-full rounded-md border border-slate-300 bg-white p-4 text-sm font-body leading-relaxed text-slate-900 placeholder:text-slate-400 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
                 />
               </div>
             ) : (
@@ -204,7 +189,7 @@ export const ContactPage: React.FC = () => {
                   value={teachingGoal}
                   onChange={(e) => setTeachingGoal(e.target.value)}
                   placeholder="Example: I want our 12 operational managers to understand how APIs connect spreadsheets to our database, and build their first automated triage workflow without code."
-                  className="w-full p-4 text-sm font-body text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600 leading-relaxed"
+                  className="w-full rounded-md border border-slate-300 bg-white p-4 text-sm font-body leading-relaxed text-slate-900 placeholder:text-slate-400 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
                 />
               </div>
             )}
@@ -223,7 +208,7 @@ export const ContactPage: React.FC = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Jane Smith"
-                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
+                className="w-full rounded-md border border-slate-300 bg-white p-3 text-sm font-body text-slate-900 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
               />
             </div>
 
@@ -245,7 +230,7 @@ export const ContactPage: React.FC = () => {
                 value={organization}
                 onChange={(e) => setOrganization(e.target.value)}
                 placeholder={inquiryType === 'workflow' ? 'Apex Industrial Supplies (apexsupplies.com)' : 'St. Jude Educational Institute'}
-                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
+                className="w-full rounded-md border border-slate-300 bg-white p-3 text-sm font-body text-slate-900 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
               />
             </div>
 
@@ -263,7 +248,7 @@ export const ContactPage: React.FC = () => {
                 value={contactInfo}
                 onChange={(e) => setContactInfo(e.target.value)}
                 placeholder="jane@company.com or +234..."
-                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
+                className="w-full rounded-md border border-slate-300 bg-white p-3 text-sm font-body text-slate-900 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
               />
             </div>
 
@@ -280,7 +265,7 @@ export const ContactPage: React.FC = () => {
                 value={currentTools}
                 onChange={(e) => setCurrentTools(e.target.value)}
                 placeholder="Excel, Gmail, QuickBooks, WhatsApp, custom ERP, etc."
-                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
+                className="w-full rounded-md border border-slate-300 bg-white p-3 text-sm font-body text-slate-900 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
               />
             </div>
 
@@ -297,7 +282,7 @@ export const ContactPage: React.FC = () => {
                 value={optionalNote}
                 onChange={(e) => setOptionalNote(e.target.value)}
                 placeholder={inquiryType === 'workflow' ? 'Google Drive / Dropbox link, or extra context' : 'e.g. 15 participants, operations & finance team'}
-                className="w-full p-3 text-sm font-body text-slate-900 bg-white border border-slate-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
+                className="w-full rounded-md border border-slate-300 bg-white p-3 text-sm font-body text-slate-900 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
               />
             </div>
 
@@ -332,8 +317,9 @@ export const ContactPage: React.FC = () => {
         )}
 
         {/* ─── CONFIDENTIALITY NOTE ────────────────────────────── */}
-        <div className="border-t border-slate-200 pt-6 font-mono-tech text-xs text-slate-500 leading-relaxed">
-          Confidentiality: All business processes, workflows, and sample records are reviewed exclusively by Odafe Amalega under strict professional discretion.
+        <div className="mt-8 grid gap-3 border-t border-slate-200 pt-6 text-xs leading-relaxed text-slate-500 sm:grid-cols-2">
+          <p className="font-mono-tech">I reply personally after reviewing the workflow. If email delivery is inconvenient, WhatsApp remains available as a direct fallback.</p>
+          <p className="font-mono-tech">Confidentiality: Business processes, workflows, and sample records are reviewed exclusively by Odafe Amalega under professional discretion.</p>
         </div>
 
       </main>

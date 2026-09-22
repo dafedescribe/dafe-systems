@@ -1,0 +1,138 @@
+- generic [ref=f6e3]:
+  - link "Skip to main content" [ref=f6e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f6e5]:
+    - generic [ref=f6e7]:
+      - link "DafeDeScribe Home" [ref=f6e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f6e9]
+        - generic [ref=f6e10]:
+          - generic [ref=f6e11]: DafeDeScribe
+          - generic [ref=f6e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - navigation [ref=f6e13]:
+        - link "01 INDUSTRY" [ref=f6e14] [cursor=pointer]:
+          - /url: /industry
+          - generic [ref=f6e15]: "01"
+          - generic [ref=f6e16]: INDUSTRY
+        - link "02 WORK" [ref=f6e17] [cursor=pointer]:
+          - /url: /work
+          - generic [ref=f6e18]: "02"
+          - generic [ref=f6e19]: WORK
+        - link "03 TEACHING" [ref=f6e20] [cursor=pointer]:
+          - /url: /teaching
+          - generic [ref=f6e21]: "03"
+          - generic [ref=f6e22]: TEACHING
+        - link "04 NOTES" [ref=f6e23] [cursor=pointer]:
+          - /url: /notes
+          - generic [ref=f6e24]: "04"
+          - generic [ref=f6e25]: NOTES
+        - link "05 ABOUT" [ref=f6e26] [cursor=pointer]:
+          - /url: /about
+          - generic [ref=f6e27]: "05"
+          - generic [ref=f6e28]: ABOUT
+      - generic [ref=f6e29]:
+        - generic [ref=f6e30]:
+          - generic [ref=f6e31]: Language
+          - combobox "Language" [ref=f6e32]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - link "CV (PDF)" [ref=f6e33] [cursor=pointer]:
+          - /url: /cv.pdf
+        - link "Show Me the Workflow" [ref=f6e39] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=f6e46]:
+    - generic [ref=f6e47]:
+      - navigation "Breadcrumb" [ref=f6e48]:
+        - list [ref=f6e49]:
+          - listitem [ref=f6e50]:
+            - link "INDEX" [ref=f6e51] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f6e52]:
+            - generic [ref=f6e55]: CONTACT
+      - generic [ref=f6e56]:
+        - generic [ref=f6e57]:
+          - generic [ref=f6e58]: Direct engineering consultation
+          - heading "Show me the workflow." [level=1] [ref=f6e59]
+        - generic [ref=f6e61]:
+          - strong [ref=f6e62]: No polished brief or RFP needed.
+          - text: Describe what happens manually today, where the handoffs bottleneck, and what software your team currently touches.
+    - generic [ref=f6e63]:
+      - button "Commercial & Operational Workflows" [ref=f6e64]
+      - button "Technical Training & Workshops" [ref=f6e65]
+    - generic [ref=f6e66]:
+      - generic [aria-hidden] [ref=f6e67]:
+        - text: Website
+        - textbox [ref=f6e68]
+      - generic [ref=f6e69]:
+        - generic [ref=f6e70]: What keeps getting repeated?
+        - textbox "What keeps getting repeated?" [ref=f6e71]:
+          - /placeholder: "Example: A customer messages us on WhatsApp or email, we extract site details, send the spec to an engineer, and then assemble a quote manually across three spreadsheets."
+      - generic [ref=f6e72]:
+        - generic [ref=f6e73]: Your Name
+        - textbox "Your Name" [ref=f6e74]:
+          - /placeholder: Jane Smith
+      - group [ref=f6e75]:
+        - generic "Add context (optional)" [ref=f6e76] [cursor=pointer]
+      - generic [ref=f6e77]:
+        - button "Submit Workflow Details" [ref=f6e78]
+        - link "Or message directly on WhatsApp (+234 913 248 0302)" [ref=f6e80] [cursor=pointer]:
+          - /url: https://wa.me/2349132480302?text=Hi%20Odafe%2C%20I%20want%20to%20show%20you%20a%20workflow.%0A%0ARepeated%20Process%3A%0ANot%20specified%0A%0AName%3A%20%0ACompany%3A%20%0AContact%3A%20%0ACurrent%20Tools%3A%20%0ANote%3A%20
+      - alert
+    - generic [ref=f6e85]:
+      - paragraph [ref=f6e86]: I reply personally after reviewing the workflow. If email delivery is inconvenient, WhatsApp remains available as a direct fallback.
+      - paragraph [ref=f6e87]: "Confidentiality: Business processes, workflows, and sample records are reviewed exclusively by Odafe Amalega under professional discretion."
+  - contentinfo [ref=f6e88]:
+    - generic [ref=f6e89]:
+      - generic [ref=f6e90]:
+        - generic [ref=f6e91]:
+          - link "DafeDeScribe home" [ref=f6e92] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f6e93]:
+              - generic [ref=f6e94]: DafeDeScribe
+              - generic [ref=f6e95]: Systems · Automation · Education
+          - paragraph [ref=f6e96]: Odafe Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
+          - generic [ref=f6e97]: Ibadan, Nigeria · Working globally
+        - navigation "Commercial services" [ref=f6e98]:
+          - generic [ref=f6e99]: Commercial work
+          - list [ref=f6e100]:
+            - listitem [ref=f6e101]:
+              - link "Industry systems" [ref=f6e102] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f6e103]:
+              - link "Automation approach" [ref=f6e104] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f6e105]:
+              - link "Documented work" [ref=f6e106] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f6e107]:
+              - link "Show me the workflow" [ref=f6e108] [cursor=pointer]:
+                - /url: /contact
+        - navigation "Background and learning" [ref=f6e109]:
+          - generic [ref=f6e110]: Practice
+          - list [ref=f6e111]:
+            - listitem [ref=f6e112]:
+              - link "Teaching" [ref=f6e113] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f6e114]:
+              - link "Notes" [ref=f6e115] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f6e116]:
+              - link "About" [ref=f6e117] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f6e118]:
+              - link "Lab" [ref=f6e119] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f6e120]:
+          - generic [ref=f6e121]: Direct
+          - link "CV (PDF)" [ref=f6e122] [cursor=pointer]:
+            - /url: /cv.pdf
+          - link "WhatsApp" [ref=f6e126] [cursor=pointer]:
+            - /url: https://wa.me/2349132480302
+      - generic [ref=f6e130]:
+        - generic [ref=f6e131]: © 2026 DafeDeScribe · Odafe Amalega.
+        - link "Direct inquiry" [ref=f6e132] [cursor=pointer]:
+          - /url: /contact
