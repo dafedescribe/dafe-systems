@@ -21,6 +21,7 @@ import { ProjectDetailPage } from '../src/pages/ProjectDetailPage';
 import { ArticleDetailPage } from '../src/pages/ArticleDetailPage';
 import { LabPage } from '../src/pages/LabPage';
 import { NotFoundPage } from '../src/pages/NotFoundPage';
+import { getBreadcrumbKey } from '../src/components/Breadcrumbs';
 
 const renderShell = (node: React.ReactNode, path = '/') => renderToStaticMarkup(
   React.createElement(
@@ -132,5 +133,11 @@ describe('site-wide editorial system', () => {
       expect(html, path).not.toContain('rounded-xl');
       expect(html, path).not.toContain('shadow-sm');
     }
+  });
+
+  it('gives breadcrumb items unique keys when they share a destination', () => {
+    const item = { label: 'NOTES', path: '/notes' };
+    expect(getBreadcrumbKey(item, 0)).toBe('/notes:0');
+    expect(getBreadcrumbKey(item, 1)).toBe('/notes:1');
   });
 });

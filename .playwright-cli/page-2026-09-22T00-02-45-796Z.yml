@@ -1,0 +1,144 @@
+- generic [ref=f17e3]:
+  - link "Skip to main content" [ref=f17e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f17e5]:
+    - generic [ref=f17e7]:
+      - link "DafeDeScribe Home" [ref=f17e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f17e9]
+        - generic [ref=f17e10]:
+          - generic [ref=f17e11]: DafeDeScribe
+          - generic [ref=f17e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - generic [ref=f17e13]:
+        - generic [ref=f17e14]:
+          - generic [ref=f17e15]: Language
+          - combobox "Language" [ref=f17e16]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - button "Open Navigation" [ref=f17e17]
+  - main [ref=f17e22]:
+    - navigation "Breadcrumb" [ref=f17e23]:
+      - list [ref=f17e24]:
+        - listitem [ref=f17e25]:
+          - link "INDEX" [ref=f17e26] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f17e27]:
+          - link "NOTES" [ref=f17e30] [cursor=pointer]:
+            - /url: /notes
+        - listitem [ref=f17e31]:
+          - generic [ref=f17e34]: INDUSTRIAL / RFQ
+    - img "Manufacturing estimator reviewing structured quotation line items on screen" [ref=f17e36]
+    - generic [ref=f17e37]:
+      - generic [ref=f17e38]:
+        - generic [ref=f17e39]: Technical Note · Industrial / RFQ
+        - generic [ref=f17e40]: 1 MIN READ · March 2026
+      - 'heading "RFQ Automation for Manufacturers: What Should Actually Be Automated?" [level=1] [ref=f17e41]'
+      - paragraph [ref=f17e42]: Why letting an AI calculate pricing unsupervised is a mistake, and how to automate the heavy information preparation layer instead.
+      - 'link "Operational Context: RFQ AUTOMATION FOR INDUSTRIAL SUPPLIERS" [ref=f17e44] [cursor=pointer]':
+        - /url: /industry/rfq-automation
+    - generic [ref=f17e50]:
+      - paragraph [ref=f17e51]: "When software vendors pitch \"AI-powered sales automation\" to manufacturers, the demo usually looks deceptively clean: a buyer emails a request, an algorithm parses it, prices it automatically against a database, and sends a binding quote back within seconds."
+      - paragraph [ref=f17e52]: In real manufacturing and industrial distribution, running an autonomous quotation loop like this is a quick way to lose customer trust or blow out operating margins.
+      - paragraph [ref=f17e53]: Industrial products are rarely interchangeable widgets. Custom tolerances, material grades, regional lead times, order volume discounts, inventory availability, and customer credit terms require experienced human judgement. If your quoting algorithm misinterprets a metallurgical specification or quotes stale steel prices, your company pays the bill.
+      - paragraph [ref=f17e54]: The real operational bottleneck is almost never the moment an experienced commercial estimator makes the pricing decision. The bottleneck is everything that has to happen before that decision can be made.
+      - paragraph [ref=f17e55]: In a typical manufacturing office, an RFQ arrives as an email body with three PDF drawings attached and an Excel spreadsheet containing 40 line items with inconsistent part descriptions. A technical salesperson or estimating engineer must then open each attachment, cross-reference customer codes against the ERP catalog, check which items are standard versus custom, check if material certifications are required, and re-type the request into the internal quoting system.
+      - blockquote [ref=f17e56]: That administrative preparation layer is what should actually be automated.
+      - paragraph [ref=f17e57]: "The goal is simple: automate the retrieval, extraction, normalization, and verification of information so that when your commercial engineer opens the RFQ, 90% of the clerical work is already finished."
+      - paragraph [ref=f17e58]: When your team can evaluate five pre-structured RFQs in the time it used to take to unpack one messy email thread, quote velocity doubles without sacrificing human control over pricing and commitments.
+      - generic [ref=f17e59]:
+        - generic [ref=f17e60]: Share
+        - link "Post" [ref=f17e61] [cursor=pointer]:
+          - /url: https://x.com/intent/tweet?text=RFQ%20Automation%20for%20Manufacturers%3A%20What%20Should%20Actually%20Be%20Automated%3F%20%E2%80%94%20via%20DafeDeScribe&url=https%3A%2F%2Fwww.dafe.name.ng%2Fnotes%2Frfq-automation-for-manufacturers
+        - link "LinkedIn" [ref=f17e62] [cursor=pointer]:
+          - /url: https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.dafe.name.ng%2Fnotes%2Frfq-automation-for-manufacturers
+        - link "WhatsApp" [ref=f17e63] [cursor=pointer]:
+          - /url: https://wa.me/?text=RFQ%20Automation%20for%20Manufacturers%3A%20What%20Should%20Actually%20Be%20Automated%3F%20%E2%80%94%20via%20DafeDeScribe%20https%3A%2F%2Fwww.dafe.name.ng%2Fnotes%2Frfq-automation-for-manufacturers
+        - button "Copy link" [ref=f17e64]
+    - generic [ref=f17e65]:
+      - generic [ref=f17e66]: WRITTEN & TESTED BY
+      - generic [ref=f17e67]: Odafe Amalega
+      - paragraph [ref=f17e68]: AI Workflow Engineer and Educator currently instructing at AppClick. Builds systems around high-value commercial processes and repetitive operational bottlenecks.
+      - link "View engineering background & credentials →" [ref=f17e70] [cursor=pointer]:
+        - /url: /about
+    - generic [ref=f17e71]:
+      - generic [ref=f17e72]: Related Notes
+      - generic [ref=f17e73]:
+        - link "Email with PDF and Excel attachments flowing into a structured intake pipeline Industrial / RFQ How to Process RFQs From Email, PDF and Excel" [ref=f17e74] [cursor=pointer]:
+          - /url: /notes/how-to-process-rfqs-email-pdf-excel
+          - img "Email with PDF and Excel attachments flowing into a structured intake pipeline" [ref=f17e76]
+          - generic [ref=f17e77]:
+            - generic [ref=f17e78]: Industrial / RFQ
+            - generic [ref=f17e79]: How to Process RFQs From Email, PDF and Excel
+        - link "Dashboard queue of filtered tender opportunities with deadlines Tender Monitoring How to Automate Tender Monitoring Across Multiple Procurement Portals" [ref=f17e80] [cursor=pointer]:
+          - /url: /notes/automate-tender-monitoring
+          - img "Dashboard queue of filtered tender opportunities with deadlines" [ref=f17e82]
+          - generic [ref=f17e83]:
+            - generic [ref=f17e84]: Tender Monitoring
+            - generic [ref=f17e85]: How to Automate Tender Monitoring Across Multiple Procurement Portals
+        - 'link "Legacy ERP portal in a browser beside API connection diagram Automation Architecture API vs Browser Automation: What Happens When the Software Has No API?" [ref=f17e86] [cursor=pointer]':
+          - /url: /notes/api-vs-browser-automation
+          - img "Legacy ERP portal in a browser beside API connection diagram" [ref=f17e88]
+          - generic [ref=f17e89]:
+            - generic [ref=f17e90]: Automation Architecture
+            - generic [ref=f17e91]: "API vs Browser Automation: What Happens When the Software Has No API?"
+    - generic [ref=f17e92]:
+      - generic [ref=f17e93]: Actionable Next Step
+      - heading "Have a similar workflow in your business?" [level=2] [ref=f17e94]
+      - paragraph [ref=f17e95]: Send me the workflow. We will identify which steps can be handled deterministically.
+      - link "Show Me the Workflow" [ref=f17e97] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f17e101]:
+    - generic [ref=f17e102]:
+      - generic [ref=f17e103]:
+        - generic [ref=f17e104]:
+          - link "DafeDeScribe home" [ref=f17e105] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f17e106]:
+              - generic [ref=f17e107]: DafeDeScribe
+              - generic [ref=f17e108]: Systems · Automation · Education
+          - paragraph [ref=f17e109]: Odafe Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
+          - generic [ref=f17e110]: Ibadan, Nigeria · Working globally
+        - navigation "Commercial services" [ref=f17e111]:
+          - generic [ref=f17e112]: Commercial work
+          - list [ref=f17e113]:
+            - listitem [ref=f17e114]:
+              - link "Industry systems" [ref=f17e115] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f17e116]:
+              - link "Automation approach" [ref=f17e117] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f17e118]:
+              - link "Documented work" [ref=f17e119] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f17e120]:
+              - link "Show me the workflow" [ref=f17e121] [cursor=pointer]:
+                - /url: /contact
+        - navigation "Background and learning" [ref=f17e122]:
+          - generic [ref=f17e123]: Practice
+          - list [ref=f17e124]:
+            - listitem [ref=f17e125]:
+              - link "Teaching" [ref=f17e126] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f17e127]:
+              - link "Notes" [ref=f17e128] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f17e129]:
+              - link "About" [ref=f17e130] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f17e131]:
+              - link "Lab" [ref=f17e132] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f17e133]:
+          - generic [ref=f17e134]: Direct
+          - link "CV (PDF)" [ref=f17e135] [cursor=pointer]:
+            - /url: /cv.pdf
+          - link "WhatsApp" [ref=f17e139] [cursor=pointer]:
+            - /url: https://wa.me/2349132480302
+      - generic [ref=f17e143]:
+        - generic [ref=f17e144]: © 2026 DafeDeScribe · Odafe Amalega.
+        - link "Direct inquiry" [ref=f17e145] [cursor=pointer]:
+          - /url: /contact

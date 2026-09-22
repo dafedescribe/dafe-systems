@@ -1,0 +1,181 @@
+- generic [ref=f14e3]:
+  - link "Skip to main content" [ref=f14e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f14e5]:
+    - generic [ref=f14e7]:
+      - link "DafeDeScribe Home" [ref=f14e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f14e9]
+        - generic [ref=f14e10]:
+          - generic [ref=f14e11]: DafeDeScribe
+          - generic [ref=f14e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - generic [ref=f14e13]:
+        - generic [ref=f14e14]:
+          - generic [ref=f14e15]: Language
+          - combobox "Language" [ref=f14e16]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - button "Open Navigation" [ref=f14e17]
+  - main [ref=f14e21]:
+    - navigation "Breadcrumb" [ref=f14e22]:
+      - list [ref=f14e23]:
+        - listitem [ref=f14e24]:
+          - link "INDEX" [ref=f14e25] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f14e26]:
+          - link "WORK" [ref=f14e29] [cursor=pointer]:
+            - /url: /work
+        - listitem [ref=f14e30]:
+          - generic [ref=f14e33]: REF. DS-001
+    - generic [ref=f14e34]:
+      - generic [ref=f14e35]:
+        - generic [ref=f14e36]:
+          - generic [ref=f14e37]: REF. DS-001
+          - generic [ref=f14e38]: "|"
+          - generic [ref=f14e39]: DATA / PYTHON / AUTOMATION
+        - generic [ref=f14e40]: INTERNAL BUILD
+      - heading "1,000,000+ Rows Processed in Under 10 Minutes" [level=1] [ref=f14e41]
+      - paragraph [ref=f14e42]: A chunked Python batch processing engine replacing manual spreadsheet work with deterministic transformations.
+      - generic [ref=f14e43]: "Category: AUTOMATION & DATA · Completed: 2026"
+    - generic [ref=f14e44]:
+      - generic [ref=f14e45]:
+        - generic [ref=f14e46]: Operational Context
+        - generic [ref=f14e47]: What was happening?
+        - paragraph [ref=f14e48]: Large tabular exports containing customer transaction histories, multi-currency ledger rows, and inventory movement logs needed repeated consolidation, deduplication, schema normalization, and validation for downstream reporting. Standard spreadsheet software repeatedly crashed, froze, or truncated rows when dealing with over 150,000 entries.
+      - generic [ref=f14e49]:
+        - generic [ref=f14e50]: Technical Constraints
+        - generic [ref=f14e51]: What made it challenging?
+        - paragraph [ref=f14e52]: Memory limits on standard local hardware (16GB RAM) prevented loading the entire raw 1.2M+ row CSV/XLSX into memory at once. Furthermore, date strings used inconsistent formats (ISO-8601, DD/MM/YYYY, MM/DD/YYYY) and numeric columns had sporadic currency symbols and trailing spaces.
+    - generic [ref=f14e53]:
+      - generic [ref=f14e54]: Engineering Solution
+      - generic [ref=f14e55]: What was built?
+      - paragraph [ref=f14e56]: Designed a lightweight chunk-based data pipeline in Python using Polars and generator-based streaming routines. The engine ingests files in 50,000-row chunks, applies deterministic cleaning functions (regex normalization, vectorized date parsing, ISO currency conversion), performs hashing for duplicate detection, and writes compressed, queryable Parquet partitions along with a consolidated analytical summary.
+    - generic [ref=f14e57]:
+      - generic [ref=f14e58]:
+        - generic [ref=f14e59]: Workflow Evidence
+        - generic [ref=f14e65]: Input → Process → Output → Result
+      - generic [ref=f14e66]:
+        - generic [ref=f14e67]:
+          - generic [ref=f14e68]:
+            - generic [ref=f14e69]: "1"
+            - text: Input
+          - paragraph [ref=f14e70]: Unstructured multi-format CSV exports and legacy ledger dumps totaling 1,140,000+ rows.
+        - generic [ref=f14e71]:
+          - generic [ref=f14e72]:
+            - generic [ref=f14e73]: "2"
+            - text: Process
+          - list [ref=f14e74]:
+            - listitem [ref=f14e75]:
+              - generic [ref=f14e78]: Stream raw byte chunks into memory buffer without heap explosion
+            - listitem [ref=f14e79]:
+              - generic [ref=f14e82]: Normalize headers and strip non-numeric glyphs from currency columns
+            - listitem [ref=f14e83]:
+              - generic [ref=f14e86]: Vectorized date parsing with fallback pattern recognition
+            - listitem [ref=f14e87]:
+              - generic [ref=f14e90]: MurmurHash3 computation on primary key tuples for rapid deduplication
+            - listitem [ref=f14e91]:
+              - generic [ref=f14e94]: Aggregate dimensional metrics (volume, revenue by category, daily velocity)
+        - generic [ref=f14e95]:
+          - generic [ref=f14e96]:
+            - generic [ref=f14e97]: "3"
+            - text: Output
+          - paragraph [ref=f14e98]: Cleaned partitioned Parquet datasets ready for BI/SQL ingestion, plus a 2-page executive summary spreadsheet generated in 8 minutes 42 seconds.
+        - generic [ref=f14e99]:
+          - generic [ref=f14e100]: Result
+          - paragraph [ref=f14e104]: Reduced a process that previously stalled spreadsheet applications and required several days of fragmented human wrangling into an 8.7-minute unattended script run with zero dropped rows.
+    - generic [ref=f14e105]:
+      - generic [ref=f14e106]: Technical Implementation
+      - generic [ref=f14e107]: Architecture and tooling notes
+      - generic [ref=f14e108]:
+        - generic [ref=f14e109]: Python 3.11
+        - generic [ref=f14e110]: Polars
+        - generic [ref=f14e111]: PyArrow
+        - generic [ref=f14e112]: DuckDB
+        - generic [ref=f14e113]: Rich CLI
+      - paragraph [ref=f14e114]: Generator-based chunked streaming pipeline with multi-threaded vectorized transformations and columnar Parquet serialization.
+      - generic [ref=f14e115]:
+        - generic [ref=f14e116]:
+          - generic [ref=f14e117]: Pipeline Code Extract
+          - generic [ref=f14e121]: Implementation Extract
+        - code [ref=f14e123]: "import polars as pl def process_chunk_stream(file_path: str, chunk_size: int = 50_000): schema_overrides = {\"record_id\": pl.Utf8, \"amount\": pl.Utf8, \"event_ts\": pl.Utf8} reader = pl.read_csv_batched(file_path, batch_size=chunk_size, schema_overrides=schema_overrides) total_processed = 0 while (batches := reader.next_batches(5)): for batch in batches: cleaned = ( batch.lazy() .filter(pl.col(\"record_id\").is_not_null()) .with_columns([ pl.col(\"amount\").str.replace_all(r\"[^0-9.-]\", \"\").cast(pl.Float64, strict=False), pl.col(\"event_ts\").str.to_datetime(\"%Y-%m-%d %H:%M:%S\", strict=False) ]) .collect() ) total_processed += len(cleaned) return total_processed"
+    - generic [ref=f14e124]:
+      - generic [ref=f14e125]: Demonstrated Capabilities
+      - list [ref=f14e126]:
+        - listitem [ref=f14e127]:
+          - generic [ref=f14e131]: Engineered data extraction and batch performance beyond spreadsheet boundaries.
+        - listitem [ref=f14e132]:
+          - generic [ref=f14e136]: Deterministic code execution beats manual cut-and-paste every time volume scales.
+    - generic [ref=f14e137]:
+      - generic [ref=f14e138]: Related Case Studies
+      - generic [ref=f14e139]:
+        - link "REF. DS-003 · PROTOTYPE Industrial RFQ Intake & Specification Preparation Engine Automated extraction of customer line items, part specifications, and delivery terms from messy email bodies and PDF attachments into a verified review queue." [ref=f14e140] [cursor=pointer]:
+          - /url: /work/industrial-rfq-intake
+          - generic [ref=f14e141]: REF. DS-003 · PROTOTYPE
+          - generic [ref=f14e142]: Industrial RFQ Intake & Specification Preparation Engine
+          - generic [ref=f14e143]: Automated extraction of customer line items, part specifications, and delivery terms from messy email bodies and PDF attachments into a verified review queue.
+        - link "REF. DS-005 · INTERNAL BUILD Commercial Quotation Coordination & Follow-Up Pipeline An automated quotation coordination workflow tracking proposal lifecycle, customer engagement, and scheduled follow-up cadence." [ref=f14e144] [cursor=pointer]:
+          - /url: /work/commercial-quotation-tracker
+          - generic [ref=f14e145]: REF. DS-005 · INTERNAL BUILD
+          - generic [ref=f14e146]: Commercial Quotation Coordination & Follow-Up Pipeline
+          - generic [ref=f14e147]: An automated quotation coordination workflow tracking proposal lifecycle, customer engagement, and scheduled follow-up cadence.
+    - generic [ref=f14e148]:
+      - generic [ref=f14e149]: Have a Similar Operational Challenge?
+      - heading "Let's evaluate your workflow." [level=2] [ref=f14e150]
+      - paragraph [ref=f14e151]: Share an overview of your current manual workflow. We will examine where the data is getting delayed and outline practical automation options.
+      - link "Discuss Your Workflow" [ref=f14e153] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f14e157]:
+    - generic [ref=f14e158]:
+      - generic [ref=f14e159]:
+        - generic [ref=f14e160]:
+          - link "DafeDeScribe home" [ref=f14e161] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f14e162]:
+              - generic [ref=f14e163]: DafeDeScribe
+              - generic [ref=f14e164]: Systems · Automation · Education
+          - paragraph [ref=f14e165]: Odafe Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
+          - generic [ref=f14e166]: Ibadan, Nigeria · Working globally
+        - navigation "Commercial services" [ref=f14e167]:
+          - generic [ref=f14e168]: Commercial work
+          - list [ref=f14e169]:
+            - listitem [ref=f14e170]:
+              - link "Industry systems" [ref=f14e171] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f14e172]:
+              - link "Automation approach" [ref=f14e173] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f14e174]:
+              - link "Documented work" [ref=f14e175] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f14e176]:
+              - link "Show me the workflow" [ref=f14e177] [cursor=pointer]:
+                - /url: /contact
+        - navigation "Background and learning" [ref=f14e178]:
+          - generic [ref=f14e179]: Practice
+          - list [ref=f14e180]:
+            - listitem [ref=f14e181]:
+              - link "Teaching" [ref=f14e182] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f14e183]:
+              - link "Notes" [ref=f14e184] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f14e185]:
+              - link "About" [ref=f14e186] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f14e187]:
+              - link "Lab" [ref=f14e188] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f14e189]:
+          - generic [ref=f14e190]: Direct
+          - link "CV (PDF)" [ref=f14e191] [cursor=pointer]:
+            - /url: /cv.pdf
+          - link "WhatsApp" [ref=f14e195] [cursor=pointer]:
+            - /url: https://wa.me/2349132480302
+      - generic [ref=f14e199]:
+        - generic [ref=f14e200]: © 2026 DafeDeScribe · Odafe Amalega.
+        - link "Direct inquiry" [ref=f14e201] [cursor=pointer]:
+          - /url: /contact

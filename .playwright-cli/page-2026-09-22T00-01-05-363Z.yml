@@ -1,0 +1,155 @@
+- generic [ref=f13e3]:
+  - link "Skip to main content" [ref=f13e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f13e5]:
+    - generic [ref=f13e7]:
+      - link "DafeDeScribe Home" [ref=f13e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f13e9]
+        - generic [ref=f13e10]:
+          - generic [ref=f13e11]: DafeDeScribe
+          - generic [ref=f13e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - generic [ref=f13e13]:
+        - generic [ref=f13e14]:
+          - generic [ref=f13e15]: Language
+          - combobox "Language" [ref=f13e16]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - button "Open Navigation" [ref=f13e17]
+  - main [ref=f13e21]:
+    - navigation "Breadcrumb" [ref=f13e22]:
+      - list [ref=f13e23]:
+        - listitem [ref=f13e24]:
+          - link "INDEX" [ref=f13e25] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f13e26]:
+          - link "INDUSTRY" [ref=f13e29] [cursor=pointer]:
+            - /url: /industry
+        - listitem [ref=f13e30]:
+          - generic [ref=f13e33]: RFQ AUTOMATION
+    - generic [ref=f13e34]:
+      - generic [ref=f13e35]: Specification Intake & RFQ Architecture
+      - heading "Organise the RFQ before your team starts quoting." [level=1] [ref=f13e36]
+      - generic [ref=f13e37]:
+        - paragraph [ref=f13e38]: Industrial RFQs rarely arrive in clean, standardized formats. They land across customer email threads as dense multi-page PDFs, technical drawings, and ad-hoc spreadsheets with ambiguous customer part numbers.
+        - paragraph [ref=f13e39]: Before an estimator or sales engineer can evaluate margins and calculate bids, staff spend hours manually re-typing specifications, validating line items, and cross-referencing internal ERP catalogs.
+        - paragraph [ref=f13e40]: Deterministic automation handles this entire extraction layer—parsing raw attachments and delivering structured quotation drafts directly into your existing workflow.
+    - region "RFQ Intake and Preparation Engine Architecture" [ref=f13e42]:
+      - generic [ref=f13e43]:
+        - generic [ref=f13e44]: RFQ Intake & Extraction Architecture
+        - generic [ref=f13e50]: End-to-End Preparation Engine
+      - generic [ref=f13e51]:
+        - generic [ref=f13e52]:
+          - generic [ref=f13e53]: Phase 01 · Inbound Sources
+          - generic [ref=f13e54]: Multi-Format Intake
+          - list [ref=f13e55]:
+            - listitem [ref=f13e56]: Inbound Customer Emails
+            - listitem [ref=f13e58]: Multi-page PDF Drawings & Specifications
+            - listitem [ref=f13e60]: Non-standard Vendor Excel Sheets
+            - listitem [ref=f13e62]: Scanned Quotation Requests
+        - generic [ref=f13e64]:
+          - generic [ref=f13e65]: Automated Parsing Pipeline
+          - generic [ref=f13e66]: Normalized RFQ Dossier
+          - list [ref=f13e67]:
+            - listitem [ref=f13e68]: Verified Customer Identity & CRM Match
+            - listitem [ref=f13e72]: Exact Part Numbers & ERP SKU Resolution
+            - listitem [ref=f13e76]: Line-Item Quantities & Unit Normalization
+            - listitem [ref=f13e80]: Extracted Tolerances & Material Grades
+            - listitem [ref=f13e84]: Required Delivery Dates & Lead Times
+        - generic [ref=f13e88]:
+          - generic [ref=f13e89]: Phase 03 · Commercial Desk
+          - generic [ref=f13e90]: Sales Engineering Sign-off
+          - list [ref=f13e91]:
+            - listitem [ref=f13e92]: Engineering Feasibility Approval
+            - listitem [ref=f13e94]: Live Margin & Pricing Evaluation
+            - listitem [ref=f13e96]: Shop Floor Production Availability
+            - listitem [ref=f13e98]: Terms & Payment Exceptions
+            - listitem [ref=f13e100]: Final Dispatched Quotation
+      - generic [ref=f13e104]:
+        - generic [ref=f13e105]: Automating repetitive extraction while keeping commercial decisions with your engineers.
+        - generic [ref=f13e106]: "Processing speed: < 3 mins per batch"
+    - generic [ref=f13e107]:
+      - generic [ref=f13e108]: Operational Principle
+      - heading "Automate preparation, not judgement." [level=2] [ref=f13e109]
+      - generic [ref=f13e110]:
+        - paragraph [ref=f13e111]: The objective is not to let an algorithm commit your business to pricing or delivery timelines without oversight.
+        - paragraph [ref=f13e112]: The goal is to stop skilled engineers and estimators from burning hours copying line items, cross-referencing customer codes, and re-entering customer details into quotation software.
+      - generic [ref=f13e113]:
+        - generic [ref=f13e114]: Multi-page table extraction from PDFs
+        - generic [ref=f13e119]: Customer part numbers mapped to ERP SKUs
+        - generic [ref=f13e124]: Incomplete specs flagged before engineering review
+        - generic [ref=f13e129]: Zero unattended price commitments
+    - generic [ref=f13e134]:
+      - generic [ref=f13e135]: Related Technical Articles
+      - generic [ref=f13e136]:
+        - 'link "Technical Note 01 RFQ Automation for Manufacturers: What Should Actually Be Automated? Why unsupervised pricing engines fail in real industrial sales." [ref=f13e137] [cursor=pointer]':
+          - /url: /notes/rfq-automation-for-manufacturers
+          - generic [ref=f13e138]: Technical Note 01
+          - generic [ref=f13e139]: "RFQ Automation for Manufacturers: What Should Actually Be Automated?"
+          - generic [ref=f13e140]: Why unsupervised pricing engines fail in real industrial sales.
+        - link "Technical Note 02 How to Process RFQs From Email, PDF and Excel Pipeline architecture for parsing non-standard attachments." [ref=f13e141] [cursor=pointer]:
+          - /url: /notes/how-to-process-rfqs-email-pdf-excel
+          - generic [ref=f13e142]: Technical Note 02
+          - generic [ref=f13e143]: How to Process RFQs From Email, PDF and Excel
+          - generic [ref=f13e144]: Pipeline architecture for parsing non-standard attachments.
+    - generic [ref=f13e145]:
+      - generic [ref=f13e146]: Workflow Consultation
+      - heading "Discuss Your RFQ Process" [level=2] [ref=f13e147]
+      - paragraph [ref=f13e148]: Send an example of a typical incoming RFQ and how your team currently prepares the quotation. We will map where data is lost and outline extraction automation.
+      - link "Discuss Your RFQ Process" [ref=f13e150] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f13e154]:
+    - generic [ref=f13e155]:
+      - generic [ref=f13e156]:
+        - generic [ref=f13e157]:
+          - link "DafeDeScribe home" [ref=f13e158] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f13e159]:
+              - generic [ref=f13e160]: DafeDeScribe
+              - generic [ref=f13e161]: Systems · Automation · Education
+          - paragraph [ref=f13e162]: Odafe Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
+          - generic [ref=f13e163]: Ibadan, Nigeria · Working globally
+        - navigation "Commercial services" [ref=f13e164]:
+          - generic [ref=f13e165]: Commercial work
+          - list [ref=f13e166]:
+            - listitem [ref=f13e167]:
+              - link "Industry systems" [ref=f13e168] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f13e169]:
+              - link "Automation approach" [ref=f13e170] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f13e171]:
+              - link "Documented work" [ref=f13e172] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f13e173]:
+              - link "Show me the workflow" [ref=f13e174] [cursor=pointer]:
+                - /url: /contact
+        - navigation "Background and learning" [ref=f13e175]:
+          - generic [ref=f13e176]: Practice
+          - list [ref=f13e177]:
+            - listitem [ref=f13e178]:
+              - link "Teaching" [ref=f13e179] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f13e180]:
+              - link "Notes" [ref=f13e181] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f13e182]:
+              - link "About" [ref=f13e183] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f13e184]:
+              - link "Lab" [ref=f13e185] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f13e186]:
+          - generic [ref=f13e187]: Direct
+          - link "CV (PDF)" [ref=f13e188] [cursor=pointer]:
+            - /url: /cv.pdf
+          - link "WhatsApp" [ref=f13e192] [cursor=pointer]:
+            - /url: https://wa.me/2349132480302
+      - generic [ref=f13e196]:
+        - generic [ref=f13e197]: © 2026 DafeDeScribe · Odafe Amalega.
+        - link "Direct inquiry" [ref=f13e198] [cursor=pointer]:
+          - /url: /contact

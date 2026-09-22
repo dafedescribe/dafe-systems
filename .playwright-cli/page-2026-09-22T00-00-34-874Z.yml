@@ -1,0 +1,168 @@
+- generic [ref=f8e3]:
+  - link "Skip to main content" [ref=f8e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f8e5]:
+    - generic [ref=f8e7]:
+      - link "DafeDeScribe Home" [ref=f8e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f8e9]
+        - generic [ref=f8e10]:
+          - generic [ref=f8e11]: DafeDeScribe
+          - generic [ref=f8e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - generic [ref=f8e13]:
+        - generic [ref=f8e14]:
+          - generic [ref=f8e15]: Language
+          - combobox "Language" [ref=f8e16]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - button "Open Navigation" [ref=f8e17]
+  - main [ref=f8e21]:
+    - generic [ref=f8e22]:
+      - navigation "Breadcrumb" [ref=f8e23]:
+        - list [ref=f8e24]:
+          - listitem [ref=f8e25]:
+            - link "INDEX" [ref=f8e26] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f8e27]:
+            - generic [ref=f8e30]: INDUSTRY
+      - generic [ref=f8e31]:
+        - generic [ref=f8e32]:
+          - generic [ref=f8e33]: Commercial workflow systems
+          - heading "Less administration between the opportunity and the order." [level=1] [ref=f8e34]
+        - generic [ref=f8e35]:
+          - generic [ref=f8e36]: Industrial sales work crosses inboxes, portals, drawings, PDFs, spreadsheets, and ERP records. I build the connective workflow around those handoffs while experienced people retain commercial control.
+          - link "Show me your workflow" [ref=f8e38] [cursor=pointer]:
+            - /url: /contact
+    - generic [ref=f8e41]:
+      - generic [ref=f8e43]:
+        - generic [ref=f8e44]: Commercial lifecycle
+        - heading "One operational surface, with human control at the decisions." [level=2] [ref=f8e45]
+      - list [ref=f8e46]:
+        - listitem [ref=f8e47]:
+          - generic [ref=f8e48]: "01"
+          - heading "Opportunity" [level=2] [ref=f8e49]
+          - paragraph [ref=f8e50]: Portals and inbound demand
+        - listitem [ref=f8e51]:
+          - generic [ref=f8e52]: "02"
+          - heading "Enquiry / RFQ" [level=2] [ref=f8e53]
+          - paragraph [ref=f8e54]: Documents and requirements
+        - listitem [ref=f8e55]:
+          - generic [ref=f8e56]: "03"
+          - heading "Specification" [level=2] [ref=f8e57]
+          - paragraph [ref=f8e58]: Technical validation
+        - listitem [ref=f8e59]:
+          - generic [ref=f8e60]: "04"
+          - heading "Quotation" [level=2] [ref=f8e61]
+          - paragraph [ref=f8e62]: Pricing and sign-off
+        - listitem [ref=f8e63]:
+          - generic [ref=f8e64]: "05"
+          - heading "Follow-up" [level=2] [ref=f8e65]
+          - paragraph [ref=f8e66]: Status and cadence
+        - listitem [ref=f8e67]:
+          - generic [ref=f8e68]: "06"
+          - heading "Reporting" [level=2] [ref=f8e69]
+          - paragraph [ref=f8e70]: Commercial visibility
+    - generic [ref=f8e71]:
+      - generic [ref=f8e72]:
+        - generic [ref=f8e73]:
+          - generic [ref=f8e74]: Specialist workflows
+          - heading "Four places commercial administration accumulates." [level=2] [ref=f8e75]
+        - generic [ref=f8e76]: Each route explains the inputs, review points, and realistic scope in more detail.
+      - generic [ref=f8e77]:
+        - article [ref=f8e78]:
+          - generic [ref=f8e79]: "01"
+          - heading "RFQ intake & extraction" [level=2] [ref=f8e80]
+          - paragraph [ref=f8e81]: Turn incoming emails, drawings, and messy PDFs into structured quote requests before estimation begins.
+          - link "Details" [ref=f8e82] [cursor=pointer]:
+            - /url: /industry/rfq-automation
+        - article [ref=f8e86]:
+          - generic [ref=f8e87]: "02"
+          - heading "Tender monitoring" [level=2] [ref=f8e88]
+          - paragraph [ref=f8e89]: Monitor defined procurement portals and deliver qualification-ready briefs to a review queue.
+          - link "Details" [ref=f8e90] [cursor=pointer]:
+            - /url: /industry/tender-monitoring
+        - article [ref=f8e94]:
+          - generic [ref=f8e95]: "03"
+          - heading "Quotation workflow" [level=2] [ref=f8e96]
+          - paragraph [ref=f8e97]: Coordinate document generation, internal sign-off, quotation status, and customer follow-up.
+          - link "Details" [ref=f8e98] [cursor=pointer]:
+            - /url: /industry/quotation-workflows
+        - article [ref=f8e102]:
+          - generic [ref=f8e103]: "04"
+          - heading "Commercial reporting" [level=2] [ref=f8e104]
+          - paragraph [ref=f8e105]: Prepare, reconcile, and report recurring operational exports without rebuilding the same workbook.
+          - link "Details" [ref=f8e106] [cursor=pointer]:
+            - /url: /industry/commercial-reporting
+    - generic [ref=f8e110]:
+      - generic [ref=f8e111]:
+        - heading "The workflow shape matters more than the industry label." [level=2] [ref=f8e113]
+        - generic [ref=f8e114]: Manufacturers, distributors, engineering businesses, equipment suppliers, contractors, and institutional suppliers often share the same operational signals.
+      - list [ref=f8e115]:
+        - listitem [ref=f8e116]: High-value enquiries arrive through email, portals, or messaging.
+        - listitem [ref=f8e117]: Specifications require experienced technical review.
+        - listitem [ref=f8e118]: Staff repeatedly move the same details between documents and systems.
+        - listitem [ref=f8e119]: Commercial status is difficult to see without asking several people.
+    - generic [ref=f8e121]:
+      - generic [ref=f8e122]:
+        - heading "Start with one commercial workflow." [level=2] [ref=f8e123]
+        - paragraph [ref=f8e124]: Walk me through one repeated process. I will identify the information bottlenecks, deterministic steps, and smallest reliable pipeline.
+      - generic [ref=f8e125]:
+        - link "Show me the process" [ref=f8e126] [cursor=pointer]:
+          - /url: /contact
+        - link "How I automate" [ref=f8e129] [cursor=pointer]:
+          - /url: /automation
+  - contentinfo [ref=f8e133]:
+    - generic [ref=f8e134]:
+      - generic [ref=f8e135]:
+        - generic [ref=f8e136]:
+          - link "DafeDeScribe home" [ref=f8e137] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f8e138]:
+              - generic [ref=f8e139]: DafeDeScribe
+              - generic [ref=f8e140]: Systems · Automation · Education
+          - paragraph [ref=f8e141]: Odafe Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
+          - generic [ref=f8e142]: Ibadan, Nigeria · Working globally
+        - navigation "Commercial services" [ref=f8e143]:
+          - generic [ref=f8e144]: Commercial work
+          - list [ref=f8e145]:
+            - listitem [ref=f8e146]:
+              - link "Industry systems" [ref=f8e147] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f8e148]:
+              - link "Automation approach" [ref=f8e149] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f8e150]:
+              - link "Documented work" [ref=f8e151] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f8e152]:
+              - link "Show me the workflow" [ref=f8e153] [cursor=pointer]:
+                - /url: /contact
+        - navigation "Background and learning" [ref=f8e154]:
+          - generic [ref=f8e155]: Practice
+          - list [ref=f8e156]:
+            - listitem [ref=f8e157]:
+              - link "Teaching" [ref=f8e158] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f8e159]:
+              - link "Notes" [ref=f8e160] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f8e161]:
+              - link "About" [ref=f8e162] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f8e163]:
+              - link "Lab" [ref=f8e164] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f8e165]:
+          - generic [ref=f8e166]: Direct
+          - link "CV (PDF)" [ref=f8e167] [cursor=pointer]:
+            - /url: /cv.pdf
+          - link "WhatsApp" [ref=f8e171] [cursor=pointer]:
+            - /url: https://wa.me/2349132480302
+      - generic [ref=f8e175]:
+        - generic [ref=f8e176]: © 2026 DafeDeScribe · Odafe Amalega.
+        - link "Direct inquiry" [ref=f8e177] [cursor=pointer]:
+          - /url: /contact

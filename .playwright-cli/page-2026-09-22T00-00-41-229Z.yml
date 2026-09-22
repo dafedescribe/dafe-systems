@@ -1,0 +1,224 @@
+- generic [ref=f9e3]:
+  - link "Skip to main content" [ref=f9e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f9e5]:
+    - generic [ref=f9e7]:
+      - link "DafeDeScribe Home" [ref=f9e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f9e9]
+        - generic [ref=f9e10]:
+          - generic [ref=f9e11]: DafeDeScribe
+          - generic [ref=f9e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - generic [ref=f9e13]:
+        - generic [ref=f9e14]:
+          - generic [ref=f9e15]: Language
+          - combobox "Language" [ref=f9e16]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - button "Open Navigation" [ref=f9e17]
+  - main [ref=f9e21]:
+    - generic [ref=f9e22]:
+      - navigation "Breadcrumb" [ref=f9e23]:
+        - list [ref=f9e24]:
+          - listitem [ref=f9e25]:
+            - link "INDEX" [ref=f9e26] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f9e27]:
+            - generic [ref=f9e30]: WORK
+      - generic [ref=f9e31]:
+        - generic [ref=f9e32]:
+          - generic [ref=f9e33]: Documented systems
+          - heading "Selected work, with the scope stated plainly." [level=1] [ref=f9e34]
+        - generic [ref=f9e35]:
+          - generic [ref=f9e36]: Production systems, internal builds, commercial prototypes, and training curricula. Every record names its constraint, workflow, and stated result.
+          - link "Discuss a similar workflow" [ref=f9e38] [cursor=pointer]:
+            - /url: /contact
+    - generic [ref=f9e41]:
+      - generic [ref=f9e42]:
+        - generic [ref=f9e43]: Project directory
+        - generic [ref=f9e45]: 6 Documented Builds. Use the filter, then open any row for the complete technical breakdown.
+      - generic [ref=f9e46]:
+        - generic [ref=f9e47]: Filter
+        - button "ALL" [pressed] [ref=f9e48]
+        - button "INDUSTRY" [ref=f9e49]
+        - button "DATA" [ref=f9e50]
+        - button "AI" [ref=f9e51]
+        - button "MEDIA" [ref=f9e52]
+        - button "EDUCATION" [ref=f9e53]
+      - generic [ref=f9e54]:
+        - link "REF. DS-001 1,000,000+ Rows Processed in Under 10 Minutes Automation & Data INTERNAL BUILD 2026" [ref=f9e55] [cursor=pointer]:
+          - /url: /work/million-row-pipeline
+          - generic [ref=f9e56]: REF. DS-001
+          - generic [ref=f9e57]: 1,000,000+ Rows Processed in Under 10 Minutes
+          - generic [ref=f9e58]: Automation & Data
+          - generic [ref=f9e59]: INTERNAL BUILD
+          - generic [ref=f9e60]: "2026"
+        - link "REF. DS-002 Long-Form Video Turned Into a Processing Pipeline AI & Media INTERNAL BUILD 2026" [ref=f9e61] [cursor=pointer]:
+          - /url: /work/video-processing-pipeline
+          - generic [ref=f9e62]: REF. DS-002
+          - generic [ref=f9e63]: Long-Form Video Turned Into a Processing Pipeline
+          - generic [ref=f9e64]: AI & Media
+          - generic [ref=f9e65]: INTERNAL BUILD
+          - generic [ref=f9e66]: "2026"
+        - link "REF. DS-003 Industrial RFQ Intake & Specification Preparation Engine Industry PROTOTYPE 2026" [ref=f9e67] [cursor=pointer]:
+          - /url: /work/industrial-rfq-intake
+          - generic [ref=f9e68]: REF. DS-003
+          - generic [ref=f9e69]: Industrial RFQ Intake & Specification Preparation Engine
+          - generic [ref=f9e70]: Industry
+          - generic [ref=f9e71]: PROTOTYPE
+          - generic [ref=f9e72]: "2026"
+        - link "REF. DS-004 Multi-Portal Tender Discovery & Filter Queue Industry PROTOTYPE 2025" [ref=f9e73] [cursor=pointer]:
+          - /url: /work/tender-monitoring-engine
+          - generic [ref=f9e74]: REF. DS-004
+          - generic [ref=f9e75]: Multi-Portal Tender Discovery & Filter Queue
+          - generic [ref=f9e76]: Industry
+          - generic [ref=f9e77]: PROTOTYPE
+          - generic [ref=f9e78]: "2025"
+        - link "REF. DS-005 Commercial Quotation Coordination & Follow-Up Pipeline Automation & Data INTERNAL BUILD 2025" [ref=f9e79] [cursor=pointer]:
+          - /url: /work/commercial-quotation-tracker
+          - generic [ref=f9e80]: REF. DS-005
+          - generic [ref=f9e81]: Commercial Quotation Coordination & Follow-Up Pipeline
+          - generic [ref=f9e82]: Automation & Data
+          - generic [ref=f9e83]: INTERNAL BUILD
+          - generic [ref=f9e84]: "2025"
+        - link "REF. DS-006 Practical AI, Automation & API Workshop Curriculum Teaching TRAINING 2026" [ref=f9e85] [cursor=pointer]:
+          - /url: /work/appclick-training-curriculum
+          - generic [ref=f9e86]: REF. DS-006
+          - generic [ref=f9e87]: Practical AI, Automation & API Workshop Curriculum
+          - generic [ref=f9e88]: Teaching
+          - generic [ref=f9e89]: TRAINING
+          - generic [ref=f9e90]: "2026"
+    - generic [ref=f9e91]:
+      - generic [ref=f9e92]:
+        - generic [ref=f9e93]:
+          - generic [ref=f9e94]: Representative evidence
+          - heading "Three systems, three different operating constraints." [level=2] [ref=f9e95]
+        - generic [ref=f9e96]: These examples show the range without making the index carry every technical detail.
+      - generic [ref=f9e97]:
+        - article [ref=f9e98]:
+          - generic [ref=f9e99]:
+            - generic [ref=f9e100]: REF. DS-001
+            - generic [ref=f9e101]: INTERNAL BUILD
+          - generic [ref=f9e102]:
+            - heading "1,000,000+ Rows Processed in Under 10 Minutes" [level=2] [ref=f9e103]
+            - paragraph [ref=f9e104]: A chunked Python batch processing engine replacing manual spreadsheet work with deterministic transformations.
+            - paragraph [ref=f9e105]:
+              - strong [ref=f9e106]: "Constraint:"
+              - text: Memory limits on standard local hardware (16GB RAM) prevented loading the entire raw 1.2M+ row CSV/XLSX into memory at once. Furthermore, date strings used inconsistent formats (ISO-8601, DD/MM/YYYY, MM/DD/YYYY) and numeric columns had sporadic currency symbols and trailing spaces.
+            - link "Read case study" [ref=f9e107] [cursor=pointer]:
+              - /url: /work/million-row-pipeline
+          - generic [ref=f9e111]:
+            - generic [ref=f9e112]:
+              - term [ref=f9e113]: Input
+              - definition [ref=f9e114]: Unstructured multi-format CSV exports and legacy ledger dumps totaling 1,140,000+ rows.
+            - generic [ref=f9e115]:
+              - term [ref=f9e116]: Output
+              - definition [ref=f9e117]: Cleaned partitioned Parquet datasets ready for BI/SQL ingestion, plus a 2-page executive summary spreadsheet generated in 8 minutes 42 seconds.
+            - generic [ref=f9e118]:
+              - term [ref=f9e119]: Result
+              - definition [ref=f9e120]: Reduced a process that previously stalled spreadsheet applications and required several days of fragmented human wrangling into an 8.7-minute unattended script run with zero dropped rows.
+        - article [ref=f9e121]:
+          - generic [ref=f9e122]:
+            - generic [ref=f9e123]: REF. DS-003
+            - generic [ref=f9e124]: PROTOTYPE
+          - generic [ref=f9e125]:
+            - heading "Industrial RFQ Intake & Specification Preparation Engine" [level=2] [ref=f9e126]
+            - paragraph [ref=f9e127]: Automated extraction of customer line items, part specifications, and delivery terms from messy email bodies and PDF attachments into a verified review queue.
+            - paragraph [ref=f9e128]:
+              - strong [ref=f9e129]: "Constraint:"
+              - text: Documents lack uniform templates. A single PDF might interleave billing addresses, technical drawings, general terms, and tabular item tables with nested sub-items.
+            - link "Read case study" [ref=f9e130] [cursor=pointer]:
+              - /url: /work/industrial-rfq-intake
+          - generic [ref=f9e134]:
+            - generic [ref=f9e135]:
+              - term [ref=f9e136]: Input
+              - definition [ref=f9e137]: Inbound RFQ emails with attached multi-page PDF specifications or Excel requisition files.
+            - generic [ref=f9e138]:
+              - term [ref=f9e139]: Output
+              - definition [ref=f9e140]: Normalized internal RFQ draft in ERP/Airtable review queue with 95% of administrative re-keying completed.
+            - generic [ref=f9e141]:
+              - term [ref=f9e142]: Result
+              - definition [ref=f9e143]: Cut estimator prep time from 25 minutes per complex request to under 3 minutes of focused human verification.
+        - article [ref=f9e144]:
+          - generic [ref=f9e145]:
+            - generic [ref=f9e146]: REF. DS-004
+            - generic [ref=f9e147]: PROTOTYPE
+          - generic [ref=f9e148]:
+            - heading "Multi-Portal Tender Discovery & Filter Queue" [level=2] [ref=f9e149]
+            - paragraph [ref=f9e150]: Scheduled automated scrapers and API monitors tracking procurement notices across fragmented buyer portals and delivering filtered, scored summaries.
+            - paragraph [ref=f9e151]:
+              - strong [ref=f9e152]: "Constraint:"
+              - text: Several target portals did not provide public RSS feeds or REST APIs, had sluggish page response times, and hid notice details behind multi-step pagination.
+            - link "Read case study" [ref=f9e153] [cursor=pointer]:
+              - /url: /work/tender-monitoring-engine
+          - generic [ref=f9e157]:
+            - generic [ref=f9e158]:
+              - term [ref=f9e159]: Input
+              - definition [ref=f9e160]: 7 external procurement portals and public tender gazette listings.
+            - generic [ref=f9e161]:
+              - term [ref=f9e162]: Output
+              - definition [ref=f9e163]: Consolidated Slack/WhatsApp/Email morning brief and synchronized internal pipeline table of high-probability opportunities.
+            - generic [ref=f9e164]:
+              - term [ref=f9e165]: Result
+              - definition [ref=f9e166]: Eliminated 10+ hours per week of manual website navigation while surfacing newly posted tenders within 4 hours of publication.
+    - generic [ref=f9e168]:
+      - generic [ref=f9e169]:
+        - heading "Have a similar operational challenge?" [level=2] [ref=f9e170]
+        - paragraph [ref=f9e171]: Send a short outline of the current manual workflow. I will assess where information is getting held up and what a practical architecture could look like.
+      - link "Discuss your workflow" [ref=f9e173] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f9e176]:
+    - generic [ref=f9e177]:
+      - generic [ref=f9e178]:
+        - generic [ref=f9e179]:
+          - link "DafeDeScribe home" [ref=f9e180] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f9e181]:
+              - generic [ref=f9e182]: DafeDeScribe
+              - generic [ref=f9e183]: Systems · Automation · Education
+          - paragraph [ref=f9e184]: Odafe Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
+          - generic [ref=f9e185]: Ibadan, Nigeria · Working globally
+        - navigation "Commercial services" [ref=f9e186]:
+          - generic [ref=f9e187]: Commercial work
+          - list [ref=f9e188]:
+            - listitem [ref=f9e189]:
+              - link "Industry systems" [ref=f9e190] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f9e191]:
+              - link "Automation approach" [ref=f9e192] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f9e193]:
+              - link "Documented work" [ref=f9e194] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f9e195]:
+              - link "Show me the workflow" [ref=f9e196] [cursor=pointer]:
+                - /url: /contact
+        - navigation "Background and learning" [ref=f9e197]:
+          - generic [ref=f9e198]: Practice
+          - list [ref=f9e199]:
+            - listitem [ref=f9e200]:
+              - link "Teaching" [ref=f9e201] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f9e202]:
+              - link "Notes" [ref=f9e203] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f9e204]:
+              - link "About" [ref=f9e205] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f9e206]:
+              - link "Lab" [ref=f9e207] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f9e208]:
+          - generic [ref=f9e209]: Direct
+          - link "CV (PDF)" [ref=f9e210] [cursor=pointer]:
+            - /url: /cv.pdf
+          - link "WhatsApp" [ref=f9e214] [cursor=pointer]:
+            - /url: https://wa.me/2349132480302
+      - generic [ref=f9e218]:
+        - generic [ref=f9e219]: © 2026 DafeDeScribe · Odafe Amalega.
+        - link "Direct inquiry" [ref=f9e220] [cursor=pointer]:
+          - /url: /contact

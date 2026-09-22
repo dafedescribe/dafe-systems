@@ -1,0 +1,114 @@
+- generic [ref=f12e3]:
+  - link "Skip to main content" [ref=f12e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f12e5]:
+    - generic [ref=f12e7]:
+      - link "DafeDeScribe Home" [ref=f12e8] [cursor=pointer]:
+        - /url: /
+        - img "DafeDeScribe Logo" [ref=f12e9]
+        - generic [ref=f12e10]:
+          - generic [ref=f12e11]: DafeDeScribe
+          - generic [ref=f12e12]: SYSTEMS · AUTOMATION · EDUCATION
+      - generic [ref=f12e13]:
+        - generic [ref=f12e14]:
+          - generic [ref=f12e15]: Language
+          - combobox "Language" [ref=f12e16]:
+            - option "English" [selected]
+            - option "Français"
+            - option "Português"
+            - option "Español"
+            - option "Deutsch"
+            - option "Türkçe"
+        - button "Open Navigation" [ref=f12e17]
+  - main [ref=f12e21]:
+    - generic [ref=f12e22]:
+      - navigation "Breadcrumb" [ref=f12e23]:
+        - list [ref=f12e24]:
+          - listitem [ref=f12e25]:
+            - link "INDEX" [ref=f12e26] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f12e27]:
+            - generic [ref=f12e30]: CONTACT
+      - generic [ref=f12e31]:
+        - generic [ref=f12e32]:
+          - generic [ref=f12e33]: Direct engineering consultation
+          - heading "Show me the workflow." [level=1] [ref=f12e34]
+        - generic [ref=f12e36]:
+          - strong [ref=f12e37]: No polished brief or RFP needed.
+          - text: Describe what happens manually today, where the handoffs bottleneck, and what software your team currently touches.
+    - generic [ref=f12e38]:
+      - button "Commercial & Operational Workflows" [ref=f12e39]
+      - button "Technical Training & Workshops" [ref=f12e40]
+    - generic [ref=f12e41]:
+      - generic [aria-hidden] [ref=f12e42]:
+        - text: Website
+        - textbox [ref=f12e43]
+      - generic [ref=f12e44]:
+        - generic [ref=f12e45]: What keeps getting repeated?
+        - textbox "What keeps getting repeated?" [ref=f12e46]:
+          - /placeholder: "Example: A customer messages us on WhatsApp or email, we extract site details, send the spec to an engineer, and then assemble a quote manually across three spreadsheets."
+      - generic [ref=f12e47]:
+        - generic [ref=f12e48]: Your Name
+        - textbox "Your Name" [ref=f12e49]:
+          - /placeholder: Jane Smith
+      - group [ref=f12e50]:
+        - generic "Add context (optional)" [ref=f12e51] [cursor=pointer]
+      - generic [ref=f12e52]:
+        - button "Submit Workflow Details" [ref=f12e53]
+        - link "Or message directly on WhatsApp (+234 913 248 0302)" [ref=f12e55] [cursor=pointer]:
+          - /url: https://wa.me/2349132480302?text=Hi%20Odafe%2C%20I%20want%20to%20show%20you%20a%20workflow.%0A%0ARepeated%20Process%3A%0ANot%20specified%0A%0AName%3A%20%0ACompany%3A%20%0AContact%3A%20%0ACurrent%20Tools%3A%20%0ANote%3A%20
+      - alert
+    - generic [ref=f12e60]:
+      - paragraph [ref=f12e61]: I reply personally after reviewing the workflow. If email delivery is inconvenient, WhatsApp remains available as a direct fallback.
+      - paragraph [ref=f12e62]: "Confidentiality: Business processes, workflows, and sample records are reviewed exclusively by Odafe Amalega under professional discretion."
+  - contentinfo [ref=f12e63]:
+    - generic [ref=f12e64]:
+      - generic [ref=f12e65]:
+        - generic [ref=f12e66]:
+          - link "DafeDeScribe home" [ref=f12e67] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f12e68]:
+              - generic [ref=f12e69]: DafeDeScribe
+              - generic [ref=f12e70]: Systems · Automation · Education
+          - paragraph [ref=f12e71]: Odafe Amalega designs maintainable workflow, data, and AI-assisted systems for industrial and operational businesses.
+          - generic [ref=f12e72]: Ibadan, Nigeria · Working globally
+        - navigation "Commercial services" [ref=f12e73]:
+          - generic [ref=f12e74]: Commercial work
+          - list [ref=f12e75]:
+            - listitem [ref=f12e76]:
+              - link "Industry systems" [ref=f12e77] [cursor=pointer]:
+                - /url: /industry
+            - listitem [ref=f12e78]:
+              - link "Automation approach" [ref=f12e79] [cursor=pointer]:
+                - /url: /automation
+            - listitem [ref=f12e80]:
+              - link "Documented work" [ref=f12e81] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=f12e82]:
+              - link "Show me the workflow" [ref=f12e83] [cursor=pointer]:
+                - /url: /contact
+        - navigation "Background and learning" [ref=f12e84]:
+          - generic [ref=f12e85]: Practice
+          - list [ref=f12e86]:
+            - listitem [ref=f12e87]:
+              - link "Teaching" [ref=f12e88] [cursor=pointer]:
+                - /url: /teaching
+            - listitem [ref=f12e89]:
+              - link "Notes" [ref=f12e90] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f12e91]:
+              - link "About" [ref=f12e92] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f12e93]:
+              - link "Lab" [ref=f12e94] [cursor=pointer]:
+                - /url: /lab
+        - generic [ref=f12e95]:
+          - generic [ref=f12e96]: Direct
+          - link "CV (PDF)" [ref=f12e97] [cursor=pointer]:
+            - /url: /cv.pdf
+          - link "WhatsApp" [ref=f12e101] [cursor=pointer]:
+            - /url: https://wa.me/2349132480302
+      - generic [ref=f12e105]:
+        - generic [ref=f12e106]: © 2026 DafeDeScribe · Odafe Amalega.
+        - link "Direct inquiry" [ref=f12e107] [cursor=pointer]:
+          - /url: /contact
