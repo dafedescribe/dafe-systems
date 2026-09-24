@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SeoHead } from '../components/SeoHead';
 import { EditorialPageHeader } from '../components/EditorialPageHeader';
-import { CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { CheckCircle2, ArrowUpRight, Copy, Check } from 'lucide-react';
 import { useI18n } from '../i18n/I18nProvider';
 
 export const ContactPage: React.FC = () => {
@@ -14,6 +14,10 @@ export const ContactPage: React.FC = () => {
   const [contactInfo, setContactInfo] = useState('');
   const [currentTools, setCurrentTools] = useState('');
   const [optionalNote, setOptionalNote] = useState('');
+  const [productRange, setProductRange] = useState('');
+  const [targetMarkets, setTargetMarkets] = useState('');
+  const [refId, setRefId] = useState('');
+  const [copied, setCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
@@ -27,10 +31,11 @@ export const ContactPage: React.FC = () => {
   };
 
   const getWhatsAppMessage = () => {
+    const refLine = refId ? `\nRef: ${refId}` : '';
     if (inquiryType === 'teaching') {
-      return `Hi Anthony, I would like to discuss training.\n\nGoal: ${teachingGoal || 'Not specified'}\nName: ${name}\nOrg: ${organization}\nContact: ${contactInfo}\nTools: ${currentTools}`;
+      return `Hi Anthony, I would like to discuss training.\n\nGoal: ${teachingGoal || 'Not specified'}\nName: ${name}\nOrg: ${organization}\nContact: ${contactInfo}\nTools: ${currentTools}${refLine}`;
     }
-    return `Hi Anthony, I want to show you a workflow.\n\nRepeated Process:\n${workflowText || 'Not specified'}\n\nName: ${name}\nCompany: ${organization}\nContact: ${contactInfo}\nCurrent Tools: ${currentTools}\nNote: ${optionalNote}`;
+    return `Hi Anthony, I want to show you a workflow.\n\nRepeated Process:\n${workflowText || 'Not specified'}\n\nName: ${name}\nCompany: ${organization}\nContact: ${contactInfo}\nCurrent Tools: ${currentTools}\nProducts: ${productRange || 'Not specified'}\nMarkets: ${targetMarkets || 'Not specified'}\nNote: ${optionalNote}${refLine}`;
   };
 
   const whatsAppUrl = `https://wa.me/2349132480302?text=${encodeURIComponent(getWhatsAppMessage())}`;
@@ -49,6 +54,8 @@ export const ContactPage: React.FC = () => {
       contactInfo,
       currentTools,
       optionalNote,
+      productRange,
+      targetMarkets,
       website: String(formData.get('website') || ''),
     };
 
@@ -64,6 +71,8 @@ export const ContactPage: React.FC = () => {
         throw new Error(result.error || 'Message delivery failed. Please use WhatsApp instead.');
       }
 
+      setRefId(`BRIEF / DS-${Math.floor(100000 + Math.random() * 900000)}`);
+      setCopied(false);
       setSubmitted(true);
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : 'Message delivery failed. Please use WhatsApp instead.');
@@ -121,31 +130,83 @@ export const ContactPage: React.FC = () => {
           </button>
         </div>
 
-        {/* ─── SUBMISSION STATE ────────────────────────────────── */}
+        {/* ─── SUBMISSION STATE: DOSSIER ───────────────────────── */}
         {submitted ? (
-          <div className="mt-10 space-y-6 border-y border-stone-300 py-8 sm:py-10">
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-6 h-6 text-emerald-600" />
-              <h2 className="text-2xl font-bold text-slate-900 font-display">
-                {t('contact.received')}
+          <div className="mt-10 space-y-6">
+            <div className="dossier-plate p-6 sm:p-8" role="status">
+              <div className="flex items-center gap-2 font-mono-tech text-xs font-bold uppercase tracking-[0.1em] text-amber-700">
+                <CheckCircle2 className="w-4 h-4" />
+                <span>{t('contact.transmission')}</span>
+              </div>
+
+              <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-slate-900 font-display">
+                {t('contact.briefRegistered')}
               </h2>
-            </div>
-            <p className="text-sm sm:text-base text-slate-700 font-body leading-relaxed">
-              Thank you, {name || 'there'}. I personally review incoming workflows and respond within 24 hours with concrete technical notes on feasibility, potential bottlenecks, and appropriate tools.
-            </p>
-            <div className="pt-3 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <span className="font-mono-tech text-xs text-slate-500">
-                Need an immediate conversation?
-              </span>
-              <a
-                href={whatsAppUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary px-5 py-2.5"
-              >
-                <span>Send to WhatsApp Now</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
+
+              <dl className="mt-6 space-y-0 font-mono-tech text-xs">
+                <div className="dossier-row py-2">
+                  <dt className="uppercase text-slate-500">{t('contact.refLabel')}</dt>
+                  <dd className="font-bold text-slate-900 text-right">{refId}</dd>
+                </div>
+                <div className="dossier-row py-2">
+                  <dt className="uppercase text-slate-500">Name</dt>
+                  <dd className="font-bold text-slate-900 text-right">{name}</dd>
+                </div>
+                {organization && (
+                  <div className="dossier-row py-2">
+                    <dt className="uppercase text-slate-500">Company</dt>
+                    <dd className="font-bold text-slate-900 text-right">{organization}</dd>
+                  </div>
+                )}
+                {inquiryType === 'workflow' && productRange && (
+                  <div className="dossier-row py-2">
+                    <dt className="uppercase text-slate-500">Products</dt>
+                    <dd className="text-slate-900 text-right max-w-[60%] truncate">{productRange}</dd>
+                  </div>
+                )}
+                {inquiryType === 'workflow' && targetMarkets && (
+                  <div className="dossier-row py-2">
+                    <dt className="uppercase text-slate-500">Markets</dt>
+                    <dd className="text-slate-900 text-right max-w-[60%] truncate">{targetMarkets}</dd>
+                  </div>
+                )}
+              </dl>
+
+              <p className="mt-6 text-sm sm:text-base text-slate-700 font-body leading-relaxed">
+                Thank you, {name || 'there'}. I personally review incoming workflows and respond within 24 hours with concrete technical notes on feasibility, potential bottlenecks, and appropriate tools.
+              </p>
+
+              <div className="mt-6 pt-4 border-t border-slate-900/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <span className="font-mono-tech text-[11px] uppercase tracking-[0.08em] text-slate-500">
+                  {t('contact.directRouting')}
+                </span>
+                <div className="flex flex-wrap items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const summary = `DOSSIER BRIEF\nReference: ${refId}\nName: ${name}\nCompany: ${organization}\nContact: ${contactInfo}\nProducts: ${productRange}\nMarkets: ${targetMarkets}`;
+                      navigator.clipboard.writeText(summary).then(
+                        () => setCopied(true),
+                        () => setCopied(false)
+                      );
+                      setTimeout(() => setCopied(false), 2000);
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3 py-2 font-mono-tech text-xs border border-slate-900 bg-white hover:bg-stone-100 transition-colors"
+                  >
+                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                    <span>{copied ? t('contact.copied') : t('contact.copyBrief')}</span>
+                  </button>
+                  <a
+                    href={whatsAppUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary px-5 py-2.5"
+                  >
+                    <span>Send to WhatsApp Now</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         ) : (
@@ -285,6 +346,44 @@ export const ContactPage: React.FC = () => {
                 className="w-full rounded-md border border-slate-300 bg-white p-3 text-sm font-body text-slate-900 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
               />
             </div>
+
+            {inquiryType === 'workflow' && (
+              <>
+                {/* What do you sell? */}
+                <div className="space-y-2">
+                  <label htmlFor="product-range" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-600">
+                    {t('contact.products')}
+                  </label>
+                  <input
+                    id="product-range"
+                    name="productRange"
+                    autoComplete="off"
+                    type="text"
+                    value={productRange}
+                    onChange={(e) => setProductRange(e.target.value)}
+                    placeholder="e.g. Commercial cold rooms, condensing units & spare parts"
+                    className="w-full rounded-md border border-slate-300 bg-white p-3 text-sm font-body text-slate-900 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
+                  />
+                </div>
+
+                {/* Target markets */}
+                <div className="space-y-2">
+                  <label htmlFor="target-markets" className="block font-mono-tech text-xs uppercase tracking-[0.08em] text-slate-600">
+                    {t('contact.markets')}
+                  </label>
+                  <input
+                    id="target-markets"
+                    name="targetMarkets"
+                    autoComplete="off"
+                    type="text"
+                    value={targetMarkets}
+                    onChange={(e) => setTargetMarkets(e.target.value)}
+                    placeholder="e.g. North Africa, Middle East, Sub-Saharan Africa"
+                    className="w-full rounded-md border border-slate-300 bg-white p-3 text-sm font-body text-slate-900 focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
+                  />
+                </div>
+              </>
+            )}
 
             </details>
 

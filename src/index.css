@@ -97,6 +97,29 @@
   border-radius: 0;
 }
 
+/* Dossier intake surfaces (contact flow only) — deliberate contrast:
+   bordered plates with hard offset shadows for form-as-document moments */
+.dossier-plate {
+  background-color: var(--paper-bright);
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 0 var(--ink);
+}
+
+.dossier-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.5rem;
+}
+
+.dossier-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 /* Button System */
 .btn-primary {
   background-color: var(--gold);

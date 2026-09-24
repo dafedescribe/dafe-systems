@@ -39,8 +39,12 @@ function validatePayload(payload) {
   if (!optionalString(payload.organization, 240)) return false;
   if (!optionalString(payload.currentTools, 1000)) return false;
   if (!optionalString(payload.optionalNote, 2000)) return false;
+  if (!optionalString(payload.productRange, 240)) return false;
+  if (!optionalString(payload.targetMarkets, 240)) return false;
   return true;
 }
+
+export { validatePayload, inquiryText };
 
 function inquiryText(payload) {
   const label = payload.inquiryType === 'teaching' ? 'Technical training inquiry' : 'Commercial workflow inquiry';
@@ -51,6 +55,8 @@ function inquiryText(payload) {
     `Organisation: ${payload.organization || 'Not provided'}`,
     `Contact: ${payload.contactInfo}`,
     `Current tools: ${payload.currentTools || 'Not specified'}`,
+    ...(payload.productRange ? [`Products: ${payload.productRange}`] : []),
+    ...(payload.targetMarkets ? [`Target Markets: ${payload.targetMarkets}`] : []),
     '',
     payload.inquiryType === 'teaching' ? 'Training goal:' : 'Repeated workflow:',
     payload.description,
