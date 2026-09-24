@@ -210,8 +210,13 @@ export const ContactPage: React.FC = () => {
             </div>
           </div>
         ) : (
-          /* ─── INTAKE FORM ────────────────────────────────────── */
-          <form onSubmit={handleSubmit} className="mt-10 space-y-6 border-y border-stone-300 py-8 sm:px-8 sm:py-10">
+          /* ─── INTAKE FORM: DOSSIER ──────────────────────────────── */
+          <form onSubmit={handleSubmit} className="mt-10 dossier-plate">
+            <div className="dossier-intake-bar">
+              <span><span className="accent">COMMERCIAL INTAKE</span> // DIRECT ROUTING TO DAFE</span>
+              <span>{inquiryType === 'workflow' ? 'WORKFLOW' : 'TRAINING'}</span>
+            </div>
+            <div className="p-6 sm:p-8 space-y-6">
 
             <div className="absolute -left-[9999px]" aria-hidden="true">
               <label htmlFor="website">Website</label>
@@ -392,7 +397,7 @@ export const ContactPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary px-7 py-3.5"
+                className="btn-dossier px-7 py-3.5"
               >
                 <span>{isSubmitting ? t('contact.sending') : inquiryType === 'workflow' ? t('contact.submit') : t('contact.trainingSubmit')}</span>
               </button>
@@ -412,6 +417,7 @@ export const ContactPage: React.FC = () => {
               {submitError}
             </p>
 
+            </div>
           </form>
         )}
 

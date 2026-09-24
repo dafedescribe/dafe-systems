@@ -120,6 +120,58 @@
   padding-bottom: 0;
 }
 
+.dossier-intake-bar {
+  background-color: var(--ink);
+  color: var(--paper-bright);
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  flex-wrap: wrap;
+}
+
+.dossier-intake-bar .accent {
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+.btn-dossier {
+  background-color: var(--ink);
+  color: var(--paper-bright);
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  font-family: 'Hanken Grotesk', -apple-system, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 3px 3px 0 0 var(--gold);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+}
+
+.btn-dossier:hover {
+  background-color: #1e293b;
+}
+
+.btn-dossier:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 0 var(--gold);
+}
+
+.btn-dossier:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
 /* Button System */
 .btn-primary {
   background-color: var(--gold);
